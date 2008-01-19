@@ -505,7 +505,9 @@ public class AcmDlContentService implements ContentService {
 			if ( (pub.getEe().indexOf("acm.org") < 0 && 
 					pub.getEe().indexOf("doi") < 0) ||
 					(pub.getEe().indexOf("doi.ieeecomputersociety.org") >= 0) ||
-					(pub.getKey().indexOf("IEEE") >= 0)) {
+					(pub.getKey().indexOf("IEEE") >= 0) ||
+					// 10.1007 (DOI registrant 1007) seems to be springerlink
+					(pub.getEe().indexOf("dx.doi.org/10.1007") >= 0) ) {
 				logger.debug("skipping non-ACM URL: "+pub.getEe());
 				return;
 			}
