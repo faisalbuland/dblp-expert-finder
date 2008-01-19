@@ -79,7 +79,7 @@ public class Publication implements Serializable {
     protected String ee;
     @Column(name="CDROM_PATH")
     protected String cdrom;
-    @ManyToMany(cascade={CascadeType.PERSIST, CascadeType.REMOVE}, fetch = FetchType.EAGER)
+    @ManyToMany(cascade=CascadeType.ALL)
     @JoinTable(
         name="PUB_CITES",
         joinColumns=
