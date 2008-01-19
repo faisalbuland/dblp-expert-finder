@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="node" type="nodeType" />
+    
+    <xs:complexType name="nodeType">
+    	<xs:choice>
+    		<xs:element name="isRelatedTo" type="isRelatedToType" minOccurs="0" maxOccurs="1"/>
+    		<xs:element name="hasNote" type="hasNoteType" minOccurs="0" maxOccurs="1" />
+    		<xs:element name="isComposedBy" type="isComposedByType" minOccurs="0" maxOccurs="1"/>
+    	</xs:choice>
+    	<xs:attribute name="id" type="xs:string" use="required"></xs:attribute>
+    	<xs:attribute name="label" type="xs:string" use="optional"></xs:attribute>
+    </xs:complexType>
+    
+    <xs:complexType name="isComposedByType">
+    	<xs:choice>
+    		<xs:element name="node" type="nodeType" minOccurs="1" maxOccurs="unbounded"/>
+    	</xs:choice>
+    </xs:complexType>
+    
+    <xs:complexType name="isRelatedToType">
+    	<xs:choice>
+    		<xs:element name="node" type="nodeType" minOccurs="1" maxOccurs="unbounded"/>
+    	</xs:choice>
+    </xs:complexType>
+    
+    <xs:complexType name="hasNoteType">
+    	<xs:simpleContent>
+    		<xs:extension base="xs:string">
+		    	<xs:attribute name="type" type="xs:integer"/>
+    		</xs:extension>
+  		</xs:simpleContent>
+    </xs:complexType>
+</xs:schema>
