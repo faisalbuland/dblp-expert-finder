@@ -1,0 +1,1177 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE dblp SYSTEM "dblp.dtd">
+<dblp>
+	<incollection mdate="2002-01-03"
+		key="books/acm/kim95/AnnevelinkACFHK95">
+		<author>Jurgen Ann&eacute;velink</author>
+		<author>Rafiul Ahad</author>
+		<author>Amelia Carlson</author>
+		<author>Daniel H. Fishman</author>
+		<author>Michael L. Heytens</author>
+		<author>William Kent</author>
+		<title>
+			Object SQL - A Language for the Design and Implementation of
+			Object Databases.
+		</title>
+		<pages>42-68</pages>
+		<year>1995</year>
+		<booktitle>Modern Database Systems</booktitle>
+		<url>db/books/collections/kim95.html#AnnevelinkACFHK95</url>
+	</incollection>
+	<incollection mdate="2002-01-03" key="books/acm/kim95/Blakeley95">
+		<author>Jose A. Blakeley</author>
+		<title>
+			OQL[C++]: Extending C++ with an Object Query Capability.
+		</title>
+		<pages>69-88</pages>
+		<booktitle>Modern Database Systems</booktitle>
+		<url>db/books/collections/kim95.html#Blakeley95</url>
+		<year>1995</year>
+	</incollection>
+	<incollection mdate="2004-03-08"
+		key="books/acm/kim95/BreitbartGS95">
+		<author>Yuri Breitbart</author>
+		<author>Hector Garcia-Molina</author>
+		<author>Abraham Silberschatz</author>
+		<title>Transaction Management in Multidatabase Systems.</title>
+		<pages>573-591</pages>
+		<booktitle>Modern Database Systems</booktitle>
+		<crossref>books/acm/Kim95</crossref>
+		<url>db/books/collections/kim95.html#BreitbartGS95</url>
+		<year>1995</year>
+	</incollection>
+
+
+	<incollection mdate="2004-03-08"
+		key="books/acm/kim95/BreitbartR95">
+		<author>Yuri Breitbart</author>
+		<author>Tom C. Reyes</author>
+		<title>Overview of the ADDS System.</title>
+		<pages>683-701</pages>
+		<booktitle>Modern Database Systems</booktitle>
+		<crossref>books/acm/Kim95</crossref>
+		<url>db/books/collections/kim95.html#BreitbartR95</url>
+		<year>1995</year>
+	</incollection>
+
+
+	<incollection mdate="2002-01-03"
+		key="books/acm/kim95/ChristodoulakisK95">
+		<author>Stavros Christodoulakis</author>
+		<author>Leonidas Koveos</author>
+		<title>
+			Multimedia Information Systems: Issues and Approaches.
+		</title>
+		<pages>318-337</pages>
+		<year>1995</year>
+		<booktitle>Modern Database Systems</booktitle>
+		<url>db/books/collections/kim95.html#ChristodoulakisK95</url>
+	</incollection>
+	<incollection mdate="2002-01-03" key="books/acm/kim95/DayalHW95">
+		<author>Umeshwar Dayal</author>
+		<author>Eric N. Hanson</author>
+		<author>Jennifer Widom</author>
+		<title>Active Database Systems.</title>
+		<pages>434-456</pages>
+		<year>1995</year>
+		<booktitle>Modern Database Systems</booktitle>
+		<url>db/books/collections/kim95.html#DayalHW95</url>
+	</incollection>
+	<incollection mdate="2002-01-03"
+		key="books/acm/kim95/DittrichD95">
+		<author>Angelika Kotz Dittrich</author>
+		<author>Klaus R. Dittrich</author>
+		<title>
+			Where Object-Oriented DBMSs Should Do Better: A Critique
+			Based on Early Experiences.
+		</title>
+		<pages>238-254</pages>
+		<year>1995</year>
+		<booktitle>Modern Database Systems</booktitle>
+		<url>db/books/collections/kim95.html#DittrichD95</url>
+	</incollection>
+	<incollection mdate="2002-01-03"
+		key="books/acm/kim95/Garcia-MolinaH95">
+		<author>Hector Garcia-Molina</author>
+		<author>Meichun Hsu</author>
+		<title>Distributed Databases.</title>
+		<pages>477-493</pages>
+		<year>1995</year>
+		<booktitle>Modern Database Systems</booktitle>
+		<url>db/books/collections/kim95.html#Garcia-MolinaH95</url>
+	</incollection>
+	<incollection mdate="2002-01-03" key="books/acm/kim95/Goodman95">
+		<author>Nathan Goodman</author>
+		<title>
+			An Object-Oriented DBMS War Story: Developing a Genome
+			Mapping Database in C++.
+		</title>
+		<pages>216-237</pages>
+		<year>1995</year>
+		<booktitle>Modern Database Systems</booktitle>
+		<url>db/books/collections/kim95.html#Goodman95</url>
+	</incollection>
+	<incollection mdate="2002-01-03" key="books/acm/kim95/Kaiser95">
+		<author>Gail E. Kaiser</author>
+		<title>
+			Cooperative Transactions for Multiuser Environments.
+		</title>
+		<pages>409-433</pages>
+		<year>1995</year>
+		<booktitle>Modern Database Systems</booktitle>
+		<url>db/books/collections/kim95.html#Kaiser95</url>
+	</incollection>
+	<incollection mdate="2004-03-08"
+		key="books/acm/kim95/KelleyGKRG95">
+		<author>William Kelley</author>
+		<author>Sunit K. Gala</author>
+		<author>Won Kim</author>
+		<author>Tom C. Reyes</author>
+		<author>Bruce Graham</author>
+		<title>
+			Schema Architecture of the UniSQL/M Multidatabase System
+		</title>
+		<booktitle>Modern Database Systems</booktitle>
+		<crossref>books/acm/Kim95</crossref>
+		<pages>621-648</pages>
+		<year>1995</year>
+		<url>db/books/collections/kim95.html#KelleyGKRG95</url>
+	</incollection>
+
+
+	<incollection mdate="2002-01-03" key="books/acm/kim95/KemperM95">
+		<author>Alfons Kemper</author>
+		<author>Guido Moerkotte</author>
+		<title>Physical Object Management.</title>
+		<pages>175-202</pages>
+		<year>1995</year>
+		<booktitle>Modern Database Systems</booktitle>
+		<url>db/books/collections/kim95.html#KemperM95</url>
+	</incollection>
+	<incollection mdate="2002-01-03" key="books/acm/kim95/Kim95">
+		<author>Won Kim</author>
+		<title>
+			Introduction to Part 1: Next-Generation Database Technology.
+		</title>
+		<pages>5-17</pages>
+		<year>1995</year>
+		<booktitle>Modern Database Systems</booktitle>
+		<url>db/books/collections/kim95.html#Kim95</url>
+	</incollection>
+	<incollection mdate="2002-01-03" key="books/acm/kim95/Kim95a">
+		<author>Won Kim</author>
+		<title>
+			Object-Oriented Database Systems: Promises, Reality, and
+			Future.
+		</title>
+		<pages>255-280</pages>
+		<year>1995</year>
+		<booktitle>Modern Database Systems</booktitle>
+		<url>db/books/collections/kim95.html#Kim95a</url>
+	</incollection>
+	<incollection mdate="2002-01-03" key="books/acm/kim95/Kim95b">
+		<author>Won Kim</author>
+		<title>
+			Introduction to Part 2: Technology for Interoperating Legacy
+			Databases.
+		</title>
+		<pages>515-520</pages>
+		<year>1995</year>
+		<booktitle>Modern Database Systems</booktitle>
+		<url>db/books/collections/kim95.html#Kim95b</url>
+	</incollection>
+	<incollection mdate="2002-01-03" key="books/acm/kim95/KimCGS95">
+		<author>Won Kim</author>
+		<author>Injun Choi</author>
+		<author>Sunit K. Gala</author>
+		<author>Mark Scheevel</author>
+		<title>
+			On Resolving Schematic Heterogeneity in Multidatabase
+			Systems.
+		</title>
+		<pages>521-550</pages>
+		<year>1995</year>
+		<booktitle>Modern Database Systems</booktitle>
+		<url>db/books/collections/kim95.html#KimCGS95</url>
+	</incollection>
+	<incollection mdate="2002-01-03" key="books/acm/kim95/KimG95">
+		<author>Won Kim</author>
+		<author>Jorge F. Garza</author>
+		<title>
+			Requirements for a Performance Benchmark for Object-Oriented
+			Database Systems.
+		</title>
+		<pages>203-215</pages>
+		<year>1995</year>
+		<booktitle>Modern Database Systems</booktitle>
+		<url>db/books/collections/kim95.html#KimG95</url>
+	</incollection>
+	<incollection mdate="2002-01-03" key="books/acm/kim95/KimK95">
+		<author>Won Kim</author>
+		<author>William Kelley</author>
+		<title>
+			On View Support in Object-Oriented Databases Systems.
+		</title>
+		<pages>108-129</pages>
+		<year>1995</year>
+		<booktitle>Modern Database Systems</booktitle>
+		<url>db/books/collections/kim95.html#KimK95</url>
+	</incollection>
+	<incollection mdate="2002-01-03" key="books/acm/kim95/Kowalski95">
+		<author>Vincent J. Kowalski</author>
+		<title>The POSC Solution to Managing E&amp;P Data.</title>
+		<pages>281-301</pages>
+		<year>1995</year>
+		<booktitle>Modern Database Systems</booktitle>
+		<url>db/books/collections/kim95.html#Kowalski95</url>
+	</incollection>
+	<incollection mdate="2002-01-03" key="books/acm/kim95/KriegerA95">
+		<author>David Krieger</author>
+		<author>Tim Andrews</author>
+		<title>C++ Bindings to an Object Database.</title>
+		<pages>89-107</pages>
+		<year>1995</year>
+		<booktitle>Modern Database Systems</booktitle>
+		<url>db/books/collections/kim95.html#KriegerA95</url>
+	</incollection>
+	<incollection mdate="2002-01-03" key="books/acm/kim95/Lunt95">
+		<author>Teresa F. Lunt</author>
+		<title>Authorization in Object-Oriented Databases.</title>
+		<pages>130-145</pages>
+		<year>1995</year>
+		<booktitle>Modern Database Systems</booktitle>
+		<url>db/books/collections/kim95.html#Lunt95</url>
+	</incollection>
+	<incollection mdate="2002-01-03" key="books/acm/kim95/MengY95">
+		<author>Weiyi Meng</author>
+		<author>Clement T. Yu</author>
+		<title>Query Processing in Multidatabase Systems.</title>
+		<pages>551-572</pages>
+		<year>1995</year>
+		<booktitle>Modern Database Systems</booktitle>
+		<url>db/books/collections/kim95.html#MengY95</url>
+	</incollection>
+	<incollection mdate="2002-01-03" key="books/acm/kim95/Motro95">
+		<author>Amihai Motro</author>
+		<title>Management of Uncerainty in database Systems.</title>
+		<pages>457-476</pages>
+		<year>1995</year>
+		<booktitle>Modern Database Systems</booktitle>
+		<url>db/books/collections/kim95.html#Motro95</url>
+	</incollection>
+	<incollection mdate="2002-01-03"
+		key="books/acm/kim95/Omiecinski95">
+		<author>Edward Omiecinski</author>
+		<title>Parallel Relational Database Systems.</title>
+		<pages>494-512</pages>
+		<year>1995</year>
+		<booktitle>Modern Database Systems</booktitle>
+		<url>db/books/collections/kim95.html#Omiecinski95</url>
+	</incollection>
+	<incollection mdate="2002-01-03" key="books/acm/kim95/OzsuB95">
+		<author>M. Tamer Ozsu</author>
+		<author>Jose A. Blakeley</author>
+		<title>
+			Query Processing in Object-Oriented Database Systems.
+		</title>
+		<pages>146-174</pages>
+		<year>1995</year>
+		<booktitle>Modern Database Systems</booktitle>
+		<url>db/books/collections/kim95.html#OzsuB95</url>
+	</incollection>
+	<incollection mdate="2004-03-08"
+		key="books/acm/kim95/RusinkiewiczS95">
+		<author>Marek Rusinkiewicz</author>
+		<author>Amit P. Sheth</author>
+		<title>
+			Specification and Execution of Transactional Workflows.
+		</title>
+		<pages>592-620</pages>
+		<booktitle>Modern Database Systems</booktitle>
+		<crossref>books/acm/Kim95</crossref>
+		<url>db/books/collections/kim95.html#RusinkiewiczS95</url>
+		<year>1995</year>
+	</incollection>
+
+
+	<incollection mdate="2004-03-08" key="books/acm/kim95/Samet95">
+		<author>Hanan Samet</author>
+		<title>Spatial Data Structures.</title>
+		<pages>361-385</pages>
+		<booktitle>Modern Database Systems</booktitle>
+		<crossref>books/acm/Kim95</crossref>
+		<url>db/books/collections/kim95.html#Samet95</url>
+		<year>1995</year>
+	</incollection>
+
+
+	<incollection mdate="2002-01-03" key="books/acm/kim95/SametA95">
+		<author>Hanan Samet</author>
+		<author>Walid G. Aref</author>
+		<title>Spatial Data Models and Query Processing.</title>
+		<pages>338-360</pages>
+		<year>1995</year>
+		<booktitle>Modern Database Systems</booktitle>
+		<url>db/books/collections/kim95.html#SametA95</url>
+	</incollection>
+	<incollection mdate="2004-03-08" key="books/acm/kim95/ShanADDK95">
+		<author>Ming-Chien Shan</author>
+		<author>Rafi Ahmed</author>
+		<author>Jim Davis</author>
+		<author>Weimin Du</author>
+		<author>William Kent</author>
+		<title>
+			Pegasus: A Heterogeneous Information Management System.
+		</title>
+		<pages>664-682</pages>
+		<booktitle>Modern Database Systems</booktitle>
+		<crossref>books/acm/Kim95</crossref>
+		<url>db/books/collections/kim95.html#ShanADDK95</url>
+		<year>1995</year>
+	</incollection>
+
+
+	<incollection mdate="2002-01-03"
+		key="books/acm/kim95/Snodgrass95">
+		<author>Richard T. Snodgrass</author>
+		<title>
+			Temporal Object-Oriented Databases: A Critical Comparison.
+		</title>
+		<pages>386-408</pages>
+		<year>1995</year>
+		<booktitle>Modern Database Systems</booktitle>
+		<url>db/books/collections/kim95.html#Snodgrass95</url>
+	</incollection>
+	<incollection mdate="2002-01-03" key="books/acm/kim95/SoleyK95">
+		<author>Richard Mark Soley</author>
+		<author>William Kent</author>
+		<title>The OMG Object Model.</title>
+		<pages>18-41</pages>
+		<year>1995</year>
+		<booktitle>Modern Database Systems</booktitle>
+		<url>db/books/collections/kim95.html#SoleyK95</url>
+	</incollection>
+	<incollection mdate="2004-03-08" key="books/acm/kim95/Stout95">
+		<author>Ralph L. Stout</author>
+		<title>EDA/SQL.</title>
+		<pages>649-663</pages>
+		<booktitle>Modern Database Systems</booktitle>
+		<crossref>books/acm/Kim95</crossref>
+		<url>db/books/collections/kim95.html#Stout95</url>
+		<year>1995</year>
+	</incollection>
+
+
+	<incollection mdate="2002-01-03" key="books/acm/kim95/Thompson95">
+		<author>Craig W. Thompson</author>
+		<title>The Changing Database Standards Landscape.</title>
+		<pages>302-317</pages>
+		<year>1995</year>
+		<booktitle>Modern Database Systems</booktitle>
+		<url>db/books/collections/kim95.html#Thompson95</url>
+	</incollection>
+	<book mdate="2004-03-08" key="books/acm/Kim95">
+		<editor>Won Kim</editor>
+		<title>
+			Modern Database Systems: The Object Model, Interoperability,
+			and Beyond.
+		</title>
+		<booktitle>Modern Database Systems</booktitle>
+		<publisher>ACM Press and Addison-Wesley</publisher>
+		<year>1995</year>
+		<isbn>0-201-59098-0</isbn>
+		<url>db/books/collections/kim95.html</url>
+	</book>
+
+
+
+	<book mdate="2002-01-03" key="books/ap/MarshallO79">
+		<author>Albert W. Marshall</author>
+		<author>Ingram Olkin</author>
+		<title>
+			Inequalities: Theory of Majorization and Its Application.
+		</title>
+		<publisher>Academic Press</publisher>
+		<year>1979</year>
+		<isbn>0-12-473750-1</isbn>
+	</book>
+
+
+	<incollection mdate="2006-02-24"
+		key="books/aw/kimL89/BjornerstedtH89">
+		<author>Anders Bjornerstedt</author>
+		<author>Christer Hulten</author>
+		<title>
+			Version Control in an Object-Oriented Architecture.
+		</title>
+		<pages>451-485</pages>
+		<booktitle>
+			Object-Oriented Concepts, Databases, and Applications
+		</booktitle>
+		<publisher>ACM Press and Addison-Wesley</publisher>
+		<year>1989</year>
+		<url>db/books/collections/kim89.html#BjornerstedtH89</url>
+	</incollection>
+
+	<incollection mdate="2002-01-03"
+		key="books/aw/kimL89/BretlMOPSSWW89">
+		<author>Robert Bretl</author>
+		<author>David Maier</author>
+		<author>Allen Otis</author>
+		<author>D. Jason Penney</author>
+		<author>Bruce Schuchardt</author>
+		<author>Jacob Stein</author>
+		<author>E. Harold Williams</author>
+		<author>Monty Williams</author>
+		<title>The GemStone Data Management System.</title>
+		<pages>283-308</pages>
+		<booktitle>
+			Object-Oriented Concepts, Databases, and Applications
+		</booktitle>
+		<publisher>ACM Press and Addison-Wesley</publisher>
+		<year>1989</year>
+		<url>db/books/collections/kim89.html#BretlMOPSSWW89</url>
+	</incollection>
+
+	<incollection mdate="2002-01-03" key="books/aw/kimL89/CareyDRS89">
+		<author>Michael J. Carey</author>
+		<author>David J. DeWitt</author>
+		<author>Joel E. Richardson</author>
+		<author>Eugene J. Shekita</author>
+		<title>Storage Management in EXODUS.</title>
+		<pages>341-369</pages>
+		<booktitle>
+			Object-Oriented Concepts, Databases, and Applications
+		</booktitle>
+		<publisher>ACM Press and Addison-Wesley</publisher>
+		<year>1989</year>
+		<url>db/books/collections/kim89.html#CareyDRS89</url>
+	</incollection>
+
+	<incollection mdate="2002-01-03"
+		key="books/aw/kimL89/Decouchant89">
+		<author>Dominique Decouchant</author>
+		<title>
+			A Distributed Object Manager for the Smalltalk-80 System.
+		</title>
+		<pages>487-520</pages>
+		<year>1989</year>
+		<booktitle>
+			Object-Oriented Concepts, Databases, and Applications
+		</booktitle>
+		<url>db/books/collections/kim89.html#Decouchant89</url>
+	</incollection>
+	<incollection mdate="2002-01-03"
+		key="books/aw/kimL89/DiederichM89">
+		<author>Jim Diederich</author>
+		<author>Jack Milton</author>
+		<title>Objects, Messages, and Rules in Database Design.</title>
+		<pages>177-197</pages>
+		<year>1989</year>
+		<booktitle>
+			Object-Oriented Concepts, Databases, and Applications
+		</booktitle>
+		<url>db/books/collections/kim89.html#DiederichM89</url>
+	</incollection>
+	<incollection mdate="2002-01-03" key="books/aw/kimL89/EllisG89">
+		<author>Clarence A. Ellis</author>
+		<author>Simon J. Gibbs</author>
+		<title>Active Objects: Ealities and Possibilities.</title>
+		<pages>561-572</pages>
+		<year>1989</year>
+		<booktitle>
+			Object-Oriented Concepts, Databases, and Applications
+		</booktitle>
+		<url>db/books/collections/kim89.html#EllisG89</url>
+	</incollection>
+	<incollection mdate="2002-01-03"
+		key="books/aw/kimL89/FishmanABCCDHHKLLMNRSW89">
+		<author>Daniel H. Fishman</author>
+		<author>Jurgen Annevelink</author>
+		<author>David Beech</author>
+		<author>E. C. Chow</author>
+		<author>Tim Connors</author>
+		<author>J. W. Davis</author>
+		<author>Waqar Hasan</author>
+		<author>C. G. Hoch</author>
+		<author>William Kent</author>
+		<author>S. Leichner</author>
+		<author>Peter Lyngbak</author>
+		<author>Brom Mahbod</author>
+		<author>Marie-Anne Neimat</author>
+		<author>Tore Risch</author>
+		<author>Ming-Chien Shan</author>
+		<author>W. Kevin Wilkinson</author>
+		<title>Overview of the Iris DBMS.</title>
+		<pages>219-250</pages>
+		<booktitle>
+			Object-Oriented Concepts, Databases, and Applications
+		</booktitle>
+		<publisher>ACM Press and Addison-Wesley</publisher>
+		<year>1989</year>
+		<url>
+			db/books/collections/kim89.html#FishmanABCCDHHKLLMNRSW89
+		</url>
+	</incollection>
+
+	<incollection mdate="2002-01-03" key="books/aw/kimL89/KimBCGW89">
+		<author>Won Kim</author>
+		<author>Nat Ballou</author>
+		<author>Hong-Tai Chou</author>
+		<author>Jorge F. Garza</author>
+		<author>Darrell Woelk</author>
+		<title>
+			Features of the ORION Object-Oriented Database System.
+		</title>
+		<pages>251-282</pages>
+		<booktitle>
+			Object-Oriented Concepts, Databases, and Applications
+		</booktitle>
+		<publisher>ACM Press and Addison-Wesley</publisher>
+		<year>1989</year>
+		<url>db/books/collections/kim89.html#KimBCGW89</url>
+	</incollection>
+
+	<incollection mdate="2002-01-03" key="books/aw/kimL89/KimKD89">
+		<author>Won Kim</author>
+		<author>Kyung-Chang Kim</author>
+		<author>Alfred G. Dale</author>
+		<title>
+			Indexing Techniques for Object-Oriented Databases.
+		</title>
+		<pages>371-394</pages>
+		<booktitle>
+			Object-Oriented Concepts, Databases, and Applications
+		</booktitle>
+		<publisher>ACM Press and Addison-Wesley</publisher>
+		<year>1989</year>
+		<url>db/books/collections/kim89.html#KimKD89</url>
+	</incollection>
+
+	<incollection mdate="2002-01-03" key="books/aw/kimL89/King89">
+		<author>Roger King</author>
+		<title>My Cat Is Object-Oriented.</title>
+		<pages>23-30</pages>
+		<year>1989</year>
+		<booktitle>
+			Object-Oriented Concepts, Databases, and Applications
+		</booktitle>
+		<url>db/books/collections/kim89.html#King89</url>
+	</incollection>
+	<incollection mdate="2002-01-03" key="books/aw/kimL89/Maier89">
+		<author>David Maier</author>
+		<title>
+			Making Database Systems Fast Enough for CAD Applications.
+		</title>
+		<pages>573-582</pages>
+		<year>1989</year>
+		<booktitle>
+			Object-Oriented Concepts, Databases, and Applications
+		</booktitle>
+		<url>db/books/collections/kim89.html#Maier89</url>
+	</incollection>
+	<incollection mdate="2002-01-03"
+		key="books/aw/kimL89/MellenderRS89">
+		<author>Fred Mellender</author>
+		<author>Steve Riegel</author>
+		<author>Andrew Straw</author>
+		<title>Optimizing Smalltalk Message Performance.</title>
+		<pages>423-450</pages>
+		<year>1989</year>
+		<booktitle>
+			Object-Oriented Concepts, Databases, and Applications
+		</booktitle>
+		<url>db/books/collections/kim89.html#MellenderRS89</url>
+	</incollection>
+	<incollection mdate="2002-01-03" key="books/aw/kimL89/Moon89">
+		<author>David A. Moon</author>
+		<title>
+			The Common List Object-Oriented Programming Language
+			Standard.
+		</title>
+		<pages>49-78</pages>
+		<year>1989</year>
+		<booktitle>
+			Object-Oriented Concepts, Databases, and Applications
+		</booktitle>
+		<url>db/books/collections/kim89.html#Moon89</url>
+	</incollection>
+	<incollection mdate="2002-01-03" key="books/aw/kimL89/Moss89">
+		<author>J. Eliot B. Moss</author>
+		<title>
+			Object Orientation as Catalyst for Language-Database
+			Inegration.
+		</title>
+		<pages>583-592</pages>
+		<year>1989</year>
+		<booktitle>
+			Object-Oriented Concepts, Databases, and Applications
+		</booktitle>
+		<url>db/books/collections/kim89.html#Moss89</url>
+	</incollection>
+	<incollection mdate="2002-01-03"
+		key="books/aw/kimL89/Nierstrasz89">
+		<author>Oscar Nierstrasz</author>
+		<title>A Survey of Object-Oriented Concepts.</title>
+		<pages>3-21</pages>
+		<year>1989</year>
+		<booktitle>
+			Object-Oriented Concepts, Databases, and Applications
+		</booktitle>
+		<url>db/books/collections/kim89.html#Nierstrasz89</url>
+	</incollection>
+	<incollection mdate="2002-01-03"
+		key="books/aw/kimL89/NierstraszT89">
+		<author>Oscar Nierstrasz</author>
+		<author>Dennis Tsichritzis</author>
+		<title>Integrated Office Systems.</title>
+		<pages>199-215</pages>
+		<year>1989</year>
+		<booktitle>
+			Object-Oriented Concepts, Databases, and Applications
+		</booktitle>
+		<url>db/books/collections/kim89.html#NierstraszT89</url>
+	</incollection>
+	<incollection mdate="2002-01-03"
+		key="books/aw/kimL89/Russinoff89">
+		<author>David M. Russinoff</author>
+		<title>
+			Proteus: A Frame-Based Nonmonotonic Inference System.
+		</title>
+		<pages>127-150</pages>
+		<booktitle>
+			Object-Oriented Concepts, Databases, and Applications
+		</booktitle>
+		<publisher>ACM Press and Addison-Wesley</publisher>
+		<year>1989</year>
+		<url>db/books/collections/kim89.html#Russinoff89</url>
+	</incollection>
+
+	<incollection mdate="2002-01-03" key="books/aw/kimL89/SkarraZ89">
+		<author>Andrea H. Skarra</author>
+		<author>Stanley B. Zdonik</author>
+		<title>
+			Concurrency Control and Object-Oriented Databases.
+		</title>
+		<pages>395-421</pages>
+		<year>1989</year>
+		<booktitle>
+			Object-Oriented Concepts, Databases, and Applications
+		</booktitle>
+		<url>db/books/collections/kim89.html#SkarraZ89</url>
+	</incollection>
+	<incollection mdate="2002-01-03" key="books/aw/kimL89/SteinLU89">
+		<author>Lynn Andrea Stein</author>
+		<author>Henry Lieberman</author>
+		<author>David Ungar</author>
+		<title>A Shared View of Sharing: The Treaty of Orlando.</title>
+		<pages>31-48</pages>
+		<year>1989</year>
+		<booktitle>
+			Object-Oriented Concepts, Databases, and Applications
+		</booktitle>
+		<url>db/books/collections/kim89.html#SteinLU89</url>
+	</incollection>
+	<incollection mdate="2002-01-03" key="books/aw/kimL89/TarltonT89">
+		<author>Mark A. Tarlton</author>
+		<author>P. Nong Tarlton</author>
+		<title>
+			Pogo: A Declarative Representation System for Graphics.
+		</title>
+		<pages>151-176</pages>
+		<year>1989</year>
+		<booktitle>
+			Object-Oriented Concepts, Databases, and Applications
+		</booktitle>
+		<url>db/books/collections/kim89.html#TarltonT89</url>
+	</incollection>
+	<incollection mdate="2002-01-03"
+		key="books/aw/kimL89/TomlinsonS89">
+		<author>Chris Tomlinson</author>
+		<author>Mark Scheevel</author>
+		<title>Concurrent Object-Oriented Programming Languages.</title>
+		<pages>79-124</pages>
+		<year>1989</year>
+		<booktitle>
+			Object-Oriented Concepts, Databases, and Applications
+		</booktitle>
+		<url>db/books/collections/kim89.html#TomlinsonS89</url>
+	</incollection>
+	<incollection mdate="2002-01-03"
+		key="books/aw/kimL89/TsichritzisN89">
+		<author>Dennis Tsichritzis</author>
+		<author>Oscar Nierstrasz</author>
+		<title>Directions in Object-Oriented Research.</title>
+		<pages>523-536</pages>
+		<year>1989</year>
+		<booktitle>
+			Object-Oriented Concepts, Databases, and Applications
+		</booktitle>
+		<url>db/books/collections/kim89.html#TsichritzisN89</url>
+	</incollection>
+	<incollection mdate="2002-01-03" key="books/aw/kimL89/Wand89">
+		<author>Yair Wand</author>
+		<title>A Proposal for a Formal Model of Objects.</title>
+		<pages>537-559</pages>
+		<year>1989</year>
+		<booktitle>
+			Object-Oriented Concepts, Databases, and Applications
+		</booktitle>
+		<url>db/books/collections/kim89.html#Wand89</url>
+	</incollection>
+	<incollection mdate="2002-01-03" key="books/aw/kimL89/WeiserL89">
+		<author>Stephen P. Weiser</author>
+		<author>Frederick H. Lochovsky</author>
+		<title>OZ+: An Object-Oriented Database System.</title>
+		<pages>309-337</pages>
+		<year>1989</year>
+		<booktitle>
+			Object-Oriented Concepts, Databases, and Applications
+		</booktitle>
+		<url>db/books/collections/kim89.html#WeiserL89</url>
+	</incollection>
+	<incollection mdate="2002-01-03"
+		key="books/aw/stonebraker86/RoweS86">
+		<author>Lawrence A. Rowe</author>
+		<author>Michael Stonebraker</author>
+		<title>The Commercial INGRES Epilogue.</title>
+		<pages>63-82</pages>
+		<year>1986</year>
+		<booktitle>The INGRES Papers</booktitle>
+		<url>db/books/collections/Stonebraker86.html#RoweS86</url>
+		<ee>db/books/collections/Stonebraker86/RoweS86.html</ee>
+		<cdrom>ingres/P063.pdf</cdrom>
+	</incollection>
+	<incollection mdate="2002-01-03"
+		key="books/aw/stonebraker86/Stonebraker86">
+		<author>Michael Stonebraker</author>
+		<title>
+			Design of Relational Systems (Introduction to Section 1).
+		</title>
+		<pages>1-3</pages>
+		<year>1986</year>
+		<booktitle>The INGRES Papers</booktitle>
+		<url>db/books/collections/Stonebraker86.html#Stonebraker86</url>
+		<ee>db/books/collections/Stonebraker86/Stonebraker86.html</ee>
+		<cdrom>ingres/P001.pdf</cdrom>
+	</incollection>
+	<incollection mdate="2002-01-03"
+		key="books/aw/stonebraker86/Stonebraker86a">
+		<author>Michael Stonebraker</author>
+		<title>
+			Supporting Studies on Relational Systems (Introduction to
+			Section 2).
+		</title>
+		<pages>83-85</pages>
+		<year>1986</year>
+		<booktitle>The INGRES Papers</booktitle>
+		<url>
+			db/books/collections/Stonebraker86.html#Stonebraker86a
+		</url>
+		<ee>db/books/collections/Stonebraker86/Stonebraker86a.html</ee>
+		<cdrom>ingres/P083.pdf</cdrom>
+	</incollection>
+	<incollection mdate="2002-01-03"
+		key="books/aw/stonebraker86/Stonebraker86b">
+		<author>Michael Stonebraker</author>
+		<title>
+			Distributed Database Systems (Introduction to Section 3).
+		</title>
+		<pages>183-186</pages>
+		<year>1986</year>
+		<booktitle>The INGRES Papers</booktitle>
+		<url>
+			db/books/collections/Stonebraker86.html#Stonebraker86b
+		</url>
+		<ee>db/books/collections/Stonebraker86/Stonebraker86b.html</ee>
+		<cdrom>ingres/P183.pdf</cdrom>
+	</incollection>
+	<incollection mdate="2002-01-03"
+		key="books/aw/stonebraker86/Stonebraker86c">
+		<author>Michael Stonebraker</author>
+		<title>
+			The Design and Implementation of Distributed INGRES.
+		</title>
+		<pages>187-196</pages>
+		<year>1986</year>
+		<booktitle>The INGRES Papers</booktitle>
+		<url>
+			db/books/collections/Stonebraker86.html#Stonebraker86c
+		</url>
+		<ee>db/books/collections/Stonebraker86/Stonebraker86c.html</ee>
+		<cdrom>ingres/P187.pdf</cdrom>
+	</incollection>
+	<incollection mdate="2002-01-03"
+		key="books/aw/stonebraker86/Stonebraker86d">
+		<author>Michael Stonebraker</author>
+		<title>
+			User Interfaces for Database Systems (Introduction to
+			Section 4).
+		</title>
+		<pages>243-245</pages>
+		<year>1986</year>
+		<booktitle>The INGRES Papers</booktitle>
+		<url>
+			db/books/collections/Stonebraker86.html#Stonebraker86d
+		</url>
+		<ee>db/books/collections/Stonebraker86/Stonebraker86d.html</ee>
+		<cdrom>ingres/P243.pdf</cdrom>
+	</incollection>
+	<incollection mdate="2002-01-03"
+		key="books/aw/stonebraker86/Stonebraker86e">
+		<author>Michael Stonebraker</author>
+		<title>
+			Extended Semantics for the Relational Model (Introduction to
+			Section 5).
+		</title>
+		<pages>313-316</pages>
+		<year>1986</year>
+		<booktitle>The INGRES Papers</booktitle>
+		<url>
+			db/books/collections/Stonebraker86.html#Stonebraker86e
+		</url>
+		<ee>db/books/collections/Stonebraker86/Stonebraker86e.html</ee>
+		<cdrom>ingres/P313.pdf</cdrom>
+	</incollection>
+	<incollection mdate="2002-01-03"
+		key="books/aw/stonebraker86/Stonebraker86f">
+		<author>Michael Stonebraker</author>
+		<title>Database Design (Introduction to Section 6).</title>
+		<pages>393-394</pages>
+		<year>1986</year>
+		<booktitle>The INGRES Papers</booktitle>
+		<url>
+			db/books/collections/Stonebraker86.html#Stonebraker86f
+		</url>
+		<ee>db/books/collections/Stonebraker86/Stonebraker86f.html</ee>
+		<cdrom>ingres/P393.pdf</cdrom>
+	</incollection>
+	<incollection mdate="2002-01-03" key="books/aw/stonebraker86/X86">
+		<title>Title, Preface, Contents.</title>
+		<year>1986</year>
+		<booktitle>The INGRES Papers</booktitle>
+		<url>db/books/collections/Stonebraker86.html#X86</url>
+		<ee>db/books/collections/Stonebraker86/X86.html</ee>
+		<cdrom>ingres/frontmatter.pdf</cdrom>
+	</incollection>
+	<incollection mdate="2002-01-03"
+		key="books/aw/stonebraker86/X86a">
+		<title>References.</title>
+		<pages>429-444</pages>
+		<year>1986</year>
+		<booktitle>The INGRES Papers</booktitle>
+		<url>db/books/collections/Stonebraker86.html#X86a</url>
+		<ee>db/books/collections/Stonebraker86/X86a.html</ee>
+		<cdrom>ingres/P429.pdf</cdrom>
+	</incollection>
+	<book mdate="2002-01-03" key="books/aw/Knuth86a">
+		<author>Donald E. Knuth</author>
+		<title>TeX: The Program</title>
+		<publisher>Addison-Wesley</publisher>
+		<year>1986</year>
+		<isbn>0-201-13437-3</isbn>
+	</book>
+
+
+
+	<book mdate="2002-01-03" key="books/aw/AbiteboulHV95">
+		<author>Serge Abiteboul</author>
+		<author>Richard Hull</author>
+		<author>Victor Vianu</author>
+		<title>Foundations of Databases.</title>
+		<publisher>Addison-Wesley</publisher>
+		<year>1995</year>
+		<isbn>0-201-53771-0</isbn>
+		<cdrom>AHV/Toc.pdf</cdrom>
+		<cite label="57391">...</cite>
+		<cite label="69392">...</cite>
+		<cite label="A+76">journals/tods/AstrahanBCEGGKLMMPTWW76</cite>
+		<cite label="AA93">books/bc/AtzeniA93</cite>
+		<cite label="AABM82">journals/tcs/AtzeniABM82</cite>
+		<cite label="AB86">journals/jcss/AbiteboulB86</cite>
+		<cite label="AB87a">journals/csur/AtkinsonB87</cite>
+		<cite label="AB87b">conf/pods/AtzeniB87</cite>
+		<cite label="AB88">journals/vldb/AbiteboulB95</cite>
+		<cite label="AB91">conf/sigmod/AbiteboulB91</cite>
+		<cite label="ABD+89">conf/dood/AtkinsonBDDMZ89</cite>
+		<cite label="ABGO93">conf/vldb/AlbanoBGO93</cite>
+		<cite label="Abi83">...</cite>
+		<cite label="Abi88">conf/icdt/Abiteboul88</cite>
+		<cite label="Abi89">journals/ipl/Abiteboul89</cite>
+		<cite label="Abr74">conf/ds/Abrial74</cite>
+		<cite label="ABU79">journals/tods/AhoBU79</cite>
+		<cite label="ABW88">books/mk/minker88/AptBW88</cite>
+		<cite label="AC78">conf/vldb/AroraC78</cite>
+		<cite label="AC89">conf/stoc/AfratiC89</cite>
+		<cite label="ACO85">journals/tods/AlbanoCO85</cite>
+		<cite label="ACY91">conf/pods/AfratiCY91</cite>
+		<cite label="ADM85">conf/pods/AusielloDM85</cite>
+		<cite label="AG85">conf/vldb/AbiteboulG85</cite>
+		<cite label="AG87">journals/jacm/AjtaiG87</cite>
+		<cite label="AG89">conf/focs/AjtaiG89</cite>
+		<cite label="AG91">journals/tods/AbiteboulG91</cite>
+		<cite label="AGM85">...</cite>
+		<cite label="AGSS86">...</cite>
+		<cite label="AH87">journals/tods/AbiteboulH87</cite>
+		<cite label="AH88">conf/sigmod/AbiteboulH88</cite>
+		<cite label="AH91">...</cite>
+		<cite label="AK89">conf/sigmod/AbiteboulK89</cite>
+		<cite label="AKG91">journals/tcs/AbiteboulKG91</cite>
+		<cite label="AKRW92">journals/jcss/AbiteboulKRW95</cite>
+		<cite label="ALUW93">conf/sigmod/AbiteboulLUW93</cite>
+		<cite label="AP82">conf/pods/AtzeniP82</cite>
+		<cite label="AP87a">conf/pods/AfratiP87</cite>
+		<cite label="AP87b">conf/pods/AptP87</cite>
+		<cite label="AP92">conf/wg/AndriesP91</cite>
+		<cite label="APP+86">conf/pods/AfratiPPRSU86</cite>
+		<cite label="Apt91">books/el/leeuwen90/Apt90</cite>
+		<cite label="Arm74">conf/ifip/Armstrong74</cite>
+		<cite label="ASSU81">journals/siamcomp/AhoSSU81</cite>
+		<cite label="ASU79a">journals/tods/AhoSU79</cite>
+		<cite label="ASU79b">journals/siamcomp/AhoSU79</cite>
+		<cite label="ASV90">conf/pods/AbiteboulSV90</cite>
+		<cite label="AT93">journals/is/AtzeniT93</cite>
+		<cite label="AU79">conf/popl/AhoU79</cite>
+		<cite label="AV87">conf/pods/AbiteboulV87</cite>
+		<cite label="AV88a">conf/jcdkb/AbiteboulV88</cite>
+		<cite label="AV88b">journals/jacm/AbiteboulV88</cite>
+		<cite label="AV88c">conf/pods/AbiteboulV88</cite>
+		<cite label="AV89">journals/jacm/AbiteboulV89</cite>
+		<cite label="AV90">journals/jcss/AbiteboulV90</cite>
+		<cite label="AV91a">journals/jcss/AbiteboulV91</cite>
+		<cite label="AV91b">conf/stoc/AbiteboulV91</cite>
+		<cite label="AV91c">journals/amai/AbiteboulV91</cite>
+		<cite label="AV94">journals/jcss/AbiteboulV95</cite>
+		<cite label="AvE82">journals/jacm/AptE82</cite>
+		<cite label="AVV92">conf/coco/AbiteboulVV92</cite>
+		<cite label="AW88">conf/iclp/AptB88</cite>
+		<cite label="B+86">conf/oopsla/BobrowKKMSZ86</cite>
+		<cite label="B+88">journals/tse/BatoryBGSTTW88</cite>
+		<cite label="Ban78">conf/mfcs/Bancilhon78</cite>
+		<cite label="Ban85">...</cite>
+		<cite label="Ban86">conf/db-workshops/Bancilhon85</cite>
+		<cite label="Bar63">books/el/leeuwen90/Barendregt90</cite>
+		<cite label="Bar84">...</cite>
+		<cite label="BB79">journals/tods/BeeriB79</cite>
+		<cite label="BB91">books/el/leeuwen90/BerstelB90</cite>
+		<cite label="BB92">conf/icdt/BeneventanoB92</cite>
+		<cite label="BBC80">conf/vldb/BernsteinBC80</cite>
+		<cite label="BBG78">conf/vldb/BeeriBG78</cite>
+		<cite label="BBMR89">conf/sigmod/BorgidaBMR89</cite>
+		<cite label="BC79">journals/tods/BunemanC79</cite>
+		<cite label="BC81">journals/jacm/BernsteinC81</cite>
+		<cite label="BCD89">conf/dbpl/BancilhonCD89</cite>
+		<cite label="BCW93">books/bc/tanselCGSS93/BaudinetCW93</cite>
+		<cite label="BDB79">conf/sigmod/BiskupDB79</cite>
+		<cite label="BDFS84">journals/jacm/BeeriDFS84</cite>
+		<cite label="BDK92">books/mk/BancilhonDK92</cite>
+		<cite label="BDM88">conf/edbt/BryDM88</cite>
+		<cite label="BDW88">conf/pods/BunemanDW88</cite>
+		<cite label="BDW91">journals/jcss/BunemanDW91</cite>
+		<cite label="Bee80">journals/tods/Beeri80</cite>
+		<cite label="Bee90">journals/dke/Beeri90</cite>
+		<cite label="Ber76a">...</cite>
+		<cite label="Ber76b">journals/tods/Bernstein76</cite>
+		<cite label="BF87">conf/lics/BidoitF87</cite>
+		<cite label="BF88">journals/iandc/BidoitF91</cite>
+		<cite label="BFH77">conf/sigmod/BeeriFH77</cite>
+		<cite label="BFM+81">conf/stoc/BeeriFMMUY81</cite>
+		<cite label="BFMY83">journals/jacm/BeeriFMY83</cite>
+		<cite label="BFN82">journals/tods/BunemanFN82</cite>
+		<cite label="BG81">journals/siamcomp/BernsteinG81</cite>
+		<cite label="BGK85">journals/iandc/BlassGK85</cite>
+		<cite label="BGL85">conf/ijcai/BrachmanGL85</cite>
+		<cite label="BGW+81">journals/tods/BernsteinGWRR81</cite>
+		<cite label="BHG87">books/aw/BernsteinHG87</cite>
+		<cite label="Bid91a">...</cite>
+		<cite label="Bid91b">journals/tcs/Bidoit91</cite>
+		<cite label="Bis80">journals/tcs/Biskup80</cite>
+		<cite label="Bis81">conf/adbt/Biskup79</cite>
+		<cite label="Bis83">journals/tods/Biskup83</cite>
+		<cite label="BJO91">journals/tcs/BunemanJO91</cite>
+		<cite label="BK86">journals/tods/BeeriK86</cite>
+		<cite label="BKBR87">conf/pods/BeeriKBR87</cite>
+		<cite label="BL90">conf/icdt/BidoitL90</cite>
+		<cite label="BLN86">journals/csur/BatiniL86</cite>
+		<cite label="BLT86">conf/sigmod/BlakeleyLT86</cite>
+		<cite label="BM91">conf/vldb/BeeriM91</cite>
+		<cite label="BMG93">conf/sigmod/BlakeleyMG93</cite>
+		<cite label="BMSU81">journals/siamcomp/BeeriMSU81</cite>
+		<cite label="BMSU86">conf/pods/BancilhonMSU86</cite>
+		<cite label="BNR+87a">conf/pods/BeeriNRST87</cite>
+		<cite label="Bor85">journals/software/Borgida85</cite>
+		<cite label="BP83">conf/icalp/BraP83</cite>
+		<cite label="BPR87">conf/fgcs/BalbinMR88</cite>
+		<cite label="BR80">...</cite>
+		<cite label="BR87a">conf/pods/BeeriR87</cite>
+		<cite label="BR87b">journals/jlp/BalbinR87</cite>
+		<cite label="BR88a">conf/sigmod/BancilhonR86</cite>
+		<cite label="BR88b">books/mk/minker88/BancilhonR88</cite>
+		<cite label="BR91">journals/jlp/BeeriR91</cite>
+		<cite label="BRS82">conf/vldb/BancilhonRS82</cite>
+		<cite label="BRSS92">conf/pods/BeeriRSS92</cite>
+		<cite label="Bry89">conf/dood/Bry89</cite>
+		<cite label="BS81">journals/tods/BancilhonS81</cite>
+		<cite label="BS85">journals/cogsci/BrachmanS85</cite>
+		<cite label="BS93">journals/tods/BergamaschiS92</cite>
+		<cite label="BST75">conf/sigmod/BernsteinST75</cite>
+		<cite label="BTBN92">conf/dbpl/TannenBN91</cite>
+		<cite label="BTBW92">conf/icdt/TannenBW92</cite>
+		<cite label="BV80a">...</cite>
+		<cite label="BV80b">journals/jacm/BeeriV84</cite>
+		<cite label="BV81a">conf/icalp/BeeriV81</cite>
+		<cite label="BV81b">conf/adbt/BeeriV79</cite>
+		<cite label="BV84a">journals/siamcomp/BeeriV84</cite>
+		<cite label="BV84b">journals/iandc/BeeriV84</cite>
+		<cite label="BV84c">journals/jacm/BeeriV84</cite>
+		<cite label="BV85">journals/tcs/BeeriV85</cite>
+		<cite label="C+76">journals/ibmrd/ChamberlinAEGLMRW76</cite>
+		<cite label="Cam92">...</cite>
+		<cite label="Car88">journals/iandc/Cardelli88</cite>
+		<cite label="Cat94">books/mk/Cattell94</cite>
+		<cite label="CCCR+90">conf/sigmod/CacaceCCTZ90</cite>
+		<cite label="CCF82">conf/vldb/CastilhoCF82</cite>
+		<cite label="CF84">conf/adbt/CasanovaF82</cite>
+		<cite label="CFI89">conf/focs/CaiFI89</cite>
+		<cite label="CFP84">journals/jcss/CasanovaFP84</cite>
+		<cite label="CGKV88">conf/stoc/CosmadakisGKV88</cite>
+		<cite label="CGP93">conf/dood/CorciuloGP93</cite>
+		<cite label="CGT90">books/sp/CeriGT90</cite>
+		<cite label="CH80a">conf/focs/ChandraH80</cite>
+		<cite label="CH80b">journals/jcss/ChandraH80</cite>
+		<cite label="CH82">journals/jcss/ChandraH82</cite>
+		<cite label="CH85">journals/jlp/ChandraH85</cite>
+		<cite label="Cha81a">conf/popl/Chandra81</cite>
+		<cite label="Cha81b">conf/adbt/Chang79</cite>
+		<cite label="Cha88">conf/pods/Chandra88</cite>
+		<cite label="Cha94">...</cite>
+		<cite label="Che76">journals/tods/Chen76</cite>
+		<cite label="CHM94">conf/ride/ChenHM94</cite>
+		<cite label="Cho92a">conf/icde/Chomicki92</cite>
+		<cite label="Cho92b">conf/pods/Chomicki92</cite>
+		<cite label="Cho94">...</cite>
+		<cite label="Chu41">...</cite>
+		<cite label="CK73">...</cite>
+		<cite label="CK85">conf/stoc/CosmadakisK85</cite>
+		<cite label="CK86">journals/acr/CosmadakisK86</cite>
+		<cite label="CKRP73">...</cite>
+		<cite label="CKS86">journals/jcss/CosmadakisKS86</cite>
+		<cite label="CKV90">journals/jacm/CosmadakisKV90</cite>
+		<cite label="CL73">...</cite>
+		<cite label="CL94">conf/pods/CalvaneseL94</cite>
+		<cite label="Cla78">conf/adbt/Clark77</cite>
+		<cite label="CLM81">conf/stoc/ChandraLM81</cite>
+		<cite label="CM77">conf/stoc/ChandraM77</cite>
+		<cite label="CM90">conf/pods/ConsensM90</cite>
+		<cite label="CM93a">conf/sigmod/ConsensM93</cite>
+		<cite label="CM93b">conf/icdt/ConsensM90</cite>
+		<cite label="Cod70">journals/cacm/Codd70</cite>
+		<cite label="Cod71">conf/sigmod/Codd71a</cite>
+		<cite label="Cod72a">persons/Codd71a</cite>
+		<cite label="Cod72b">persons/Codd72</cite>
+		<cite label="Cod74">conf/ifip/Codd74</cite>
+		<cite label="Cod75">...</cite>
+		<cite label="Cod79">conf/sigmod/Codd79</cite>
+		<cite label="Cod82">journals/cacm/Codd82</cite>
+		<cite label="Coh86">...</cite>
+		<cite label="Coh89">conf/sigmod/Cohen89</cite>
+		<cite label="Coh90">journals/cacm/Cohen90</cite>
+		<cite label="Com88">...</cite>
+		<cite label="Coo74">journals/jcss/Cook74</cite>
+		<cite label="Cos83">conf/pods/Cosmadakis83</cite>
+		<cite label="Cos87">conf/focs/Cosmadakis87</cite>
+		<cite label="Cou90">books/el/leeuwen90/Courcelle90a</cite>
+		<cite label="CP84">journals/jacm/CosmadakisP84</cite>
+		<cite label="CRG+88">conf/edbt/CeriCGLLTZ88</cite>
+		<cite label="CT48">...</cite>
+		<cite label="CT87">conf/vldb/CeriT87</cite>
+		<cite label="CTF88">conf/vldb/CasanovaTF88</cite>
+		<cite label="CV81">...</cite>
+		<cite label="CV83">conf/pods/CasanovaV83</cite>
+		<cite label="CV85">journals/siamcomp/ChandraV85</cite>
+		<cite label="CV92">conf/pods/ChaudhuriV92</cite>
+		<cite label="CV93">conf/pods/ChaudhuriV93</cite>
+		<cite label="CV94">conf/pods/ChaudhuriV94</cite>
+		<cite label="CW85">journals/csur/CardelliW85</cite>
+		<cite label="CW89a">conf/pods/ChenW89</cite>
+		<cite label="CW89b">conf/pods/CohenW89</cite>
+		<cite label="CW90">conf/vldb/CeriW90</cite>
+		<cite label="CW91">conf/vldb/CeriW91</cite>
+		<cite label="CW92">conf/iclp/ChenW92</cite>
+		<cite label="CW93">conf/vldb/CeriW93</cite>
+		<cite label="DA83">...</cite>
+		<cite label="Dal87">conf/birthday/Dahlhaus87</cite>
+		<cite label="Dat81">conf/vldb/Date81</cite>
+		<cite label="Dat86">books/aw/Date86</cite>
+		<cite label="Daw93">...</cite>
+		<cite label="Day89">conf/dbpl/Dayal89</cite>
+		<cite label="DB82">journals/tods/DayalB82</cite>
+		<cite label="DC72">journals/ibmrd/DelobelC73</cite>
+		<cite label="DD89">conf/icde/DelcambreD89</cite>
+		<cite label="Dec86">...</cite>
+		<cite label="Del78">journals/tods/Delobel78</cite>
+		<cite label="Dem82">journals/jacm/Demolombe92</cite>
+		<cite label="DF92">journals/tods/DateF92</cite>
+		<cite label="DG79">...</cite>
+		<cite label="DHL91">conf/vldb/DayalHL91</cite>
+		<cite label="DiP69">journals/jacm/Paola69a</cite>
+		<cite label="DM86a">conf/caap/DahlhausM86</cite>
+		<cite label="DM86b">journals/acr/DAtriM86</cite>
+		<cite label="DM92">journals/iandc/DahlhausM92</cite>
+		<cite label="DMP93">conf/sigmod/DerrMP93</cite>
+		<cite label="dMS88">conf/vldb/MaindrevilleS88</cite>
+		<cite label="Don92">conf/pods/Dong92</cite>
+		<cite label="DP84">conf/adbt/BraP82</cite>
+		<cite label="dR87">...</cite>
+		<cite label="DS91">conf/dbpl/DongS91</cite>
+		<cite label="DS92">journals/iandc/DongS95</cite>
+		<cite label="DS93">conf/dbpl/DongS93</cite>
+		<cite label="DST93">conf/dbpl/DongS93</cite>
+		<cite label="DT92">conf/icdt/DongT92</cite>
+		<cite label="DV91">conf/vldb/DenninghoffV91</cite>
+		<cite label="DV93">conf/pods/DenninghoffV93</cite>
+		<cite label="DW85">...</cite>
+		<cite label="DW87">...</cite>
+		<cite label="DW94">books/acm/kim95/DayalHW95</cite>
+		<cite label="EFT84">...</cite>
+		<cite label="EGM94">conf/pods/EiterGM94</cite>
+		<cite label="EHJ93">conf/pods/Escobar-MolanoHJ93</cite>
+		<cite label="Ehr61">...</cite>
+		<cite label="Eme91">books/el/leeuwen90/Emerson90</cite>
+		<cite label="EN89">books/bc/ElmasriN89</cite>
+		<cite label="End72">...</cite>
+		<cite label="Esw76">conf/icse/Eswaran76</cite>
+		<cite label="ESW79">conf/sigmod/EpsteinSW78</cite>
+		<cite label="Fag72">...</cite>
+		<cite label="Fag76">...</cite>
+		<cite label="Fag77a">conf/vldb/Fagin77</cite>
+		<cite label="Fag77b">journals/tods/Fagin77</cite>
+		<cite label="Fag79">conf/sigmod/Fagin79</cite>
+		<cite label="Fag81">journals/tods/Fagin81</cite>
+		<cite label="Fag82a">journals/ipl/FaginV83</cite>
+		<cite label="Fag82b">journals/jacm/Fagin82</cite>
+		<cite label="Fag83">journals/jacm/Fagin83</cite>
+		<cite label="Fag93">journals/tcs/Fagin93</cite>
+		<cite label="FC85">books/sp/kimrb85/FurtadoC85</cite>
+		<cite label="FHMV94">...</cite>
+		<cite label="Fit85">journals/jlp/Fitting85a</cite>
+		<cite label="FJT83">journals/tcs/FischerJT83</cite>
+		<cite label="FKUV86">journals/acr/FaginKUV86</cite>
+		<cite label="FM92">conf/icdt/FernandezM92</cite>
+		<cite label="FMU82">journals/tods/FaginMU82</cite>
+		<cite label="FNS91">conf/vldb/FaloutsosNS91</cite>
+		<cite label="For81">...</cite>
+		<cite label="For82">journals/ai/Forgy82</cite>
+		<cite label="Fra54">...</cite>
+		<cite label="Fre87">conf/sigmod/Freytag87</cite>
+		<cite label="Fri71">...</cite>
+		<cite label="FT83">journals/siamcomp/FischerT83</cite>
+		<cite label="FUMY83">journals/siamcomp/FaginMUY83</cite>
+		<cite label="FUV83">conf/pods/FaginUV83</cite>
+		<cite label="FV86">conf/icalp/FaginV84</cite>
+		<cite label="Fv89">...</cite>
+		<cite label="Gal87">...</cite>
+		<cite label="Gar70">...</cite>
+		<cite label="Gar88">...</cite>
+	</book>
+</dblp>

@@ -1,0 +1,433 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="address">
+    <xs:complexType mixed="true" />
+  </xs:element>
+
+  <xs:element name="article" >
+    <xs:complexType>
+      <xs:choice>
+        <xs:element ref="author" maxOccurs="unbounded"/>
+        <xs:element ref="editor" />
+        <xs:element ref="title" />
+        <xs:element ref="booktitle" />
+        <xs:element ref="pages" />
+        <xs:element ref="year" />
+        <xs:element ref="address" />
+        <xs:element ref="journal" />
+        <xs:element ref="volume" />
+        <xs:element ref="number" />
+        <xs:element ref="month" />
+        <xs:element ref="url" />
+        <xs:element ref="ee" />
+        <xs:element ref="cdrom" />
+        <xs:element ref="cite" maxOccurs="unbounded"/>
+        <xs:element ref="publisher" />
+        <xs:element ref="note" />
+        <xs:element ref="crossref" />
+        <xs:element ref="isbn" />
+        <xs:element ref="series" />
+        <xs:element ref="school" />
+        <xs:element ref="chapter" />
+      </xs:choice>
+      <xs:attribute name="key" type="xs:string" use="required" />
+      <xs:attribute name="rating" type="xs:string" use="optional" />
+      <xs:attribute name="mdate" type="xs:string" use="optional" />
+      <xs:attribute name="reviewid" type="xs:string" use="optional" />
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="author">
+    <xs:complexType mixed="true" />
+  </xs:element>
+
+  <xs:element name="book" >
+    <xs:complexType>
+      <xs:choice>
+        <xs:element ref="author" maxOccurs="unbounded"/>
+        <xs:element ref="editor" />
+        <xs:element ref="title" />
+        <xs:element ref="booktitle" />
+        <xs:element ref="pages" />
+        <xs:element ref="year" />
+        <xs:element ref="address" />
+        <xs:element ref="journal" />
+        <xs:element ref="volume" />
+        <xs:element ref="number" />
+        <xs:element ref="month" />
+        <xs:element ref="url" />
+        <xs:element ref="ee" />
+        <xs:element ref="cdrom" />
+        <xs:element ref="cite" maxOccurs="unbounded"/>
+        <xs:element ref="publisher" />
+        <xs:element ref="note" />
+        <xs:element ref="crossref" />
+        <xs:element ref="isbn" />
+        <xs:element ref="series" />
+        <xs:element ref="school" />
+        <xs:element ref="chapter" />
+      </xs:choice>
+      <xs:attribute name="key" type="xs:string" use="required" />
+      <xs:attribute name="mdate" type="xs:string" use="optional" />
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="booktitle">
+    <xs:complexType mixed="true" />
+  </xs:element>
+
+  <xs:element name="cdrom">
+    <xs:complexType mixed="true" />
+  </xs:element>
+
+  <xs:element name="chapter">
+    <xs:complexType mixed="true" />
+  </xs:element>
+
+  <xs:element name="cite">
+    <xs:complexType mixed="true">
+      <xs:attribute name="label" type="xs:string" use="optional" />
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="crossref">
+    <xs:complexType mixed="true" />
+  </xs:element>
+
+  <xs:element name="dblp">
+    <xs:complexType>
+      <xs:choice>
+        <xs:element ref="article" maxOccurs="unbounded" />
+        <xs:element ref="inproceedings" maxOccurs="unbounded" />
+        <xs:element ref="proceedings" maxOccurs="unbounded" />
+        <xs:element ref="book" maxOccurs="unbounded" />
+        <xs:element ref="incollection" maxOccurs="unbounded" />
+        <xs:element ref="phdthesis" maxOccurs="unbounded" />
+        <xs:element ref="mastersthesis" maxOccurs="unbounded" />
+        <xs:element ref="www" maxOccurs="unbounded" />
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="editor">
+    <xs:complexType mixed="true" />
+  </xs:element>
+
+  <xs:element name="ee">
+    <xs:complexType mixed="true" />
+  </xs:element>
+
+  <xs:element name="i">
+    <xs:complexType mixed="true">
+      <xs:choice>
+        <xs:element ref="sub" />
+        <xs:element ref="sup" />
+        <xs:element ref="i" />
+        <xs:element ref="tt" />
+        <xs:element ref="ref" />
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="incollection" >
+    <xs:complexType>
+      <xs:choice>
+        <xs:element ref="author" maxOccurs="unbounded"/>
+        <xs:element ref="editor" />
+        <xs:element ref="title" />
+        <xs:element ref="booktitle" />
+        <xs:element ref="pages" />
+        <xs:element ref="year" />
+        <xs:element ref="address" />
+        <xs:element ref="journal" />
+        <xs:element ref="volume" />
+        <xs:element ref="number" />
+        <xs:element ref="month" />
+        <xs:element ref="url" />
+        <xs:element ref="ee" />
+        <xs:element ref="cdrom" />
+        <xs:element ref="cite" maxOccurs="unbounded"/>
+        <xs:element ref="publisher" />
+        <xs:element ref="note" />
+        <xs:element ref="crossref" />
+        <xs:element ref="isbn" />
+        <xs:element ref="series" />
+        <xs:element ref="school" />
+        <xs:element ref="chapter" />
+      </xs:choice>
+      <xs:attribute name="key" type="xs:string" use="required" />
+      <xs:attribute name="mdate" type="xs:string" use="optional" />
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="inproceedings" >
+    <xs:complexType>
+      <xs:choice>
+        <xs:element ref="author" maxOccurs="unbounded"/>
+        <xs:element ref="editor" />
+        <xs:element ref="title" />
+        <xs:element ref="booktitle" />
+        <xs:element ref="pages" />
+        <xs:element ref="year" />
+        <xs:element ref="address" />
+        <xs:element ref="journal" />
+        <xs:element ref="volume" />
+        <xs:element ref="number" />
+        <xs:element ref="month" />
+        <xs:element ref="url" />
+        <xs:element ref="ee" />
+        <xs:element ref="cdrom" />
+        <xs:element ref="cite" maxOccurs="unbounded"/>
+        <xs:element ref="publisher" />
+        <xs:element ref="note" />
+        <xs:element ref="crossref" />
+        <xs:element ref="isbn" />
+        <xs:element ref="series" />
+        <xs:element ref="school" />
+        <xs:element ref="chapter" />
+      </xs:choice>
+      <xs:attribute name="key" type="xs:string" use="required" />
+      <xs:attribute name="mdate" type="xs:string" use="optional" />
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="isbn">
+    <xs:complexType mixed="true" />
+  </xs:element>
+
+  <xs:element name="journal">
+    <xs:complexType mixed="true" />
+  </xs:element>
+
+  <xs:element name="layout">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:any namespace="http://www.w3.org/namespace/" />
+      </xs:sequence>
+      <xs:attribute name="logo" type="xs:string" use="optional" />
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="mastersthesis" >
+    <xs:complexType>
+      <xs:choice>
+        <xs:element ref="author" maxOccurs="unbounded"/>
+        <xs:element ref="editor" />
+        <xs:element ref="title" />
+        <xs:element ref="booktitle" />
+        <xs:element ref="pages" />
+        <xs:element ref="year" />
+        <xs:element ref="address" />
+        <xs:element ref="journal" />
+        <xs:element ref="volume" />
+        <xs:element ref="number" />
+        <xs:element ref="month" />
+        <xs:element ref="url" />
+        <xs:element ref="ee" />
+        <xs:element ref="cdrom" />
+        <xs:element ref="cite" maxOccurs="unbounded"/>
+        <xs:element ref="publisher" />
+        <xs:element ref="note" />
+        <xs:element ref="crossref" />
+        <xs:element ref="isbn" />
+        <xs:element ref="series" />
+        <xs:element ref="school" />
+        <xs:element ref="chapter" />
+      </xs:choice>
+      <xs:attribute name="key" type="xs:string" use="required" />
+      <xs:attribute name="mdate" type="xs:string" use="optional" />
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="month">
+    <xs:complexType mixed="true" />
+  </xs:element>
+
+  <xs:element name="note">
+    <xs:complexType mixed="true" />
+  </xs:element>
+
+  <xs:element name="number">
+    <xs:complexType mixed="true" />
+  </xs:element>
+
+  <xs:element name="pages">
+    <xs:complexType mixed="true" />
+  </xs:element>
+
+  <xs:element name="phdthesis" >
+    <xs:complexType>
+      <xs:choice>
+        <xs:element ref="author" maxOccurs="unbounded"/>
+        <xs:element ref="editor" />
+        <xs:element ref="title" />
+        <xs:element ref="booktitle" />
+        <xs:element ref="pages" />
+        <xs:element ref="year" />
+        <xs:element ref="address" />
+        <xs:element ref="journal" />
+        <xs:element ref="volume" />
+        <xs:element ref="number" />
+        <xs:element ref="month" />
+        <xs:element ref="url" />
+        <xs:element ref="ee" />
+        <xs:element ref="cdrom" />
+        <xs:element ref="cite" maxOccurs="unbounded"/>
+        <xs:element ref="publisher" />
+        <xs:element ref="note" />
+        <xs:element ref="crossref" />
+        <xs:element ref="isbn" />
+        <xs:element ref="series" />
+        <xs:element ref="school" />
+        <xs:element ref="chapter" />
+      </xs:choice>
+      <xs:attribute name="key" type="xs:string" use="required" />
+      <xs:attribute name="mdate" type="xs:string" use="optional" />
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="proceedings" >
+    <xs:complexType>
+      <xs:choice>
+        <xs:element ref="author" maxOccurs="unbounded"/>
+        <xs:element ref="editor" />
+        <xs:element ref="title" />
+        <xs:element ref="booktitle" />
+        <xs:element ref="pages" />
+        <xs:element ref="year" />
+        <xs:element ref="address" />
+        <xs:element ref="journal" />
+        <xs:element ref="volume" />
+        <xs:element ref="number" />
+        <xs:element ref="month" />
+        <xs:element ref="url" />
+        <xs:element ref="ee" />
+        <xs:element ref="cdrom" />
+        <xs:element ref="cite" maxOccurs="unbounded"/>
+        <xs:element ref="publisher" />
+        <xs:element ref="note" />
+        <xs:element ref="crossref" />
+        <xs:element ref="isbn" />
+        <xs:element ref="series" />
+        <xs:element ref="school" />
+        <xs:element ref="chapter" />
+      </xs:choice>
+      <xs:attribute name="key" type="xs:string" use="required" />
+      <xs:attribute name="mdate" type="xs:string" use="optional" />
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="publisher">
+    <xs:complexType mixed="true">
+      <xs:attribute name="href" type="xs:string" use="optional" />
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="ref">
+    <xs:complexType mixed="true">
+      <xs:attribute name="href" type="xs:string" use="required" />
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="school">
+    <xs:complexType mixed="true" />
+  </xs:element>
+
+  <xs:element name="series">
+    <xs:complexType mixed="true">
+      <xs:attribute name="href" type="xs:string" use="optional" />
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="sub">
+    <xs:complexType mixed="true">
+      <xs:choice>
+        <xs:element ref="sub" />
+        <xs:element ref="sup" />
+        <xs:element ref="i" />
+        <xs:element ref="tt" />
+        <xs:element ref="ref" />
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="sup">
+    <xs:complexType mixed="true">
+      <xs:choice>
+        <xs:element ref="sub" />
+        <xs:element ref="sup" />
+        <xs:element ref="i" />
+        <xs:element ref="tt" />
+        <xs:element ref="ref" />
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="title">
+    <xs:complexType mixed="true">
+      <xs:choice>
+        <xs:element ref="sub" />
+        <xs:element ref="sup" />
+        <xs:element ref="i" />
+        <xs:element ref="tt" />
+        <xs:element ref="ref" />
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="tt">
+    <xs:complexType mixed="true">
+      <xs:choice>
+        <xs:element ref="sub" />
+        <xs:element ref="sup" />
+        <xs:element ref="i" />
+        <xs:element ref="tt" />
+        <xs:element ref="ref" />
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="url">
+    <xs:complexType mixed="true" />
+  </xs:element>
+
+  <xs:element name="volume">
+    <xs:complexType mixed="true" />  
+  </xs:element>
+
+  <xs:element name="www" >
+    <xs:complexType>
+      <xs:choice>
+        <xs:element ref="author" maxOccurs="unbounded" />
+        <xs:element ref="editor" />
+        <xs:element ref="title" />
+        <xs:element ref="booktitle" />
+        <xs:element ref="pages" />
+        <xs:element ref="year" />
+        <xs:element ref="address" />
+        <xs:element ref="journal" />
+        <xs:element ref="volume" />
+        <xs:element ref="number" />
+        <xs:element ref="month" />
+        <xs:element ref="url" />
+        <xs:element ref="ee" />
+        <xs:element ref="cdrom" />
+        <xs:element ref="cite" maxOccurs="unbounded"/>
+        <xs:element ref="publisher" />
+        <xs:element ref="note" />
+        <xs:element ref="crossref" />
+        <xs:element ref="isbn" />
+        <xs:element ref="series" />
+        <xs:element ref="school" />
+        <xs:element ref="chapter" />
+      </xs:choice>
+      <xs:attribute name="key" type="xs:string" use="required" />
+      <xs:attribute name="mdate" type="xs:string" use="optional" />
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="year">
+    <xs:complexType mixed="true" />
+  </xs:element>
+
+</xs:schema>

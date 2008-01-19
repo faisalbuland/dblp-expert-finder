@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:lang="http://www.springframework.org/schema/lang"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+		http://www.springframework.org/schema/lang http://www.springframework.org/schema/lang/spring-lang-2.0.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.1.xsd">
+
+	<!-- DBLPS -->
+	<bean id="dblpPubDao"
+		class="edu.ucdavis.cs.dblp.data.DblpPubDaoImpl" />
+
+	<bean id="dataLoader"
+		class="edu.ucdavis.cs.dblp.data.DblpDataLoader">
+		<property name="inputSourceItemProvider"
+			ref="inputSourceItemProviderBean" />
+		<property name="itemProcessor" ref="itemProcessorBean" />
+		<property name="batchSize" value="250" />
+	</bean>
+
+	<bean id="inputSourceItemProviderBean"
+		class="edu.ucdavis.cs.dblp.data.DblpInputSourceItemProvider">
+		<!--  use this one to reference your local download of the DBLP data dump 
+		<property name="inputSource" 
+			value="file:/Documents and Settings/Philip/My Documents/UC Davis/ms thesis/dblp/dblp.xml.gz" />
+			-->
+		<property name="inputSource"
+			value="file:/home/fisherog/dev/data/dblp.xml.gz"/>
+		<!-- use this one to avoid having to download the dblp data dump separately: 
+		<property name="inputSource" 
+			value="http://dblp.uni-trier.de/xml/dblp.xml.gz" /> -->
+		 <!-- use this one for testing:
+		<property name="inputSource" 
+			value="classpath:sample_dblp.xml" /> --> 
+	</bean>
+
+	<bean id="itemProcessorBean"
+		class="edu.ucdavis.cs.dblp.data.DblpItemReProcessor">
+		<property name="dao" ref="dblpPubDao" />
+		<property name="contentService" ref="contentService" />
+	</bean>
+	
+	<!-- ACM CCS (Taxonomy system) -->
+	<bean id="categoryDao"
+		class="edu.ucdavis.cs.taxonomy.CategoryDaoImpl" />	
+	
+	<bean id="ccsDataLoader"
+		class="edu.ucdavis.cs.taxonomy.acm.CcsDataLoader">
+		<property name="inputSourceItemProvider"
+			ref="ccsInputSourceItemProviderBean" />
+		<property name="itemProcessor" ref="ccsItemProcessorBean" />
+		<property name="batchSize" value="1000" />
+	</bean>
+
+	<bean id="ccsInputSourceItemProviderBean"
+		class="edu.ucdavis.cs.taxonomy.acm.CcsInputSourceItemProvider">
+		<!--  use this one to reference your local download of the ACM CCS dump  
+		<property name="inputSource" 
+			value="file:/Documents and Settings/Philip/My Documents/UC Davis/ms thesis/taxonomy/acm/acmccs98-1.2.3.xml" />
+			-->
+		<!-- use this one to avoid having to download the ACM CCS data dump separately: --> 
+		<property name="inputSource" 
+			value="http://www.acm.org/class/1998/acmccs98-1.2.3.xml" />
+	</bean>
+
+	<bean id="ccsItemProcessorBean"
+		class="edu.ucdavis.cs.taxonomy.acm.CcsItemProcessor">
+		<property name="dao" ref="categoryDao" />	
+	</bean>
+	
+	<bean id="contentService" class="edu.ucdavis.cs.dblp.service.AcmDlContentService"/>
+
+</beans>
