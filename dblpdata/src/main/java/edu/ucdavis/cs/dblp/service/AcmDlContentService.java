@@ -572,7 +572,9 @@ public class AcmDlContentService implements ContentService {
 					client.executeMethod(method);
 					Header contentType = method.getResponseHeader("Content-Type");
 					// verify that it is a text/html document (e.g. not a pdf)
-					if (contentType.getValue().indexOf("text/html") >= 0) {
+					if (contentType != null &&
+							StringUtils.isNotBlank(contentType.getValue()) && 
+							contentType.getValue().indexOf("text/html") >= 0) {
 						is = method.getResponseBodyAsStream();
 						IOUtils.copy(is, writer);
 						responseBody = writer.toString();
