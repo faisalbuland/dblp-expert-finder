@@ -64,6 +64,9 @@ public class AcmDlContentService implements ContentService {
 		// establish a connection within 5 seconds
 		client.getHttpConnectionManager().getParams()
 				.setConnectionTimeout(5000);
+		// also set a socket level timeout (10 seconds) to also allow timeouts 
+		// after the connection is made
+		client.getParams().setParameter("http.socket.timeout", 10000);
 	}
 	
 	
