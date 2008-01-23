@@ -35,9 +35,9 @@ public class DblpItemReProcessor extends DblpItemProcessor {
 				} else {
 					logger.info("not found in DB: "+pub.getKey() + 
 							" [ee]:"+pub.getEe());
-					// insert without content, just to have in the DB
 					filterBadCites(pub);
-					dao.update(pub);
+					// insert without content, just to have in the DB
+//					dao.update(pub);
 				}
 			} else if (null == persistedPub.getContent()) {
 				if (PROCESS) {
@@ -54,13 +54,12 @@ public class DblpItemReProcessor extends DblpItemProcessor {
 			} else { // found in the DB with content
 				logger.info("skipping persisted pub with content "+pub.getKey());
 			}
-		} catch (org.hibernate.exception.ConstraintViolationException cve) {
-			// explicitly catching this error until a resolution can be found
-			logger.error("cve error:"+cve);
-			logger.error("cve error pub:"+pub.getKey()+" ee:"+pub.getEe());
-			logger.error("cve error cites:"+StringUtils.join(pub.getCite(), ", "));
 		} catch (RuntimeException rex) {
-			logger.error("error while processing pub="+pub.getKey()+'-'+rex);
+			// explicitly catching runtime exception until a resolution 
+			// can be found to the constraint violation problem
+			logger.error("error:"+rex);
+			logger.error("error pub:"+pub.getKey()+" ee:"+pub.getEe());
+			logger.error("error cites:"+StringUtils.join(pub.getCite(), ", "));
 		}
 	}
 	
