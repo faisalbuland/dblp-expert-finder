@@ -15,7 +15,7 @@ public class DblpItemReProcessor extends DblpItemProcessor {
 	 * PROCESS==true means re-process the data - download if needed and then save via the dao
 	 * PROCESS==false means just output the state of the item (in the db or not, has content or not)
 	 */
-	private static final boolean PROCESS=false;
+	private static final boolean PROCESS=true;
 	
 	@Override
 	protected void processItem(Object entry) {
