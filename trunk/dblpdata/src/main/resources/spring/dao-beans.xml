@@ -69,6 +69,16 @@
 		<property name="dao" ref="categoryDao" />	
 	</bean>
 	
-	<bean id="contentService" class="edu.ucdavis.cs.dblp.service.AcmDlContentService"/>
+	<bean id="contentService" class="edu.ucdavis.cs.dblp.service.AcmDlContentService">
+	<constructor-arg index="0">
+		<bean id="fetcher" class="edu.ucdavis.cs.dblp.service.AcmResourceFetcher">
+			<constructor-arg index="0">
+				<bean id="localFetcher" class="edu.ucdavis.cs.dblp.service.LocalResourceFetcher">
+					<constructor-arg index="0" value="file:/home/fisherog/dev/data"/>
+				</bean>
+			</constructor-arg>
+		</bean>
+	</constructor-arg>
+	</bean>
 
 </beans>
