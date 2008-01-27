@@ -55,18 +55,10 @@ import edu.ucdavis.cs.taxonomy.CategoryDao;
 
 public class AcmDlContentService implements ContentService {
 	public static final Logger logger = Logger.getLogger(AcmDlContentService.class);
-	private final HttpClient client;
+	private final ResourceFetcher fetcher;
 	
-	public AcmDlContentService() {
-		// create a singular HttpClient object
-		client = new HttpClient();
-
-		// establish a connection within 5 seconds
-		client.getHttpConnectionManager().getParams()
-				.setConnectionTimeout(5000);
-		// also set a socket level timeout (10 seconds) to also allow timeouts 
-		// after the connection is made
-		client.getParams().setParameter("http.socket.timeout", 10000);
+	public AcmDlContentService(ResourceFetcher fetcher) {
+		this.fetcher = fetcher;
 	}
 	
 	
@@ -136,7 +128,7 @@ public class AcmDlContentService implements ContentService {
 		
 		if (StringUtils.isNotBlank(pub.getEe())) {
 			try {
-				Parser parser = new Parser(getACMDlResource(pub.getEe()));
+				Parser parser = new Parser(fetcher.fetchElectronicEdition(pub));
 				retrieveAbstract(pub, parser);
 			} catch (ParserException e) {
 				String msg = "error while parsing electronic edition link";
@@ -156,7 +148,7 @@ public class AcmDlContentService implements ContentService {
 		
 		if (StringUtils.isNotBlank(pub.getEe())) {
 			try {
-				Parser parser = new Parser(getACMDlResource(pub.getEe()));
+				Parser parser = new Parser(fetcher.fetchElectronicEdition(pub));
 				retrieveClassification(pub, categories, parser);
 			} catch (ParserException e) {
 				String msg = "error while parsing electronic edition link";
@@ -395,7 +387,7 @@ public class AcmDlContentService implements ContentService {
 		if (StringUtils.isNotBlank(pub.getEe())) {
 			try {
 				keywords = retrieveKeywords(pub, 
-									new Parser(getACMDlResource(pub.getEe())));
+							new Parser(fetcher.fetchElectronicEdition(pub)));
 			} catch (ParserException e) {
 				String msg = "error while parsing electronic edition link";
 				logger.error(msg+':'+e);
@@ -436,7 +428,7 @@ public class AcmDlContentService implements ContentService {
 		
 		if (StringUtils.isNotBlank(pub.getEe())) {
 			try {
-				Parser parser = new Parser(getACMDlResource(pub.getEe()));
+				Parser parser = new Parser(fetcher.fetchElectronicEdition(pub));
 				retrieveTerms(pub, "GenTerms", generalTerms, parser);
 			} catch (ParserException e) {
 				String msg = "error while parsing electronic edition link";
@@ -504,39 +496,31 @@ public class AcmDlContentService implements ContentService {
 	public void retrieveAll(Publication pub) {
 		logger.debug("retrieving all information for pub id="+pub.getTitle()+'-'+pub.getEe());
 		if (StringUtils.isNotBlank(pub.getEe())) {
-			// XXX test code
-			if ( (pub.getEe().indexOf("acm.org") < 0 && 
-					pub.getEe().indexOf("doi") < 0) ||
-					(pub.getEe().indexOf("doi.ieeecomputersociety.org") >= 0) ||
-					(pub.getKey().indexOf("IEEE") >= 0) ||
-					// 10.1007 (DOI registrant 1007) seems to be springerlink
-					(pub.getEe().indexOf("dx.doi.org/10.1007") >= 0) ||
-					// 10.1109 (DOI registrant 1109) seems to be IEEE
-					(pub.getEe().indexOf("dx.doi.org/10.1109/") >= 0) || 
-					// 10.1117 (DOI registrant 1117) seems to be SPIE digital library
-					(pub.getEe().indexOf("dx.doi.org/10.1117/") >= 0) ) {
-				logger.debug("skipping non-ACM URL: "+pub.getEe());
-				return;
-			}
 			try {
-				Parser parser = new Parser(getACMDlResource(pub.getEe()));
-				PublicationContent content = new PublicationContent();
-				content.setAbstractText(retrieveAbstract(pub, parser));
-				parser.reset();
-				// ignoring General Terms for now as they are too general
-				retrieveGeneralTerms(pub, parser);
-				parser.reset();
-				content.setKeywords(retrieveKeywords(pub, parser));
-				parser.reset();
-				content.setCategories(retrieveClassification(pub, parser));
-				// put the content in the pub unless it is totally empty
-				if (StringUtils.isBlank(content.getAbstractText()) && 
-						content.getKeywords().size() == 0 && 
-						content.getCategories().size() == 0) {
-					logger.debug("not setting content in pub "+pub.getTitle()+
-							" as no content was found");
+				final String eeContents = fetcher.fetchElectronicEdition(pub);
+				if (StringUtils.isNotBlank(eeContents)) {
+					Parser parser = new Parser(eeContents);
+					PublicationContent content = new PublicationContent();
+					content.setAbstractText(retrieveAbstract(pub, parser));
+					parser.reset();
+					// ignoring General Terms for now as they are too general
+					retrieveGeneralTerms(pub, parser);
+					parser.reset();
+					content.setKeywords(retrieveKeywords(pub, parser));
+					parser.reset();
+					content.setCategories(retrieveClassification(pub, parser));
+					// put the content in the pub unless it is totally empty
+					if (StringUtils.isBlank(content.getAbstractText()) && 
+							content.getKeywords().size() == 0 && 
+							content.getCategories().size() == 0) {
+						logger.debug("not setting content in pub "+
+								pub.getTitle()+" as no content was found");
+					} else {
+						pub.setContent(content);
+					}
 				} else {
-					pub.setContent(content);
+					logger.debug("no contents fetched for " + 
+									pub.getEe());
 				}
 			} catch (ParserException e) {
 				String msg = "error while parsing electronic edition link";
@@ -546,65 +530,6 @@ public class AcmDlContentService implements ContentService {
 			logger.debug("no EE found for publication " + pub.getTitle() + 
 					" - retrieveAll failed.");
 		}
-	}
-	
-	/**
-	 * @param url the URL of the ACM Digital Library resource to download.
-	 * @return the ACM DigitalLibrary web page as a non-blank string, if the 
-	 * input <code>url</code> pointed to a valid ACM DigitalLibrary URL.  If
-	 * the page was not an ACM Digital Library page or if it was not a text/html
-	 * type response, then a blank string will be returned. 
-	 */
-	private String getACMDlResource(String url) {
-		HttpMethod method = null;
-		String responseBody = "";
-		
-		// create a method object
-		method = new GetMethod(url);
-		method.setFollowRedirects(true);
-		try {
-			if (StringUtils.isNotBlank(method.getURI().getScheme())) {
-				// execute the method
-				InputStream is = null;
-				StringWriter writer = new StringWriter();
-
-				try {
-					client.executeMethod(method);
-					Header contentType = method.getResponseHeader("Content-Type");
-					// verify that it is a text/html document (e.g. not a pdf)
-					if (contentType != null &&
-							StringUtils.isNotBlank(contentType.getValue()) && 
-							contentType.getValue().indexOf("text/html") >= 0) {
-						is = method.getResponseBodyAsStream();
-						IOUtils.copy(is, writer);
-						responseBody = writer.toString();
-						if (responseBody.indexOf("ACM Digital Library") < 0) {
-							// non-ACM DL link - reject
-							logger.info("ignoring non-ACM Digital Library page: "
-									+ url);
-							responseBody = "";
-						}
-					} else {
-						logger.info("ignoring non-text/html response from page: "
-								+ url+" content-type:"+contentType);
-					}
-				} catch (HttpException he) {
-					logger.error("Http error connecting to '" + url + "'");
-					logger.error(he.getMessage());
-				} catch (IOException ioe) {
-					logger.error("Unable to connect to '" + url + "'");
-				} finally {
-					IOUtils.closeQuietly(is);
-					IOUtils.closeQuietly(writer);
-				}
-			}
-		} catch (URIException e) {
-			logger.error(e);
-		} finally {
-			method.releaseConnection();
-		}
-
-		return responseBody;
 	}
 	
 	public static void main(String ... args) throws Exception {
