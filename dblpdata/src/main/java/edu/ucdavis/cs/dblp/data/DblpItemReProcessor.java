@@ -30,12 +30,10 @@ public class DblpItemReProcessor extends DblpItemProcessor {
 					contentService.retrieveAll(pub);
 					logger.info("not found in DB: "+pub.getKey() + ' ' +
 							(pub.getContent() == null?"no content": "has content"));
-					filterBadCites(pub);
 					dao.update(pub);
 				} else {
 					logger.info("not found in DB: "+pub.getKey() + 
 							" [ee]:"+pub.getEe());
-					filterBadCites(pub);
 					// insert without content, just to have in the DB
 //					dao.update(pub);
 				}
@@ -45,7 +43,6 @@ public class DblpItemReProcessor extends DblpItemProcessor {
 					contentService.retrieveAll(persistedPub);
 					logger.info("was missing content: "+persistedPub.getKey() + ' ' +
 							(persistedPub.getContent() == null?"no content": "has content"));
-					filterBadCites(persistedPub);
 					dao.update(persistedPub);
 				} else {
 					logger.info("was missing content: " + 
@@ -60,24 +57,6 @@ public class DblpItemReProcessor extends DblpItemProcessor {
 			logger.error("error:"+rex);
 			logger.error("error pub:"+pub.getKey()+" ee:"+pub.getEe());
 			logger.error("error cites:"+StringUtils.join(pub.getCite(), ", "));
-		}
-	}
-	
-	/**
-	 * Filters out Cite entries that are empty (e.g. "..." as their value
-	 * and have no label).
-	 * 
-	 * @param pub
-	 */
-	private void filterBadCites(Publication pub) {
-		for (Cite cite : Sets.immutableSet(pub.getCite())) {
-			if ("...".equals(cite.getContent().trim()) && 
-					StringUtils.isBlank(cite.getLabel())) {
-				pub.getCite().remove(cite);
-				logger.info("removed empty ... cite from "+pub.getKey() + 
-						" remaining cites:" + 
-						StringUtils.join(pub.getCite(), ", "));
-			}
 		}
 	}
 }
