@@ -22,6 +22,7 @@ import javax.xml.bind.annotation.XmlValue;
 
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
+import org.apache.commons.lang.builder.ToStringBuilder;
 
 
 /**
@@ -116,7 +117,6 @@ public class Cite implements Serializable {
 		Cite rhs = (Cite) obj;
 		return new EqualsBuilder()
 					.append(content, rhs.content)
-					.append(label, rhs.label)
 					.isEquals();
     }
     
@@ -124,8 +124,12 @@ public class Cite implements Serializable {
     public int hashCode() {
     	return new HashCodeBuilder(17, 39)
         			.append(content)
-        			.append(label)
         			.toHashCode();
+    }
+    
+    @Override
+    public String toString() {
+    	return new ToStringBuilder(this).append(content).toString();
     }
 
 }
