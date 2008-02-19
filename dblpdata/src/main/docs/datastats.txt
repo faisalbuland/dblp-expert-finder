@@ -1,0 +1,7 @@
+[Data Statistics]
+* 997,731 total entries from DBLP loaded into my local DB
+* 625,617 entries with non-blank, electronic edition links (URLs starting with http)
+* 87,410 entries with ACM publication content loaded (abstracts, keywords, classified into ACM CCS taxonomy nodes)
+    - 64,346 entries with non-blank abstracts
+    - 77,166 entries with ACM CCS classifications
+    - 45,512 entries with keywords associated with them

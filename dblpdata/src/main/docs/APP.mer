@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ERDiagram version="1.1">
+  <Connection session="Derby (Embedded)" database="APP" />
+  <Drawing gridVisible="false" snapOn="false" fastRouting="false" labelsVisible="true" />
+  <Tables>
+    <Table name="AUTHOR">
+      <Drawing expanded="true" location="135,395" dimensions="222,48" />
+      <Columns>
+        <Column name="AUTHOR_NAME" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="VARCHAR" size="255" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="CATEGORY">
+      <Drawing expanded="true" location="1617,791" dimensions="230,127" />
+      <Columns>
+        <Column name="CAT_KEY" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="VARCHAR" size="255" />
+        </Column>
+        <Column name="ACTIVE" primary_key="false" foreign_key="false" required="true" unique="false">
+          <Data type="SMALLINT" size="5" />
+        </Column>
+        <Column name="ID" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="255" />
+        </Column>
+        <Column name="LABEL" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="255" />
+        </Column>
+        <Column name="PARENT_CAT_KEY" primary_key="false" foreign_key="true" required="false" unique="false">
+          <Data type="VARCHAR" size="255" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="CITE">
+      <Drawing expanded="true" location="1960,385" dimensions="199,68" />
+      <Columns>
+        <Column name="CITE_VALUE" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="VARCHAR" size="255" />
+        </Column>
+        <Column name="LABEL" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="255" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="JOURNAL">
+      <Drawing expanded="true" location="31,820" dimensions="226,48" />
+      <Columns>
+        <Column name="JOURNAL_NAME" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="VARCHAR" size="255" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="KEYWORD">
+      <Drawing expanded="true" location="1299,820" dimensions="188,68" />
+      <Columns>
+        <Column name="ID" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="BIGINT" size="19" />
+        </Column>
+        <Column name="KEYWORD" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="255" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="PUBCONTENT_CATS">
+      <Drawing expanded="true" location="1577,385" dimensions="283,67" />
+      <Columns>
+        <Column name="PUBLICATIONCONTENT_ID" primary_key="true" foreign_key="true" required="true" unique="false">
+          <Data type="BIGINT" size="19" />
+        </Column>
+        <Column name="CATEGORIES_CAT_KEY" primary_key="true" foreign_key="true" required="true" unique="false">
+          <Data type="VARCHAR" size="255" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="PUBCONTENT_KWS">
+      <Drawing expanded="true" location="1148,387" dimensions="260,67" />
+      <Columns>
+        <Column name="PUBLICATIONCONTENT_ID" primary_key="true" foreign_key="true" required="true" unique="false">
+          <Data type="BIGINT" size="19" />
+        </Column>
+        <Column name="KEYWORDS_ID" primary_key="true" foreign_key="true" required="true" unique="false">
+          <Data type="BIGINT" size="19" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="PUBLICATION">
+      <Drawing expanded="true" location="457,167" dimensions="301,504" />
+      <Columns>
+        <Column name="DBLP_KEY" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="VARCHAR" size="255" />
+        </Column>
+        <Column name="ADDRESS" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="255" />
+        </Column>
+        <Column name="BOOKTITLE" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="255" />
+        </Column>
+        <Column name="CDROM_PATH" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="255" />
+        </Column>
+        <Column name="CHAPTER" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="255" />
+        </Column>
+        <Column name="CROSSREF" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="255" />
+        </Column>
+        <Column name="EDITOR" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="255" />
+        </Column>
+        <Column name="ELECTRONIC_EDITION" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="255" />
+        </Column>
+        <Column name="ISBN" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="255" />
+        </Column>
+        <Column name="MOD_DATE" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="255" />
+        </Column>
+        <Column name="MONTH" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="255" />
+        </Column>
+        <Column name="NOTE" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="255" />
+        </Column>
+        <Column name="NUMBER" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="255" />
+        </Column>
+        <Column name="PAGES" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="255" />
+        </Column>
+        <Column name="SERIES" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="255" />
+        </Column>
+        <Column name="TITLE" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="4000" />
+        </Column>
+        <Column name="TYPE" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="INTEGER" size="10" />
+        </Column>
+        <Column name="URL" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="255" />
+        </Column>
+        <Column name="VOLUME" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="255" />
+        </Column>
+        <Column name="PUB_YEAR" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="255" />
+        </Column>
+        <Column name="JOURNAL_JOURNAL_NAME" primary_key="false" foreign_key="true" required="false" unique="false">
+          <Data type="VARCHAR" size="255" />
+        </Column>
+        <Column name="PUBLISHER_PUBLISHER_NAME" primary_key="false" foreign_key="true" required="false" unique="false">
+          <Data type="VARCHAR" size="255" />
+        </Column>
+        <Column name="SCHOOL_SCHOOL_NAME" primary_key="false" foreign_key="true" required="false" unique="false">
+          <Data type="VARCHAR" size="255" />
+        </Column>
+        <Column name="CONTENT_ID" primary_key="false" foreign_key="true" required="false" unique="false">
+          <Data type="BIGINT" size="19" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="PUBLICATIONCONTENT">
+      <Drawing expanded="true" location="981,820" dimensions="218,68" />
+      <Columns>
+        <Column name="ID" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="BIGINT" size="19" />
+        </Column>
+        <Column name="ABSTRACTTEXT" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="CLOB" size="1048576" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="PUBLISHER">
+      <Drawing expanded="true" location="326,820" dimensions="236,68" />
+      <Columns>
+        <Column name="PUBLISHER_NAME" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="VARCHAR" size="255" />
+        </Column>
+        <Column name="HREF" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="255" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="PUB_AUTHORS">
+      <Drawing expanded="true" location="288,0" dimensions="201,67" />
+      <Columns>
+        <Column name="PUB_ID" primary_key="true" foreign_key="true" required="true" unique="false">
+          <Data type="VARCHAR" size="255" />
+        </Column>
+        <Column name="AUTHOR_ID" primary_key="true" foreign_key="true" required="true" unique="false">
+          <Data type="VARCHAR" size="255" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="PUB_CITES">
+      <Drawing expanded="true" location="1220,0" dimensions="175,67" />
+      <Columns>
+        <Column name="PUB_ID" primary_key="true" foreign_key="true" required="true" unique="false">
+          <Data type="VARCHAR" size="255" />
+        </Column>
+        <Column name="CITE_ID" primary_key="true" foreign_key="true" required="true" unique="false">
+          <Data type="VARCHAR" size="255" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="SCHOOL">
+      <Drawing expanded="true" location="662,830" dimensions="219,48" />
+      <Columns>
+        <Column name="SCHOOL_NAME" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="VARCHAR" size="255" />
+        </Column>
+      </Columns>
+    </Table>
+  </Tables>
+  <Relationships>
+    <Relationship name="FK6DD211ED95D67CF">
+      <Details primary_table="CATEGORY" foreign_table="CATEGORY">
+        <PrimaryKeys>
+          <ColumnName name="CAT_KEY" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="PARENT_CAT_KEY" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="FK4E6B8EE05AE61341">
+      <Details primary_table="CATEGORY" foreign_table="PUBCONTENT_CATS">
+        <PrimaryKeys>
+          <ColumnName name="CAT_KEY" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="CATEGORIES_CAT_KEY" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="FK4E6B8EE08E3B953F">
+      <Details primary_table="PUBLICATIONCONTENT" foreign_table="PUBCONTENT_CATS">
+        <PrimaryKeys>
+          <ColumnName name="ID" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="PUBLICATIONCONTENT_ID" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="FK2BD20C848E3B953F">
+      <Details primary_table="PUBLICATIONCONTENT" foreign_table="PUBCONTENT_KWS">
+        <PrimaryKeys>
+          <ColumnName name="ID" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="PUBLICATIONCONTENT_ID" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="FK2BD20C8488A88614">
+      <Details primary_table="KEYWORD" foreign_table="PUBCONTENT_KWS">
+        <PrimaryKeys>
+          <ColumnName name="ID" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="KEYWORDS_ID" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="FK23254A0C5270289A">
+      <Details primary_table="PUBLISHER" foreign_table="PUBLICATION">
+        <PrimaryKeys>
+          <ColumnName name="PUBLISHER_NAME" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="PUBLISHER_PUBLISHER_NAME" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="FK23254A0CABD3BA13">
+      <Details primary_table="PUBLICATIONCONTENT" foreign_table="PUBLICATION">
+        <PrimaryKeys>
+          <ColumnName name="ID" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="CONTENT_ID" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="FK23254A0C79BEC1F">
+      <Details primary_table="JOURNAL" foreign_table="PUBLICATION">
+        <PrimaryKeys>
+          <ColumnName name="JOURNAL_NAME" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="JOURNAL_JOURNAL_NAME" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="FK23254A0C4FE907B2">
+      <Details primary_table="SCHOOL" foreign_table="PUBLICATION">
+        <PrimaryKeys>
+          <ColumnName name="SCHOOL_NAME" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="SCHOOL_SCHOOL_NAME" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="FK6E514CC6E7802CA4">
+      <Details primary_table="PUBLICATION" foreign_table="PUB_AUTHORS">
+        <PrimaryKeys>
+          <ColumnName name="DBLP_KEY" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="PUB_ID" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="FK6E514CC6B90CA1ED">
+      <Details primary_table="AUTHOR" foreign_table="PUB_AUTHORS">
+        <PrimaryKeys>
+          <ColumnName name="AUTHOR_NAME" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="AUTHOR_ID" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="FK1C70D9FA9460E72D">
+      <Details primary_table="CITE" foreign_table="PUB_CITES">
+        <PrimaryKeys>
+          <ColumnName name="CITE_VALUE" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="CITE_ID" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="FK1C70D9FAE7802CA4">
+      <Details primary_table="PUBLICATION" foreign_table="PUB_CITES">
+        <PrimaryKeys>
+          <ColumnName name="DBLP_KEY" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="PUB_ID" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+  </Relationships>
+</ERDiagram>
+
