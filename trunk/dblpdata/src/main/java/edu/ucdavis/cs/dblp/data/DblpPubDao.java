@@ -3,18 +3,16 @@
  */
 package edu.ucdavis.cs.dblp.data;
 
-import java.math.BigInteger;
 import java.util.List;
 
 import javax.persistence.EntityManager;
-import javax.persistence.Query;
 
 import edu.ucdavis.cs.taxonomy.Category;
 
 /**
+ * Data Access Object for DBLP {@link Publication}s.
  * 
  * @author pfishero
- * @version $Id$
  *
  */
 public interface DblpPubDao {

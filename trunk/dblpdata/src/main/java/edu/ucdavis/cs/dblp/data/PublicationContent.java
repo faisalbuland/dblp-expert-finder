@@ -3,18 +3,27 @@
  */
 package edu.ucdavis.cs.dblp.data;
 
+import static edu.ucdavis.cs.taxonomy.Categories.ONLY_LEAF_NODES;
+
 import java.io.Serializable;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinTable;
 import javax.persistence.Lob;
 import javax.persistence.ManyToMany;
+
+import org.apache.commons.lang.builder.ToStringBuilder;
+import org.apache.commons.lang.builder.ToStringStyle;
+
+import com.google.common.base.Join;
+import com.google.common.collect.Iterables;
 
 import edu.ucdavis.cs.taxonomy.Category;
 
@@ -35,12 +44,12 @@ public class PublicationContent implements Serializable {
 	@Lob
 	@Column(length=1048576)
 	protected String abstractText;
-	@ManyToMany(cascade=CascadeType.ALL)
+	@ManyToMany(cascade=CascadeType.ALL,fetch=FetchType.EAGER)
 	@JoinTable(
 		name="PUBCONTENT_KWS"
 	)
 	protected Set<Keyword> keywords;
-	@ManyToMany(cascade={CascadeType.MERGE, CascadeType.PERSIST})
+	@ManyToMany(cascade={CascadeType.MERGE, CascadeType.PERSIST},fetch=FetchType.EAGER)
 	@JoinTable(
 		name="PUBCONTENT_CATS"
 	)
@@ -116,5 +125,20 @@ public class PublicationContent implements Serializable {
 	 */
 	public void setCategories(Set<Category> categories) {
 		this.categories = categories;
+	}
+	
+	@Override
+	public String toString() {
+		return new ToStringBuilder(this, ToStringStyle.SHORT_PREFIX_STYLE).
+			append("Keywords", this.keywords).
+			append("Categories", Join.join(", ", 
+					Iterables.filter(this.categories, ONLY_LEAF_NODES))).
+			append("TruncatedAbstract", 
+					this.abstractText != null ? 
+							(this.abstractText.length() > 30 ?
+							this.abstractText.substring(0, 30)
+							: this.abstractText)
+							: "").
+			toString();
 	}
 }

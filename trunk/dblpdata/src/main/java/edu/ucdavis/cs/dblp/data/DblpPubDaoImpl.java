@@ -3,7 +3,6 @@
  */
 package edu.ucdavis.cs.dblp.data;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -64,13 +63,7 @@ public class DblpPubDaoImpl implements DblpPubDao {
 		Query query = em.createNamedQuery("Publication.byAuthorName");
 		query.setParameter("name", name);
 		
-		List<Publication> pubs = new ArrayList<Publication>();
-		
-		try {
-			pubs = (List<Publication>)query.getResultList();
-		} catch (javax.persistence.NoResultException nre) {
-			logger.warn("didn't find any pubs for author name: "+name);
-		}
+		List<Publication> pubs = (List<Publication>)query.getResultList();
 		
 		return pubs;
 	}
@@ -79,13 +72,7 @@ public class DblpPubDaoImpl implements DblpPubDao {
 		Query query = em.createNamedQuery("Publication.byCategoryId");
 		query.setParameter("catId", cat.getId());
 		
-		List<Publication> pubs = new ArrayList<Publication>();
-		
-		try {
-			pubs = (List<Publication>)query.getResultList();
-		} catch (javax.persistence.NoResultException nre) {
-			logger.warn("didn't find any pubs for category: "+cat.getKey());
-		}
+		List<Publication> pubs = (List<Publication>)query.getResultList();
 		
 		return pubs;
 	}
@@ -93,13 +80,7 @@ public class DblpPubDaoImpl implements DblpPubDao {
 	public List<SmeDTO> findSmes() {
 		Query query = em.createNamedQuery("allSmes");
 		
-		List<SmeDTO> smes = new ArrayList<SmeDTO>();
-		
-		try {
-			smes = (List<SmeDTO>)query.getResultList();
-		} catch (javax.persistence.NoResultException nre) {
-			logger.warn("didn't find any sme/pubs");
-		}
+		List<SmeDTO> smes = (List<SmeDTO>)query.getResultList();
 		
 		return smes;
 	}
