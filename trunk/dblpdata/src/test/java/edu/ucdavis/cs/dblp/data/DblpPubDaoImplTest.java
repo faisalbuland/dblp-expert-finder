@@ -77,7 +77,7 @@ public class DblpPubDaoImplTest {
 				"author three",
 				"author1",
 		};
-		for(String name : Arrays.asList(authorNames)) {
+		for(String name : authorNames) {
 			authors.add(new Author(name));
 		}
 		pub.setAuthor(authors);
@@ -97,7 +97,7 @@ public class DblpPubDaoImplTest {
 				"author2",
 				"author three",
 		};
-		for(String name : Arrays.asList(authorNames)) {
+		for(String name : authorNames) {
 			authors.add(new Author(name));
 		}
 		pub.setAuthor(authors);
