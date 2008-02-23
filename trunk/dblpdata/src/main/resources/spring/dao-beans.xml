@@ -10,6 +10,9 @@
 	<!-- DBLPS -->
 	<bean id="dblpPubDao"
 		class="edu.ucdavis.cs.dblp.data.DblpPubDaoImpl" />
+		
+	<bean id="researcherDao"
+		class="edu.ucdavis.cs.dblp.experts.ResearcherDaoImpl" />
 
 	<bean id="dataLoader"
 		class="edu.ucdavis.cs.dblp.data.DblpDataLoader">
@@ -26,7 +29,7 @@
 			value="file:/Documents and Settings/Philip/My Documents/UC Davis/ms thesis/dblp/dblp.xml.gz" />
 			-->
 		<property name="inputSource"
-			value="file:/home/fisherog/dev/data/dblp.xml.gz"/>
+			value="file:/dev/data/dblp/dblp.xml.gz"/>
 		<!-- use this one to avoid having to download the dblp data dump separately: 
 		<property name="inputSource" 
 			value="http://dblp.uni-trier.de/xml/dblp.xml.gz" /> -->
@@ -74,7 +77,7 @@
 		<bean id="fetcher" class="edu.ucdavis.cs.dblp.service.AcmResourceFetcher">
 			<constructor-arg index="0">
 				<bean id="localFetcher" class="edu.ucdavis.cs.dblp.service.LocalResourceFetcher">
-					<constructor-arg index="0" value="file:/home/fisherog/dev/data"/>
+					<constructor-arg index="0" value="file:/dev/data"/>
 				</bean>
 			</constructor-arg>
 		</bean>
