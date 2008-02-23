@@ -40,7 +40,7 @@ http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd"
 			<property name="hibernate.connection.driver_class"
 				value="org.apache.derby.jdbc.EmbeddedDriver" />
 			<property name="hibernate.connection.url"
-				value="jdbc:derby:/home/fisherog/dev/dbs/dblp" />
+				value="jdbc:derby:/dev/data/dbs/dblp" />
 			<property name="hibernate.hbm2ddl.auto" value="update" />
 			
 			<property name="hibernate.connection.useUnicode"
