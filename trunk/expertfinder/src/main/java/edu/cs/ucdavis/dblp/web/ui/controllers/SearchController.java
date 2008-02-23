@@ -12,6 +12,8 @@ import org.apache.log4j.Logger;
 import com.google.common.collect.Lists;
 
 import de.unitrier.dblp.Author;
+import edu.ucdavis.cs.dblp.ServiceLocator;
+import edu.ucdavis.cs.dblp.experts.ResearcherDao;
 
 /**
  * Controller for search related actions and state.
@@ -53,16 +55,16 @@ public class SearchController {
 		authors.clear();
 		logger.info("searching for author with name: "+searchText);
 		
-/*		ResearcherDao dao = ServiceLocator.getInstance().getResearcherDao();
+		ResearcherDao dao = ServiceLocator.getInstance().getResearcherDao();
 		Collection<Author> authorResults = dao.findByNamePrefix(searchText);
 		logger.info("found "+authorResults.size()+" authors for prefix text: "+searchText);
 		this.authors = authorResults;
-*/
-		for (String name : new String[]{"Michael Gertz", "Ian Davidson", "Test Author"}) {
+
+	/*	for (String name : new String[]{"Michael Gertz", "Ian Davidson", "Test Author"}) {
 			Author auth = new Author();
 			auth.setContent(name);
 			authors.add(auth);
-		}
+		}*/
 
 		resultsForm.setRendered(authors.size() > 0);
 		
