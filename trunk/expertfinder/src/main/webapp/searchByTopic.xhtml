@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+	<ui:composition template="/WEB-INF/layout/layout.xhtml">
+		<ui:define name="menuBarLIs">
+		<li><a href="searchByResearcher.jsf" accesskey="r">Researcher</a></li>
+		<li class="active"><a href="searchByTopic.jsf" accesskey="t">Topic</a></li>
+		</ui:define>
+		<ui:define name="search_field_contents">
+			<form method="post" action="?">
+				<div class="search_form">
+				<p>Search: <input type="text" name="search" class="search" /> <input type="submit" value="Search" class="submit" /> <a class="grey" href="#">Advanced</a></p>
+				</div>
+			</form>
+			
+			<p>Search for experts on a given topic.</p>
+		</ui:define>
+	</ui:composition>
+</html>
