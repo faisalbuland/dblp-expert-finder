@@ -13,6 +13,8 @@ import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -47,6 +49,10 @@ import org.apache.commons.lang.builder.ToStringStyle;
 })
 @XmlRootElement(name = "author")
 @Entity
+@NamedQueries({
+	@NamedQuery(name="Author.byName", query="SELECT a FROM Author a WHERE a.content=:name"),
+	@NamedQuery(name="Author.byNamePrefix", query="SELECT a FROM Author a WHERE a.content LIKE :namePrefix || '%'"),
+})
 public class Author implements Serializable {
 
     @XmlValue
@@ -108,7 +114,7 @@ public class Author implements Serializable {
     @Override
     public String toString() {
     	return new ToStringBuilder(this, ToStringStyle.SHORT_PREFIX_STYLE).
-    					append(this.content).toString();
+    					append("AuthorName", this.content).toString();
     }
 
 }
