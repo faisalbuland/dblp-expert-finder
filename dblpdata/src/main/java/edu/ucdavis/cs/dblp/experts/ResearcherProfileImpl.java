@@ -9,6 +9,8 @@ import java.util.List;
 
 import org.apache.log4j.Logger;
 
+import com.google.common.base.Function;
+import com.google.common.base.Join;
 import com.google.common.base.Predicate;
 import com.google.common.collect.HashMultiset;
 import com.google.common.collect.Iterables;
@@ -158,16 +160,24 @@ public class ResearcherProfileImpl implements ResearcherProfile {
 			str.append("<div class=\"right_articles\">");
 			str.append("<p><img src=\"images/image.gif\" alt=\"Image\" title=\"Image\" class=\"image\" />");
 			str.append("<b>"+pub.getTitle()+"</b><br/>");
-			str.append("Year: "+pub.getYear());
-			str.append(pub.getJournal() != null ?
-					" | Journal: "+pub.getJournal().getContent() : "");
-			str.append("<br/>DBLP key: "+pub.getKey());
+			Join.join(str, ", ", Iterables.transform(pub.getAuthor(), 
+					new Function<Author, String>() {
+				@Override
+				public String apply(Author author) {
+					return author.getContent();
+				}
+			}));
+			str.append("<br/>"+pub.toCitationString());
 			str.append("</p></div>\n");
 		}
 		
 		str.append("\nCategories:\n");
 		for (Category cat : getSortedLeafCategories()) {
-			str.append(cat+" ("+leafCategories.count(cat)+"), \n");
+			String parentKey = cat.getKey().split(" Subjects: ")[0];
+			str.append("<p><b><img src=\"images/arrow.gif\" alt=\">\" /><a class=\"title\" href=\"#\">");
+			str.append(parentKey);
+			str.append("</a></b><br />");
+			str.append("<a href=\"#\">").append(cat.getLabel()).append("</a> (").append(leafCategories.count(cat)).append(")</p>\n");
 		}
 		
 		return str.toString();

@@ -683,6 +683,51 @@ public class Publication implements Serializable {
 		this.content = content;
 	}
 	
+	public String toCitationString() {
+		StringBuilder str = new StringBuilder();
+		
+		switch(this.getType()) {
+		case ARTICLE:
+			if (this.getJournal() != null) {
+				str.append(this.getJournal().getContent());
+			}
+			if (this.getVolume() != null) {
+				str.append(' '+this.getVolume());
+			}
+			if (this.getNumber() != null) {
+				str.append('('+this.getNumber()+')');
+			}
+			if (this.getPages() != null) {
+				str.append(':'+this.getPages());
+			}
+			if (this.getYear() != null) {
+				str.append(" ("+this.getYear()+')');
+			}
+			break;
+		case INPROCEEDINGS:
+			if (this.getBooktitle() != null) {
+				str.append(this.getBooktitle());
+			}
+			if (this.getYear() != null) {
+				str.append(' '+this.getYear());
+			}
+			if (this.getPages() != null) {
+				str.append(':'+this.getPages());
+			}
+			break;
+		case BOOK: 
+			if (this.getPublisher() != null) {
+				str.append(' '+this.getPublisher().getContent());
+			}
+			if (this.getYear() != null) {
+				str.append(' '+this.getYear());
+			}
+			break;
+		}
+		
+		return str.toString();
+	}
+	
 	@Override
 	public String toString() {
 		return new ToStringBuilder(this, ToStringStyle.SHORT_PREFIX_STYLE).
