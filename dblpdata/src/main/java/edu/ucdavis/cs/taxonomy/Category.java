@@ -193,7 +193,8 @@ public class Category implements Serializable {
 					.append("id", this.id)
 					.append("label", this.label)
 					.append("active", this.active)
-					.append("\nchildren", this.children)
+//					commented out as this leads to data explosion
+//					.append("\nchildren", this.children)
 					.toString();
 	}
 }

@@ -9,6 +9,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import edu.ucdavis.cs.dblp.data.DataLoader;
 import edu.ucdavis.cs.dblp.data.DblpPubDao;
+import edu.ucdavis.cs.dblp.experts.ResearcherDao;
 import edu.ucdavis.cs.dblp.service.ContentService;
 import edu.ucdavis.cs.taxonomy.Category;
 import edu.ucdavis.cs.taxonomy.CategoryDao;
@@ -53,15 +54,19 @@ public class ServiceLocator {
 		return appContext;
 	}
 	
-	public DblpPubDao getDblpPubDao () {
+	public DblpPubDao getDblpPubDao() {
 		return (DblpPubDao)appContext.getBean("dblpPubDao");
 	}
 	
-	public CategoryDao getCategoryDao () {
+	public ResearcherDao getResearcherDao() {
+		return (ResearcherDao)appContext.getBean("researcherDao");
+	}
+	
+	public CategoryDao getCategoryDao() {
 		return (CategoryDao)appContext.getBean("categoryDao");
 	}
 	
-	public ContentService getContentService () {
+	public ContentService getContentService() {
 		return (ContentService)appContext.getBean("contentService");
 	}
 }

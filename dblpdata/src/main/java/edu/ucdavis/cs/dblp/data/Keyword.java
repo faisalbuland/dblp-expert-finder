@@ -10,7 +10,12 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import org.apache.commons.lang.builder.EqualsBuilder;
+import org.apache.commons.lang.builder.HashCodeBuilder;
 import org.apache.commons.lang.builder.ToStringBuilder;
+import org.apache.commons.lang.builder.ToStringStyle;
+
+import de.unitrier.dblp.Author;
 
 /**
  * 
@@ -64,6 +69,29 @@ public class Keyword implements Serializable {
 	
 	@Override
 	public String toString() {
-		return new ToStringBuilder(this).append(keyword).toString();
+		return new ToStringBuilder(this, ToStringStyle.SHORT_PREFIX_STYLE).
+				append("Keyword", keyword).
+				toString();
 	}
+	
+	@Override
+    public boolean equals(Object obj) {
+    	if (obj instanceof Keyword == false) {
+			return false;
+		}
+		if (this == obj) {
+			return true;
+		}
+		Keyword rhs = (Keyword) obj;
+		return new EqualsBuilder()
+					.append(this.keyword, rhs.keyword)
+					.isEquals();
+    }
+    
+    @Override
+    public int hashCode() {
+    	return new HashCodeBuilder(117, 5)
+        			.append(this.keyword)
+        			.toHashCode();
+    }
 }

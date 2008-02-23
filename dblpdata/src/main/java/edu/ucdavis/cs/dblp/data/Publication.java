@@ -20,6 +20,8 @@ import javax.persistence.OneToOne;
 import javax.xml.bind.annotation.XmlAttribute;
 
 import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang.builder.ToStringBuilder;
+import org.apache.commons.lang.builder.ToStringStyle;
 import org.apache.log4j.Logger;
 
 import de.unitrier.dblp.Article;
@@ -39,7 +41,7 @@ import de.unitrier.dblp.Www;
 @Entity
 @NamedQueries({
 		@NamedQuery(name="Publication.byId", query="FROM Publication p WHERE p.key = :key"),
-		@NamedQuery(name="Publication.byAuthorName", query="SELECT p FROM Publication p, IN(p.author) a WHERE a.content=:name"),
+		@NamedQuery(name="Publication.byAuthorName", query="SELECT p FROM Publication p, IN(p.author) a WHERE a.content=:name ORDER BY p.year DESC NULLS LAST"),
 		@NamedQuery(name="Publication.byCategoryId", query="SELECT p FROM Publication p, IN(p.content.categories) cats WHERE cats.id=:catId"),
 		@NamedQuery(name="smeTest", query="SELECT NEW edu.ucdavis.cs.dblp.data.SmeDTO(auths, COUNT(*)) FROM Publication p, IN(p.author) auths, IN(p.content.categories) cats WHERE cats.id=:catId GROUP BY auths ORDER BY COUNT(*) DESC"),
 		@NamedQuery(name="allSmes", query="SELECT NEW edu.ucdavis.cs.dblp.data.SmeDTO(cats.key, auths, COUNT(*)) FROM Publication p, IN(p.author) auths, IN(p.content.categories) cats GROUP BY cats, auths HAVING COUNT(*) > 1 ORDER BY COUNT(*) DESC")
@@ -679,5 +681,15 @@ public class Publication implements Serializable {
 	 */
 	public void setContent(PublicationContent content) {
 		this.content = content;
+	}
+	
+	@Override
+	public String toString() {
+		return new ToStringBuilder(this, ToStringStyle.SHORT_PREFIX_STYLE).
+			append("Title", this.title).
+			append("PubYear", this.year).
+			append("Authors", this.author).
+			append("PubContent", this.content).
+			toString();
 	}
 }
