@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:j4j="http://javascript4jsf.dev.java.net/" >
+	<ui:composition template="/WEB-INF/layout/layout.xhtml">
+		<ui:define name="menuBarLIs">
+		<li class="active"><a href="searchByResearcher.jsf" accesskey="r">Researcher</a></li>
+		<li><a href="searchByTopic.jsf" accesskey="t">Topic</a></li>
+		</ui:define>
+		<ui:define name="search_field_contents">
+			<h:form id="searchForm">
+				<div class="search_form">
+				<p>
+        		<h:outputLabel value="Search: " for="searchText"/>
+        		<h:inputText id="searchText" label="Search: "
+          		value="#{searchController.searchText}" required="true" styleClass="search" />
+				<h:commandButton action="#{searchController.authorSearch}" value="Search" 
+				styleClass="submit" />
+				<a class="grey" href="#">Advanced</a></p>
+				</div>
+			</h:form>
+			
+			<p>Search for a researcher by name<br />
+			and generate their research profile.</p>
+		</ui:define>
+		<ui:define name="facets">
+			<h:form id="resultsForm" rendered="false" binding="#{searchController.resultsForm}">
+				<h3>
+					Researcher:
+				</h3>
+				<div class="left_box">
+					<h2>
+						Michael Gertz
+					</h2>
+					<p>
+					<h:dataTable id="results" value="#{searchController.authors}" var="author"
+						rowClasses="oddRow, evenRow" rendered="false">
+							<h:column>
+								<f:facet name="header">
+									<h:outputText value="Author Name" />
+								</f:facet>
+								<h:outputText value="#{author.content}" />
+							</h:column>
+					</h:dataTable>
+					</p>
+				</div>
+			</h:form>
+		</ui:define>
+	</ui:composition>
+</html>
