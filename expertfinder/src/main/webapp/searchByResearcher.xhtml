@@ -4,7 +4,9 @@
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:j4j="http://javascript4jsf.dev.java.net/" >
+      xmlns:j4j="http://javascript4jsf.dev.java.net/" 
+      xmlns:a="http://www.cs.ucdavis.edu/jsf" 
+      xmlns:c="http://java.sun.com/jstl/core">
 	<ui:composition template="/WEB-INF/layout/layout.xhtml">
 		<ui:define name="menuBarLIs">
 		<li class="active"><a href="searchByResearcher.jsf" accesskey="r">Researcher</a></li>
@@ -26,28 +28,88 @@
 			<p>Search for a researcher by name<br />
 			and generate their research profile.</p>
 		</ui:define>
+		
 		<ui:define name="facets">
-			<h:form id="resultsForm" rendered="false" binding="#{searchController.resultsForm}">
-				<h3>
-					Researcher:
-				</h3>
-				<div class="left_box">
-					<h2>
-						Michael Gertz
-					</h2>
-					<p>
-					<h:dataTable id="results" value="#{searchController.authors}" var="author"
-						rowClasses="oddRow, evenRow" rendered="false">
-							<h:column>
-								<f:facet name="header">
-									<h:outputText value="Author Name" />
-								</f:facet>
-								<h:outputText value="#{author.content}" />
-							</h:column>
-					</h:dataTable>
-					</p>
-				</div>
-			</h:form>
+			<h:panelGroup rendered="false" binding="#{searchController.authorSelector}">
+			<h3>
+				Select a Researcher:
+			</h3>
+			<div class="left_side">
+				<p>
+				<c:forEach var="author" items="#{searchController.authors}" varStatus="vs">
+							<h:commandLink
+								action="#{searchController.buildResearcherProfile}"
+								value="#{author.content}">
+								<f:setPropertyActionListener 
+									target="#{searchController.researcherName}"
+        							value="#{author.content}"/>
+							</h:commandLink>
+							<c:if test="#{not vs.last}"><br /></c:if>
+				</c:forEach>
+				</p>
+			</div>
+			</h:panelGroup>
+			<h:panelGroup rendered="false" binding="#{searchController.researcherInfo}">
+			<h3>
+				Researcher:
+			</h3>
+			<div class="left_box">
+				<h2>
+					<h:outputText value="#{searchController.profile.researcher.content}"/>
+				</h2>
+			</div>
+				
+			<a:displayFacet facetName="Keywords: " 
+				facetItems="#{searchController.profile.sortedKeywords}"
+				facetCounts="#{searchController.profile.keywordsCounts}"
+				displayField="keyword"
+				/>
+				
+			<a:displayFacet facetName="Co-Authors: " 
+				facetItems="#{searchController.profile.sortedCoAuthors}"
+				facetCounts="#{searchController.profile.coAuthorsCounts}"
+				displayField="content"
+				separator="break"
+				>
+				<ui:define name="display">
+				<h:commandLink action="#{searchController.buildResearcherProfile}"
+								value="#{item[displayField]}"
+								>
+								<f:setPropertyActionListener 
+									target="#{searchController.researcherName}"
+        							value="#{item[displayField]}"/>
+       			</h:commandLink>
+        		</ui:define>
+				</a:displayFacet>
+			
+			<a:displayFacet facetName="Taxonomy Nodes: " 
+				facetItems="#{searchController.profile.sortedLeafCategories}"
+				facetCounts="#{searchController.profile.leafCategoriesCounts}"
+				displayField="label"
+				separator="break"
+				>
+				<ui:define name="preDisplay">
+				<b><img src="images/arrow.gif" alt=">" /><a class="title" href="#">
+				#{item.parentDescription}</a></b><br />
+				</ui:define>
+			</a:displayFacet>
+			</h:panelGroup>
+		</ui:define>
+				
+		<ui:define name="results">
+			<h:panelGroup rendered="false" binding="#{searchController.publicationsList}">
+			<a:displaySearchResults resultsTitle="Publications: (#{searchController.publicationsCount})" 
+				searchResults="#{searchController.profile.publications}"
+				>
+				<ui:define name="resultOutput">
+				<b>#{result.title}</b><br />
+				<c:forEach var="author" items="#{result.author}" varStatus="vs">
+					#{author.content}<c:if test="#{not vs.last}">, </c:if> 
+				</c:forEach><br />
+				#{result.citationString}<br/>
+				</ui:define>
+			</a:displaySearchResults>
+			</h:panelGroup>
 		</ui:define>
 	</ui:composition>
 </html>

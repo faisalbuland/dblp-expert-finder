@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" xmlns:ui="http://java.sun.com/jsf/facelets">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" 
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html">
 <head>
 	<meta name="templateauthor" content="Luka Cvrk (www.solucija.com)" />
 	<meta http-equiv="content-type" content="text/html;charset=iso-8859-1" />
@@ -9,6 +11,7 @@
 </head>
 <body>
 	<div class="content">
+	<h:form id="facetsForm">
 		<div class="header">
 			<div class="top_info">
 				<div class="top_info_right">
@@ -37,149 +40,11 @@
 		</div>
 		
 		<div class="left">
-			<ui:insert name="facets">
-				<h3>Authors:</h3>
-				<div class="left_box">
-					<p></p>
-				</div>
-			</ui:insert>
-	
-			<h3>Taxonomy Nodes:</h3>
-				<div class="left_side">
-					<p><b><img src="images/arrow.gif" alt=">" /><a class="title" href="#">H.2.2 Information Systems : DATABASE MANAGEMENT : Physical Design</a></b><br />
-					<a href="#">Access Methods (1)</a></p>
-					<p><b><img src="images/arrow.gif" alt=">" /><a class="title" href="#">H.2.8 Information Systems : DATABASE MANAGEMENT : Database Applications</a></b><br />
-					<a href="#">Spatial databases and GIS (1)</a></p>
-				</div>
-			
-			<h3>Keywords:</h3>
-			<div class="left_side">
-				<p><a href="#">social networks</a> (2), <a href="#">open source</a> (2), <a href="#">information visualization</a> (1), <a href="#">folk literature DL</a> (1), <a href="#">temporal information</a> (1), <a href="#">temporal retrieval</a> (1), <a href="#">streaming data</a> (1), <a href="#">experimentation</a> (1), <a href="#">user interfaces</a> (1), <a href="#">query optimization</a> (1), <a href="#">clustering</a> (1), <a href="#">information extraction</a> (1), <a href="#">indexing raster image data</a> (1), <a href="#">data annotations</a> (1), <a href="#">remotely sensed imagery (RSI)</a> (1), <a href="#">spatio-temporal aggregates</a> (1), <a href="#">GIS</a> (1)</p> 
-			</div>
-				
-			<h3>Co-authors:</h3>
-			<div class="left_side">
-				<p>
-				<a href="#">Premkumar T. Devanbu</a> (9)<br/>
-<a href="#">Udo W. Lipeck</a> (6)<br/>
-<a href="#">Jan-Marco Bremer</a> (5)<br/>
-<a href="#">Quinn Hart</a> (5)<br/>
-<a href="#">Charles U. Martel</a> (5)<br/>
-<a href="#">April Kwong</a> (5)<br/>
-<a href="#">Christina Yip Chung</a> (5)<br/>
-<a href="#">Stuart G. Stubblebine</a> (4)<br/>
-<a href="#">Karl N. Levitt</a> (4)<br/>
-<a href="#">Kai-Uwe Sattler</a> (4)<br/>
-<a href="#">Glen Nuckolls</a> (3)<br/>
-<a href="#">Jie Zhang</a> (3)<br/>
-<a href="#">Alex Gourley</a> (2)<br/>
-<a href="#">T. J. Jankun-Kelly</a> (2)<br/>
-<a href="#">Kwan-Liu Ma</a> (2)<br/>
-<a href="#">Carlos Rueda</a> (2)<br/>
-<a href="#">Anand Swaminathan</a> (2)<br/>
-<a href="#">Neel Sundaresan</a> (2)<br/>
-<a href="#">Gunter Saake</a> (2)<br/>
-<a href="#">Omar Alonso</a> (2)<br/>
-<a href="#">Christian Bird</a> (2)<br/>
-<a href="#">Brian Toone</a> (2)<br/>
-<a href="#">Ebrima N. Ceesay</a> (1)<br/>
-<a href="#">Jim Bosch</a> (1)<br/>
-<a href="#">Jingmin Zhou</a> (1)<br/>
-<a href="#">Daniel Zinn</a> (1)<br/>
-<a href="#">M. Tamer Ozsu</a> (1)<br/>
-<a href="#">Bertram Ludascher</a> (1)<br/>
-<a href="#">George Csaba</a> (1)<br/>
-<a href="#">Alexander Scharnofske</a> (1)<br/>
-<a href="#">Can Turker</a> (1)<br/>
-<a href="#">Michael Hogarth</a> (1)<br/>
-<a href="#">Jim Stone</a> (1)<br/>
-<a href="#">Shefali Singhal</a> (1)<br/>
-<a href="#">Demet Aksoy</a> (1)<br/>
-<a href="#">Matt Bishop</a> (1)<br/>
-<a href="#">Fredric Gorin</a> (1)<br/>
-<a href="#">Vram Kouramajian</a> (1)<br/>
-<a href="#">Bruce Rosenstock</a> (1)<br/>
-<a href="#">Ingo Schmitt</a> (1)<br/>
-<a href="#">Bernd Hamann</a> (1)<br/>
-<a href="#">Ricardo A. Baeza-Yates</a> (1)<br/>
-				</p>
-			</div>
+			<ui:insert name="facets"/>
 		</div>
-		
+			
 		<div class="right">
-			<h3>Publications:</h3>
-<div class="right_articles"><p><img src="images/image.gif" alt="Image" title="Image" class="image" /><b>Integrating document and data retrieval based on XML.</b><br/>Year: 2008 | Journal: VLDB J.<br/>DBLP key: journals/vldb/BremerG08</p></div>
-<div class="right_articles"><p><img src="images/image.gif" alt="Image" title="Image" class="image" /><b>Search results using timeline visualizations.</b><br/>Year: 2007<br/>DBLP key: conf/sigir/AlonsoGB07</p></div>
-<div class="right_articles"><p><img src="images/image.gif" alt="Image" title="Image" class="image" /><b>A Model and Framework for Visualization Exploration.</b><br/>Year: 2007 | Journal: IEEE Trans. Vis. Comput. Graph.<br/>DBLP key: journals/tvcg/Jankun-KellyMG07</p></div>
-<div class="right_articles"><p><img src="images/image.gif" alt="Image" title="Image" class="image" /><b>Modeling and Querying Vague Spatial Objects Using Shapelets.</b><br/>Year: 2007<br/>DBLP key: conf/vldb/ZinnBG07</p></div>
-<div class="right_articles"><p><img src="images/image.gif" alt="Image" title="Image" class="image" /><b>Clustering of search results using temporal attributes.</b><br/>Year: 2006<br/>DBLP key: conf/sigir/AlonsoG06</p></div>
-<div class="right_articles"><p><img src="images/image.gif" alt="Image" title="Image" class="image" /><b>Optimization of multiple continuous queries over streaming satellite data.</b><br/>Year: 2006<br/>DBLP key: conf/gis/HartG06</p></div>
-<div class="right_articles"><p><img src="images/image.gif" alt="Image" title="Image" class="image" /><b>A Data and Query Model for Streaming Geospatial Image Data.</b><br/>Year: 2006<br/>DBLP key: conf/edbtw/GertzHRSZ06</p></div>
-<div class="right_articles"><p><img src="images/image.gif" alt="Image" title="Image" class="image" /><b>Using Type Qualifiers to Analyze Untrusted Integers and Detecting Security Flaws in C Programs.</b><br/>Year: 2006<br/>DBLP key: conf/dimva/CeesayZGLB06</p></div>
-<div class="right_articles"><p><img src="images/image.gif" alt="Image" title="Image" class="image" /><b>Integrating document and data retrieval based on XML.</b><br/>Year: 2006 | Journal: VLDB J.<br/>DBLP key: journals/vldb/BremerG06</p></div>
-<div class="right_articles"><p><img src="images/image.gif" alt="Image" title="Image" class="image" /><b>An Extensible Infrastructure for Processing Distributed Geospatial Data Streams.</b><br/>Year: 2006<br/>DBLP key: conf/ssdbm/RuedaGLH06</p></div>
-<div class="right_articles"><p><img src="images/image.gif" alt="Image" title="Image" class="image" /><b>Mining email social networks in Postgres.</b><br/>Year: 2006<br/>DBLP key: conf/msr/BirdGDGS06a</p></div>
-<div class="right_articles"><p><img src="images/image.gif" alt="Image" title="Image" class="image" /><b>Mining email social networks.</b><br/>Year: 2006<br/>DBLP key: conf/msr/BirdGDGS06</p></div>
-<div class="right_articles"><p><img src="images/image.gif" alt="Image" title="Image" class="image" /><b>Evaluation of a Dynamic Tree Structure for Indexing Query Regions on Streaming Geospatial Data.</b><br/>Year: 2005<br/>DBLP key: conf/ssd/HartGZ05</p></div>
-<div class="right_articles"><p><img src="images/image.gif" alt="Image" title="Image" class="image" /><b>Querying Streaming Geospatial Image Data: The GeoStreams Project.</b><br/>Year: 2005<br/>DBLP key: conf/ssdbm/HartG05</p></div>
-<div class="right_articles"><p><img src="images/image.gif" alt="Image" title="Image" class="image" /><b>Report on the Dagstuhl Seminar: "data quality on the Web".</b><br/>Year: 2004 | Journal: SIGMOD Record<br/>DBLP key: journals/sigmod/GertzOSS04</p></div>
-<div class="right_articles"><p><img src="images/image.gif" alt="Image" title="Image" class="image" /><b>Indexing Query Regions for Streaming Geospatial Data.</b><br/>Year: 2004<br/>DBLP key: conf/stdbm/HartG04</p></div>
-<div class="right_articles"><p><img src="images/image.gif" alt="Image" title="Image" class="image" /><b>Spatio-temporal aggregates over raster image data.</b><br/>Year: 2004<br/>DBLP key: conf/gis/ZhangGA04</p></div>
-<div class="right_articles"><p><img src="images/image.gif" alt="Image" title="Image" class="image" /><b>Flexible authentication of XML documents.</b><br/>Year: 2004 | Journal: Journal of Computer Security<br/>DBLP key: journals/jcs/DevanbuGK04</p></div>
-<div class="right_articles"><p><img src="images/image.gif" alt="Image" title="Image" class="image" /><b>Databases that tell the Truth: Authentic Data Publication.</b><br/>Year: 2004 | Journal: IEEE Data Eng. Bull.<br/>DBLP key: journals/debu/GertzKMN04</p></div>
-<div class="right_articles"><p><img src="images/image.gif" alt="Image" title="Image" class="image" /><b>A General Model for Authenticated Data Structures.</b><br/>Year: 2004 | Journal: Algorithmica<br/>DBLP key: journals/algorithmica/MartelNDGKS04</p></div>
-<div class="right_articles"><p><img src="images/image.gif" alt="Image" title="Image" class="image" /><b>Static Type-Inference for Trust in Distributed Information Systems.</b><br/>Year: 2003<br/>DBLP key: conf/coopis/DevanbuGT03</p></div>
-<div class="right_articles"><p><img src="images/image.gif" alt="Image" title="Image" class="image" /><b>Authentic Data Publication Over the Internet.</b><br/>Year: 2003 | Journal: Journal of Computer Security<br/>DBLP key: journals/jcs/DevanbuGMS03</p></div>
-<div class="right_articles"><p><img src="images/image.gif" alt="Image" title="Image" class="image" /><b>On Distributing XML Repositories.</b><br/>Year: 2003<br/>DBLP key: conf/webdb/BremerG03</p></div>
-<div class="right_articles"><p><img src="images/image.gif" alt="Image" title="Image" class="image" /><b>Trust Mediation for Distributed Information Systems.</b><br/>Year: 2003<br/>DBLP key: conf/sec/TooneGD03</p></div>
-<div class="right_articles"><p><img src="images/image.gif" alt="Image" title="Image" class="image" /><b>Integrating Scientific Data through External Concept-based annotations.</b><br/>Year: 2002<br/>DBLP key: conf/diweb/GertzS02</p></div>
-<div class="right_articles"><p><img src="images/image.gif" alt="Image" title="Image" class="image" /><b>XQuery/IR: Integrating XML Document and Data Retrieval.</b><br/>Year: 2002<br/>DBLP key: conf/webdb/BremerG02</p></div>
-<div class="right_articles"><p><img src="images/image.gif" alt="Image" title="Image" class="image" /><b>A Model for the Visualization Exploration Process.</b><br/>Year: 2002<br/>DBLP key: conf/visualization/Jankun-KellyMG02</p></div>
-<div class="right_articles"><p><img src="images/image.gif" alt="Image" title="Image" class="image" /><b>Monitoring Mission Critical Data for Integrity and Availability.</b><br/>Year: 2002<br/>DBLP key: conf/tc11-5/GertzC02</p></div>
-<div class="right_articles"><p><img src="images/image.gif" alt="Image" title="Image" class="image" /><b>Opportunities and Challenges in Tracing Security Breaches.</b><br/>Year: 2002<br/>DBLP key: conf/tc11-5/Gertz02</p></div>
-<div class="right_articles"><p><img src="images/image.gif" alt="Image" title="Image" class="image" /><b>Annotating Scientific Images: A Concept-Based Approach.</b><br/>Year: 2002<br/>DBLP key: conf/ssdbm/GertzSGHS02</p></div>
-<div class="right_articles"><p><img src="images/image.gif" alt="Image" title="Image" class="image" /><b>Reverse Engineering for Web Data: From Visual to Semantic Structure.</b><br/>Year: 2002<br/>DBLP key: conf/icde/ChungGS02</p></div>
-<div class="right_articles"><p><img src="images/image.gif" alt="Image" title="Image" class="image" /><b>Integrating Scientific Data through External, Concept-Based Annotations.</b><br/>Year: 2002<br/>DBLP key: conf/eextt/GertzS02</p></div>
-<div class="right_articles"><p><img src="images/image.gif" alt="Image" title="Image" class="image" /><b>Web-based scholarship: annotating the digital library.</b><br/>Year: 2001<br/>DBLP key: conf/jcdl/RosenstockG01</p></div>
-<div class="right_articles"><p><img src="images/image.gif" alt="Image" title="Image" class="image" /><b>Flexible authentication of XML documents.</b><br/>Year: 2001<br/>DBLP key: conf/ccs/DevanbuGKMNS01</p></div>
-<div class="right_articles"><p><img src="images/image.gif" alt="Image" title="Image" class="image" /><b>Authentic Publication of XML Document Data.</b><br/>Year: 2001<br/>DBLP key: conf/wise/KwongG01</p></div>
-<div class="right_articles"><p><img src="images/image.gif" alt="Image" title="Image" class="image" /><b>Semantic integrity support in SQL: 1999 and commercial (object-)relational database management systems.</b><br/>Year: 2001 | Journal: VLDB J.<br/>DBLP key: journals/vldb/TurkerG01</p></div>
-<div class="right_articles"><p><img src="images/image.gif" alt="Image" title="Image" class="image" /><b>Quixote: Building XML Repositories from Topic Specific Web Documents.</b><br/>Year: 2001<br/>DBLP key: conf/webdb/ChungGS01</p></div>
-<div class="right_articles"><p><img src="images/image.gif" alt="Image" title="Image" class="image" /><b>Web Data Indexing Through External Semantic-carrying Annotations.</b><br/>Year: 2001<br/>DBLP key: conf/ride/BremerG01</p></div>
-<div class="right_articles"><p><img src="images/image.gif" alt="Image" title="Image" class="image" /><b>Discovery of Multi-Level Security Policies.</b><br/>Year: 2000<br/>DBLP key: conf/dbsec/ChungGL00</p></div>
-<div class="right_articles"><p><img src="images/image.gif" alt="Image" title="Image" class="image" /><b>Authentic Third-party Data Publication.</b><br/>Year: 2000<br/>DBLP key: conf/dbsec/DevanbuGMS00</p></div>
-<div class="right_articles"><p><img src="images/image.gif" alt="Image" title="Image" class="image" /><b>DEMIDS: A Misuse Detection System for Database Systems.</b><br/>Year: 1999<br/>DBLP key: conf/tc11-5/ChungGL99</p></div>
-<div class="right_articles"><p><img src="images/image.gif" alt="Image" title="Image" class="image" /><b>Misuse Detection in Database Systems Through User Profiling.</b><br/>Year: 1999<br/>DBLP key: conf/raid/ChungGL99</p></div>
-<div class="right_articles"><p><img src="images/image.gif" alt="Image" title="Image" class="image" /><b>Managing Data Quality and Integrity in Federated Databases.</b><br/>Year: 1998<br/>DBLP key: conf/tc11-5/Gertz98</p></div>
-<div class="right_articles"><p><img src="images/image.gif" alt="Image" title="Image" class="image" /><b>Data Integration Techniques based on Data Quality Aspects.</b><br/>Year: 1998<br/>DBLP key: conf/fdbs/GertzS98</p></div>
-<div class="right_articles"><p><img src="images/image.gif" alt="Image" title="Image" class="image" /><b>Diagnosis and Repair of Constraint Violations in Database Systems.</b><br/>Year: 1997 | Journal: Datenbank Rundbrief<br/>DBLP key: journals/gidr/Gertz97</p></div>
-<div class="right_articles"><p><img src="images/image.gif" alt="Image" title="Image" class="image" /><b>SubQuery-By-Example: Eine orthogonale Erweiterung von QBE.</b><br/>Year: 1997<br/>DBLP key: conf/btw/ScharnofskeLG97</p></div>
-<div class="right_articles"><p><img src="images/image.gif" alt="Image" title="Image" class="image" /><b>An Extensible Framework for Repairing Constraint Violations.</b><br/>Year: 1997<br/>DBLP key: conf/tc11-5/GertzL97</p></div>
-<div class="right_articles"><p><img src="images/image.gif" alt="Image" title="Image" class="image" /><b>Deriving Optimized Integrity Monitoring Triggers from Dynamic Integrity Constraints.</b><br/>Year: 1996 | Journal: Data Knowl. Eng.<br/>DBLP key: journals/dke/GertzL96</p></div>
-<div class="right_articles"><p><img src="images/image.gif" alt="Image" title="Image" class="image" /><b>Diagnosis and Repair of Constraint Violations in Database Systems.</b><br/>Year: 1996<br/>DBLP key: books/infix/Gertz96</p></div>
-<div class="right_articles"><p><img src="images/image.gif" alt="Image" title="Image" class="image" /><b>An Extensible Framework for Repairing Constraint Violations.</b><br/>Year: 1996<br/>DBLP key: conf/fmldo/Gertz96</p></div>
-<div class="right_articles"><p><img src="images/image.gif" alt="Image" title="Image" class="image" /><b>"Temporal" Integrity Constraints in Temporal Databases</b><br/>Year: 1995<br/>DBLP key: conf/tdb/GertzL95</p></div>
-<div class="right_articles"><p><img src="images/image.gif" alt="Image" title="Image" class="image" /><b>A Visual Query Editor for Temporal Databases.</b><br/>Year: 1995<br/>DBLP key: conf/er/KouramajianG95</p></div>
-<div class="right_articles"><p><img src="images/image.gif" alt="Image" title="Image" class="image" /><b>Transitional Monitoring of Dynamic Inegrity Constraints.</b><br/>Year: 1994 | Journal: IEEE Data Eng. Bull.<br/>DBLP key: journals/debu/LipeckGS94</p></div>
-<div class="right_articles"><p><img src="images/image.gif" alt="Image" title="Image" class="image" /><b>Specifying Reactive Integrity Control for Active Databases.</b><br/>Year: 1994<br/>DBLP key: conf/ride/Gertz94</p></div>
-<div class="right_articles"><p><img src="images/image.gif" alt="Image" title="Image" class="image" /><b>Integritatssicherung in aktiven Datenbanken.</b><br/>Year: 1993<br/>DBLP key: conf/gvd/Gertz93</p></div>
-<div class="right_articles"><p><img src="images/image.gif" alt="Image" title="Image" class="image" /><b>Deriving Integrity Maintaining Triggers from Transition Graphs.</b><br/>Year: 1993<br/>DBLP key: conf/icde/GertzL93</p></div>
-<div class="right_articles"><p><img src="images/image.gif" alt="Image" title="Image" class="image" /><b>Deriving Integrity Constraints Maintaining Triggers from Transition Graphs.</b><br/>Year: 1992<br/>DBLP key: conf/gvd/Gertz92</p></div>
-
-
-			<h3>Related Researchers: (Nearest Neighbors)</h3>
-			<div class="right_articles">
-				<p><img src="images/image.gif" alt="Image" title="Image" class="image" /><b>Lorem ipsum dolor sit amet</b><br />consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam.</p>
-			</div>
-			<div class="right_articles">
-				<p><img src="images/image.gif" alt="Image" title="Image" class="image" /><b>Lorem ipsum dolor sit amet</b><br />consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam.</p>
-			</div>
-			<div class="right_articles">
-				<p><img src="images/image.gif" alt="Image" title="Image" class="image" /><b>Lorem ipsum dolor sit amet</b><br />consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam.</p>
-			</div>
-			<div class="right_articles">
-				<p><img src="images/image.gif" alt="Image" title="Image" class="image" /><b>Lorem ipsum dolor sit amet</b><br />consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam.</p>
-			</div>
+			<ui:insert name="results"/>
 		</div>
 			
 		<div class="footer">
@@ -187,6 +52,7 @@
 			Template &copy; Copyright 2006 Internet Services, Design: Luka Cvrk - <a href="http://www.solucija.com/" title="What's your solution?">Solucija</a><br />
 			Code developed by Philip Fisher-Ogden and licensed under the <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License 2.0</a></p>
 		</div>
+		</h:form>
 	</div>
 </body>
 </html>

@@ -17,7 +17,7 @@
 		<managed-bean-class>
 			edu.cs.ucdavis.dblp.web.ui.controllers.SearchController
 		</managed-bean-class>
-		<managed-bean-scope>request</managed-bean-scope>
+		<managed-bean-scope>session</managed-bean-scope>
 	</managed-bean>
 
 	<navigation-rule>
