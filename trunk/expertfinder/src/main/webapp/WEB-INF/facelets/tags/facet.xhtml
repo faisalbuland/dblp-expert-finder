@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:c="http://java.sun.com/jstl/core">
+<ui:composition>
+
+	<h3>#{facetName}</h3>
+	<div class="left_side">
+		<p>
+		<c:forEach var="item" items="#{facetItems}" varStatus="vs">
+			<ui:insert name="preDisplay"/>
+			<ui:insert name="display">#{item[displayField]}</ui:insert>
+			(#{facetCounts[item]})
+			<c:if test="#{not vs.last}">
+				<c:choose>
+					<c:when test="#{empty separator}">,&nbsp;</c:when>
+					<c:when test='#{separator == "break"}'><br /></c:when>
+				</c:choose>
+			</c:if>
+		</c:forEach>
+		</p>
+	</div>
+	
+</ui:composition>
+</html>
