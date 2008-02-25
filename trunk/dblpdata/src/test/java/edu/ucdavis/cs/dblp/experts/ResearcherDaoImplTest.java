@@ -78,7 +78,7 @@ public class ResearcherDaoImplTest {
 	 */
 	@Test
 	public final void testFindPublications() {
-		Collection<Author> authors = dao.findByName("Michael Gertz");
+		Collection<Author> authors = dao.findByName("Hector Garcia-Molina");
 //		Collection<Author> authors = dao.findByName("Ian Davidson");
 		assertTrue(authors.size() >= 1);
 		ResearcherProfile profile = new ResearcherProfileImpl(
