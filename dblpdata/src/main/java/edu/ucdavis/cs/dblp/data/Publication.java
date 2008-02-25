@@ -683,7 +683,7 @@ public class Publication implements Serializable {
 		this.content = content;
 	}
 	
-	public String toCitationString() {
+	public String getCitationString() {
 		StringBuilder str = new StringBuilder();
 		
 		switch(this.getType()) {

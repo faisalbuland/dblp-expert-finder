@@ -171,6 +171,13 @@ public class Category implements Serializable {
 	public void setKey(String key) {
 		this.key = key;
 	}
+	
+	/**
+	 * @return a description of this node's parent (e.g. H.2.2 This and That).
+	 */
+	public String getParentDescription() {
+		return this.getKey().split(" Subjects: ")[0];
+	}
 
 	/**
 	 * @return the active

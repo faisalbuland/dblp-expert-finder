@@ -5,7 +5,10 @@ package edu.ucdavis.cs.dblp.experts;
 
 import java.util.Collection;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.concurrent.atomic.AtomicInteger;
 
 import org.apache.log4j.Logger;
 
@@ -71,6 +74,11 @@ public class ResearcherProfileImpl implements ResearcherProfile {
 		}
 	}
 	
+	@Override
+	public Author getResearcher() {
+		return this.researcher;
+	}
+	
 	/* (non-Javadoc)
 	 * @see edu.ucdavis.cs.dblp.experts.ResearcherProfile#getCoAuthors()
 	 */
@@ -87,6 +95,17 @@ public class ResearcherProfileImpl implements ResearcherProfile {
 			Lists.sortedCopy(this.coAuthors.elementSet(), comp); 
 		
 		return sortedCoAuthors;
+	}
+	
+	public Map<Author, Integer> getCoAuthorsCounts() {
+		Map<Author, Integer> countMap = 
+				new HashMap<Author, Integer>(coAuthors.size());
+		
+		for (Author author : coAuthors.elementSet()) {
+			countMap.put(author, coAuthors.count(author));
+		}
+		
+		return countMap;
 	}
 
 	/* (non-Javadoc)
@@ -105,6 +124,17 @@ public class ResearcherProfileImpl implements ResearcherProfile {
 			Lists.sortedCopy(this.keywords.elementSet(), comp); 
 		
 		return sortedKeywords;
+	}
+	
+	public Map<Keyword, Integer> getKeywordsCounts() {
+		Map<Keyword, Integer> countMap = 
+				new HashMap<Keyword, Integer>(keywords.size());
+		
+		for (Keyword keyword : keywords.elementSet()) {
+			countMap.put(keyword, keywords.count(keyword));
+		}
+		
+		return countMap;
 	}
 
 	/* (non-Javadoc)
@@ -128,6 +158,17 @@ public class ResearcherProfileImpl implements ResearcherProfile {
 			Lists.sortedCopy(this.leafCategories.elementSet(), comp); 
 		
 		return sortedCategories;
+	}
+	
+	public Map<Category, Integer> getLeafCategoriesCounts() {
+		Map<Category, Integer> countMap = 
+				new HashMap<Category, Integer>(leafCategories.size());
+		
+		for (Category cat: leafCategories.elementSet()) {
+			countMap.put(cat, leafCategories.count(cat));
+		}
+		
+		return countMap;
 	}
 	
 	private static final class SortedComparator<T> implements Comparator<T> {
@@ -167,7 +208,7 @@ public class ResearcherProfileImpl implements ResearcherProfile {
 					return author.getContent();
 				}
 			}));
-			str.append("<br/>"+pub.toCitationString());
+			str.append("<br/>"+pub.getCitationString());
 			str.append("</p></div>\n");
 		}
 		
