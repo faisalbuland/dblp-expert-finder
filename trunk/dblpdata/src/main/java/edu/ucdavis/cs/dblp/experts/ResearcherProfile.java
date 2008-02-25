@@ -16,9 +16,12 @@ import edu.ucdavis.cs.taxonomy.Category;
  * @author pfishero
  */
 public interface ResearcherProfile {
-	Multiset<Author> getCoAuthors();
+	Author getResearcher();
 	Collection<Publication> getPublications();
+	Multiset<Author> getCoAuthors();
 	Multiset<Keyword> getKeywords();
 	Multiset<Category> getLeafCategories();
-	// TODO add getACMCCSNodes();
+	Collection<Author> getSortedCoAuthors();
+	Collection<Keyword> getSortedKeywords();
+	Collection<Category> getSortedLeafCategories();
 }
