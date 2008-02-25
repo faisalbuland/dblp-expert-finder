@@ -190,17 +190,15 @@ public class ResearcherProfileImpl implements ResearcherProfile {
 		
 		str.append("\nKeywords:\n");
 		for (Keyword keyword : getSortedKeywords()) {
-			str.append("<a href=\"#\">"+keyword.getKeyword()+"</a> ("+keywords.count(keyword)+"), ");
+			str.append(keyword.getKeyword()+" ("+keywords.count(keyword)+"), ");
 		}
 		str.append("\nCo-Authors:\n");
 		for (Author coAuthor : getSortedCoAuthors()) {
-			str.append("<a href=\"#\">"+coAuthor.getContent()+"</a> ("+coAuthors.count(coAuthor)+")<br/>\n");
+			str.append(coAuthor.getContent()+" ("+coAuthors.count(coAuthor)+")\n");
 		}
 		str.append("\nPublications:\n");
 		for (Publication pub : pubs) {
-			str.append("<div class=\"right_articles\">");
-			str.append("<p><img src=\"images/image.gif\" alt=\"Image\" title=\"Image\" class=\"image\" />");
-			str.append("<b>"+pub.getTitle()+"</b><br/>");
+			str.append(pub.getTitle()+'\n');
 			Join.join(str, ", ", Iterables.transform(pub.getAuthor(), 
 					new Function<Author, String>() {
 				@Override
@@ -208,17 +206,14 @@ public class ResearcherProfileImpl implements ResearcherProfile {
 					return author.getContent();
 				}
 			}));
-			str.append("<br/>"+pub.getCitationString());
-			str.append("</p></div>\n");
+			str.append('\n'+pub.getCitationString()+'\n');
 		}
 		
 		str.append("\nCategories:\n");
 		for (Category cat : getSortedLeafCategories()) {
 			String parentKey = cat.getKey().split(" Subjects: ")[0];
-			str.append("<p><b><img src=\"images/arrow.gif\" alt=\">\" /><a class=\"title\" href=\"#\">");
-			str.append(parentKey);
-			str.append("</a></b><br />");
-			str.append("<a href=\"#\">").append(cat.getLabel()).append("</a> (").append(leafCategories.count(cat)).append(")</p>\n");
+			str.append(parentKey+'\n');
+			str.append(cat.getLabel()).append(" (").append(leafCategories.count(cat)).append(")\n");
 		}
 		
 		return str.toString();
