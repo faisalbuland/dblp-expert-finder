@@ -20,15 +20,30 @@
 	</param-value>
   </context-param>
   
+  <context-param>
+	<param-name>facelets.SKIP_COMMENTS</param-name>
+	<param-value>false</param-value>
+  </context-param>
+  
   <servlet>
     <servlet-name>Faces Servlet</servlet-name>
   	<servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
   	<load-on-startup>1</load-on-startup>
   </servlet>
+  <servlet>
+    <servlet-name>PubsToEvents</servlet-name>
+    <servlet-class>edu.cs.ucdavis.dblp.web.PubsToEvents</servlet-class>
+    <load-on-startup>2</load-on-startup>
+  </servlet>
+
   
   <servlet-mapping>
   	<servlet-name>Faces Servlet</servlet-name>
   	<url-pattern>*.jsf</url-pattern>  	
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>PubsToEvents</servlet-name>
+    <url-pattern>/servlet/PubsToEvents</url-pattern>
   </servlet-mapping>
   
 </web-app>

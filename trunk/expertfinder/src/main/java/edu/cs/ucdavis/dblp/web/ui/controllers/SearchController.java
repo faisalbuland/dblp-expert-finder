@@ -3,11 +3,13 @@
  */
 package edu.cs.ucdavis.dblp.web.ui.controllers;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 import java.util.Collection;
-import java.util.Collections;
 
 import javax.faces.component.UIComponent;
 
+import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
 
 import com.google.common.collect.Lists;
@@ -49,6 +51,20 @@ public class SearchController {
 	public String getResearcherName() {
 		return researcherName;
 	}
+	
+	public String getResearcherNameForLink() {
+		StringBuilder str = new StringBuilder();
+		
+		if (StringUtils.isNotBlank(researcherName)) {
+			try {
+				str.append(URLEncoder.encode(researcherName, "UTF-8"));
+			} catch (UnsupportedEncodingException e) {
+				logger.error("error encoding researcher name for link: "+researcherName+" - "+e);
+			}
+		}
+		
+		return str.toString();
+	}
 
 	public void setResearcherName(String researcherName) {
 		this.researcherName = researcherName;
@@ -56,6 +72,18 @@ public class SearchController {
 
 	public Collection<Author> getAuthors() {
 		return authors;
+	}
+	
+	public boolean isAuthorsFound() {
+		boolean authorsFound;
+		
+		if (authors == null || authors.size() == 0) {
+			authorsFound = false;
+		} else {
+			authorsFound = true;
+		}
+		
+		return authorsFound;
 	}
 
 	public String authorSearch() {
@@ -83,10 +111,12 @@ public class SearchController {
 	private final void doAuthorSearch(String authorName) {
 		ResearcherDao dao = ServiceLocator.getInstance().getResearcherDao();
 		Collection<Author> authorResults = dao.findByNamePrefix(authorName);
-		logger.info("found "+authorResults.size()+" authors for name: "+authorName);
-		this.authors = authorResults;
-
-		setProfile(new ResearcherProfileImpl(authorResults.iterator().next()));		
+		if (authorResults.size() > 0) {
+			logger.info("found "+authorResults.size()+" authors for name: "+authorName);
+			this.authors = authorResults;
+	
+			setProfile(new ResearcherProfileImpl(authorResults.iterator().next()));
+		}
 	}
 	
 	public ResearcherProfile getProfile() {
