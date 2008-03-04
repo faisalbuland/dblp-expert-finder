@@ -4,11 +4,15 @@ import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
 
+import org.apache.commons.lang.StringUtils;
+import org.apache.log4j.Logger;
+
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.annotations.Annotations;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import com.thoughtworks.xstream.annotations.XStreamAsAttribute;
 import com.thoughtworks.xstream.annotations.XStreamImplicit;
+import com.thoughtworks.xstream.annotations.XStreamOmitField;
 
 import edu.ucdavis.cs.dblp.data.Publication;
 
@@ -20,6 +24,8 @@ import edu.ucdavis.cs.dblp.data.Publication;
  */
 @XStreamAlias("data")
 public class EventData {
+	@XStreamOmitField
+	public static final Logger logger = Logger.getLogger(EventData.class);
 	@XStreamAlias("wiki-url")
    	@XStreamAsAttribute
 	private String wikiUrl;
@@ -37,12 +43,21 @@ public class EventData {
 		EventData data = new EventData();
 		
 		for (Publication pub : pubs) {
-			data.addEvent(Event.fromPublication(pub));
+			// valid event must have dates
+			// so skip a pub if it doesn't have a year associated with it
+			if (StringUtils.isNotBlank(pub.getYear())) {
+				data.addEvent(Event.fromPublication(pub));
+			} else {
+				logger.warn("skipping publication without a year: "+pub);
+			}
 		}
 		
 		return data;
 	}
 	
+	/**
+	 * @return an XML representation of <code>this</code>.
+	 */
 	public String toXML() {
 		XStream xstream = new XStream();
 		

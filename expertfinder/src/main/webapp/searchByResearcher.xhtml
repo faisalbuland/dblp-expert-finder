@@ -8,10 +8,15 @@
       xmlns:a="http://www.cs.ucdavis.edu/jsf" 
       xmlns:c="http://java.sun.com/jstl/core">
 	<ui:composition template="/WEB-INF/layout/layout.xhtml">
+		<ui:define name="scriptCode">
+
+		</ui:define>
+	
 		<ui:define name="menuBarLIs">
 		<li class="active"><a href="searchByResearcher.jsf" accesskey="r">Researcher</a></li>
 		<li><a href="searchByTopic.jsf" accesskey="t">Topic</a></li>
 		</ui:define>
+		
 		<ui:define name="search_field_contents">
 			<h:form id="searchForm">
 				<div class="search_form">
@@ -36,16 +41,21 @@
 			</h3>
 			<div class="left_side">
 				<p>
-				<c:forEach var="author" items="#{searchController.authors}" varStatus="vs">
-							<h:commandLink
-								action="#{searchController.buildResearcherProfile}"
-								value="#{author.content}">
-								<f:setPropertyActionListener 
-									target="#{searchController.researcherName}"
-        							value="#{author.content}"/>
-							</h:commandLink>
-							<c:if test="#{not vs.last}"><br /></c:if>
-				</c:forEach>
+				<h:panelGroup rendered="#{searchController.authorsFound}">
+					<c:forEach var="author" items="#{searchController.authors}" varStatus="vs">
+								<h:commandLink
+									action="#{searchController.buildResearcherProfile}"
+									value="#{author.content}">
+									<f:setPropertyActionListener 
+										target="#{searchController.researcherName}"
+	        							value="#{author.content}"/>
+								</h:commandLink>
+								<c:if test="#{not vs.last}"><br /></c:if>
+					</c:forEach>
+				</h:panelGroup>
+				<h:panelGroup rendered="#{not searchController.authorsFound}">
+					No authors found for "#{searchController.searchText}".
+				</h:panelGroup>
 				</p>
 			</div>
 			</h:panelGroup>
@@ -109,6 +119,8 @@
 				#{result.citationString}<br/>
 				</ui:define>
 			</a:displaySearchResults>
+			<br />
+			<iframe src="timeline/showTimeline.jsf" width="100%"/>
 			</h:panelGroup>
 		</ui:define>
 	</ui:composition>

@@ -12,14 +12,11 @@ import org.apache.log4j.Logger;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import com.google.common.base.Join;
 import com.google.common.collect.Iterators;
 
 import de.unitrier.dblp.Author;
 import edu.ucdavis.cs.dblp.ServiceLocator;
-import edu.ucdavis.cs.dblp.data.Publication;
-import edu.ucdavis.cs.dblp.experts.ResearcherProfile;
-import edu.ucdavis.cs.dblp.experts.ResearcherProfileImpl;
+import edu.ucdavis.cs.dblp.data.timeline.EventData;
 
 /**
  * Tests the ResearcherDaoImpl.  Note: this requires the data store
@@ -78,14 +75,17 @@ public class ResearcherDaoImplTest {
 	 */
 	@Test
 	public final void testFindPublications() {
-		Collection<Author> authors = dao.findByName("Hector Garcia-Molina");
-//		Collection<Author> authors = dao.findByName("Ian Davidson");
+//		Collection<Author> authors = dao.findByName("Hector Garcia-Molina");
+		Collection<Author> authors = dao.findByName("Ian Davidson");
 		assertTrue(authors.size() >= 1);
 		ResearcherProfile profile = new ResearcherProfileImpl(
 									Iterators.getOnlyElement(authors.iterator()));
 		assertTrue(profile.getPublications().size() > 0);
 		logger.info("for author(s):"+StringUtils.join(authors, ',')+
 				" profile:"+profile);
+		logger.info("pubs as xml: " + 
+				EventData.fromPublications(profile.getPublications()).
+					toXML());
 	}
 
 }

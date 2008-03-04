@@ -68,6 +68,11 @@
 			<version>1.1.14</version>
 		</dependency>
 		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>2.5</version>
+		</dependency>
+		<dependency>
 			<groupId>edu.ucdavis.cs.philfish</groupId>
 			<artifactId>dblp-loader</artifactId>
 			<version>0.0.2-SNAPSHOT</version>
