@@ -225,6 +225,16 @@ input.login {
 		margin: 0 0 3px 0;
 	}
 	
+	.right_articles a {	
+		color: #454545;	
+		text-decoration: none;
+	}
+
+	.right_articles a:hover { 
+		color: #6C757A; 
+		text-decoration: underline;
+	}
+	
 .image {
 	float: left;
 	margin: 0 9px 3px 0;

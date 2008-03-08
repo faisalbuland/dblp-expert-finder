@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:j4j="http://javascript4jsf.dev.java.net/" 
+      xmlns:a="http://www.cs.ucdavis.edu/jsf" 
+      xmlns:c="http://java.sun.com/jstl/core">
+	<ui:composition template="/WEB-INF/layout/taxonomyLayout.xhtml">
+		
+		<ui:define name="facets">
+			<h:panelGroup rendered="#{not empty searchBean.searchText}">
+			<h3>
+				Select a Node:
+			</h3>
+			<div class="left_side">
+				<p>
+				<h:panelGroup rendered="#{searchBean.matchesFound}">
+					<c:forEach var="node" items="#{searchBean.matches}" varStatus="vs">
+								<h:commandLink
+									action="#{nodeProfile.buildProfile}"
+									value="#{node.key}">
+									<f:setPropertyActionListener 
+										target="#{nodeProfile.nodeKey}"
+	        							value="#{node.key}"/>
+								</h:commandLink>
+								<c:if test="#{not vs.last}"><br /></c:if>
+					</c:forEach>
+				</h:panelGroup>
+				<h:panelGroup rendered="#{not searchBean.matchesFound}">
+					No nodes found for "#{searchBean.searchText}".
+				</h:panelGroup>
+				</p>
+			</div>
+			</h:panelGroup>
+			
+		</ui:define>
+		
+	</ui:composition>
+</html>
