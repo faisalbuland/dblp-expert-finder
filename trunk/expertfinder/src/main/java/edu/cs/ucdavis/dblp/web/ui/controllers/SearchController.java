@@ -6,19 +6,17 @@ package edu.cs.ucdavis.dblp.web.ui.controllers;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.Collection;
-
-import javax.faces.component.UIComponent;
+import java.util.Collections;
 
 import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
-
-import com.google.common.collect.Lists;
 
 import de.unitrier.dblp.Author;
 import edu.ucdavis.cs.dblp.ServiceLocator;
 import edu.ucdavis.cs.dblp.experts.ResearcherDao;
 import edu.ucdavis.cs.dblp.experts.ResearcherProfile;
 import edu.ucdavis.cs.dblp.experts.ResearcherProfileImpl;
+import edu.ucdavis.cs.taxonomy.Category;
 
 /**
  * Controller for search related actions and state.
@@ -29,15 +27,14 @@ public class SearchController {
 	public static final Logger logger = Logger.getLogger(SearchController.class);
 	
 	private String searchText;
+	private String nodeSearchText;
 	private String researcherName;
 	private Collection<Author> authors;
 	private ResearcherProfile profile;
-	private UIComponent authorSelector;
-	private UIComponent researcherInfo;
-	private UIComponent publicationsList;
+	private Category selectedCategory;
 	
 	public SearchController() {
-		authors = Lists.newLinkedList();
+		authors = Collections.emptyList();
 	}
 
 	public String getSearchText() {
@@ -47,7 +44,7 @@ public class SearchController {
 	public void setSearchText(String searchText) {
 		this.searchText = searchText;
 	}
-	
+
 	public String getResearcherName() {
 		return researcherName;
 	}
@@ -90,9 +87,8 @@ public class SearchController {
 		logger.info("searching for author with name: "+searchText);
 		doAuthorSearch(searchText);
 		
-		authorSelector.setRendered(true);
-		researcherInfo.setRendered(false);
-		publicationsList.setRendered(false);
+		// TODO use a boolean to flag "don't display the profile" rather than null 
+		this.profile = null;
 		
 		return null;
 	}
@@ -101,11 +97,7 @@ public class SearchController {
 		doAuthorSearch(researcherName);
 		this.searchText=researcherName;
 		
-		authorSelector.setRendered(false);
-		researcherInfo.setRendered(true);
-		publicationsList.setRendered(true);
-		
-		return null;
+		return "PEOPLE_SEARCHED";
 	}
 	
 	private final void doAuthorSearch(String authorName) {
@@ -116,6 +108,8 @@ public class SearchController {
 			this.authors = authorResults;
 	
 			setProfile(new ResearcherProfileImpl(authorResults.iterator().next()));
+		} else {
+			this.authors = Collections.emptyList();
 		}
 	}
 	
@@ -125,30 +119,6 @@ public class SearchController {
 
 	public void setProfile(ResearcherProfile profile) {
 		this.profile = profile;
-	}
-	
-	public UIComponent getAuthorSelector() {
-		return authorSelector;
-	}
-
-	public void setAuthorSelector(UIComponent authorSelector) {
-		this.authorSelector = authorSelector;
-	}
-
-	public UIComponent getResearcherInfo() {
-		return researcherInfo;
-	}
-
-	public void setResearcherInfo(UIComponent researcherInfo) {
-		this.researcherInfo = researcherInfo;
-	}
-
-	public UIComponent getPublicationsList() {
-		return publicationsList;
-	}
-
-	public void setPublicationsList(UIComponent publicationsList) {
-		this.publicationsList = publicationsList;
 	}
 	
 	public int getPublicationsCount() {

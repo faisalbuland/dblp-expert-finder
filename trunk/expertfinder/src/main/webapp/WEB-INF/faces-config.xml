@@ -19,6 +19,22 @@
 		</managed-bean-class>
 		<managed-bean-scope>session</managed-bean-scope>
 	</managed-bean>
+	
+	<managed-bean>
+		<managed-bean-name>searchBean</managed-bean-name>
+		<managed-bean-class>
+			edu.cs.ucdavis.dblp.web.ui.data.SearchBean
+		</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	
+	<managed-bean>
+		<managed-bean-name>nodeProfile</managed-bean-name>
+		<managed-bean-class>
+			edu.cs.ucdavis.dblp.web.ui.data.NodeProfileBean
+		</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
 
 	<navigation-rule>
 		<navigation-case>
@@ -26,6 +42,40 @@
 			<to-view-id>/home.jsp</to-view-id>
 			<redirect/>
 		</navigation-case>
+		<navigation-case>
+			<from-outcome>NODES_SEARCHED</from-outcome>
+			<to-view-id>/searchByTaxonomy.xhtml</to-view-id>
+			<redirect/>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>PEOPLE_SEARCHED</from-outcome>
+			<to-view-id>/searchByResearcher.xhtml</to-view-id>
+			<redirect/>
+		</navigation-case>
 	</navigation-rule>
-    
+	
+	<navigation-rule>
+		<from-view-id>/searchByTaxonomy.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>NODE_RESULTS_FOUND</from-outcome>
+			<to-view-id>/taxonomyResults.xhtml</to-view-id>
+			<redirect/>
+		</navigation-case>
+		<navigation-case>
+			<to-view-id>/searchByTaxonomy.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
+		<from-view-id>/searchByResearcher.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>NODE_RESULTS_FOUND</from-outcome>
+			<to-view-id>/taxonomyResults.xhtml</to-view-id>
+			<redirect/>
+		</navigation-case>
+		<navigation-case>
+			<to-view-id>/searchByResearcher.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
 </faces-config>

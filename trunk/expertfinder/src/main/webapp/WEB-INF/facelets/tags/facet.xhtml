@@ -11,14 +11,17 @@
 	<div class="left_side">
 		<p>
 		<c:forEach var="item" items="#{facetItems}" varStatus="vs">
-			<ui:insert name="preDisplay"/>
-			<ui:insert name="display">#{item[displayField]}</ui:insert> (#{facetCounts[item]})
-			<c:if test="#{not vs.last}">
-				<c:choose>
-					<c:when test="#{empty separator}"><h:outputText value=", " /></c:when>
-					<c:when test='#{separator == "break"}'><br /></c:when>
-				</c:choose>
-			</c:if>
+			<h:panelGroup rendered="#{(empty limitResults) or (limitResults and vs.index lt limit)}">
+				<ui:insert name="preDisplay"/>
+				<ui:insert name="display">#{item[displayField]}</ui:insert> (#{facetCounts[item]})
+				<c:if test="#{not vs.last}">
+					<c:choose>
+						<c:when test="#{empty separator}"><h:outputText value=", " /></c:when>
+						<c:when test='#{separator == "break"}'><br /></c:when>
+					</c:choose>
+				</c:if>
+				<c:if test="${limitResults and vs.index eq (limit-1)}"><h:outputText value=" ... " /></c:if>
+			</h:panelGroup>
 		</c:forEach>
 		</p>
 	</div>
