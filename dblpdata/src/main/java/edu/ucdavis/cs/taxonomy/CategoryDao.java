@@ -7,6 +7,7 @@ public interface CategoryDao {
 	Category findByKey(String key);
 	Category findByKeyIgnoreCase(String key);
 	Category findById(String id);
+	List<Category> findByFreeTextSearch(String freeText);
 	List<Category> findAll();
 	List<Category> findLeafNodes();
 	

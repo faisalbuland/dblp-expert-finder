@@ -42,7 +42,7 @@ import de.unitrier.dblp.Www;
 @NamedQueries({
 		@NamedQuery(name="Publication.byId", query="FROM Publication p WHERE p.key = :key"),
 		@NamedQuery(name="Publication.byAuthorName", query="SELECT p FROM Publication p, IN(p.author) a WHERE a.content=:name ORDER BY p.year DESC NULLS LAST"),
-		@NamedQuery(name="Publication.byCategoryId", query="SELECT p FROM Publication p, IN(p.content.categories) cats WHERE cats.id=:catId"),
+		@NamedQuery(name="Publication.byCategory", query="SELECT p FROM Publication p, IN(p.content.categories) cats WHERE cats.key=:catKey ORDER BY p.year DESC NULLS LAST"),
 		@NamedQuery(name="smeTest", query="SELECT NEW edu.ucdavis.cs.dblp.data.SmeDTO(auths, COUNT(*)) FROM Publication p, IN(p.author) auths, IN(p.content.categories) cats WHERE cats.id=:catId GROUP BY auths ORDER BY COUNT(*) DESC"),
 		@NamedQuery(name="allSmes", query="SELECT NEW edu.ucdavis.cs.dblp.data.SmeDTO(cats.key, auths, COUNT(*)) FROM Publication p, IN(p.author) auths, IN(p.content.categories) cats GROUP BY cats, auths HAVING COUNT(*) > 1 ORDER BY COUNT(*) DESC")
 })

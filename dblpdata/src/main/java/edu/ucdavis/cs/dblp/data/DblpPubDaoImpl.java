@@ -68,9 +68,9 @@ public class DblpPubDaoImpl implements DblpPubDao {
 		return pubs;
 	}
 	
-	public List<Publication> findByCategoryId(Category cat) {
-		Query query = em.createNamedQuery("Publication.byCategoryId");
-		query.setParameter("catId", cat.getId());
+	public List<Publication> findByCategory(Category cat) {
+		Query query = em.createNamedQuery("Publication.byCategory");
+		query.setParameter("catKey", cat.getKey());
 		
 		List<Publication> pubs = (List<Publication>)query.getResultList();
 		

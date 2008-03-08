@@ -139,7 +139,7 @@ public class DblpPubDaoImplTest {
 	
 	// TODO re-enable after building dist
 	public void testFindByCategoryId() throws Exception {
-		List<Publication> pubs = dao.findByCategoryId(ServiceLocator.getInstance().getCategoryDao().findById("H.5"));
+		List<Publication> pubs = dao.findByCategory(ServiceLocator.getInstance().getCategoryDao().findById("H.5"));
 		logger.info("pubs for H.5:"+pubs);
 		assertTrue(pubs.size() > 0);
 	}

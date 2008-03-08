@@ -22,8 +22,13 @@ import com.google.common.base.Join;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 
+import de.unitrier.dblp.Author;
 import edu.ucdavis.cs.dblp.ServiceLocator;
-import edu.ucdavis.cs.dblp.data.DataLoader;
+import edu.ucdavis.cs.dblp.data.DblpPubDao;
+import edu.ucdavis.cs.dblp.data.Publication;
+import edu.ucdavis.cs.dblp.experts.NullAuthor;
+import edu.ucdavis.cs.dblp.experts.ResearcherProfile;
+import edu.ucdavis.cs.dblp.experts.ResearcherProfileImpl;
 import edu.ucdavis.cs.dblp.service.AcmDlContentService;
 
 /**
@@ -184,4 +189,23 @@ public class CategoryDaoImplTest {
 		assertNotNull(cats);
 	}
 
+	@Test
+	public void testFindByFreeTextSearch() {
+		List<Category> cats = dao.findByFreeTextSearch("distributed data");
+		assertNotNull(cats);
+		logger.info(cats);
+		
+		List<Category> leaves = Lists.immutableList(Iterables.filter(cats, Categories.ONLY_LEAF_NODES));
+		DblpPubDao dao = ServiceLocator.getInstance().getDblpPubDao();
+		Author noOpAuthor = new NullAuthor();
+		for (Category cat : leaves) {
+			List<Publication> pubs = dao.findByCategory(cat);
+			ResearcherProfile profile = new ResearcherProfileImpl(noOpAuthor, pubs);
+			logger.info("category="+cat);
+			logger.info("keywords="+profile.getKeywords());
+			logger.info("publications="+profile.getPublications());
+			logger.info("authors="+profile.getCoAuthors());
+		}
+		
+	}
 }

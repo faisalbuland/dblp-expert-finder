@@ -23,7 +23,7 @@ public interface DblpPubDao {
 	 */
 	Publication findById(String key);
 	List<Publication> findByAuthorName(String name);
-	List<Publication> findByCategoryId(Category catId);
+	List<Publication> findByCategory(Category catId);
 	List<SmeDTO> findSmes();
 	
 	List<Publication> findInText(String query);
