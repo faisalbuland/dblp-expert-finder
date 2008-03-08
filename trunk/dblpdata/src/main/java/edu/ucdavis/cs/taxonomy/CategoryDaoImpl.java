@@ -66,6 +66,16 @@ public class CategoryDaoImpl implements CategoryDao {
 	}
 	
 	@Override
+	public List<Category> findByFreeTextSearch(String freeText) {
+		Query query = em.createNamedQuery("Category.byFreeTextSearch");
+		query.setParameter("freeText", freeText);
+		
+		List<Category> cats = (List<Category>)query.getResultList();
+		
+		return cats;
+	}	
+	
+	@Override
 	public List<Category> findAll() {
 		return (List<Category>)em.createNamedQuery("Category.allCategories").getResultList();
 	}

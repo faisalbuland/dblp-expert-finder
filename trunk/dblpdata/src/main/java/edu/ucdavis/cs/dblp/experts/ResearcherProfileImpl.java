@@ -8,7 +8,6 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.atomic.AtomicInteger;
 
 import org.apache.log4j.Logger;
 
@@ -36,15 +35,25 @@ public class ResearcherProfileImpl implements ResearcherProfile {
 
 	private final Author researcher;
 	private final Collection<Publication> pubs;
-	private final Multiset<Author> coAuthors;
-	private final Multiset<Keyword> keywords;
-	private final Multiset<Category> leafCategories;
+	private Multiset<Author> coAuthors;
+	private Multiset<Keyword> keywords;
+	private Multiset<Category> leafCategories;
+	
+	public ResearcherProfileImpl(Author researcher, Collection<Publication> pubs) {
+		this.researcher = researcher;
+		this.pubs = pubs;
+		buildSets(researcher, pubs);
+	}
 	
 	public ResearcherProfileImpl(Author researcher) {
 		ResearcherDao dao = ServiceLocator.getInstance().getResearcherDao();
 		this.researcher = researcher;
 		pubs = dao.findPublications(researcher);
 		
+		buildSets(researcher, pubs);
+	}
+
+	private final void buildSets(Author researcher, Collection<Publication> pubs) {
 		coAuthors = new HashMultiset<Author>(pubs.size(), 0.75f);
 		keywords = new HashMultiset<Keyword>();
 		leafCategories = new HashMultiset<Category>();
