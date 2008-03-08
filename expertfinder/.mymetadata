@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="expertfinder"
+  id="myeclipse.1203596347740"
+  context-root="/expertfinder"
+  j2ee-spec="5.0"
+  archive="expertfinder.war">
+  <attributes>
+    <attribute name="webrootdir" value="target/work" />
+  </attributes>
+</project-module>
+
