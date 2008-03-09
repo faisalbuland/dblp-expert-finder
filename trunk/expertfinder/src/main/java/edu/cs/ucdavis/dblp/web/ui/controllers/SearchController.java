@@ -12,6 +12,7 @@ import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
 
 import de.unitrier.dblp.Author;
+import edu.cs.ucdavis.dblp.web.ui.data.Exporter;
 import edu.ucdavis.cs.dblp.ServiceLocator;
 import edu.ucdavis.cs.dblp.experts.ResearcherDao;
 import edu.ucdavis.cs.dblp.experts.ResearcherProfile;
@@ -111,6 +112,10 @@ public class SearchController {
 		} else {
 			this.authors = Collections.emptyList();
 		}
+	}
+	
+	public String exportResults() {
+		return Exporter.exportResults(profile.getPublications());
 	}
 	
 	public ResearcherProfile getProfile() {

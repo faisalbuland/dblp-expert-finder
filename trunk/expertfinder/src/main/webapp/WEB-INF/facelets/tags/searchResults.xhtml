@@ -8,6 +8,11 @@
 <ui:composition>
 
 	<h3>#{resultsTitle}</h3>
+	<h:panelGroup rendered="#{showExportLink}" style="float:right; ">
+		<h:commandButton immediate="true" title="Export to CSV" 
+			action="#{exportBean.exportResults}"
+			image="/icons/page_excel.png" />
+	</h:panelGroup>
 	
 	<c:forEach var="result" items="#{searchResults}">
 		<div class="right_articles">

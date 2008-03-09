@@ -82,5 +82,10 @@
 			<artifactId>log4j</artifactId>
 			<version>1.2.14</version>
 		</dependency>
+		<dependency>
+			<groupId>net.sf.opencsv</groupId>
+			<artifactId>opencsv</artifactId>
+			<version>1.8</version>
+		</dependency>
 	</dependencies>
 </project>

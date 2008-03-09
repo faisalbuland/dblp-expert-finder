@@ -3,20 +3,36 @@
  */
 package edu.cs.ucdavis.dblp.web.ui.data;
 
+import java.io.BufferedWriter;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
 import java.io.Serializable;
+import java.io.UnsupportedEncodingException;
 import java.util.List;
 
-import javax.faces.component.UIComponent;
+import javax.faces.context.FacesContext;
+import javax.servlet.ServletOutputStream;
+import javax.servlet.http.HttpServletResponse;
 
 import org.apache.log4j.Logger;
+
+import au.com.bytecode.opencsv.CSVWriter;
+
+import com.google.common.base.Function;
+import com.google.common.base.Join;
+import com.google.common.collect.Iterables;
+import com.google.common.collect.Lists;
 
 import de.unitrier.dblp.Author;
 import edu.ucdavis.cs.dblp.ServiceLocator;
 import edu.ucdavis.cs.dblp.data.DblpPubDao;
+import edu.ucdavis.cs.dblp.data.Keyword;
 import edu.ucdavis.cs.dblp.data.Publication;
 import edu.ucdavis.cs.dblp.experts.NullAuthor;
 import edu.ucdavis.cs.dblp.experts.ResearcherProfile;
 import edu.ucdavis.cs.dblp.experts.ResearcherProfileImpl;
+import edu.ucdavis.cs.taxonomy.Categories;
 import edu.ucdavis.cs.taxonomy.Category;
 import edu.ucdavis.cs.taxonomy.CategoryDao;
 
@@ -49,6 +65,10 @@ public class NodeProfileBean implements Serializable {
 		}
 		
 		return "NODE_RESULTS_FOUND";
+	}
+	
+	public String exportResults() {
+		return Exporter.exportResults(profile.getPublications());
 	}
 	
 	// ---- Getters/Setters ----

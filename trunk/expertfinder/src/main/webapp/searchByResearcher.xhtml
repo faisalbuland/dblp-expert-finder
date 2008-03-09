@@ -123,8 +123,11 @@
 				
 		<ui:define name="results">
 			<h:panelGroup rendered="#{not empty searchController.profile}">
-				<a:displaySearchResults resultsTitle="Publications: (#{searchController.publicationsCount})" 
+				<a:displaySearchResults 
+					resultsTitle="Publications: (#{searchController.publicationsCount})" 
 					searchResults="#{searchController.profile.publications}"
+					exportBean="#{searchController}"
+					showExportLink="true"
 					>
 					<ui:define name="resultOutput">
 						<c:choose>
