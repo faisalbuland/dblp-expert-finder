@@ -39,8 +39,6 @@ public class PublicationContent implements Serializable {
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     protected Long id;
-/*	@OneToOne(optional=false, mappedBy="publicationContent")
-	protected Publication publication;*/
 	@Lob
 	@Column(length=1048576)
 	protected String abstractText;
@@ -70,20 +68,6 @@ public class PublicationContent implements Serializable {
 	public void setId(Long id) {
 		this.id = id;
 	}
-
-	/**
-	 * @return the publication
-	 *//*
-	public Publication getPublication() {
-		return publication;
-	}
-
-	*//**
-	 * @param publication the publication to set
-	 *//*
-	public void setPublication(Publication publication) {
-		this.publication = publication;
-	}*/
 
 	/**
 	 * @return the abstractText
