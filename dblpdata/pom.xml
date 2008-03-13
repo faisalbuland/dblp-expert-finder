@@ -193,6 +193,11 @@
 			<version>2.3</version>
 		</dependency>
 		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>1.4</version>
+		</dependency>
+		<dependency>
 			<groupId>ant</groupId>
 			<artifactId>ant</artifactId>
 			<version>1.6.5</version>
