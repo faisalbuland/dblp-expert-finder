@@ -32,15 +32,8 @@ public class SearchBean implements Serializable {
 		List<Category> leaves = Lists.immutableList(Iterables.filter(cats, Categories.ONLY_LEAF_NODES));
 		this.matches = leaves;
 				
-		return null;
-	}
-	
-	public String buildProfile() {
-		logger.info("buildProfile called");
-		
-		return null;
-	}
-		
+		return "NODES_SEARCHED";
+	}		
 	
 	public boolean isMatchesFound() {
 		boolean matchesFound;

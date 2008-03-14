@@ -142,7 +142,12 @@
 					</ui:define>
 				</a:displaySearchResults>
 				<br />
-				<iframe src="timeline/showTimeline.jsf" width="100%"/>
+			</h:panelGroup>
+		</ui:define>
+		
+		<ui:define name="preFooter">
+			<h:panelGroup rendered="#{not empty searchController.profile}">
+				<iframe src="timeline/showTimeline.jsf" height="325px"  width="100%" frameborder="0" marginheight="0" marginwidth="0"/>
 			</h:panelGroup>
 		</ui:define>
 	</ui:composition>
