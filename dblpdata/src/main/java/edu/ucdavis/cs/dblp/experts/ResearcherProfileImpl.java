@@ -23,6 +23,7 @@ import de.unitrier.dblp.Author;
 import edu.ucdavis.cs.dblp.ServiceLocator;
 import edu.ucdavis.cs.dblp.data.Keyword;
 import edu.ucdavis.cs.dblp.data.Publication;
+import edu.ucdavis.cs.dblp.data.StemmedKeyword;
 import edu.ucdavis.cs.taxonomy.Categories;
 import edu.ucdavis.cs.taxonomy.Category;
 
@@ -56,7 +57,7 @@ public class ResearcherProfileImpl implements ResearcherProfile {
 	private final void buildSets(Author researcher, Collection<Publication> pubs) {
 		coAuthors = new HashMultiset<Author>(pubs.size(), 0.75f);
 		keywords = new HashMultiset<Keyword>();
-		leafCategories = new HashMultiset<Category>();
+		leafCategories = new HashMultiset<Category>();		
 		
 		for (Publication pub : pubs) {
 			coAuthors.addAll(Lists.immutableList(
@@ -72,7 +73,13 @@ public class ResearcherProfileImpl implements ResearcherProfile {
 			})));
 			
 			if (pub.getContent() != null) {
-				keywords.addAll(pub.getContent().getKeywords());
+				keywords.addAll(Lists.immutableList(Iterables.transform(
+						pub.getContent().getKeywords(), new Function<Keyword, Keyword>() {
+					@Override
+					public Keyword apply(Keyword keyword) {
+						return new StemmedKeyword(keyword);
+					}
+				})));
 				leafCategories.addAll(
 						Lists.immutableList(
 							Iterables.filter(
