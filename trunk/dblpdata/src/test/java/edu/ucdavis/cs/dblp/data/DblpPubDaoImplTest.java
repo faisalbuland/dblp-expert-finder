@@ -138,9 +138,11 @@ public class DblpPubDaoImplTest {
 	}
 	
 	// TODO re-enable after building dist
+	@Test
 	public void testFindByCategoryId() throws Exception {
-		List<Publication> pubs = dao.findByCategory(ServiceLocator.getInstance().getCategoryDao().findById("H.5"));
-		logger.info("pubs for H.5:"+pubs);
+		List<Publication> pubs = dao.findByCategory(
+				ServiceLocator.getInstance().getCategoryDao().findByKey("B.3.1 Semiconductor Memories (B.7.1) Subjects: Dynamic memory (DRAM)"));
+		logger.info("pubs for B.3.1:"+pubs);
 		assertTrue(pubs.size() > 0);
 	}
 	
