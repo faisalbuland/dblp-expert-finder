@@ -16,17 +16,22 @@ function onLoad() {
   var bandInfos = [
     Timeline.createBandInfo({
         eventSource:    eventSource,
-        date:           "Jun 28 2006 00:00:00 GMT",
-        width:          "70%", 
+        width:			100,
+        trackHeight:	2.25,
+        date:           "Oct 01 2007 00:00:00 GMT",
+        width:          "80%", 
         intervalUnit:   Timeline.DateTime.MONTH, 
-        intervalPixels: 100
+        intervalPixels: 50
     }),
     Timeline.createBandInfo({
+        showEventText:  false,
+        trackHeight:    0.6,
+        trackGap:       0.3,
         eventSource:    eventSource,
-        date:           "Jun 28 2006 00:00:00 GMT",
-        width:          "30%", 
+        date:           "Oct 01 2007 00:00:00 GMT",
+        width:          "20%", 
         intervalUnit:   Timeline.DateTime.YEAR, 
-        intervalPixels: 200
+        intervalPixels: 100
     })
   ];
   bandInfos[1].syncWith = 0;
@@ -41,7 +46,7 @@ function onLoad() {
 </head>
 <body onload="onLoad();">
 <h:panelGroup rendered="#{not empty searchController.researcherName}">
-<div id="my-timeline" style="height: 150px; border: 1px solid #aaa" />
+<div id="my-timeline" style="height: 300px; border: 1px solid #aaa" />
 </h:panelGroup>
 </body>
 </html>
