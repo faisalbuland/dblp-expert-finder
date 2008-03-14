@@ -5,7 +5,6 @@ package edu.ucdavis.cs.dblp.text.io;
 
 import static edu.ucdavis.cs.taxonomy.Categories.ONLY_LEAF_NODES;
 
-import java.io.File;
 import java.io.IOException;
 import java.util.List;
 
@@ -17,10 +16,12 @@ import com.google.common.base.Join;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Multiset;
 import com.google.common.collect.Multisets;
-import com.google.common.collect.Sets;
 
+import de.schlichtherle.io.File;
+import de.schlichtherle.io.FileWriter;
 import edu.ucdavis.cs.dblp.ServiceLocator;
 import edu.ucdavis.cs.dblp.data.DblpPubDao;
+import edu.ucdavis.cs.dblp.data.Keyword;
 import edu.ucdavis.cs.dblp.data.Publication;
 import edu.ucdavis.cs.taxonomy.Category;
 
@@ -77,19 +78,36 @@ public class DumpPubsForCategories {
 				
 				StringBuilder fileContents = new StringBuilder();
 				fileContents.append(pub.getTitle()).
-							append('\n').
-							append(Join.join(" ", pub.getContent().getKeywords())).
-							append('\n').
+							append(" \n").
+							append(Join.join(" ", 
+									Iterables.transform(pub.getContent().getKeywords(), 
+											new Function<Keyword, String>() {
+										@Override
+										public String apply(Keyword keyword) {
+											return keyword.getKeyword();
+										}
+									}))).
+							append(" \n").
 							append(pub.getContent().getAbstractText());
 				
 				File catDir = new File(baseDir, catDirName);
-				File outputFile = new File(catDir, fileIdBuilder.toString());
+				File outputFile = new File(catDir+".zip", fileIdBuilder.toString());
+				FileWriter writer = null;
 				try {
-					FileUtils.writeStringToFile(
-							outputFile, fileContents.toString(), DEFAULT_FILE_ENCODING);
+					writer = new FileWriter(outputFile);
+					writer.write(fileContents.toString());
 				} catch (IOException e) {
 					logger.error("problem while writing "+outputFile, e);
 					throw new RuntimeException(e);
+				} finally {
+					if (writer != null) { 
+						try {
+							writer.close();
+						} catch (IOException e) {
+							logger.error("problem while closing writer for "+outputFile, e);
+							throw new RuntimeException(e);
+						} 
+					}
 				}
 			}
 			
