@@ -54,14 +54,14 @@ public class Event {
 		if (pub.getContent() != null) {
 			event.content = pub.getContent().getAbstractText();
 		}
-		event.duration = true;
+		event.duration = false;
 		
 		if (null != pub.getYear()) {
 			SimpleDateFormat formatter = new SimpleDateFormat("yyyy");
 			
 			try {
 				event.start = formatter.parse(pub.getYear());
-				event.end = formatter.parse(pub.getYear());
+//				event.end = formatter.parse(pub.getYear());
 			} catch (ParseException e) {
 				logger.error("error while parsing: "+pub.getYear()+" - "+e);
 			}
