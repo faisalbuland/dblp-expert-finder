@@ -1,0 +1,840 @@
+>=70
+<parameter key="A.0 GENERAL Subjects: Biographies/autobiographies" value="C:\dev\data\texts\A.0 GENERAL Subjects_ Biographies_autobiographies"/> <!-- 70 items -->
+<parameter key="A.0 GENERAL Subjects: Conference proceedings" value="C:\dev\data\texts\A.0 GENERAL Subjects_ Conference proceedings"/> <!-- 172 items -->
+<parameter key="A.1 INTRODUCTORY AND SURVEY" value="C:\dev\data\texts\A.1 INTRODUCTORY AND SURVEY"/> <!-- 446 items -->
+<parameter key="A.2 REFERENCE (e.g., dictionaries, encyclopedias, glossaries)" value="C:\dev\data\texts\A.2 REFERENCE (e.g., dictionaries, encyclopedias, glossaries)"/> <!-- 84 items -->
+<parameter key="A.m MISCELLANEOUS" value="C:\dev\data\texts\A.m MISCELLANEOUS"/> <!-- 402 items -->
+<parameter key="B.0 GENERAL" value="C:\dev\data\texts\B.0 GENERAL"/> <!-- 122 items -->
+<parameter key="B.1.4 Microprogram Design Aids (D.2.2, D.2.4, D.3.2, D.3.4) Subjects: Languages and compilers" value="C:\dev\data\texts\B.1.4 Microprogram Design Aids (D.2.2, D.2.4, D.3.2, D.3.4) Subjects_ Languages and compilers"/> <!-- 305 items -->
+<parameter key="B.1.4 Microprogram Design Aids (D.2.2, D.2.4, D.3.2, D.3.4) Subjects: Optimization" value="C:\dev\data\texts\B.1.4 Microprogram Design Aids (D.2.2, D.2.4, D.3.2, D.3.4) Subjects_ Optimization"/> <!-- 225 items -->
+<parameter key="B.1.5 Microcode Applications Subjects: Instruction set interpretation" value="C:\dev\data\texts\B.1.5 Microcode Applications Subjects_ Instruction set interpretation"/> <!-- 162 items -->
+<parameter key="B.2.1 Design Styles (C.1.1, C.1.2) Subjects: Parallel" value="C:\dev\data\texts\B.2.1 Design Styles (C.1.1, C.1.2) Subjects_ Parallel"/> <!-- 74 items -->
+<parameter key="B.2.1 Design Styles (C.1.1, C.1.2) Subjects: Pipeline" value="C:\dev\data\texts\B.2.1 Design Styles (C.1.1, C.1.2) Subjects_ Pipeline"/> <!-- 120 items -->
+<parameter key="B.2.4 High-Speed Arithmetic Subjects: Algorithms" value="C:\dev\data\texts\B.2.4 High-Speed Arithmetic Subjects_ Algorithms"/> <!-- 104 items -->
+<parameter key="B.3.1 Semiconductor Memories (B.7.1) Subjects: Dynamic memory (DRAM)" value="C:\dev\data\texts\B.3.1 Semiconductor Memories (B.7.1) Subjects_ Dynamic memory (DRAM)"/> <!-- 70 items -->
+<parameter key="B.3.2 Design Styles (D.4.2) Subjects: Associative memories" value="C:\dev\data\texts\B.3.2 Design Styles (D.4.2) Subjects_ Associative memories"/> <!-- 93 items -->
+<parameter key="B.3.2 Design Styles (D.4.2) Subjects: Cache memories" value="C:\dev\data\texts\B.3.2 Design Styles (D.4.2) Subjects_ Cache memories"/> <!-- 932 items -->
+<parameter key="B.3.2 Design Styles (D.4.2) Subjects: Mass storage (e.g., magnetic, optical, RAID)" value="C:\dev\data\texts\B.3.2 Design Styles (D.4.2) Subjects_ Mass storage (e.g., magnetic, optical, RAID)"/> <!-- 201 items -->
+<parameter key="B.3.2 Design Styles (D.4.2) Subjects: Primary memory" value="C:\dev\data\texts\B.3.2 Design Styles (D.4.2) Subjects_ Primary memory"/> <!-- 77 items -->
+<parameter key="B.3.2 Design Styles (D.4.2) Subjects: Shared memory" value="C:\dev\data\texts\B.3.2 Design Styles (D.4.2) Subjects_ Shared memory"/> <!-- 569 items -->
+<parameter key="B.3.2 Design Styles (D.4.2) Subjects: Virtual memory" value="C:\dev\data\texts\B.3.2 Design Styles (D.4.2) Subjects_ Virtual memory"/> <!-- 155 items -->
+<parameter key="B.3.3 Performance Analysis and Design Aids (B.8, C.4) Subjects: Simulation" value="C:\dev\data\texts\B.3.3 Performance Analysis and Design Aids (B.8, C.4) Subjects_ Simulation"/> <!-- 163 items -->
+<parameter key="B.4.2 Input/Output Devices Subjects: Channels and controllers" value="C:\dev\data\texts\B.4.2 Input_Output Devices Subjects_ Channels and controllers"/> <!-- 367 items -->
+<parameter key="B.4.2 Input/Output Devices Subjects: Image display" value="C:\dev\data\texts\B.4.2 Input_Output Devices Subjects_ Image display"/> <!-- 194 items -->
+<parameter key="B.4.2 Input/Output Devices Subjects: Voice" value="C:\dev\data\texts\B.4.2 Input_Output Devices Subjects_ Voice"/> <!-- 83 items -->
+<parameter key="B.4.3 Interconnections (Subsystems) Subjects: Asynchronous/synchronous operation" value="C:\dev\data\texts\B.4.3 Interconnections (Subsystems) Subjects_ Asynchronous_synchronous operation"/> <!-- 340 items -->
+<parameter key="B.4.3 Interconnections (Subsystems) Subjects: Topology (e.g., bus, point-to-point)" value="C:\dev\data\texts\B.4.3 Interconnections (Subsystems) Subjects_ Topology (e.g., bus, point-to-point)"/> <!-- 258 items -->
+<parameter key="B.5.1 Design Subjects: Arithmetic and logic units" value="C:\dev\data\texts\B.5.1 Design Subjects_ Arithmetic and logic units"/> <!-- 141 items -->
+<parameter key="B.5.1 Design Subjects: Control design" value="C:\dev\data\texts\B.5.1 Design Subjects_ Control design"/> <!-- 99 items -->
+<parameter key="B.5.1 Design Subjects: Data-path design" value="C:\dev\data\texts\B.5.1 Design Subjects_ Data-path design"/> <!-- 214 items -->
+<parameter key="B.5.1 Design Subjects: Memory design" value="C:\dev\data\texts\B.5.1 Design Subjects_ Memory design"/> <!-- 125 items -->
+<parameter key="B.5.1 Design Subjects: Styles (e.g., parallel, pipeline, special-purpose)" value="C:\dev\data\texts\B.5.1 Design Subjects_ Styles (e.g., parallel, pipeline, special-purpose)"/> <!-- 169 items -->
+<parameter key="B.5.2 Design Aids Subjects: Automatic synthesis" value="C:\dev\data\texts\B.5.2 Design Aids Subjects_ Automatic synthesis"/> <!-- 226 items -->
+<parameter key="B.5.2 Design Aids Subjects: Hardware description languages" value="C:\dev\data\texts\B.5.2 Design Aids Subjects_ Hardware description languages"/> <!-- 102 items -->
+<parameter key="B.5.2 Design Aids Subjects: Optimization" value="C:\dev\data\texts\B.5.2 Design Aids Subjects_ Optimization"/> <!-- 263 items -->
+<parameter key="B.6.1 Design Styles Subjects: Combinational logic" value="C:\dev\data\texts\B.6.1 Design Styles Subjects_ Combinational logic"/> <!-- 283 items -->
+<parameter key="B.6.1 Design Styles Subjects: Logic arrays" value="C:\dev\data\texts\B.6.1 Design Styles Subjects_ Logic arrays"/> <!-- 182 items -->
+<parameter key="B.6.1 Design Styles Subjects: Sequential circuits" value="C:\dev\data\texts\B.6.1 Design Styles Subjects_ Sequential circuits"/> <!-- 225 items -->
+<parameter key="B.6.3 Design Aids Subjects: Automatic synthesis" value="C:\dev\data\texts\B.6.3 Design Aids Subjects_ Automatic synthesis"/> <!-- 428 items -->
+<parameter key="B.6.3 Design Aids Subjects: Hardware description languages" value="C:\dev\data\texts\B.6.3 Design Aids Subjects_ Hardware description languages"/> <!-- 158 items -->
+<parameter key="B.6.3 Design Aids Subjects: Optimization" value="C:\dev\data\texts\B.6.3 Design Aids Subjects_ Optimization"/> <!-- 581 items -->
+<parameter key="B.6.3 Design Aids Subjects: Simulation" value="C:\dev\data\texts\B.6.3 Design Aids Subjects_ Simulation"/> <!-- 283 items -->
+<parameter key="B.6.3 Design Aids Subjects: Switching theory" value="C:\dev\data\texts\B.6.3 Design Aids Subjects_ Switching theory"/> <!-- 152 items -->
+<parameter key="B.6.3 Design Aids Subjects: Verification" value="C:\dev\data\texts\B.6.3 Design Aids Subjects_ Verification"/> <!-- 193 items -->
+<parameter key="B.7.0 General" value="C:\dev\data\texts\B.7.0 General"/> <!-- 93 items -->
+<parameter key="B.7.1 Types and Design Styles Subjects: Advanced technologies" value="C:\dev\data\texts\B.7.1 Types and Design Styles Subjects_ Advanced technologies"/> <!-- 575 items -->
+<parameter key="B.7.1 Types and Design Styles Subjects: Algorithms implemented in hardware" value="C:\dev\data\texts\B.7.1 Types and Design Styles Subjects_ Algorithms implemented in hardware"/> <!-- 715 items -->
+<parameter key="B.7.1 Types and Design Styles Subjects: Gate arrays" value="C:\dev\data\texts\B.7.1 Types and Design Styles Subjects_ Gate arrays"/> <!-- 932 items -->
+<parameter key="B.7.1 Types and Design Styles Subjects: Input/output circuits" value="C:\dev\data\texts\B.7.1 Types and Design Styles Subjects_ Input_output circuits"/> <!-- 239 items -->
+<parameter key="B.7.1 Types and Design Styles Subjects: Memory technologies" value="C:\dev\data\texts\B.7.1 Types and Design Styles Subjects_ Memory technologies"/> <!-- 591 items -->
+<parameter key="B.7.1 Types and Design Styles Subjects: Microprocessors and microcomputers" value="C:\dev\data\texts\B.7.1 Types and Design Styles Subjects_ Microprocessors and microcomputers"/> <!-- 529 items -->
+<parameter key="B.7.1 Types and Design Styles Subjects: VLSI (very large scale integration)" value="C:\dev\data\texts\B.7.1 Types and Design Styles Subjects_ VLSI (very large scale integration)"/> <!-- 1504 items -->
+<parameter key="B.7.2 Design Aids Subjects: Layout" value="C:\dev\data\texts\B.7.2 Design Aids Subjects_ Layout"/> <!-- 738 items -->
+<parameter key="B.7.2 Design Aids Subjects: Placement and routing" value="C:\dev\data\texts\B.7.2 Design Aids Subjects_ Placement and routing"/> <!-- 1356 items -->
+<parameter key="B.7.2 Design Aids Subjects: Simulation" value="C:\dev\data\texts\B.7.2 Design Aids Subjects_ Simulation"/> <!-- 674 items -->
+<parameter key="B.7.2 Design Aids Subjects: Verification" value="C:\dev\data\texts\B.7.2 Design Aids Subjects_ Verification"/> <!-- 203 items -->
+<parameter key="B.8.0 General" value="C:\dev\data\texts\B.8.0 General"/> <!-- 77 items -->
+<parameter key="B.8.1 Reliability, Testing, and Fault-Tolerance" value="C:\dev\data\texts\B.8.1 Reliability, Testing, and Fault-Tolerance"/> <!-- 595 items -->
+<parameter key="B.8.2 Performance Analysis and Design Aids" value="C:\dev\data\texts\B.8.2 Performance Analysis and Design Aids"/> <!-- 1742 items -->
+<parameter key="B.m MISCELLANEOUS Subjects: Design management" value="C:\dev\data\texts\B.m MISCELLANEOUS Subjects_ Design management"/> <!-- 556 items -->
+<parameter key="C.0 GENERAL Subjects: Hardware/software interfaces" value="C:\dev\data\texts\C.0 GENERAL Subjects_ Hardware_software interfaces"/> <!-- 273 items -->
+<parameter key="C.0 GENERAL Subjects: Instruction set design (e.g., RISC, CISC, VLIW)" value="C:\dev\data\texts\C.0 GENERAL Subjects_ Instruction set design (e.g., RISC, CISC, VLIW)"/> <!-- 622 items -->
+<parameter key="C.0 GENERAL Subjects: Modeling of computer architecture" value="C:\dev\data\texts\C.0 GENERAL Subjects_ Modeling of computer architecture"/> <!-- 185 items -->
+<parameter key="C.0 GENERAL Subjects: System architectures" value="C:\dev\data\texts\C.0 GENERAL Subjects_ System architectures"/> <!-- 338 items -->
+<parameter key="C.0 GENERAL Subjects: Systems specification methodology" value="C:\dev\data\texts\C.0 GENERAL Subjects_ Systems specification methodology"/> <!-- 183 items -->
+<parameter key="C.1.0 General" value="C:\dev\data\texts\C.1.0 General"/> <!-- 109 items -->
+<parameter key="C.1.1 Single Data Stream Architectures Subjects: RISC/CISC, VLIW architectures" value="C:\dev\data\texts\C.1.1 Single Data Stream Architectures Subjects_ RISC_CISC, VLIW architectures"/> <!-- 125 items -->
+<parameter key="C.1.2 Multiple Data Stream Architectures (Multiprocessors) Subjects: Array and vector processors" value="C:\dev\data\texts\C.1.2 Multiple Data Stream Architectures (Multiprocessors) Subjects_ Array and vector processors"/> <!-- 373 items -->
+<parameter key="C.1.2 Multiple Data Stream Architectures (Multiprocessors) Subjects: Interconnection architectures (e.g., common bus, multiport memory, crossbar switch)" value="C:\dev\data\texts\C.1.2 Multiple Data Stream Architectures (Multiprocessors) Subjects_ Interconnection architectures (e.g., common bus, multiport memory, crossbar switch)"/> <!-- 911 items -->
+<parameter key="C.1.2 Multiple Data Stream Architectures (Multiprocessors) Subjects: Multiple-instruction-stream, multiple-data-stream processors (MIMD)" value="C:\dev\data\texts\C.1.2 Multiple Data Stream Architectures (Multiprocessors) Subjects_ Multiple-instruction-stream, multiple-data-stream processors (MIMD)"/> <!-- 490 items -->
+<parameter key="C.1.2 Multiple Data Stream Architectures (Multiprocessors) Subjects: Parallel processors" value="C:\dev\data\texts\C.1.2 Multiple Data Stream Architectures (Multiprocessors) Subjects_ Parallel processors"/> <!-- 1529 items -->
+<parameter key="C.1.2 Multiple Data Stream Architectures (Multiprocessors) Subjects: Pipeline processors" value="C:\dev\data\texts\C.1.2 Multiple Data Stream Architectures (Multiprocessors) Subjects_ Pipeline processors"/> <!-- 116 items -->
+<parameter key="C.1.2 Multiple Data Stream Architectures (Multiprocessors) Subjects: Single-instruction-stream, multiple-data-stream processors (SIMD)" value="C:\dev\data\texts\C.1.2 Multiple Data Stream Architectures (Multiprocessors) Subjects_ Single-instruction-stream, multiple-data-stream processors (SIMD)"/> <!-- 202 items -->
+<parameter key="C.1.3 Other Architecture Styles Subjects: Adaptable architectures" value="C:\dev\data\texts\C.1.3 Other Architecture Styles Subjects_ Adaptable architectures"/> <!-- 212 items -->
+<parameter key="C.1.3 Other Architecture Styles Subjects: Cellular architecture (e.g., mobile)" value="C:\dev\data\texts\C.1.3 Other Architecture Styles Subjects_ Cellular architecture (e.g., mobile)"/> <!-- 377 items -->
+<parameter key="C.1.3 Other Architecture Styles Subjects: Data-flow architectures" value="C:\dev\data\texts\C.1.3 Other Architecture Styles Subjects_ Data-flow architectures"/> <!-- 211 items -->
+<parameter key="C.1.3 Other Architecture Styles Subjects: Heterogeneous (hybrid) systems" value="C:\dev\data\texts\C.1.3 Other Architecture Styles Subjects_ Heterogeneous (hybrid) systems"/> <!-- 114 items -->
+<parameter key="C.1.3 Other Architecture Styles Subjects: Neural nets" value="C:\dev\data\texts\C.1.3 Other Architecture Styles Subjects_ Neural nets"/> <!-- 86 items -->
+<parameter key="C.1.3 Other Architecture Styles Subjects: Pipeline processors" value="C:\dev\data\texts\C.1.3 Other Architecture Styles Subjects_ Pipeline processors"/> <!-- 160 items -->
+<parameter key="C.1.4 Parallel Architectures Subjects: Distributed architectures" value="C:\dev\data\texts\C.1.4 Parallel Architectures Subjects_ Distributed architectures"/> <!-- 260 items -->
+<parameter key="C.1.4 Parallel Architectures Subjects: Mobile processors" value="C:\dev\data\texts\C.1.4 Parallel Architectures Subjects_ Mobile processors"/> <!-- 195 items -->
+<parameter key="C.2.0 General Subjects: Data communications" value="C:\dev\data\texts\C.2.0 General Subjects_ Data communications"/> <!-- 722 items -->
+<parameter key="C.2.0 General Subjects: Open Systems Interconnection reference model (OSI)" value="C:\dev\data\texts\C.2.0 General Subjects_ Open Systems Interconnection reference model (OSI)"/> <!-- 113 items -->
+<parameter key="C.2.0 General Subjects: Security and protection (e.g., firewalls)" value="C:\dev\data\texts\C.2.0 General Subjects_ Security and protection (e.g., firewalls)"/> <!-- 1386 items -->
+<parameter key="C.2.1 Network Architecture and Design Subjects: Asynchronous Transfer Mode (ATM)" value="C:\dev\data\texts\C.2.1 Network Architecture and Design Subjects_ Asynchronous Transfer Mode (ATM)"/> <!-- 324 items -->
+<parameter key="C.2.1 Network Architecture and Design Subjects: Circuit-switching networks" value="C:\dev\data\texts\C.2.1 Network Architecture and Design Subjects_ Circuit-switching networks"/> <!-- 214 items -->
+<parameter key="C.2.1 Network Architecture and Design Subjects: Distributed networks" value="C:\dev\data\texts\C.2.1 Network Architecture and Design Subjects_ Distributed networks"/> <!-- 953 items -->
+<parameter key="C.2.1 Network Architecture and Design Subjects: ISDN (Integrated Services Digital Network)" value="C:\dev\data\texts\C.2.1 Network Architecture and Design Subjects_ ISDN (Integrated Services Digital Network)"/> <!-- 143 items -->
+<parameter key="C.2.1 Network Architecture and Design Subjects: Network communications" value="C:\dev\data\texts\C.2.1 Network Architecture and Design Subjects_ Network communications"/> <!-- 1652 items -->
+<parameter key="C.2.1 Network Architecture and Design Subjects: Network topology" value="C:\dev\data\texts\C.2.1 Network Architecture and Design Subjects_ Network topology"/> <!-- 1362 items -->
+<parameter key="C.2.1 Network Architecture and Design Subjects: Packet-switching networks" value="C:\dev\data\texts\C.2.1 Network Architecture and Design Subjects_ Packet-switching networks"/> <!-- 1387 items -->
+<parameter key="C.2.1 Network Architecture and Design Subjects: Store and forward networks" value="C:\dev\data\texts\C.2.1 Network Architecture and Design Subjects_ Store and forward networks"/> <!-- 185 items -->
+<parameter key="C.2.1 Network Architecture and Design Subjects: Wireless communication" value="C:\dev\data\texts\C.2.1 Network Architecture and Design Subjects_ Wireless communication"/> <!-- 3356 items -->
+<parameter key="C.2.2 Network Protocols Subjects: Applications (SMTP, FTP, etc.)" value="C:\dev\data\texts\C.2.2 Network Protocols Subjects_ Applications (SMTP, FTP, etc.)"/> <!-- 420 items -->
+<parameter key="C.2.2 Network Protocols Subjects: Protocol architecture (OSI model)" value="C:\dev\data\texts\C.2.2 Network Protocols Subjects_ Protocol architecture (OSI model)"/> <!-- 491 items -->
+<parameter key="C.2.2 Network Protocols Subjects: Protocol verification" value="C:\dev\data\texts\C.2.2 Network Protocols Subjects_ Protocol verification"/> <!-- 388 items -->
+<parameter key="C.2.2 Network Protocols Subjects: Routing protocols" value="C:\dev\data\texts\C.2.2 Network Protocols Subjects_ Routing protocols"/> <!-- 1469 items -->
+<parameter key="C.2.3 Network Operations Subjects: Network management" value="C:\dev\data\texts\C.2.3 Network Operations Subjects_ Network management"/> <!-- 1558 items -->
+<parameter key="C.2.3 Network Operations Subjects: Network monitoring" value="C:\dev\data\texts\C.2.3 Network Operations Subjects_ Network monitoring"/> <!-- 957 items -->
+<parameter key="C.2.3 Network Operations Subjects: Public networks" value="C:\dev\data\texts\C.2.3 Network Operations Subjects_ Public networks"/> <!-- 130 items -->
+<parameter key="C.2.4 Distributed Systems Subjects: Client/server" value="C:\dev\data\texts\C.2.4 Distributed Systems Subjects_ Client_server"/> <!-- 506 items -->
+<parameter key="C.2.4 Distributed Systems Subjects: Distributed applications" value="C:\dev\data\texts\C.2.4 Distributed Systems Subjects_ Distributed applications"/> <!-- 2064 items -->
+<parameter key="C.2.4 Distributed Systems Subjects: Distributed databases" value="C:\dev\data\texts\C.2.4 Distributed Systems Subjects_ Distributed databases"/> <!-- 371 items -->
+<parameter key="C.2.4 Distributed Systems Subjects: Network operating systems" value="C:\dev\data\texts\C.2.4 Distributed Systems Subjects_ Network operating systems"/> <!-- 337 items -->
+<parameter key="C.2.5 Local and Wide-Area Networks Subjects: Access schemes" value="C:\dev\data\texts\C.2.5 Local and Wide-Area Networks Subjects_ Access schemes"/> <!-- 417 items -->
+<parameter key="C.2.5 Local and Wide-Area Networks Subjects: High-speed (e.g., FDDI, fiber channel, ATM)" value="C:\dev\data\texts\C.2.5 Local and Wide-Area Networks Subjects_ High-speed (e.g., FDDI, fiber channel, ATM)"/> <!-- 268 items -->
+<parameter key="C.2.5 Local and Wide-Area Networks Subjects: Internet (e.g., TCP/IP)" value="C:\dev\data\texts\C.2.5 Local and Wide-Area Networks Subjects_ Internet (e.g., TCP_IP)"/> <!-- 947 items -->
+<parameter key="C.2.5 Local and Wide-Area Networks Subjects: Token rings" value="C:\dev\data\texts\C.2.5 Local and Wide-Area Networks Subjects_ Token rings"/> <!-- 119 items -->
+<parameter key="C.2.6 Internetworking (C.2.2) Subjects: Routers" value="C:\dev\data\texts\C.2.6 Internetworking (C.2.2) Subjects_ Routers"/> <!-- 352 items -->
+<parameter key="C.2.6 Internetworking (C.2.2) Subjects: Standards (e.g., TCP/IP)" value="C:\dev\data\texts\C.2.6 Internetworking (C.2.2) Subjects_ Standards (e.g., TCP_IP)"/> <!-- 171 items -->
+<parameter key="C.2.m Miscellaneous" value="C:\dev\data\texts\C.2.m Miscellaneous"/> <!-- 124 items -->
+<parameter key="C.3 SPECIAL-PURPOSE AND APPLICATION-BASED SYSTEMS (J.7) Subjects: Microprocessor/microcomputer applications" value="C:\dev\data\texts\C.3 SPECIAL-PURPOSE AND APPLICATION-BASED SYSTEMS (J.7) Subjects_ Microprocessor_microcomputer applications"/> <!-- 188 items -->
+<parameter key="C.3 SPECIAL-PURPOSE AND APPLICATION-BASED SYSTEMS (J.7) Subjects: Process control systems" value="C:\dev\data\texts\C.3 SPECIAL-PURPOSE AND APPLICATION-BASED SYSTEMS (J.7) Subjects_ Process control systems"/> <!-- 89 items -->
+<parameter key="C.3 SPECIAL-PURPOSE AND APPLICATION-BASED SYSTEMS (J.7) Subjects: Real-time and embedded systems" value="C:\dev\data\texts\C.3 SPECIAL-PURPOSE AND APPLICATION-BASED SYSTEMS (J.7) Subjects_ Real-time and embedded systems"/> <!-- 1996 items -->
+<parameter key="C.3 SPECIAL-PURPOSE AND APPLICATION-BASED SYSTEMS (J.7) Subjects: Signal processing systems" value="C:\dev\data\texts\C.3 SPECIAL-PURPOSE AND APPLICATION-BASED SYSTEMS (J.7) Subjects_ Signal processing systems"/> <!-- 634 items -->
+<parameter key="C.3 SPECIAL-PURPOSE AND APPLICATION-BASED SYSTEMS (J.7) Subjects: Smartcards" value="C:\dev\data\texts\C.3 SPECIAL-PURPOSE AND APPLICATION-BASED SYSTEMS (J.7) Subjects_ Smartcards"/> <!-- 77 items -->
+<parameter key="C.4 PERFORMANCE OF SYSTEMS Subjects: Design studies" value="C:\dev\data\texts\C.4 PERFORMANCE OF SYSTEMS Subjects_ Design studies"/> <!-- 1354 items -->
+<parameter key="C.4 PERFORMANCE OF SYSTEMS Subjects: Fault tolerance" value="C:\dev\data\texts\C.4 PERFORMANCE OF SYSTEMS Subjects_ Fault tolerance"/> <!-- 449 items -->
+<parameter key="C.4 PERFORMANCE OF SYSTEMS Subjects: Measurement techniques" value="C:\dev\data\texts\C.4 PERFORMANCE OF SYSTEMS Subjects_ Measurement techniques"/> <!-- 1074 items -->
+<parameter key="C.4 PERFORMANCE OF SYSTEMS Subjects: Modeling techniques" value="C:\dev\data\texts\C.4 PERFORMANCE OF SYSTEMS Subjects_ Modeling techniques"/> <!-- 2289 items -->
+<parameter key="C.4 PERFORMANCE OF SYSTEMS Subjects: Performance attributes" value="C:\dev\data\texts\C.4 PERFORMANCE OF SYSTEMS Subjects_ Performance attributes"/> <!-- 2675 items -->
+<parameter key="C.4 PERFORMANCE OF SYSTEMS Subjects: Reliability, availability, and serviceability" value="C:\dev\data\texts\C.4 PERFORMANCE OF SYSTEMS Subjects_ Reliability, availability, and serviceability"/> <!-- 1158 items -->
+<parameter key="C.5.0 General" value="C:\dev\data\texts\C.5.0 General"/> <!-- 74 items -->
+<parameter key="C.5.1 Large and Medium (``Mainframe'') Computers Subjects: Super (very large) computers" value="C:\dev\data\texts\C.5.1 Large and Medium (``Mainframe'') Computers Subjects_ Super (very large) computers"/> <!-- 2023 items -->
+<parameter key="C.5.3 Microcomputers Subjects: Microprocessors" value="C:\dev\data\texts\C.5.3 Microcomputers Subjects_ Microprocessors"/> <!-- 170 items -->
+<parameter key="C.5.3 Microcomputers Subjects: Portable devices (e.g., laptops, personal digital assistants)" value="C:\dev\data\texts\C.5.3 Microcomputers Subjects_ Portable devices (e.g., laptops, personal digital assistants)"/> <!-- 558 items -->
+<parameter key="C.5.3 Microcomputers Subjects: Workstations" value="C:\dev\data\texts\C.5.3 Microcomputers Subjects_ Workstations"/> <!-- 104 items -->
+<parameter key="C.5.4 VLSI Systems" value="C:\dev\data\texts\C.5.4 VLSI Systems"/> <!-- 105 items -->
+<parameter key="C.5.5 Servers" value="C:\dev\data\texts\C.5.5 Servers"/> <!-- 105 items -->
+<parameter key="D.0 GENERAL" value="C:\dev\data\texts\D.0 GENERAL"/> <!-- 348 items -->
+<parameter key="D.1.0 General" value="C:\dev\data\texts\D.1.0 General"/> <!-- 128 items -->
+<parameter key="D.1.1 Applicative (Functional) Programming" value="C:\dev\data\texts\D.1.1 Applicative (Functional) Programming"/> <!-- 427 items -->
+<parameter key="D.1.2 Automatic Programming (I.2.2)" value="C:\dev\data\texts\D.1.2 Automatic Programming (I.2.2)"/> <!-- 269 items -->
+<parameter key="D.1.3 Concurrent Programming Subjects: Distributed programming" value="C:\dev\data\texts\D.1.3 Concurrent Programming Subjects_ Distributed programming"/> <!-- 673 items -->
+<parameter key="D.1.3 Concurrent Programming Subjects: Parallel programming" value="C:\dev\data\texts\D.1.3 Concurrent Programming Subjects_ Parallel programming"/> <!-- 1554 items -->
+<parameter key="D.1.5 Object-oriented Programming" value="C:\dev\data\texts\D.1.5 Object-oriented Programming"/> <!-- 787 items -->
+<parameter key="D.1.6 Logic Programming" value="C:\dev\data\texts\D.1.6 Logic Programming"/> <!-- 223 items -->
+<parameter key="D.1.7 Visual Programming" value="C:\dev\data\texts\D.1.7 Visual Programming"/> <!-- 211 items -->
+<parameter key="D.1.m Miscellaneous" value="C:\dev\data\texts\D.1.m Miscellaneous"/> <!-- 88 items -->
+<parameter key="D.2.0 General (K.5.1) Subjects: Protection mechanisms" value="C:\dev\data\texts\D.2.0 General (K.5.1) Subjects_ Protection mechanisms"/> <!-- 173 items -->
+<parameter key="D.2.0 General (K.5.1) Subjects: Standards" value="C:\dev\data\texts\D.2.0 General (K.5.1) Subjects_ Standards"/> <!-- 139 items -->
+<parameter key="D.2.1 Requirements/Specifications (D.3.1) Subjects: Elicitation methods (e.g., rapid prototyping, interviews, JAD)" value="C:\dev\data\texts\D.2.1 Requirements_Specifications (D.3.1) Subjects_ Elicitation methods (e.g., rapid prototyping, interviews, JAD)"/> <!-- 242 items -->
+<parameter key="D.2.1 Requirements/Specifications (D.3.1) Subjects: Languages" value="C:\dev\data\texts\D.2.1 Requirements_Specifications (D.3.1) Subjects_ Languages"/> <!-- 598 items -->
+<parameter key="D.2.1 Requirements/Specifications (D.3.1) Subjects: Methodologies (e.g., object-oriented, structured)" value="C:\dev\data\texts\D.2.1 Requirements_Specifications (D.3.1) Subjects_ Methodologies (e.g., object-oriented, structured)"/> <!-- 868 items -->
+<parameter key="D.2.1 Requirements/Specifications (D.3.1) Subjects: Tools" value="C:\dev\data\texts\D.2.1 Requirements_Specifications (D.3.1) Subjects_ Tools"/> <!-- 414 items -->
+<parameter key="D.2.2 Design Tools and Techniques Subjects: Computer-aided software engineering (CASE)" value="C:\dev\data\texts\D.2.2 Design Tools and Techniques Subjects_ Computer-aided software engineering (CASE)"/> <!-- 718 items -->
+<parameter key="D.2.2 Design Tools and Techniques Subjects: Evolutionary prototyping" value="C:\dev\data\texts\D.2.2 Design Tools and Techniques Subjects_ Evolutionary prototyping"/> <!-- 200 items -->
+<parameter key="D.2.2 Design Tools and Techniques Subjects: Flow charts" value="C:\dev\data\texts\D.2.2 Design Tools and Techniques Subjects_ Flow charts"/> <!-- 114 items -->
+<parameter key="D.2.2 Design Tools and Techniques Subjects: Modules and interfaces" value="C:\dev\data\texts\D.2.2 Design Tools and Techniques Subjects_ Modules and interfaces"/> <!-- 711 items -->
+<parameter key="D.2.2 Design Tools and Techniques Subjects: Object-oriented design methods" value="C:\dev\data\texts\D.2.2 Design Tools and Techniques Subjects_ Object-oriented design methods"/> <!-- 586 items -->
+<parameter key="D.2.2 Design Tools and Techniques Subjects: Petri nets" value="C:\dev\data\texts\D.2.2 Design Tools and Techniques Subjects_ Petri nets"/> <!-- 282 items -->
+<parameter key="D.2.2 Design Tools and Techniques Subjects: Software libraries" value="C:\dev\data\texts\D.2.2 Design Tools and Techniques Subjects_ Software libraries"/> <!-- 690 items -->
+<parameter key="D.2.2 Design Tools and Techniques Subjects: State diagrams" value="C:\dev\data\texts\D.2.2 Design Tools and Techniques Subjects_ State diagrams"/> <!-- 221 items -->
+<parameter key="D.2.2 Design Tools and Techniques Subjects: Structured programming" value="C:\dev\data\texts\D.2.2 Design Tools and Techniques Subjects_ Structured programming"/> <!-- 98 items -->
+<parameter key="D.2.2 Design Tools and Techniques Subjects: User interfaces" value="C:\dev\data\texts\D.2.2 Design Tools and Techniques Subjects_ User interfaces"/> <!-- 2359 items -->
+<parameter key="D.2.3 Coding Tools and Techniques Subjects: Object-oriented programming" value="C:\dev\data\texts\D.2.3 Coding Tools and Techniques Subjects_ Object-oriented programming"/> <!-- 243 items -->
+<parameter key="D.2.3 Coding Tools and Techniques Subjects: Program editors" value="C:\dev\data\texts\D.2.3 Coding Tools and Techniques Subjects_ Program editors"/> <!-- 167 items -->
+<parameter key="D.2.3 Coding Tools and Techniques Subjects: Structured programming" value="C:\dev\data\texts\D.2.3 Coding Tools and Techniques Subjects_ Structured programming"/> <!-- 93 items -->
+<parameter key="D.2.4 Software/Program Verification (F.3.1) Subjects: Assertion checkers" value="C:\dev\data\texts\D.2.4 Software_Program Verification (F.3.1) Subjects_ Assertion checkers"/> <!-- 251 items -->
+<parameter key="D.2.4 Software/Program Verification (F.3.1) Subjects: Class invariants" value="C:\dev\data\texts\D.2.4 Software_Program Verification (F.3.1) Subjects_ Class invariants"/> <!-- 95 items -->
+<parameter key="D.2.4 Software/Program Verification (F.3.1) Subjects: Correctness proofs" value="C:\dev\data\texts\D.2.4 Software_Program Verification (F.3.1) Subjects_ Correctness proofs"/> <!-- 808 items -->
+<parameter key="D.2.4 Software/Program Verification (F.3.1) Subjects: Formal methods" value="C:\dev\data\texts\D.2.4 Software_Program Verification (F.3.1) Subjects_ Formal methods"/> <!-- 908 items -->
+<parameter key="D.2.4 Software/Program Verification (F.3.1) Subjects: Model checking" value="C:\dev\data\texts\D.2.4 Software_Program Verification (F.3.1) Subjects_ Model checking"/> <!-- 613 items -->
+<parameter key="D.2.4 Software/Program Verification (F.3.1) Subjects: Programming by contract" value="C:\dev\data\texts\D.2.4 Software_Program Verification (F.3.1) Subjects_ Programming by contract"/> <!-- 124 items -->
+<parameter key="D.2.4 Software/Program Verification (F.3.1) Subjects: Reliability" value="C:\dev\data\texts\D.2.4 Software_Program Verification (F.3.1) Subjects_ Reliability"/> <!-- 448 items -->
+<parameter key="D.2.4 Software/Program Verification (F.3.1) Subjects: Statistical methods" value="C:\dev\data\texts\D.2.4 Software_Program Verification (F.3.1) Subjects_ Statistical methods"/> <!-- 93 items -->
+<parameter key="D.2.4 Software/Program Verification (F.3.1) Subjects: Validation" value="C:\dev\data\texts\D.2.4 Software_Program Verification (F.3.1) Subjects_ Validation"/> <!-- 630 items -->
+<parameter key="D.2.5 Testing and Debugging Subjects: Code inspections and walk-throughs" value="C:\dev\data\texts\D.2.5 Testing and Debugging Subjects_ Code inspections and walk-throughs"/> <!-- 140 items -->
+<parameter key="D.2.5 Testing and Debugging Subjects: Debugging aids" value="C:\dev\data\texts\D.2.5 Testing and Debugging Subjects_ Debugging aids"/> <!-- 744 items -->
+<parameter key="D.2.5 Testing and Debugging Subjects: Diagnostics" value="C:\dev\data\texts\D.2.5 Testing and Debugging Subjects_ Diagnostics"/> <!-- 197 items -->
+<parameter key="D.2.5 Testing and Debugging Subjects: Distributed debugging" value="C:\dev\data\texts\D.2.5 Testing and Debugging Subjects_ Distributed debugging"/> <!-- 113 items -->
+<parameter key="D.2.5 Testing and Debugging Subjects: Error handling and recovery" value="C:\dev\data\texts\D.2.5 Testing and Debugging Subjects_ Error handling and recovery"/> <!-- 231 items -->
+<parameter key="D.2.5 Testing and Debugging Subjects: Monitors" value="C:\dev\data\texts\D.2.5 Testing and Debugging Subjects_ Monitors"/> <!-- 236 items -->
+<parameter key="D.2.5 Testing and Debugging Subjects: Symbolic execution" value="C:\dev\data\texts\D.2.5 Testing and Debugging Subjects_ Symbolic execution"/> <!-- 136 items -->
+<parameter key="D.2.5 Testing and Debugging Subjects: Testing tools (e.g., data generators, coverage testing)" value="C:\dev\data\texts\D.2.5 Testing and Debugging Subjects_ Testing tools (e.g., data generators, coverage testing)"/> <!-- 755 items -->
+<parameter key="D.2.5 Testing and Debugging Subjects: Tracing" value="C:\dev\data\texts\D.2.5 Testing and Debugging Subjects_ Tracing"/> <!-- 343 items -->
+<parameter key="D.2.6 Programming Environments Subjects: Graphical environments" value="C:\dev\data\texts\D.2.6 Programming Environments Subjects_ Graphical environments"/> <!-- 233 items -->
+<parameter key="D.2.6 Programming Environments Subjects: Integrated environments" value="C:\dev\data\texts\D.2.6 Programming Environments Subjects_ Integrated environments"/> <!-- 309 items -->
+<parameter key="D.2.6 Programming Environments Subjects: Interactive environments" value="C:\dev\data\texts\D.2.6 Programming Environments Subjects_ Interactive environments"/> <!-- 589 items -->
+<parameter key="D.2.6 Programming Environments Subjects: Programmer workbench" value="C:\dev\data\texts\D.2.6 Programming Environments Subjects_ Programmer workbench"/> <!-- 79 items -->
+<parameter key="D.2.7 Distribution, Maintenance, and Enhancement Subjects: Documentation" value="C:\dev\data\texts\D.2.7 Distribution, Maintenance, and Enhancement Subjects_ Documentation"/> <!-- 643 items -->
+<parameter key="D.2.7 Distribution, Maintenance, and Enhancement Subjects: Portability" value="C:\dev\data\texts\D.2.7 Distribution, Maintenance, and Enhancement Subjects_ Portability"/> <!-- 189 items -->
+<parameter key="D.2.7 Distribution, Maintenance, and Enhancement Subjects: Restructuring, reverse engineering, and reengineering" value="C:\dev\data\texts\D.2.7 Distribution, Maintenance, and Enhancement Subjects_ Restructuring, reverse engineering, and reengineering"/> <!-- 597 items -->
+<parameter key="D.2.7 Distribution, Maintenance, and Enhancement Subjects: Version control" value="C:\dev\data\texts\D.2.7 Distribution, Maintenance, and Enhancement Subjects_ Version control"/> <!-- 252 items -->
+<parameter key="D.2.8 Metrics (D.4.8) Subjects: Complexity measures" value="C:\dev\data\texts\D.2.8 Metrics (D.4.8) Subjects_ Complexity measures"/> <!-- 384 items -->
+<parameter key="D.2.8 Metrics (D.4.8) Subjects: Performance measures" value="C:\dev\data\texts\D.2.8 Metrics (D.4.8) Subjects_ Performance measures"/> <!-- 801 items -->
+<parameter key="D.2.8 Metrics (D.4.8) Subjects: Process metrics" value="C:\dev\data\texts\D.2.8 Metrics (D.4.8) Subjects_ Process metrics"/> <!-- 154 items -->
+<parameter key="D.2.8 Metrics (D.4.8) Subjects: Product metrics" value="C:\dev\data\texts\D.2.8 Metrics (D.4.8) Subjects_ Product metrics"/> <!-- 215 items -->
+<parameter key="D.2.9 Management (K.6.3, K.6.4) Subjects: Cost estimation" value="C:\dev\data\texts\D.2.9 Management (K.6.3, K.6.4) Subjects_ Cost estimation"/> <!-- 171 items -->
+<parameter key="D.2.9 Management (K.6.3, K.6.4) Subjects: Life cycle" value="C:\dev\data\texts\D.2.9 Management (K.6.3, K.6.4) Subjects_ Life cycle"/> <!-- 361 items -->
+<parameter key="D.2.9 Management (K.6.3, K.6.4) Subjects: Productivity" value="C:\dev\data\texts\D.2.9 Management (K.6.3, K.6.4) Subjects_ Productivity"/> <!-- 212 items -->
+<parameter key="D.2.9 Management (K.6.3, K.6.4) Subjects: Programming teams" value="C:\dev\data\texts\D.2.9 Management (K.6.3, K.6.4) Subjects_ Programming teams"/> <!-- 406 items -->
+<parameter key="D.2.9 Management (K.6.3, K.6.4) Subjects: Software configuration management" value="C:\dev\data\texts\D.2.9 Management (K.6.3, K.6.4) Subjects_ Software configuration management"/> <!-- 383 items -->
+<parameter key="D.2.9 Management (K.6.3, K.6.4) Subjects: Software process models (e.g., CMM, ISO, PSP)" value="C:\dev\data\texts\D.2.9 Management (K.6.3, K.6.4) Subjects_ Software process models (e.g., CMM, ISO, PSP)"/> <!-- 341 items -->
+<parameter key="D.2.9 Management (K.6.3, K.6.4) Subjects: Software quality assurance (SQA)" value="C:\dev\data\texts\D.2.9 Management (K.6.3, K.6.4) Subjects_ Software quality assurance (SQA)"/> <!-- 310 items -->
+<parameter key="D.2.9 Management (K.6.3, K.6.4) Subjects: Time estimation" value="C:\dev\data\texts\D.2.9 Management (K.6.3, K.6.4) Subjects_ Time estimation"/> <!-- 93 items -->
+<parameter key="D.2.10 Design (D.2.2) Subjects: Methodologies" value="C:\dev\data\texts\D.2.10 Design (D.2.2) Subjects_ Methodologies"/> <!-- 484 items -->
+<parameter key="D.2.10 Design (D.2.2) Subjects: Representation" value="C:\dev\data\texts\D.2.10 Design (D.2.2) Subjects_ Representation"/> <!-- 89 items -->
+<parameter key="D.2.11 Software Architectures Subjects: Data abstraction" value="C:\dev\data\texts\D.2.11 Software Architectures Subjects_ Data abstraction"/> <!-- 188 items -->
+<parameter key="D.2.11 Software Architectures Subjects: Domain-specific architectures" value="C:\dev\data\texts\D.2.11 Software Architectures Subjects_ Domain-specific architectures"/> <!-- 643 items -->
+<parameter key="D.2.11 Software Architectures Subjects: Information hiding" value="C:\dev\data\texts\D.2.11 Software Architectures Subjects_ Information hiding"/> <!-- 112 items -->
+<parameter key="D.2.11 Software Architectures Subjects: Languages (e.g., description, interconnection, definition)" value="C:\dev\data\texts\D.2.11 Software Architectures Subjects_ Languages (e.g., description, interconnection, definition)"/> <!-- 282 items -->
+<parameter key="D.2.11 Software Architectures Subjects: Patterns (e.g., client/server, pipeline, blackboard)" value="C:\dev\data\texts\D.2.11 Software Architectures Subjects_ Patterns (e.g., client_server, pipeline, blackboard)"/> <!-- 433 items -->
+<parameter key="D.2.12 Interoperability Subjects: Data mapping" value="C:\dev\data\texts\D.2.12 Interoperability Subjects_ Data mapping"/> <!-- 157 items -->
+<parameter key="D.2.12 Interoperability Subjects: Distributed objects" value="C:\dev\data\texts\D.2.12 Interoperability Subjects_ Distributed objects"/> <!-- 213 items -->
+<parameter key="D.2.13 Reusable Software Subjects: Domain engineering" value="C:\dev\data\texts\D.2.13 Reusable Software Subjects_ Domain engineering"/> <!-- 232 items -->
+<parameter key="D.2.13 Reusable Software Subjects: Reusable libraries" value="C:\dev\data\texts\D.2.13 Reusable Software Subjects_ Reusable libraries"/> <!-- 316 items -->
+<parameter key="D.2.13 Reusable Software Subjects: Reuse models" value="C:\dev\data\texts\D.2.13 Reusable Software Subjects_ Reuse models"/> <!-- 259 items -->
+<parameter key="D.2.m Miscellaneous Subjects: Rapid prototyping" value="C:\dev\data\texts\D.2.m Miscellaneous Subjects_ Rapid prototyping"/> <!-- 180 items -->
+<parameter key="D.2.m Miscellaneous Subjects: Reusable software" value="C:\dev\data\texts\D.2.m Miscellaneous Subjects_ Reusable software"/> <!-- 504 items -->
+<parameter key="D.3.0 General Subjects: Standards" value="C:\dev\data\texts\D.3.0 General Subjects_ Standards"/> <!-- 145 items -->
+<parameter key="D.3.1 Formal Definitions and Theory (D.2.1, F.3.1, F.3.2, F.4.2, F.4.3) Subjects: Semantics" value="C:\dev\data\texts\D.3.1 Formal Definitions and Theory (D.2.1, F.3.1, F.3.2, F.4.2, F.4.3) Subjects_ Semantics"/> <!-- 1048 items -->
+<parameter key="D.3.1 Formal Definitions and Theory (D.2.1, F.3.1, F.3.2, F.4.2, F.4.3) Subjects: Syntax" value="C:\dev\data\texts\D.3.1 Formal Definitions and Theory (D.2.1, F.3.1, F.3.2, F.4.2, F.4.3) Subjects_ Syntax"/> <!-- 517 items -->
+<parameter key="D.3.2 Language Classifications Subjects: Applicative (functional) languages" value="C:\dev\data\texts\D.3.2 Language Classifications Subjects_ Applicative (functional) languages"/> <!-- 627 items -->
+<parameter key="D.3.2 Language Classifications Subjects: Concurrent, distributed, and parallel languages" value="C:\dev\data\texts\D.3.2 Language Classifications Subjects_ Concurrent, distributed, and parallel languages"/> <!-- 572 items -->
+<parameter key="D.3.2 Language Classifications Subjects: Constraint and logic languages" value="C:\dev\data\texts\D.3.2 Language Classifications Subjects_ Constraint and logic languages"/> <!-- 271 items -->
+<parameter key="D.3.2 Language Classifications Subjects: Data-flow languages" value="C:\dev\data\texts\D.3.2 Language Classifications Subjects_ Data-flow languages"/> <!-- 246 items -->
+<parameter key="D.3.2 Language Classifications Subjects: Design languages" value="C:\dev\data\texts\D.3.2 Language Classifications Subjects_ Design languages"/> <!-- 155 items -->
+<parameter key="D.3.2 Language Classifications Subjects: Extensible languages" value="C:\dev\data\texts\D.3.2 Language Classifications Subjects_ Extensible languages"/> <!-- 130 items -->
+<parameter key="D.3.2 Language Classifications Subjects: Macro and assembly languages" value="C:\dev\data\texts\D.3.2 Language Classifications Subjects_ Macro and assembly languages"/> <!-- 116 items -->
+<parameter key="D.3.2 Language Classifications Subjects: Multiparadigm languages" value="C:\dev\data\texts\D.3.2 Language Classifications Subjects_ Multiparadigm languages"/> <!-- 103 items -->
+<parameter key="D.3.2 Language Classifications Subjects: Object-oriented languages" value="C:\dev\data\texts\D.3.2 Language Classifications Subjects_ Object-oriented languages"/> <!-- 624 items -->
+<parameter key="D.3.2 Language Classifications Subjects: Specialized application languages" value="C:\dev\data\texts\D.3.2 Language Classifications Subjects_ Specialized application languages"/> <!-- 292 items -->
+<parameter key="D.3.2 Language Classifications Subjects: Very high-level languages" value="C:\dev\data\texts\D.3.2 Language Classifications Subjects_ Very high-level languages"/> <!-- 161 items -->
+<parameter key="D.3.3 Language Constructs and Features (E.2) Subjects: Abstract data types" value="C:\dev\data\texts\D.3.3 Language Constructs and Features (E.2) Subjects_ Abstract data types"/> <!-- 639 items -->
+<parameter key="D.3.3 Language Constructs and Features (E.2) Subjects: Classes and objects" value="C:\dev\data\texts\D.3.3 Language Constructs and Features (E.2) Subjects_ Classes and objects"/> <!-- 589 items -->
+<parameter key="D.3.3 Language Constructs and Features (E.2) Subjects: Concurrent programming structures" value="C:\dev\data\texts\D.3.3 Language Constructs and Features (E.2) Subjects_ Concurrent programming structures"/> <!-- 820 items -->
+<parameter key="D.3.3 Language Constructs and Features (E.2) Subjects: Constraints" value="C:\dev\data\texts\D.3.3 Language Constructs and Features (E.2) Subjects_ Constraints"/> <!-- 244 items -->
+<parameter key="D.3.3 Language Constructs and Features (E.2) Subjects: Control structures" value="C:\dev\data\texts\D.3.3 Language Constructs and Features (E.2) Subjects_ Control structures"/> <!-- 752 items -->
+<parameter key="D.3.3 Language Constructs and Features (E.2) Subjects: Data types and structures" value="C:\dev\data\texts\D.3.3 Language Constructs and Features (E.2) Subjects_ Data types and structures"/> <!-- 1017 items -->
+<parameter key="D.3.3 Language Constructs and Features (E.2) Subjects: Dynamic storage management" value="C:\dev\data\texts\D.3.3 Language Constructs and Features (E.2) Subjects_ Dynamic storage management"/> <!-- 223 items -->
+<parameter key="D.3.3 Language Constructs and Features (E.2) Subjects: Frameworks" value="C:\dev\data\texts\D.3.3 Language Constructs and Features (E.2) Subjects_ Frameworks"/> <!-- 450 items -->
+<parameter key="D.3.3 Language Constructs and Features (E.2) Subjects: Inheritance" value="C:\dev\data\texts\D.3.3 Language Constructs and Features (E.2) Subjects_ Inheritance"/> <!-- 289 items -->
+<parameter key="D.3.3 Language Constructs and Features (E.2) Subjects: Modules, packages" value="C:\dev\data\texts\D.3.3 Language Constructs and Features (E.2) Subjects_ Modules, packages"/> <!-- 362 items -->
+<parameter key="D.3.3 Language Constructs and Features (E.2) Subjects: Patterns" value="C:\dev\data\texts\D.3.3 Language Constructs and Features (E.2) Subjects_ Patterns"/> <!-- 172 items -->
+<parameter key="D.3.3 Language Constructs and Features (E.2) Subjects: Polymorphism" value="C:\dev\data\texts\D.3.3 Language Constructs and Features (E.2) Subjects_ Polymorphism"/> <!-- 528 items -->
+<parameter key="D.3.3 Language Constructs and Features (E.2) Subjects: Procedures, functions, and subroutines" value="C:\dev\data\texts\D.3.3 Language Constructs and Features (E.2) Subjects_ Procedures, functions, and subroutines"/> <!-- 671 items -->
+<parameter key="D.3.3 Language Constructs and Features (E.2) Subjects: Recursion" value="C:\dev\data\texts\D.3.3 Language Constructs and Features (E.2) Subjects_ Recursion"/> <!-- 141 items -->
+<parameter key="D.3.4 Processors Subjects: Code generation" value="C:\dev\data\texts\D.3.4 Processors Subjects_ Code generation"/> <!-- 1465 items -->
+<parameter key="D.3.4 Processors Subjects: Compilers" value="C:\dev\data\texts\D.3.4 Processors Subjects_ Compilers"/> <!-- 4012 items -->
+<parameter key="D.3.4 Processors Subjects: Debuggers" value="C:\dev\data\texts\D.3.4 Processors Subjects_ Debuggers"/> <!-- 118 items -->
+<parameter key="D.3.4 Processors Subjects: Incremental compilers" value="C:\dev\data\texts\D.3.4 Processors Subjects_ Incremental compilers"/> <!-- 127 items -->
+<parameter key="D.3.4 Processors Subjects: Interpreters" value="C:\dev\data\texts\D.3.4 Processors Subjects_ Interpreters"/> <!-- 447 items -->
+<parameter key="D.3.4 Processors Subjects: Memory management (garbage collection)" value="C:\dev\data\texts\D.3.4 Processors Subjects_ Memory management (garbage collection)"/> <!-- 386 items -->
+<parameter key="D.3.4 Processors Subjects: Optimization" value="C:\dev\data\texts\D.3.4 Processors Subjects_ Optimization"/> <!-- 2880 items -->
+<parameter key="D.3.4 Processors Subjects: Parsing" value="C:\dev\data\texts\D.3.4 Processors Subjects_ Parsing"/> <!-- 342 items -->
+<parameter key="D.3.4 Processors Subjects: Preprocessors" value="C:\dev\data\texts\D.3.4 Processors Subjects_ Preprocessors"/> <!-- 103 items -->
+<parameter key="D.3.4 Processors Subjects: Retargetable compilers" value="C:\dev\data\texts\D.3.4 Processors Subjects_ Retargetable compilers"/> <!-- 125 items -->
+<parameter key="D.3.4 Processors Subjects: Run-time environments" value="C:\dev\data\texts\D.3.4 Processors Subjects_ Run-time environments"/> <!-- 699 items -->
+<parameter key="D.3.4 Processors Subjects: Translator writing systems and compiler generators" value="C:\dev\data\texts\D.3.4 Processors Subjects_ Translator writing systems and compiler generators"/> <!-- 387 items -->
+<parameter key="D.4.0 General" value="C:\dev\data\texts\D.4.0 General"/> <!-- 605 items -->
+<parameter key="D.4.1 Process Management Subjects: Concurrency" value="C:\dev\data\texts\D.4.1 Process Management Subjects_ Concurrency"/> <!-- 603 items -->
+<parameter key="D.4.1 Process Management Subjects: Deadlocks" value="C:\dev\data\texts\D.4.1 Process Management Subjects_ Deadlocks"/> <!-- 137 items -->
+<parameter key="D.4.1 Process Management Subjects: Multiprocessing/multiprogramming/multitasking" value="C:\dev\data\texts\D.4.1 Process Management Subjects_ Multiprocessing_multiprogramming_multitasking"/> <!-- 475 items -->
+<parameter key="D.4.1 Process Management Subjects: Mutual exclusion" value="C:\dev\data\texts\D.4.1 Process Management Subjects_ Mutual exclusion"/> <!-- 219 items -->
+<parameter key="D.4.1 Process Management Subjects: Scheduling" value="C:\dev\data\texts\D.4.1 Process Management Subjects_ Scheduling"/> <!-- 880 items -->
+<parameter key="D.4.1 Process Management Subjects: Synchronization" value="C:\dev\data\texts\D.4.1 Process Management Subjects_ Synchronization"/> <!-- 738 items -->
+<parameter key="D.4.1 Process Management Subjects: Threads" value="C:\dev\data\texts\D.4.1 Process Management Subjects_ Threads"/> <!-- 275 items -->
+<parameter key="D.4.2 Storage Management Subjects: Allocation/deallocation strategies" value="C:\dev\data\texts\D.4.2 Storage Management Subjects_ Allocation_deallocation strategies"/> <!-- 388 items -->
+<parameter key="D.4.2 Storage Management Subjects: Distributed memories" value="C:\dev\data\texts\D.4.2 Storage Management Subjects_ Distributed memories"/> <!-- 197 items -->
+<parameter key="D.4.2 Storage Management Subjects: Garbage collection" value="C:\dev\data\texts\D.4.2 Storage Management Subjects_ Garbage collection"/> <!-- 170 items -->
+<parameter key="D.4.2 Storage Management Subjects: Main memory" value="C:\dev\data\texts\D.4.2 Storage Management Subjects_ Main memory"/> <!-- 96 items -->
+<parameter key="D.4.2 Storage Management Subjects: Secondary storage" value="C:\dev\data\texts\D.4.2 Storage Management Subjects_ Secondary storage"/> <!-- 229 items -->
+<parameter key="D.4.2 Storage Management Subjects: Storage hierarchies" value="C:\dev\data\texts\D.4.2 Storage Management Subjects_ Storage hierarchies"/> <!-- 116 items -->
+<parameter key="D.4.2 Storage Management Subjects: Virtual memory" value="C:\dev\data\texts\D.4.2 Storage Management Subjects_ Virtual memory"/> <!-- 200 items -->
+<parameter key="D.4.3 File Systems Management (E.5) Subjects: Access methods" value="C:\dev\data\texts\D.4.3 File Systems Management (E.5) Subjects_ Access methods"/> <!-- 158 items -->
+<parameter key="D.4.3 File Systems Management (E.5) Subjects: Directory structures" value="C:\dev\data\texts\D.4.3 File Systems Management (E.5) Subjects_ Directory structures"/> <!-- 70 items -->
+<parameter key="D.4.3 File Systems Management (E.5) Subjects: Distributed file systems" value="C:\dev\data\texts\D.4.3 File Systems Management (E.5) Subjects_ Distributed file systems"/> <!-- 295 items -->
+<parameter key="D.4.3 File Systems Management (E.5) Subjects: File organization" value="C:\dev\data\texts\D.4.3 File Systems Management (E.5) Subjects_ File organization"/> <!-- 180 items -->
+<parameter key="D.4.4 Communications Management (C.2) Subjects: Buffering" value="C:\dev\data\texts\D.4.4 Communications Management (C.2) Subjects_ Buffering"/> <!-- 124 items -->
+<parameter key="D.4.4 Communications Management (C.2) Subjects: Input/output" value="C:\dev\data\texts\D.4.4 Communications Management (C.2) Subjects_ Input_output"/> <!-- 146 items -->
+<parameter key="D.4.4 Communications Management (C.2) Subjects: Message sending" value="C:\dev\data\texts\D.4.4 Communications Management (C.2) Subjects_ Message sending"/> <!-- 347 items -->
+<parameter key="D.4.4 Communications Management (C.2) Subjects: Network communication" value="C:\dev\data\texts\D.4.4 Communications Management (C.2) Subjects_ Network communication"/> <!-- 349 items -->
+<parameter key="D.4.5 Reliability Subjects: Checkpoint/restart" value="C:\dev\data\texts\D.4.5 Reliability Subjects_ Checkpoint_restart"/> <!-- 199 items -->
+<parameter key="D.4.5 Reliability Subjects: Fault-tolerance" value="C:\dev\data\texts\D.4.5 Reliability Subjects_ Fault-tolerance"/> <!-- 627 items -->
+<parameter key="D.4.6 Security and Protection (K.6.5) Subjects: Access controls" value="C:\dev\data\texts\D.4.6 Security and Protection (K.6.5) Subjects_ Access controls"/> <!-- 809 items -->
+<parameter key="D.4.6 Security and Protection (K.6.5) Subjects: Authentication" value="C:\dev\data\texts\D.4.6 Security and Protection (K.6.5) Subjects_ Authentication"/> <!-- 386 items -->
+<parameter key="D.4.6 Security and Protection (K.6.5) Subjects: Cryptographic controls" value="C:\dev\data\texts\D.4.6 Security and Protection (K.6.5) Subjects_ Cryptographic controls"/> <!-- 314 items -->
+<parameter key="D.4.6 Security and Protection (K.6.5) Subjects: Information flow controls" value="C:\dev\data\texts\D.4.6 Security and Protection (K.6.5) Subjects_ Information flow controls"/> <!-- 233 items -->
+<parameter key="D.4.6 Security and Protection (K.6.5) Subjects: Invasive software (e.g., viruses, worms, Trojan horses)" value="C:\dev\data\texts\D.4.6 Security and Protection (K.6.5) Subjects_ Invasive software (e.g., viruses, worms, Trojan horses)"/> <!-- 214 items -->
+<parameter key="D.4.7 Organization and Design Subjects: Distributed systems" value="C:\dev\data\texts\D.4.7 Organization and Design Subjects_ Distributed systems"/> <!-- 973 items -->
+<parameter key="D.4.7 Organization and Design Subjects: Interactive systems" value="C:\dev\data\texts\D.4.7 Organization and Design Subjects_ Interactive systems"/> <!-- 145 items -->
+<parameter key="D.4.7 Organization and Design Subjects: Real-time systems and embedded systems" value="C:\dev\data\texts\D.4.7 Organization and Design Subjects_ Real-time systems and embedded systems"/> <!-- 700 items -->
+<parameter key="D.4.8 Performance (C.4, D.2.8, I.6) Subjects: Measurements" value="C:\dev\data\texts\D.4.8 Performance (C.4, D.2.8, I.6) Subjects_ Measurements"/> <!-- 421 items -->
+<parameter key="D.4.8 Performance (C.4, D.2.8, I.6) Subjects: Modeling and prediction" value="C:\dev\data\texts\D.4.8 Performance (C.4, D.2.8, I.6) Subjects_ Modeling and prediction"/> <!-- 425 items -->
+<parameter key="D.4.8 Performance (C.4, D.2.8, I.6) Subjects: Operational analysis" value="C:\dev\data\texts\D.4.8 Performance (C.4, D.2.8, I.6) Subjects_ Operational analysis"/> <!-- 172 items -->
+<parameter key="D.4.8 Performance (C.4, D.2.8, I.6) Subjects: Queueing theory" value="C:\dev\data\texts\D.4.8 Performance (C.4, D.2.8, I.6) Subjects_ Queueing theory"/> <!-- 385 items -->
+<parameter key="D.4.8 Performance (C.4, D.2.8, I.6) Subjects: Simulation" value="C:\dev\data\texts\D.4.8 Performance (C.4, D.2.8, I.6) Subjects_ Simulation"/> <!-- 277 items -->
+<parameter key="D.4.8 Performance (C.4, D.2.8, I.6) Subjects: Stochastic analysis" value="C:\dev\data\texts\D.4.8 Performance (C.4, D.2.8, I.6) Subjects_ Stochastic analysis"/> <!-- 185 items -->
+<parameter key="E.1 DATA STRUCTURES Subjects: Arrays" value="C:\dev\data\texts\E.1 DATA STRUCTURES Subjects_ Arrays"/> <!-- 430 items -->
+<parameter key="E.1 DATA STRUCTURES Subjects: Distributed data structures" value="C:\dev\data\texts\E.1 DATA STRUCTURES Subjects_ Distributed data structures"/> <!-- 229 items -->
+<parameter key="E.1 DATA STRUCTURES Subjects: Graphs and networks" value="C:\dev\data\texts\E.1 DATA STRUCTURES Subjects_ Graphs and networks"/> <!-- 442 items -->
+<parameter key="E.1 DATA STRUCTURES Subjects: Lists, stacks, and queues" value="C:\dev\data\texts\E.1 DATA STRUCTURES Subjects_ Lists, stacks, and queues"/> <!-- 304 items -->
+<parameter key="E.1 DATA STRUCTURES Subjects: Trees" value="C:\dev\data\texts\E.1 DATA STRUCTURES Subjects_ Trees"/> <!-- 895 items -->
+<parameter key="E.2 DATA STORAGE REPRESENTATIONS Subjects: Hash-table representations" value="C:\dev\data\texts\E.2 DATA STORAGE REPRESENTATIONS Subjects_ Hash-table representations"/> <!-- 268 items -->
+<parameter key="E.2 DATA STORAGE REPRESENTATIONS Subjects: Linked representations" value="C:\dev\data\texts\E.2 DATA STORAGE REPRESENTATIONS Subjects_ Linked representations"/> <!-- 154 items -->
+<parameter key="E.2 DATA STORAGE REPRESENTATIONS Subjects: Object representation" value="C:\dev\data\texts\E.2 DATA STORAGE REPRESENTATIONS Subjects_ Object representation"/> <!-- 78 items -->
+<parameter key="E.3 DATA ENCRYPTION Subjects: Public key cryptosystems" value="C:\dev\data\texts\E.3 DATA ENCRYPTION Subjects_ Public key cryptosystems"/> <!-- 377 items -->
+<parameter key="E.4 CODING AND INFORMATION THEORY (H.1.1) Subjects: Data compaction and compression" value="C:\dev\data\texts\E.4 CODING AND INFORMATION THEORY (H.1.1) Subjects_ Data compaction and compression"/> <!-- 823 items -->
+<parameter key="E.4 CODING AND INFORMATION THEORY (H.1.1) Subjects: Error control codes" value="C:\dev\data\texts\E.4 CODING AND INFORMATION THEORY (H.1.1) Subjects_ Error control codes"/> <!-- 134 items -->
+<parameter key="E.4 CODING AND INFORMATION THEORY (H.1.1) Subjects: Formal models of communication" value="C:\dev\data\texts\E.4 CODING AND INFORMATION THEORY (H.1.1) Subjects_ Formal models of communication"/> <!-- 173 items -->
+<parameter key="E.5 FILES (D.4.3, F.2.2, H.2) Subjects: Backup/recovery" value="C:\dev\data\texts\E.5 FILES (D.4.3, F.2.2, H.2) Subjects_ Backup_recovery"/> <!-- 87 items -->
+<parameter key="E.5 FILES (D.4.3, F.2.2, H.2) Subjects: Organization/structure" value="C:\dev\data\texts\E.5 FILES (D.4.3, F.2.2, H.2) Subjects_ Organization_structure"/> <!-- 196 items -->
+<parameter key="E.5 FILES (D.4.3, F.2.2, H.2) Subjects: Sorting/searching" value="C:\dev\data\texts\E.5 FILES (D.4.3, F.2.2, H.2) Subjects_ Sorting_searching"/> <!-- 104 items -->
+<parameter key="F.0 GENERAL" value="C:\dev\data\texts\F.0 GENERAL"/> <!-- 124 items -->
+<parameter key="F.1.1 Models of Computation (F.4.1) Subjects: Automata (e.g., finite, push-down, resource-bounded)" value="C:\dev\data\texts\F.1.1 Models of Computation (F.4.1) Subjects_ Automata (e.g., finite, push-down, resource-bounded)"/> <!-- 722 items -->
+<parameter key="F.1.1 Models of Computation (F.4.1) Subjects: Bounded-action devices (e.g., Turing machines, random access machines)" value="C:\dev\data\texts\F.1.1 Models of Computation (F.4.1) Subjects_ Bounded-action devices (e.g., Turing machines, random access machines)"/> <!-- 200 items -->
+<parameter key="F.1.1 Models of Computation (F.4.1) Subjects: Computability theory" value="C:\dev\data\texts\F.1.1 Models of Computation (F.4.1) Subjects_ Computability theory"/> <!-- 166 items -->
+<parameter key="F.1.1 Models of Computation (F.4.1) Subjects: Relations between models" value="C:\dev\data\texts\F.1.1 Models of Computation (F.4.1) Subjects_ Relations between models"/> <!-- 245 items -->
+<parameter key="F.1.1 Models of Computation (F.4.1) Subjects: Self-modifying machines (e.g., neural networks)" value="C:\dev\data\texts\F.1.1 Models of Computation (F.4.1) Subjects_ Self-modifying machines (e.g., neural networks)"/> <!-- 175 items -->
+<parameter key="F.1.1 Models of Computation (F.4.1) Subjects: Unbounded-action devices (e.g., cellular automata, circuits, networks of machines)" value="C:\dev\data\texts\F.1.1 Models of Computation (F.4.1) Subjects_ Unbounded-action devices (e.g., cellular automata, circuits, networks of machines)"/> <!-- 448 items -->
+<parameter key="F.1.2 Modes of Computation Subjects: Alternation and nondeterminism" value="C:\dev\data\texts\F.1.2 Modes of Computation Subjects_ Alternation and nondeterminism"/> <!-- 164 items -->
+<parameter key="F.1.2 Modes of Computation Subjects: Interactive and reactive computation" value="C:\dev\data\texts\F.1.2 Modes of Computation Subjects_ Interactive and reactive computation"/> <!-- 162 items -->
+<parameter key="F.1.2 Modes of Computation Subjects: Online computation" value="C:\dev\data\texts\F.1.2 Modes of Computation Subjects_ Online computation"/> <!-- 166 items -->
+<parameter key="F.1.2 Modes of Computation Subjects: Parallelism and concurrency" value="C:\dev\data\texts\F.1.2 Modes of Computation Subjects_ Parallelism and concurrency"/> <!-- 3119 items -->
+<parameter key="F.1.2 Modes of Computation Subjects: Probabilistic computation" value="C:\dev\data\texts\F.1.2 Modes of Computation Subjects_ Probabilistic computation"/> <!-- 1351 items -->
+<parameter key="F.1.3 Complexity Measures and Classes (F.2) Subjects: Complexity hierarchies" value="C:\dev\data\texts\F.1.3 Complexity Measures and Classes (F.2) Subjects_ Complexity hierarchies"/> <!-- 109 items -->
+<parameter key="F.1.3 Complexity Measures and Classes (F.2) Subjects: Reducibility and completeness" value="C:\dev\data\texts\F.1.3 Complexity Measures and Classes (F.2) Subjects_ Reducibility and completeness"/> <!-- 437 items -->
+<parameter key="F.1.3 Complexity Measures and Classes (F.2) Subjects: Relations among complexity classes" value="C:\dev\data\texts\F.1.3 Complexity Measures and Classes (F.2) Subjects_ Relations among complexity classes"/> <!-- 106 items -->
+<parameter key="F.2.0 General" value="C:\dev\data\texts\F.2.0 General"/> <!-- 281 items -->
+<parameter key="F.2.1 Numerical Algorithms and Problems (G.1, G.4, I.1) Subjects: Computation of transforms (e.g., fast Fourier transform)" value="C:\dev\data\texts\F.2.1 Numerical Algorithms and Problems (G.1, G.4, I.1) Subjects_ Computation of transforms (e.g., fast Fourier transform)"/> <!-- 346 items -->
+<parameter key="F.2.1 Numerical Algorithms and Problems (G.1, G.4, I.1) Subjects: Computations in finite fields" value="C:\dev\data\texts\F.2.1 Numerical Algorithms and Problems (G.1, G.4, I.1) Subjects_ Computations in finite fields"/> <!-- 179 items -->
+<parameter key="F.2.1 Numerical Algorithms and Problems (G.1, G.4, I.1) Subjects: Computations on matrices" value="C:\dev\data\texts\F.2.1 Numerical Algorithms and Problems (G.1, G.4, I.1) Subjects_ Computations on matrices"/> <!-- 1450 items -->
+<parameter key="F.2.1 Numerical Algorithms and Problems (G.1, G.4, I.1) Subjects: Computations on polynomials" value="C:\dev\data\texts\F.2.1 Numerical Algorithms and Problems (G.1, G.4, I.1) Subjects_ Computations on polynomials"/> <!-- 1038 items -->
+<parameter key="F.2.1 Numerical Algorithms and Problems (G.1, G.4, I.1) Subjects: Number-theoretic computations (e.g., factoring, primality testing)" value="C:\dev\data\texts\F.2.1 Numerical Algorithms and Problems (G.1, G.4, I.1) Subjects_ Number-theoretic computations (e.g., factoring, primality testing)"/> <!-- 438 items -->
+<parameter key="F.2.2 Nonnumerical Algorithms and Problems (E.2, E.3, E.4, E.5, G.2, H.2, H.3) Subjects: Complexity of proof procedures" value="C:\dev\data\texts\F.2.2 Nonnumerical Algorithms and Problems (E.2, E.3, E.4, E.5, G.2, H.2, H.3) Subjects_ Complexity of proof procedures"/> <!-- 249 items -->
+<parameter key="F.2.2 Nonnumerical Algorithms and Problems (E.2, E.3, E.4, E.5, G.2, H.2, H.3) Subjects: Computations on discrete structures" value="C:\dev\data\texts\F.2.2 Nonnumerical Algorithms and Problems (E.2, E.3, E.4, E.5, G.2, H.2, H.3) Subjects_ Computations on discrete structures"/> <!-- 3748 items -->
+<parameter key="F.2.2 Nonnumerical Algorithms and Problems (E.2, E.3, E.4, E.5, G.2, H.2, H.3) Subjects: Geometrical problems and computations" value="C:\dev\data\texts\F.2.2 Nonnumerical Algorithms and Problems (E.2, E.3, E.4, E.5, G.2, H.2, H.3) Subjects_ Geometrical problems and computations"/> <!-- 2301 items -->
+<parameter key="F.2.2 Nonnumerical Algorithms and Problems (E.2, E.3, E.4, E.5, G.2, H.2, H.3) Subjects: Pattern matching" value="C:\dev\data\texts\F.2.2 Nonnumerical Algorithms and Problems (E.2, E.3, E.4, E.5, G.2, H.2, H.3) Subjects_ Pattern matching"/> <!-- 623 items -->
+<parameter key="F.2.2 Nonnumerical Algorithms and Problems (E.2, E.3, E.4, E.5, G.2, H.2, H.3) Subjects: Routing and layout" value="C:\dev\data\texts\F.2.2 Nonnumerical Algorithms and Problems (E.2, E.3, E.4, E.5, G.2, H.2, H.3) Subjects_ Routing and layout"/> <!-- 2006 items -->
+<parameter key="F.2.2 Nonnumerical Algorithms and Problems (E.2, E.3, E.4, E.5, G.2, H.2, H.3) Subjects: Sequencing and scheduling" value="C:\dev\data\texts\F.2.2 Nonnumerical Algorithms and Problems (E.2, E.3, E.4, E.5, G.2, H.2, H.3) Subjects_ Sequencing and scheduling"/> <!-- 2350 items -->
+<parameter key="F.2.2 Nonnumerical Algorithms and Problems (E.2, E.3, E.4, E.5, G.2, H.2, H.3) Subjects: Sorting and searching" value="C:\dev\data\texts\F.2.2 Nonnumerical Algorithms and Problems (E.2, E.3, E.4, E.5, G.2, H.2, H.3) Subjects_ Sorting and searching"/> <!-- 1387 items -->
+<parameter key="F.2.m Miscellaneous" value="C:\dev\data\texts\F.2.m Miscellaneous"/> <!-- 115 items -->
+<parameter key="F.3.1 Specifying and Verifying and Reasoning about Programs (D.2.1, D.2.4, D.3.1, E.1) Subjects: Assertions" value="C:\dev\data\texts\F.3.1 Specifying and Verifying and Reasoning about Programs (D.2.1, D.2.4, D.3.1, E.1) Subjects_ Assertions"/> <!-- 362 items -->
+<parameter key="F.3.1 Specifying and Verifying and Reasoning about Programs (D.2.1, D.2.4, D.3.1, E.1) Subjects: Invariants" value="C:\dev\data\texts\F.3.1 Specifying and Verifying and Reasoning about Programs (D.2.1, D.2.4, D.3.1, E.1) Subjects_ Invariants"/> <!-- 403 items -->
+<parameter key="F.3.1 Specifying and Verifying and Reasoning about Programs (D.2.1, D.2.4, D.3.1, E.1) Subjects: Logics of programs" value="C:\dev\data\texts\F.3.1 Specifying and Verifying and Reasoning about Programs (D.2.1, D.2.4, D.3.1, E.1) Subjects_ Logics of programs"/> <!-- 456 items -->
+<parameter key="F.3.1 Specifying and Verifying and Reasoning about Programs (D.2.1, D.2.4, D.3.1, E.1) Subjects: Mechanical verification" value="C:\dev\data\texts\F.3.1 Specifying and Verifying and Reasoning about Programs (D.2.1, D.2.4, D.3.1, E.1) Subjects_ Mechanical verification"/> <!-- 627 items -->
+<parameter key="F.3.1 Specifying and Verifying and Reasoning about Programs (D.2.1, D.2.4, D.3.1, E.1) Subjects: Pre- and post-conditions" value="C:\dev\data\texts\F.3.1 Specifying and Verifying and Reasoning about Programs (D.2.1, D.2.4, D.3.1, E.1) Subjects_ Pre- and post-conditions"/> <!-- 307 items -->
+<parameter key="F.3.1 Specifying and Verifying and Reasoning about Programs (D.2.1, D.2.4, D.3.1, E.1) Subjects: Specification techniques" value="C:\dev\data\texts\F.3.1 Specifying and Verifying and Reasoning about Programs (D.2.1, D.2.4, D.3.1, E.1) Subjects_ Specification techniques"/> <!-- 703 items -->
+<parameter key="F.3.2 Semantics of Programming Languages (D.3.1) Subjects: Algebraic approaches to semantics" value="C:\dev\data\texts\F.3.2 Semantics of Programming Languages (D.3.1) Subjects_ Algebraic approaches to semantics"/> <!-- 243 items -->
+<parameter key="F.3.2 Semantics of Programming Languages (D.3.1) Subjects: Denotational semantics" value="C:\dev\data\texts\F.3.2 Semantics of Programming Languages (D.3.1) Subjects_ Denotational semantics"/> <!-- 395 items -->
+<parameter key="F.3.2 Semantics of Programming Languages (D.3.1) Subjects: Operational semantics" value="C:\dev\data\texts\F.3.2 Semantics of Programming Languages (D.3.1) Subjects_ Operational semantics"/> <!-- 593 items -->
+<parameter key="F.3.2 Semantics of Programming Languages (D.3.1) Subjects: Partial evaluation" value="C:\dev\data\texts\F.3.2 Semantics of Programming Languages (D.3.1) Subjects_ Partial evaluation"/> <!-- 237 items -->
+<parameter key="F.3.2 Semantics of Programming Languages (D.3.1) Subjects: Program analysis" value="C:\dev\data\texts\F.3.2 Semantics of Programming Languages (D.3.1) Subjects_ Program analysis"/> <!-- 689 items -->
+<parameter key="F.3.3 Studies of Program Constructs (D.3.2, D.3.3) Subjects: Control primitives" value="C:\dev\data\texts\F.3.3 Studies of Program Constructs (D.3.2, D.3.3) Subjects_ Control primitives"/> <!-- 316 items -->
+<parameter key="F.3.3 Studies of Program Constructs (D.3.2, D.3.3) Subjects: Functional constructs" value="C:\dev\data\texts\F.3.3 Studies of Program Constructs (D.3.2, D.3.3) Subjects_ Functional constructs"/> <!-- 356 items -->
+<parameter key="F.3.3 Studies of Program Constructs (D.3.2, D.3.3) Subjects: Object-oriented constructs" value="C:\dev\data\texts\F.3.3 Studies of Program Constructs (D.3.2, D.3.3) Subjects_ Object-oriented constructs"/> <!-- 133 items -->
+<parameter key="F.3.3 Studies of Program Constructs (D.3.2, D.3.3) Subjects: Program and recursion schemes" value="C:\dev\data\texts\F.3.3 Studies of Program Constructs (D.3.2, D.3.3) Subjects_ Program and recursion schemes"/> <!-- 215 items -->
+<parameter key="F.3.3 Studies of Program Constructs (D.3.2, D.3.3) Subjects: Type structure" value="C:\dev\data\texts\F.3.3 Studies of Program Constructs (D.3.2, D.3.3) Subjects_ Type structure"/> <!-- 877 items -->
+<parameter key="F.4.1 Mathematical Logic (F.1.1, I.2.2, I.2.3, I.2.4) Subjects: Computability theory" value="C:\dev\data\texts\F.4.1 Mathematical Logic (F.1.1, I.2.2, I.2.3, I.2.4) Subjects_ Computability theory"/> <!-- 208 items -->
+<parameter key="F.4.1 Mathematical Logic (F.1.1, I.2.2, I.2.3, I.2.4) Subjects: Computational logic" value="C:\dev\data\texts\F.4.1 Mathematical Logic (F.1.1, I.2.2, I.2.3, I.2.4) Subjects_ Computational logic"/> <!-- 310 items -->
+<parameter key="F.4.1 Mathematical Logic (F.1.1, I.2.2, I.2.3, I.2.4) Subjects: Lambda calculus and related systems" value="C:\dev\data\texts\F.4.1 Mathematical Logic (F.1.1, I.2.2, I.2.3, I.2.4) Subjects_ Lambda calculus and related systems"/> <!-- 508 items -->
+<parameter key="F.4.1 Mathematical Logic (F.1.1, I.2.2, I.2.3, I.2.4) Subjects: Logic and constraint programming" value="C:\dev\data\texts\F.4.1 Mathematical Logic (F.1.1, I.2.2, I.2.3, I.2.4) Subjects_ Logic and constraint programming"/> <!-- 592 items -->
+<parameter key="F.4.1 Mathematical Logic (F.1.1, I.2.2, I.2.3, I.2.4) Subjects: Mechanical theorem proving" value="C:\dev\data\texts\F.4.1 Mathematical Logic (F.1.1, I.2.2, I.2.3, I.2.4) Subjects_ Mechanical theorem proving"/> <!-- 305 items -->
+<parameter key="F.4.1 Mathematical Logic (F.1.1, I.2.2, I.2.3, I.2.4) Subjects: Modal logic" value="C:\dev\data\texts\F.4.1 Mathematical Logic (F.1.1, I.2.2, I.2.3, I.2.4) Subjects_ Modal logic"/> <!-- 134 items -->
+<parameter key="F.4.1 Mathematical Logic (F.1.1, I.2.2, I.2.3, I.2.4) Subjects: Model theory" value="C:\dev\data\texts\F.4.1 Mathematical Logic (F.1.1, I.2.2, I.2.3, I.2.4) Subjects_ Model theory"/> <!-- 176 items -->
+<parameter key="F.4.1 Mathematical Logic (F.1.1, I.2.2, I.2.3, I.2.4) Subjects: Proof theory" value="C:\dev\data\texts\F.4.1 Mathematical Logic (F.1.1, I.2.2, I.2.3, I.2.4) Subjects_ Proof theory"/> <!-- 249 items -->
+<parameter key="F.4.1 Mathematical Logic (F.1.1, I.2.2, I.2.3, I.2.4) Subjects: Recursive function theory" value="C:\dev\data\texts\F.4.1 Mathematical Logic (F.1.1, I.2.2, I.2.3, I.2.4) Subjects_ Recursive function theory"/> <!-- 168 items -->
+<parameter key="F.4.1 Mathematical Logic (F.1.1, I.2.2, I.2.3, I.2.4) Subjects: Set theory" value="C:\dev\data\texts\F.4.1 Mathematical Logic (F.1.1, I.2.2, I.2.3, I.2.4) Subjects_ Set theory"/> <!-- 109 items -->
+<parameter key="F.4.1 Mathematical Logic (F.1.1, I.2.2, I.2.3, I.2.4) Subjects: Temporal logic" value="C:\dev\data\texts\F.4.1 Mathematical Logic (F.1.1, I.2.2, I.2.3, I.2.4) Subjects_ Temporal logic"/> <!-- 191 items -->
+<parameter key="F.4.2 Grammars and Other Rewriting Systems (D.3.1) Subjects: Decision problems" value="C:\dev\data\texts\F.4.2 Grammars and Other Rewriting Systems (D.3.1) Subjects_ Decision problems"/> <!-- 85 items -->
+<parameter key="F.4.2 Grammars and Other Rewriting Systems (D.3.1) Subjects: Grammar types (e.g., context-free, context-sensitive)" value="C:\dev\data\texts\F.4.2 Grammars and Other Rewriting Systems (D.3.1) Subjects_ Grammar types (e.g., context-free, context-sensitive)"/> <!-- 319 items -->
+<parameter key="F.4.2 Grammars and Other Rewriting Systems (D.3.1) Subjects: Parallel rewriting systems (e.g., developmental systems, L-systems)" value="C:\dev\data\texts\F.4.2 Grammars and Other Rewriting Systems (D.3.1) Subjects_ Parallel rewriting systems (e.g., developmental systems, L-systems)"/> <!-- 92 items -->
+<parameter key="F.4.2 Grammars and Other Rewriting Systems (D.3.1) Subjects: Parsing" value="C:\dev\data\texts\F.4.2 Grammars and Other Rewriting Systems (D.3.1) Subjects_ Parsing"/> <!-- 272 items -->
+<parameter key="F.4.3 Formal Languages (D.3.1) Subjects: Algebraic language theory" value="C:\dev\data\texts\F.4.3 Formal Languages (D.3.1) Subjects_ Algebraic language theory"/> <!-- 108 items -->
+<parameter key="F.4.3 Formal Languages (D.3.1) Subjects: Classes defined by grammars or automata (e.g., context-free languages, regular sets, recursive sets)" value="C:\dev\data\texts\F.4.3 Formal Languages (D.3.1) Subjects_ Classes defined by grammars or automata (e.g., context-free languages, regular sets, recursive sets)"/> <!-- 259 items -->
+<parameter key="F.4.3 Formal Languages (D.3.1) Subjects: Decision problems" value="C:\dev\data\texts\F.4.3 Formal Languages (D.3.1) Subjects_ Decision problems"/> <!-- 149 items -->
+<parameter key="G.0 GENERAL" value="C:\dev\data\texts\G.0 GENERAL"/> <!-- 117 items -->
+<parameter key="G.1.0 General Subjects: Computer arithmetic" value="C:\dev\data\texts\G.1.0 General Subjects_ Computer arithmetic"/> <!-- 363 items -->
+<parameter key="G.1.0 General Subjects: Error analysis" value="C:\dev\data\texts\G.1.0 General Subjects_ Error analysis"/> <!-- 192 items -->
+<parameter key="G.1.0 General Subjects: Numerical algorithms" value="C:\dev\data\texts\G.1.0 General Subjects_ Numerical algorithms"/> <!-- 312 items -->
+<parameter key="G.1.0 General Subjects: Parallel algorithms" value="C:\dev\data\texts\G.1.0 General Subjects_ Parallel algorithms"/> <!-- 998 items -->
+<parameter key="G.1.1 Interpolation (I.3.5, I.3.7) Subjects: Interpolation formulas" value="C:\dev\data\texts\G.1.1 Interpolation (I.3.5, I.3.7) Subjects_ Interpolation formulas"/> <!-- 193 items -->
+<parameter key="G.1.1 Interpolation (I.3.5, I.3.7) Subjects: Smoothing" value="C:\dev\data\texts\G.1.1 Interpolation (I.3.5, I.3.7) Subjects_ Smoothing"/> <!-- 85 items -->
+<parameter key="G.1.1 Interpolation (I.3.5, I.3.7) Subjects: Spline and piecewise polynomial interpolation" value="C:\dev\data\texts\G.1.1 Interpolation (I.3.5, I.3.7) Subjects_ Spline and piecewise polynomial interpolation"/> <!-- 203 items -->
+<parameter key="G.1.2 Approximation Subjects: Approximation of surfaces and contours" value="C:\dev\data\texts\G.1.2 Approximation Subjects_ Approximation of surfaces and contours"/> <!-- 117 items -->
+<parameter key="G.1.2 Approximation Subjects: Least squares approximation" value="C:\dev\data\texts\G.1.2 Approximation Subjects_ Least squares approximation"/> <!-- 75 items -->
+<parameter key="G.1.2 Approximation Subjects: Linear approximation" value="C:\dev\data\texts\G.1.2 Approximation Subjects_ Linear approximation"/> <!-- 112 items -->
+<parameter key="G.1.2 Approximation Subjects: Spline and piecewise polynomial approximation" value="C:\dev\data\texts\G.1.2 Approximation Subjects_ Spline and piecewise polynomial approximation"/> <!-- 253 items -->
+<parameter key="G.1.2 Approximation Subjects: Wavelets and fractals" value="C:\dev\data\texts\G.1.2 Approximation Subjects_ Wavelets and fractals"/> <!-- 149 items -->
+<parameter key="G.1.3 Numerical Linear Algebra Subjects: Eigenvalues and eigenvectors (direct and iterative methods)" value="C:\dev\data\texts\G.1.3 Numerical Linear Algebra Subjects_ Eigenvalues and eigenvectors (direct and iterative methods)"/> <!-- 340 items -->
+<parameter key="G.1.3 Numerical Linear Algebra Subjects: Linear systems (direct and iterative methods)" value="C:\dev\data\texts\G.1.3 Numerical Linear Algebra Subjects_ Linear systems (direct and iterative methods)"/> <!-- 654 items -->
+<parameter key="G.1.3 Numerical Linear Algebra Subjects: Matrix inversion" value="C:\dev\data\texts\G.1.3 Numerical Linear Algebra Subjects_ Matrix inversion"/> <!-- 96 items -->
+<parameter key="G.1.3 Numerical Linear Algebra Subjects: Sparse, structured, and very large systems (direct and iterative methods)" value="C:\dev\data\texts\G.1.3 Numerical Linear Algebra Subjects_ Sparse, structured, and very large systems (direct and iterative methods)"/> <!-- 365 items -->
+<parameter key="G.1.5 Roots of Nonlinear Equations Subjects: Polynomials, methods for" value="C:\dev\data\texts\G.1.5 Roots of Nonlinear Equations Subjects_ Polynomials, methods for"/> <!-- 384 items -->
+<parameter key="G.1.5 Roots of Nonlinear Equations Subjects: Systems of equations" value="C:\dev\data\texts\G.1.5 Roots of Nonlinear Equations Subjects_ Systems of equations"/> <!-- 147 items -->
+<parameter key="G.1.6 Optimization Subjects: Constrained optimization" value="C:\dev\data\texts\G.1.6 Optimization Subjects_ Constrained optimization"/> <!-- 369 items -->
+<parameter key="G.1.6 Optimization Subjects: Global optimization" value="C:\dev\data\texts\G.1.6 Optimization Subjects_ Global optimization"/> <!-- 265 items -->
+<parameter key="G.1.6 Optimization Subjects: Gradient methods" value="C:\dev\data\texts\G.1.6 Optimization Subjects_ Gradient methods"/> <!-- 105 items -->
+<parameter key="G.1.6 Optimization Subjects: Integer programming" value="C:\dev\data\texts\G.1.6 Optimization Subjects_ Integer programming"/> <!-- 392 items -->
+<parameter key="G.1.6 Optimization Subjects: Least squares methods" value="C:\dev\data\texts\G.1.6 Optimization Subjects_ Least squares methods"/> <!-- 107 items -->
+<parameter key="G.1.6 Optimization Subjects: Linear programming" value="C:\dev\data\texts\G.1.6 Optimization Subjects_ Linear programming"/> <!-- 573 items -->
+<parameter key="G.1.6 Optimization Subjects: Nonlinear programming" value="C:\dev\data\texts\G.1.6 Optimization Subjects_ Nonlinear programming"/> <!-- 144 items -->
+<parameter key="G.1.6 Optimization Subjects: Unconstrained optimization" value="C:\dev\data\texts\G.1.6 Optimization Subjects_ Unconstrained optimization"/> <!-- 81 items -->
+<parameter key="G.1.7 Ordinary Differential Equations Subjects: Boundary value problems" value="C:\dev\data\texts\G.1.7 Ordinary Differential Equations Subjects_ Boundary value problems"/> <!-- 129 items -->
+<parameter key="G.1.7 Ordinary Differential Equations Subjects: Convergence and stability" value="C:\dev\data\texts\G.1.7 Ordinary Differential Equations Subjects_ Convergence and stability"/> <!-- 70 items -->
+<parameter key="G.1.8 Partial Differential Equations Subjects: Finite element methods" value="C:\dev\data\texts\G.1.8 Partial Differential Equations Subjects_ Finite element methods"/> <!-- 228 items -->
+<parameter key="G.1.8 Partial Differential Equations Subjects: Multigrid and multilevel methods" value="C:\dev\data\texts\G.1.8 Partial Differential Equations Subjects_ Multigrid and multilevel methods"/> <!-- 73 items -->
+<parameter key="G.1.10 Applications" value="C:\dev\data\texts\G.1.10 Applications"/> <!-- 105 items -->
+<parameter key="G.2.1 Combinatorics (F.2.2) Subjects: Combinatorial algorithms" value="C:\dev\data\texts\G.2.1 Combinatorics (F.2.2) Subjects_ Combinatorial algorithms"/> <!-- 832 items -->
+<parameter key="G.2.1 Combinatorics (F.2.2) Subjects: Counting problems" value="C:\dev\data\texts\G.2.1 Combinatorics (F.2.2) Subjects_ Counting problems"/> <!-- 130 items -->
+<parameter key="G.2.1 Combinatorics (F.2.2) Subjects: Permutations and combinations" value="C:\dev\data\texts\G.2.1 Combinatorics (F.2.2) Subjects_ Permutations and combinations"/> <!-- 212 items -->
+<parameter key="G.2.2 Graph Theory (F.2.2) Subjects: Graph algorithms" value="C:\dev\data\texts\G.2.2 Graph Theory (F.2.2) Subjects_ Graph algorithms"/> <!-- 2217 items -->
+<parameter key="G.2.2 Graph Theory (F.2.2) Subjects: Graph labeling" value="C:\dev\data\texts\G.2.2 Graph Theory (F.2.2) Subjects_ Graph labeling"/> <!-- 112 items -->
+<parameter key="G.2.2 Graph Theory (F.2.2) Subjects: Hypergraphs" value="C:\dev\data\texts\G.2.2 Graph Theory (F.2.2) Subjects_ Hypergraphs"/> <!-- 86 items -->
+<parameter key="G.2.2 Graph Theory (F.2.2) Subjects: Network problems" value="C:\dev\data\texts\G.2.2 Graph Theory (F.2.2) Subjects_ Network problems"/> <!-- 1713 items -->
+<parameter key="G.2.2 Graph Theory (F.2.2) Subjects: Path and circuit problems" value="C:\dev\data\texts\G.2.2 Graph Theory (F.2.2) Subjects_ Path and circuit problems"/> <!-- 1111 items -->
+<parameter key="G.2.2 Graph Theory (F.2.2) Subjects: Trees" value="C:\dev\data\texts\G.2.2 Graph Theory (F.2.2) Subjects_ Trees"/> <!-- 1800 items -->
+<parameter key="G.2.3 Applications" value="C:\dev\data\texts\G.2.3 Applications"/> <!-- 173 items -->
+<parameter key="G.3 PROBABILITY AND STATISTICS Subjects: Correlation and regression analysis" value="C:\dev\data\texts\G.3 PROBABILITY AND STATISTICS Subjects_ Correlation and regression analysis"/> <!-- 232 items -->
+<parameter key="G.3 PROBABILITY AND STATISTICS Subjects: Distribution functions" value="C:\dev\data\texts\G.3 PROBABILITY AND STATISTICS Subjects_ Distribution functions"/> <!-- 178 items -->
+<parameter key="G.3 PROBABILITY AND STATISTICS Subjects: Experimental design" value="C:\dev\data\texts\G.3 PROBABILITY AND STATISTICS Subjects_ Experimental design"/> <!-- 78 items -->
+<parameter key="G.3 PROBABILITY AND STATISTICS Subjects: Markov processes" value="C:\dev\data\texts\G.3 PROBABILITY AND STATISTICS Subjects_ Markov processes"/> <!-- 638 items -->
+<parameter key="G.3 PROBABILITY AND STATISTICS Subjects: Multivariate statistics" value="C:\dev\data\texts\G.3 PROBABILITY AND STATISTICS Subjects_ Multivariate statistics"/> <!-- 153 items -->
+<parameter key="G.3 PROBABILITY AND STATISTICS Subjects: Probabilistic algorithms (including Monte Carlo)" value="C:\dev\data\texts\G.3 PROBABILITY AND STATISTICS Subjects_ Probabilistic algorithms (including Monte Carlo)"/> <!-- 1546 items -->
+<parameter key="G.3 PROBABILITY AND STATISTICS Subjects: Queueing theory" value="C:\dev\data\texts\G.3 PROBABILITY AND STATISTICS Subjects_ Queueing theory"/> <!-- 618 items -->
+<parameter key="G.3 PROBABILITY AND STATISTICS Subjects: Random number generation" value="C:\dev\data\texts\G.3 PROBABILITY AND STATISTICS Subjects_ Random number generation"/> <!-- 368 items -->
+<parameter key="G.3 PROBABILITY AND STATISTICS Subjects: Statistical computing" value="C:\dev\data\texts\G.3 PROBABILITY AND STATISTICS Subjects_ Statistical computing"/> <!-- 577 items -->
+<parameter key="G.3 PROBABILITY AND STATISTICS Subjects: Stochastic processes" value="C:\dev\data\texts\G.3 PROBABILITY AND STATISTICS Subjects_ Stochastic processes"/> <!-- 590 items -->
+<parameter key="G.3 PROBABILITY AND STATISTICS Subjects: Time series analysis" value="C:\dev\data\texts\G.3 PROBABILITY AND STATISTICS Subjects_ Time series analysis"/> <!-- 212 items -->
+<parameter key="G.4 MATHEMATICAL SOFTWARE Subjects: Algorithm design and analysis" value="C:\dev\data\texts\G.4 MATHEMATICAL SOFTWARE Subjects_ Algorithm design and analysis"/> <!-- 2217 items -->
+<parameter key="G.4 MATHEMATICAL SOFTWARE Subjects: Certification and testing" value="C:\dev\data\texts\G.4 MATHEMATICAL SOFTWARE Subjects_ Certification and testing"/> <!-- 138 items -->
+<parameter key="G.4 MATHEMATICAL SOFTWARE Subjects: Efficiency" value="C:\dev\data\texts\G.4 MATHEMATICAL SOFTWARE Subjects_ Efficiency"/> <!-- 430 items -->
+<parameter key="G.4 MATHEMATICAL SOFTWARE Subjects: Parallel and vector implementations" value="C:\dev\data\texts\G.4 MATHEMATICAL SOFTWARE Subjects_ Parallel and vector implementations"/> <!-- 194 items -->
+<parameter key="G.4 MATHEMATICAL SOFTWARE Subjects: Reliability and robustness" value="C:\dev\data\texts\G.4 MATHEMATICAL SOFTWARE Subjects_ Reliability and robustness"/> <!-- 246 items -->
+<parameter key="G.4 MATHEMATICAL SOFTWARE Subjects: User interfaces" value="C:\dev\data\texts\G.4 MATHEMATICAL SOFTWARE Subjects_ User interfaces"/> <!-- 161 items -->
+<parameter key="G.m MISCELLANEOUS Subjects: Queueing theory" value="C:\dev\data\texts\G.m MISCELLANEOUS Subjects_ Queueing theory"/> <!-- 307 items -->
+<parameter key="H.0 GENERAL" value="C:\dev\data\texts\H.0 GENERAL"/> <!-- 233 items -->
+<parameter key="H.1.0 General" value="C:\dev\data\texts\H.1.0 General"/> <!-- 142 items -->
+<parameter key="H.1.1 Systems and Information Theory (E.4) Subjects: General systems theory" value="C:\dev\data\texts\H.1.1 Systems and Information Theory (E.4) Subjects_ General systems theory"/> <!-- 166 items -->
+<parameter key="H.1.1 Systems and Information Theory (E.4) Subjects: Information theory" value="C:\dev\data\texts\H.1.1 Systems and Information Theory (E.4) Subjects_ Information theory"/> <!-- 315 items -->
+<parameter key="H.1.1 Systems and Information Theory (E.4) Subjects: Value of information" value="C:\dev\data\texts\H.1.1 Systems and Information Theory (E.4) Subjects_ Value of information"/> <!-- 187 items -->
+<parameter key="H.1.2 User/Machine Systems Subjects: Human factors" value="C:\dev\data\texts\H.1.2 User_Machine Systems Subjects_ Human factors"/> <!-- 5176 items -->
+<parameter key="H.1.2 User/Machine Systems Subjects: Human information processing" value="C:\dev\data\texts\H.1.2 User_Machine Systems Subjects_ Human information processing"/> <!-- 1381 items -->
+<parameter key="H.1.2 User/Machine Systems Subjects: Software psychology" value="C:\dev\data\texts\H.1.2 User_Machine Systems Subjects_ Software psychology"/> <!-- 326 items -->
+<parameter key="H.2.0 General Subjects: Security, integrity, and protection" value="C:\dev\data\texts\H.2.0 General Subjects_ Security, integrity, and protection"/> <!-- 135 items -->
+<parameter key="H.2.1 Logical Design Subjects: Data models" value="C:\dev\data\texts\H.2.1 Logical Design Subjects_ Data models"/> <!-- 1188 items -->
+<parameter key="H.2.1 Logical Design Subjects: Normal forms" value="C:\dev\data\texts\H.2.1 Logical Design Subjects_ Normal forms"/> <!-- 84 items -->
+<parameter key="H.2.1 Logical Design Subjects: Schema and subschema" value="C:\dev\data\texts\H.2.1 Logical Design Subjects_ Schema and subschema"/> <!-- 383 items -->
+<parameter key="H.2.2 Physical Design Subjects: Access methods" value="C:\dev\data\texts\H.2.2 Physical Design Subjects_ Access methods"/> <!-- 269 items -->
+<parameter key="H.2.2 Physical Design Subjects: Recovery and restart" value="C:\dev\data\texts\H.2.2 Physical Design Subjects_ Recovery and restart"/> <!-- 81 items -->
+<parameter key="H.2.3 Languages (D.3.2) Subjects: Data description languages (DDL)" value="C:\dev\data\texts\H.2.3 Languages (D.3.2) Subjects_ Data description languages (DDL)"/> <!-- 105 items -->
+<parameter key="H.2.3 Languages (D.3.2) Subjects: Data manipulation languages (DML)" value="C:\dev\data\texts\H.2.3 Languages (D.3.2) Subjects_ Data manipulation languages (DML)"/> <!-- 74 items -->
+<parameter key="H.2.3 Languages (D.3.2) Subjects: Database (persistent) programming languages" value="C:\dev\data\texts\H.2.3 Languages (D.3.2) Subjects_ Database (persistent) programming languages"/> <!-- 83 items -->
+<parameter key="H.2.3 Languages (D.3.2) Subjects: Query languages" value="C:\dev\data\texts\H.2.3 Languages (D.3.2) Subjects_ Query languages"/> <!-- 779 items -->
+<parameter key="H.2.4 Systems Subjects: Concurrency" value="C:\dev\data\texts\H.2.4 Systems Subjects_ Concurrency"/> <!-- 296 items -->
+<parameter key="H.2.4 Systems Subjects: Distributed databases" value="C:\dev\data\texts\H.2.4 Systems Subjects_ Distributed databases"/> <!-- 937 items -->
+<parameter key="H.2.4 Systems Subjects: Multimedia databases" value="C:\dev\data\texts\H.2.4 Systems Subjects_ Multimedia databases"/> <!-- 327 items -->
+<parameter key="H.2.4 Systems Subjects: Object-oriented databases" value="C:\dev\data\texts\H.2.4 Systems Subjects_ Object-oriented databases"/> <!-- 237 items -->
+<parameter key="H.2.4 Systems Subjects: Parallel databases" value="C:\dev\data\texts\H.2.4 Systems Subjects_ Parallel databases"/> <!-- 74 items -->
+<parameter key="H.2.4 Systems Subjects: Query processing" value="C:\dev\data\texts\H.2.4 Systems Subjects_ Query processing"/> <!-- 1827 items -->
+<parameter key="H.2.4 Systems Subjects: Relational databases" value="C:\dev\data\texts\H.2.4 Systems Subjects_ Relational databases"/> <!-- 499 items -->
+<parameter key="H.2.4 Systems Subjects: Rule-based databases" value="C:\dev\data\texts\H.2.4 Systems Subjects_ Rule-based databases"/> <!-- 89 items -->
+<parameter key="H.2.4 Systems Subjects: Textual databases" value="C:\dev\data\texts\H.2.4 Systems Subjects_ Textual databases"/> <!-- 254 items -->
+<parameter key="H.2.4 Systems Subjects: Transaction processing" value="C:\dev\data\texts\H.2.4 Systems Subjects_ Transaction processing"/> <!-- 485 items -->
+<parameter key="H.2.7 Database Administration Subjects: Data dictionary/directory" value="C:\dev\data\texts\H.2.7 Database Administration Subjects_ Data dictionary_directory"/> <!-- 84 items -->
+<parameter key="H.2.7 Database Administration Subjects: Data warehouse and repository" value="C:\dev\data\texts\H.2.7 Database Administration Subjects_ Data warehouse and repository"/> <!-- 290 items -->
+<parameter key="H.2.7 Database Administration Subjects: Logging and recovery" value="C:\dev\data\texts\H.2.7 Database Administration Subjects_ Logging and recovery"/> <!-- 86 items -->
+<parameter key="H.2.7 Database Administration Subjects: Security, integrity, and protection" value="C:\dev\data\texts\H.2.7 Database Administration Subjects_ Security, integrity, and protection"/> <!-- 379 items -->
+<parameter key="H.2.8 Database Applications Subjects: Data mining" value="C:\dev\data\texts\H.2.8 Database Applications Subjects_ Data mining"/> <!-- 2197 items -->
+<parameter key="H.2.8 Database Applications Subjects: Image databases" value="C:\dev\data\texts\H.2.8 Database Applications Subjects_ Image databases"/> <!-- 398 items -->
+<parameter key="H.2.8 Database Applications Subjects: Scientific databases" value="C:\dev\data\texts\H.2.8 Database Applications Subjects_ Scientific databases"/> <!-- 171 items -->
+<parameter key="H.2.8 Database Applications Subjects: Spatial databases and GIS" value="C:\dev\data\texts\H.2.8 Database Applications Subjects_ Spatial databases and GIS"/> <!-- 650 items -->
+<parameter key="H.2.8 Database Applications Subjects: Statistical databases" value="C:\dev\data\texts\H.2.8 Database Applications Subjects_ Statistical databases"/> <!-- 111 items -->
+<parameter key="H.2.m Miscellaneous" value="C:\dev\data\texts\H.2.m Miscellaneous"/> <!-- 88 items -->
+<parameter key="H.3.0 General" value="C:\dev\data\texts\H.3.0 General"/> <!-- 283 items -->
+<parameter key="H.3.1 Content Analysis and Indexing Subjects: Abstracting methods" value="C:\dev\data\texts\H.3.1 Content Analysis and Indexing Subjects_ Abstracting methods"/> <!-- 442 items -->
+<parameter key="H.3.1 Content Analysis and Indexing Subjects: Dictionaries" value="C:\dev\data\texts\H.3.1 Content Analysis and Indexing Subjects_ Dictionaries"/> <!-- 247 items -->
+<parameter key="H.3.1 Content Analysis and Indexing Subjects: Indexing methods" value="C:\dev\data\texts\H.3.1 Content Analysis and Indexing Subjects_ Indexing methods"/> <!-- 1787 items -->
+<parameter key="H.3.1 Content Analysis and Indexing Subjects: Linguistic processing" value="C:\dev\data\texts\H.3.1 Content Analysis and Indexing Subjects_ Linguistic processing"/> <!-- 558 items -->
+<parameter key="H.3.1 Content Analysis and Indexing Subjects: Thesauruses" value="C:\dev\data\texts\H.3.1 Content Analysis and Indexing Subjects_ Thesauruses"/> <!-- 220 items -->
+<parameter key="H.3.2 Information Storage Subjects: File organization" value="C:\dev\data\texts\H.3.2 Information Storage Subjects_ File organization"/> <!-- 299 items -->
+<parameter key="H.3.3 Information Search and Retrieval Subjects: Clustering" value="C:\dev\data\texts\H.3.3 Information Search and Retrieval Subjects_ Clustering"/> <!-- 1075 items -->
+<parameter key="H.3.3 Information Search and Retrieval Subjects: Information filtering" value="C:\dev\data\texts\H.3.3 Information Search and Retrieval Subjects_ Information filtering"/> <!-- 1236 items -->
+<parameter key="H.3.3 Information Search and Retrieval Subjects: Query formulation" value="C:\dev\data\texts\H.3.3 Information Search and Retrieval Subjects_ Query formulation"/> <!-- 1422 items -->
+<parameter key="H.3.3 Information Search and Retrieval Subjects: Relevance feedback" value="C:\dev\data\texts\H.3.3 Information Search and Retrieval Subjects_ Relevance feedback"/> <!-- 585 items -->
+<parameter key="H.3.3 Information Search and Retrieval Subjects: Retrieval models" value="C:\dev\data\texts\H.3.3 Information Search and Retrieval Subjects_ Retrieval models"/> <!-- 2472 items -->
+<parameter key="H.3.3 Information Search and Retrieval Subjects: Search process" value="C:\dev\data\texts\H.3.3 Information Search and Retrieval Subjects_ Search process"/> <!-- 2550 items -->
+<parameter key="H.3.3 Information Search and Retrieval Subjects: Selection process" value="C:\dev\data\texts\H.3.3 Information Search and Retrieval Subjects_ Selection process"/> <!-- 743 items -->
+<parameter key="H.3.4 Systems and Software Subjects: Distributed systems" value="C:\dev\data\texts\H.3.4 Systems and Software Subjects_ Distributed systems"/> <!-- 958 items -->
+<parameter key="H.3.4 Systems and Software Subjects: Information networks" value="C:\dev\data\texts\H.3.4 Systems and Software Subjects_ Information networks"/> <!-- 454 items -->
+<parameter key="H.3.4 Systems and Software Subjects: Performance evaluation (efficiency and effectiveness)" value="C:\dev\data\texts\H.3.4 Systems and Software Subjects_ Performance evaluation (efficiency and effectiveness)"/> <!-- 925 items -->
+<parameter key="H.3.4 Systems and Software Subjects: User profiles and alert services" value="C:\dev\data\texts\H.3.4 Systems and Software Subjects_ User profiles and alert services"/> <!-- 160 items -->
+<parameter key="H.3.5 Online Information Services Subjects: Commercial services" value="C:\dev\data\texts\H.3.5 Online Information Services Subjects_ Commercial services"/> <!-- 153 items -->
+<parameter key="H.3.5 Online Information Services Subjects: Data sharing" value="C:\dev\data\texts\H.3.5 Online Information Services Subjects_ Data sharing"/> <!-- 475 items -->
+<parameter key="H.3.5 Online Information Services Subjects: Web-based services" value="C:\dev\data\texts\H.3.5 Online Information Services Subjects_ Web-based services"/> <!-- 2792 items -->
+<parameter key="H.3.6 Library Automation Subjects: Large text archives" value="C:\dev\data\texts\H.3.6 Library Automation Subjects_ Large text archives"/> <!-- 124 items -->
+<parameter key="H.3.7 Digital Libraries Subjects: Collection" value="C:\dev\data\texts\H.3.7 Digital Libraries Subjects_ Collection"/> <!-- 520 items -->
+<parameter key="H.3.7 Digital Libraries Subjects: Dissemination" value="C:\dev\data\texts\H.3.7 Digital Libraries Subjects_ Dissemination"/> <!-- 367 items -->
+<parameter key="H.3.7 Digital Libraries Subjects: Standards" value="C:\dev\data\texts\H.3.7 Digital Libraries Subjects_ Standards"/> <!-- 424 items -->
+<parameter key="H.3.7 Digital Libraries Subjects: Systems issues" value="C:\dev\data\texts\H.3.7 Digital Libraries Subjects_ Systems issues"/> <!-- 591 items -->
+<parameter key="H.3.7 Digital Libraries Subjects: User issues" value="C:\dev\data\texts\H.3.7 Digital Libraries Subjects_ User issues"/> <!-- 722 items -->
+<parameter key="H.3.m Miscellaneous" value="C:\dev\data\texts\H.3.m Miscellaneous"/> <!-- 123 items -->
+<parameter key="H.4.0 General" value="C:\dev\data\texts\H.4.0 General"/> <!-- 186 items -->
+<parameter key="H.4.1 Office Automation (I.7) Subjects: Groupware" value="C:\dev\data\texts\H.4.1 Office Automation (I.7) Subjects_ Groupware"/> <!-- 242 items -->
+<parameter key="H.4.1 Office Automation (I.7) Subjects: Spreadsheets" value="C:\dev\data\texts\H.4.1 Office Automation (I.7) Subjects_ Spreadsheets"/> <!-- 118 items -->
+<parameter key="H.4.1 Office Automation (I.7) Subjects: Time management (e.g., calendars, schedules)" value="C:\dev\data\texts\H.4.1 Office Automation (I.7) Subjects_ Time management (e.g., calendars, schedules)"/> <!-- 127 items -->
+<parameter key="H.4.1 Office Automation (I.7) Subjects: Word processing" value="C:\dev\data\texts\H.4.1 Office Automation (I.7) Subjects_ Word processing"/> <!-- 97 items -->
+<parameter key="H.4.1 Office Automation (I.7) Subjects: Workflow management" value="C:\dev\data\texts\H.4.1 Office Automation (I.7) Subjects_ Workflow management"/> <!-- 226 items -->
+<parameter key="H.4.2 Types of Systems Subjects: Decision support (e.g., MIS)" value="C:\dev\data\texts\H.4.2 Types of Systems Subjects_ Decision support (e.g., MIS)"/> <!-- 851 items -->
+<parameter key="H.4.2 Types of Systems Subjects: Logistics" value="C:\dev\data\texts\H.4.2 Types of Systems Subjects_ Logistics"/> <!-- 75 items -->
+<parameter key="H.4.3 Communications Applications Subjects: Bulletin boards" value="C:\dev\data\texts\H.4.3 Communications Applications Subjects_ Bulletin boards"/> <!-- 117 items -->
+<parameter key="H.4.3 Communications Applications Subjects: Computer conferencing, teleconferencing, and videoconferencing" value="C:\dev\data\texts\H.4.3 Communications Applications Subjects_ Computer conferencing, teleconferencing, and videoconferencing"/> <!-- 651 items -->
+<parameter key="H.4.3 Communications Applications Subjects: Electronic mail" value="C:\dev\data\texts\H.4.3 Communications Applications Subjects_ Electronic mail"/> <!-- 654 items -->
+<parameter key="H.4.3 Communications Applications Subjects: Information browsers" value="C:\dev\data\texts\H.4.3 Communications Applications Subjects_ Information browsers"/> <!-- 437 items -->
+<parameter key="H.4.m Miscellaneous" value="C:\dev\data\texts\H.4.m Miscellaneous"/> <!-- 424 items -->
+<parameter key="H.5.0 General" value="C:\dev\data\texts\H.5.0 General"/> <!-- 336 items -->
+<parameter key="H.5.1 Multimedia Information Systems Subjects: Animations" value="C:\dev\data\texts\H.5.1 Multimedia Information Systems Subjects_ Animations"/> <!-- 802 items -->
+<parameter key="H.5.1 Multimedia Information Systems Subjects: Artificial, augmented, and virtual realities" value="C:\dev\data\texts\H.5.1 Multimedia Information Systems Subjects_ Artificial, augmented, and virtual realities"/> <!-- 1877 items -->
+<parameter key="H.5.1 Multimedia Information Systems Subjects: Audio input/output" value="C:\dev\data\texts\H.5.1 Multimedia Information Systems Subjects_ Audio input_output"/> <!-- 874 items -->
+<parameter key="H.5.1 Multimedia Information Systems Subjects: Evaluation/methodology" value="C:\dev\data\texts\H.5.1 Multimedia Information Systems Subjects_ Evaluation_methodology"/> <!-- 955 items -->
+<parameter key="H.5.1 Multimedia Information Systems Subjects: Hypertext navigation and maps" value="C:\dev\data\texts\H.5.1 Multimedia Information Systems Subjects_ Hypertext navigation and maps"/> <!-- 305 items -->
+<parameter key="H.5.1 Multimedia Information Systems Subjects: Video (e.g., tape, disk, DVI)" value="C:\dev\data\texts\H.5.1 Multimedia Information Systems Subjects_ Video (e.g., tape, disk, DVI)"/> <!-- 1278 items -->
+<parameter key="H.5.2 User Interfaces (D.2.2, H.1.2, I.3.6) Subjects: Auditory (non-speech) feedback" value="C:\dev\data\texts\H.5.2 User Interfaces (D.2.2, H.1.2, I.3.6) Subjects_ Auditory (non-speech) feedback"/> <!-- 380 items -->
+<parameter key="H.5.2 User Interfaces (D.2.2, H.1.2, I.3.6) Subjects: Ergonomics" value="C:\dev\data\texts\H.5.2 User Interfaces (D.2.2, H.1.2, I.3.6) Subjects_ Ergonomics"/> <!-- 389 items -->
+<parameter key="H.5.2 User Interfaces (D.2.2, H.1.2, I.3.6) Subjects: Evaluation/methodology" value="C:\dev\data\texts\H.5.2 User Interfaces (D.2.2, H.1.2, I.3.6) Subjects_ Evaluation_methodology"/> <!-- 3238 items -->
+<parameter key="H.5.2 User Interfaces (D.2.2, H.1.2, I.3.6) Subjects: Graphical user interfaces (GUI)" value="C:\dev\data\texts\H.5.2 User Interfaces (D.2.2, H.1.2, I.3.6) Subjects_ Graphical user interfaces (GUI)"/> <!-- 2399 items -->
+<parameter key="H.5.2 User Interfaces (D.2.2, H.1.2, I.3.6) Subjects: Haptic I/O" value="C:\dev\data\texts\H.5.2 User Interfaces (D.2.2, H.1.2, I.3.6) Subjects_ Haptic I_O"/> <!-- 606 items -->
+<parameter key="H.5.2 User Interfaces (D.2.2, H.1.2, I.3.6) Subjects: Input devices and strategies (e.g., mouse, touchscreen)" value="C:\dev\data\texts\H.5.2 User Interfaces (D.2.2, H.1.2, I.3.6) Subjects_ Input devices and strategies (e.g., mouse, touchscreen)"/> <!-- 2453 items -->
+<parameter key="H.5.2 User Interfaces (D.2.2, H.1.2, I.3.6) Subjects: Interaction styles (e.g., commands, menus, forms, direct manipulation)" value="C:\dev\data\texts\H.5.2 User Interfaces (D.2.2, H.1.2, I.3.6) Subjects_ Interaction styles (e.g., commands, menus, forms, direct manipulation)"/> <!-- 5216 items -->
+<parameter key="H.5.2 User Interfaces (D.2.2, H.1.2, I.3.6) Subjects: Natural language" value="C:\dev\data\texts\H.5.2 User Interfaces (D.2.2, H.1.2, I.3.6) Subjects_ Natural language"/> <!-- 863 items -->
+<parameter key="H.5.2 User Interfaces (D.2.2, H.1.2, I.3.6) Subjects: Prototyping" value="C:\dev\data\texts\H.5.2 User Interfaces (D.2.2, H.1.2, I.3.6) Subjects_ Prototyping"/> <!-- 1180 items -->
+<parameter key="H.5.2 User Interfaces (D.2.2, H.1.2, I.3.6) Subjects: Screen design (e.g., text, graphics, color)" value="C:\dev\data\texts\H.5.2 User Interfaces (D.2.2, H.1.2, I.3.6) Subjects_ Screen design (e.g., text, graphics, color)"/> <!-- 982 items -->
+<parameter key="H.5.2 User Interfaces (D.2.2, H.1.2, I.3.6) Subjects: Standardization" value="C:\dev\data\texts\H.5.2 User Interfaces (D.2.2, H.1.2, I.3.6) Subjects_ Standardization"/> <!-- 297 items -->
+<parameter key="H.5.2 User Interfaces (D.2.2, H.1.2, I.3.6) Subjects: Style guides" value="C:\dev\data\texts\H.5.2 User Interfaces (D.2.2, H.1.2, I.3.6) Subjects_ Style guides"/> <!-- 229 items -->
+<parameter key="H.5.2 User Interfaces (D.2.2, H.1.2, I.3.6) Subjects: Theory and methods" value="C:\dev\data\texts\H.5.2 User Interfaces (D.2.2, H.1.2, I.3.6) Subjects_ Theory and methods"/> <!-- 1824 items -->
+<parameter key="H.5.2 User Interfaces (D.2.2, H.1.2, I.3.6) Subjects: Training, help, and documentation" value="C:\dev\data\texts\H.5.2 User Interfaces (D.2.2, H.1.2, I.3.6) Subjects_ Training, help, and documentation"/> <!-- 1122 items -->
+<parameter key="H.5.2 User Interfaces (D.2.2, H.1.2, I.3.6) Subjects: User-centered design" value="C:\dev\data\texts\H.5.2 User Interfaces (D.2.2, H.1.2, I.3.6) Subjects_ User-centered design"/> <!-- 2580 items -->
+<parameter key="H.5.2 User Interfaces (D.2.2, H.1.2, I.3.6) Subjects: User interface management systems (UIMS)" value="C:\dev\data\texts\H.5.2 User Interfaces (D.2.2, H.1.2, I.3.6) Subjects_ User interface management systems (UIMS)"/> <!-- 547 items -->
+<parameter key="H.5.2 User Interfaces (D.2.2, H.1.2, I.3.6) Subjects: Voice I/O" value="C:\dev\data\texts\H.5.2 User Interfaces (D.2.2, H.1.2, I.3.6) Subjects_ Voice I_O"/> <!-- 748 items -->
+<parameter key="H.5.2 User Interfaces (D.2.2, H.1.2, I.3.6) Subjects: Windowing systems" value="C:\dev\data\texts\H.5.2 User Interfaces (D.2.2, H.1.2, I.3.6) Subjects_ Windowing systems"/> <!-- 347 items -->
+<parameter key="H.5.3 Group and Organization Interfaces Subjects: Asynchronous interaction" value="C:\dev\data\texts\H.5.3 Group and Organization Interfaces Subjects_ Asynchronous interaction"/> <!-- 520 items -->
+<parameter key="H.5.3 Group and Organization Interfaces Subjects: Collaborative computing" value="C:\dev\data\texts\H.5.3 Group and Organization Interfaces Subjects_ Collaborative computing"/> <!-- 1251 items -->
+<parameter key="H.5.3 Group and Organization Interfaces Subjects: Computer-supported cooperative work" value="C:\dev\data\texts\H.5.3 Group and Organization Interfaces Subjects_ Computer-supported cooperative work"/> <!-- 1271 items -->
+<parameter key="H.5.3 Group and Organization Interfaces Subjects: Evaluation/methodology" value="C:\dev\data\texts\H.5.3 Group and Organization Interfaces Subjects_ Evaluation_methodology"/> <!-- 552 items -->
+<parameter key="H.5.3 Group and Organization Interfaces Subjects: Organizational design" value="C:\dev\data\texts\H.5.3 Group and Organization Interfaces Subjects_ Organizational design"/> <!-- 366 items -->
+<parameter key="H.5.3 Group and Organization Interfaces Subjects: Synchronous interaction" value="C:\dev\data\texts\H.5.3 Group and Organization Interfaces Subjects_ Synchronous interaction"/> <!-- 829 items -->
+<parameter key="H.5.3 Group and Organization Interfaces Subjects: Theory and models" value="C:\dev\data\texts\H.5.3 Group and Organization Interfaces Subjects_ Theory and models"/> <!-- 608 items -->
+<parameter key="H.5.3 Group and Organization Interfaces Subjects: Web-based interaction" value="C:\dev\data\texts\H.5.3 Group and Organization Interfaces Subjects_ Web-based interaction"/> <!-- 1763 items -->
+<parameter key="H.5.4 Hypertext/Hypermedia (I.7, J.7) Subjects: Architectures" value="C:\dev\data\texts\H.5.4 Hypertext_Hypermedia (I.7, J.7) Subjects_ Architectures"/> <!-- 645 items -->
+<parameter key="H.5.4 Hypertext/Hypermedia (I.7, J.7) Subjects: Navigation" value="C:\dev\data\texts\H.5.4 Hypertext_Hypermedia (I.7, J.7) Subjects_ Navigation"/> <!-- 1159 items -->
+<parameter key="H.5.4 Hypertext/Hypermedia (I.7, J.7) Subjects: Theory" value="C:\dev\data\texts\H.5.4 Hypertext_Hypermedia (I.7, J.7) Subjects_ Theory"/> <!-- 323 items -->
+<parameter key="H.5.4 Hypertext/Hypermedia (I.7, J.7) Subjects: User issues" value="C:\dev\data\texts\H.5.4 Hypertext_Hypermedia (I.7, J.7) Subjects_ User issues"/> <!-- 911 items -->
+<parameter key="H.5.5 Sound and Music Computing (J.5) Subjects: Methodologies and techniques" value="C:\dev\data\texts\H.5.5 Sound and Music Computing (J.5) Subjects_ Methodologies and techniques"/> <!-- 149 items -->
+<parameter key="H.5.5 Sound and Music Computing (J.5) Subjects: Signal analysis, synthesis, and processing" value="C:\dev\data\texts\H.5.5 Sound and Music Computing (J.5) Subjects_ Signal analysis, synthesis, and processing"/> <!-- 168 items -->
+<parameter key="H.5.5 Sound and Music Computing (J.5) Subjects: Systems" value="C:\dev\data\texts\H.5.5 Sound and Music Computing (J.5) Subjects_ Systems"/> <!-- 120 items -->
+<parameter key="H.5.m Miscellaneous" value="C:\dev\data\texts\H.5.m Miscellaneous"/> <!-- 594 items -->
+<parameter key="I.0 GENERAL" value="C:\dev\data\texts\I.0 GENERAL"/> <!-- 119 items -->
+<parameter key="I.1.1 Expressions and Their Representation (E.1, E.2) Subjects: Representations (general and polynomial)" value="C:\dev\data\texts\I.1.1 Expressions and Their Representation (E.1, E.2) Subjects_ Representations (general and polynomial)"/> <!-- 112 items -->
+<parameter key="I.1.1 Expressions and Their Representation (E.1, E.2) Subjects: Simplification of expressions" value="C:\dev\data\texts\I.1.1 Expressions and Their Representation (E.1, E.2) Subjects_ Simplification of expressions"/> <!-- 176 items -->
+<parameter key="I.1.2 Algorithms (F.2.1, F.2.2) Subjects: Algebraic algorithms" value="C:\dev\data\texts\I.1.2 Algorithms (F.2.1, F.2.2) Subjects_ Algebraic algorithms"/> <!-- 945 items -->
+<parameter key="I.1.2 Algorithms (F.2.1, F.2.2) Subjects: Analysis of algorithms" value="C:\dev\data\texts\I.1.2 Algorithms (F.2.1, F.2.2) Subjects_ Analysis of algorithms"/> <!-- 839 items -->
+<parameter key="I.1.3 Languages and Systems (D.3.2, D.3.3, F.2.2) Subjects: Evaluation strategies" value="C:\dev\data\texts\I.1.3 Languages and Systems (D.3.2, D.3.3, F.2.2) Subjects_ Evaluation strategies"/> <!-- 81 items -->
+<parameter key="I.1.3 Languages and Systems (D.3.2, D.3.3, F.2.2) Subjects: Special-purpose algebraic systems" value="C:\dev\data\texts\I.1.3 Languages and Systems (D.3.2, D.3.3, F.2.2) Subjects_ Special-purpose algebraic systems"/> <!-- 140 items -->
+<parameter key="I.2.0 General Subjects: Cognitive simulation" value="C:\dev\data\texts\I.2.0 General Subjects_ Cognitive simulation"/> <!-- 450 items -->
+<parameter key="I.2.1 Applications and Expert Systems (H.4, J.) Subjects: Games" value="C:\dev\data\texts\I.2.1 Applications and Expert Systems (H.4, J.) Subjects_ Games"/> <!-- 310 items -->
+<parameter key="I.2.1 Applications and Expert Systems (H.4, J.) Subjects: Industrial automation" value="C:\dev\data\texts\I.2.1 Applications and Expert Systems (H.4, J.) Subjects_ Industrial automation"/> <!-- 640 items -->
+<parameter key="I.2.1 Applications and Expert Systems (H.4, J.) Subjects: Law" value="C:\dev\data\texts\I.2.1 Applications and Expert Systems (H.4, J.) Subjects_ Law"/> <!-- 579 items -->
+<parameter key="I.2.1 Applications and Expert Systems (H.4, J.) Subjects: Medicine and science" value="C:\dev\data\texts\I.2.1 Applications and Expert Systems (H.4, J.) Subjects_ Medicine and science"/> <!-- 253 items -->
+<parameter key="I.2.1 Applications and Expert Systems (H.4, J.) Subjects: Natural language interfaces" value="C:\dev\data\texts\I.2.1 Applications and Expert Systems (H.4, J.) Subjects_ Natural language interfaces"/> <!-- 464 items -->
+<parameter key="I.2.1 Applications and Expert Systems (H.4, J.) Subjects: Office automation" value="C:\dev\data\texts\I.2.1 Applications and Expert Systems (H.4, J.) Subjects_ Office automation"/> <!-- 168 items -->
+<parameter key="I.2.2 Automatic Programming (D.1.2, F.3.1, F.4.1) Subjects: Automatic analysis of algorithms" value="C:\dev\data\texts\I.2.2 Automatic Programming (D.1.2, F.3.1, F.4.1) Subjects_ Automatic analysis of algorithms"/> <!-- 91 items -->
+<parameter key="I.2.2 Automatic Programming (D.1.2, F.3.1, F.4.1) Subjects: Program modification" value="C:\dev\data\texts\I.2.2 Automatic Programming (D.1.2, F.3.1, F.4.1) Subjects_ Program modification"/> <!-- 90 items -->
+<parameter key="I.2.2 Automatic Programming (D.1.2, F.3.1, F.4.1) Subjects: Program synthesis" value="C:\dev\data\texts\I.2.2 Automatic Programming (D.1.2, F.3.1, F.4.1) Subjects_ Program synthesis"/> <!-- 363 items -->
+<parameter key="I.2.2 Automatic Programming (D.1.2, F.3.1, F.4.1) Subjects: Program transformation" value="C:\dev\data\texts\I.2.2 Automatic Programming (D.1.2, F.3.1, F.4.1) Subjects_ Program transformation"/> <!-- 536 items -->
+<parameter key="I.2.2 Automatic Programming (D.1.2, F.3.1, F.4.1) Subjects: Program verification" value="C:\dev\data\texts\I.2.2 Automatic Programming (D.1.2, F.3.1, F.4.1) Subjects_ Program verification"/> <!-- 139 items -->
+<parameter key="I.2.3 Deduction and Theorem Proving (F.4.1) Subjects: Deduction (e.g., natural, rule-based)" value="C:\dev\data\texts\I.2.3 Deduction and Theorem Proving (F.4.1) Subjects_ Deduction (e.g., natural, rule-based)"/> <!-- 401 items -->
+<parameter key="I.2.3 Deduction and Theorem Proving (F.4.1) Subjects: Inference engines" value="C:\dev\data\texts\I.2.3 Deduction and Theorem Proving (F.4.1) Subjects_ Inference engines"/> <!-- 106 items -->
+<parameter key="I.2.3 Deduction and Theorem Proving (F.4.1) Subjects: Logic programming" value="C:\dev\data\texts\I.2.3 Deduction and Theorem Proving (F.4.1) Subjects_ Logic programming"/> <!-- 455 items -->
+<parameter key="I.2.3 Deduction and Theorem Proving (F.4.1) Subjects: Nonmonotonic reasoning and belief revision" value="C:\dev\data\texts\I.2.3 Deduction and Theorem Proving (F.4.1) Subjects_ Nonmonotonic reasoning and belief revision"/> <!-- 238 items -->
+<parameter key="I.2.3 Deduction and Theorem Proving (F.4.1) Subjects: Resolution" value="C:\dev\data\texts\I.2.3 Deduction and Theorem Proving (F.4.1) Subjects_ Resolution"/> <!-- 88 items -->
+<parameter key="I.2.3 Deduction and Theorem Proving (F.4.1) Subjects: Uncertainty, ``fuzzy,'' and probabilistic reasoning" value="C:\dev\data\texts\I.2.3 Deduction and Theorem Proving (F.4.1) Subjects_ Uncertainty, ``fuzzy,'' and probabilistic reasoning"/> <!-- 808 items -->
+<parameter key="I.2.4 Knowledge Representation Formalisms and Methods (F.4.1) Subjects: Frames and scripts" value="C:\dev\data\texts\I.2.4 Knowledge Representation Formalisms and Methods (F.4.1) Subjects_ Frames and scripts"/> <!-- 158 items -->
+<parameter key="I.2.4 Knowledge Representation Formalisms and Methods (F.4.1) Subjects: Modal logic" value="C:\dev\data\texts\I.2.4 Knowledge Representation Formalisms and Methods (F.4.1) Subjects_ Modal logic"/> <!-- 113 items -->
+<parameter key="I.2.4 Knowledge Representation Formalisms and Methods (F.4.1) Subjects: Predicate logic" value="C:\dev\data\texts\I.2.4 Knowledge Representation Formalisms and Methods (F.4.1) Subjects_ Predicate logic"/> <!-- 126 items -->
+<parameter key="I.2.4 Knowledge Representation Formalisms and Methods (F.4.1) Subjects: Relation systems" value="C:\dev\data\texts\I.2.4 Knowledge Representation Formalisms and Methods (F.4.1) Subjects_ Relation systems"/> <!-- 83 items -->
+<parameter key="I.2.4 Knowledge Representation Formalisms and Methods (F.4.1) Subjects: Representation languages" value="C:\dev\data\texts\I.2.4 Knowledge Representation Formalisms and Methods (F.4.1) Subjects_ Representation languages"/> <!-- 426 items -->
+<parameter key="I.2.4 Knowledge Representation Formalisms and Methods (F.4.1) Subjects: Representations (procedural and rule-based)" value="C:\dev\data\texts\I.2.4 Knowledge Representation Formalisms and Methods (F.4.1) Subjects_ Representations (procedural and rule-based)"/> <!-- 1274 items -->
+<parameter key="I.2.4 Knowledge Representation Formalisms and Methods (F.4.1) Subjects: Semantic networks" value="C:\dev\data\texts\I.2.4 Knowledge Representation Formalisms and Methods (F.4.1) Subjects_ Semantic networks"/> <!-- 301 items -->
+<parameter key="I.2.5 Programming Languages and Software (D.3.2) Subjects: Expert system tools and techniques" value="C:\dev\data\texts\I.2.5 Programming Languages and Software (D.3.2) Subjects_ Expert system tools and techniques"/> <!-- 307 items -->
+<parameter key="I.2.6 Learning (K.3.2) Subjects: Analogies" value="C:\dev\data\texts\I.2.6 Learning (K.3.2) Subjects_ Analogies"/> <!-- 95 items -->
+<parameter key="I.2.6 Learning (K.3.2) Subjects: Concept learning" value="C:\dev\data\texts\I.2.6 Learning (K.3.2) Subjects_ Concept learning"/> <!-- 694 items -->
+<parameter key="I.2.6 Learning (K.3.2) Subjects: Connectionism and neural nets" value="C:\dev\data\texts\I.2.6 Learning (K.3.2) Subjects_ Connectionism and neural nets"/> <!-- 668 items -->
+<parameter key="I.2.6 Learning (K.3.2) Subjects: Induction" value="C:\dev\data\texts\I.2.6 Learning (K.3.2) Subjects_ Induction"/> <!-- 531 items -->
+<parameter key="I.2.6 Learning (K.3.2) Subjects: Knowledge acquisition" value="C:\dev\data\texts\I.2.6 Learning (K.3.2) Subjects_ Knowledge acquisition"/> <!-- 1002 items -->
+<parameter key="I.2.6 Learning (K.3.2) Subjects: Language acquisition" value="C:\dev\data\texts\I.2.6 Learning (K.3.2) Subjects_ Language acquisition"/> <!-- 94 items -->
+<parameter key="I.2.6 Learning (K.3.2) Subjects: Parameter learning" value="C:\dev\data\texts\I.2.6 Learning (K.3.2) Subjects_ Parameter learning"/> <!-- 269 items -->
+<parameter key="I.2.7 Natural Language Processing Subjects: Discourse" value="C:\dev\data\texts\I.2.7 Natural Language Processing Subjects_ Discourse"/> <!-- 101 items -->
+<parameter key="I.2.7 Natural Language Processing Subjects: Language generation" value="C:\dev\data\texts\I.2.7 Natural Language Processing Subjects_ Language generation"/> <!-- 108 items -->
+<parameter key="I.2.7 Natural Language Processing Subjects: Language models" value="C:\dev\data\texts\I.2.7 Natural Language Processing Subjects_ Language models"/> <!-- 148 items -->
+<parameter key="I.2.7 Natural Language Processing Subjects: Language parsing and understanding" value="C:\dev\data\texts\I.2.7 Natural Language Processing Subjects_ Language parsing and understanding"/> <!-- 403 items -->
+<parameter key="I.2.7 Natural Language Processing Subjects: Machine translation" value="C:\dev\data\texts\I.2.7 Natural Language Processing Subjects_ Machine translation"/> <!-- 149 items -->
+<parameter key="I.2.7 Natural Language Processing Subjects: Speech recognition and synthesis" value="C:\dev\data\texts\I.2.7 Natural Language Processing Subjects_ Speech recognition and synthesis"/> <!-- 546 items -->
+<parameter key="I.2.7 Natural Language Processing Subjects: Text analysis" value="C:\dev\data\texts\I.2.7 Natural Language Processing Subjects_ Text analysis"/> <!-- 799 items -->
+<parameter key="I.2.8 Problem Solving, Control Methods, and Search (F.2.2) Subjects: Backtracking" value="C:\dev\data\texts\I.2.8 Problem Solving, Control Methods, and Search (F.2.2) Subjects_ Backtracking"/> <!-- 128 items -->
+<parameter key="I.2.8 Problem Solving, Control Methods, and Search (F.2.2) Subjects: Control theory" value="C:\dev\data\texts\I.2.8 Problem Solving, Control Methods, and Search (F.2.2) Subjects_ Control theory"/> <!-- 411 items -->
+<parameter key="I.2.8 Problem Solving, Control Methods, and Search (F.2.2) Subjects: Dynamic programming" value="C:\dev\data\texts\I.2.8 Problem Solving, Control Methods, and Search (F.2.2) Subjects_ Dynamic programming"/> <!-- 336 items -->
+<parameter key="I.2.8 Problem Solving, Control Methods, and Search (F.2.2) Subjects: Graph and tree search strategies" value="C:\dev\data\texts\I.2.8 Problem Solving, Control Methods, and Search (F.2.2) Subjects_ Graph and tree search strategies"/> <!-- 609 items -->
+<parameter key="I.2.8 Problem Solving, Control Methods, and Search (F.2.2) Subjects: Heuristic methods" value="C:\dev\data\texts\I.2.8 Problem Solving, Control Methods, and Search (F.2.2) Subjects_ Heuristic methods"/> <!-- 1760 items -->
+<parameter key="I.2.8 Problem Solving, Control Methods, and Search (F.2.2) Subjects: Plan execution, formation, and generation" value="C:\dev\data\texts\I.2.8 Problem Solving, Control Methods, and Search (F.2.2) Subjects_ Plan execution, formation, and generation"/> <!-- 573 items -->
+<parameter key="I.2.8 Problem Solving, Control Methods, and Search (F.2.2) Subjects: Scheduling" value="C:\dev\data\texts\I.2.8 Problem Solving, Control Methods, and Search (F.2.2) Subjects_ Scheduling"/> <!-- 633 items -->
+<parameter key="I.2.9 Robotics Subjects: Autonomous vehicles" value="C:\dev\data\texts\I.2.9 Robotics Subjects_ Autonomous vehicles"/> <!-- 160 items -->
+<parameter key="I.2.9 Robotics Subjects: Manipulators" value="C:\dev\data\texts\I.2.9 Robotics Subjects_ Manipulators"/> <!-- 108 items -->
+<parameter key="I.2.9 Robotics Subjects: Sensors" value="C:\dev\data\texts\I.2.9 Robotics Subjects_ Sensors"/> <!-- 314 items -->
+<parameter key="I.2.10 Vision and Scene Understanding (I.4.8, I.5) Subjects: 3D/stereo scene analysis" value="C:\dev\data\texts\I.2.10 Vision and Scene Understanding (I.4.8, I.5) Subjects_ 3D_stereo scene analysis"/> <!-- 161 items -->
+<parameter key="I.2.10 Vision and Scene Understanding (I.4.8, I.5) Subjects: Intensity, color, photometry, and thresholding" value="C:\dev\data\texts\I.2.10 Vision and Scene Understanding (I.4.8, I.5) Subjects_ Intensity, color, photometry, and thresholding"/> <!-- 209 items -->
+<parameter key="I.2.10 Vision and Scene Understanding (I.4.8, I.5) Subjects: Modeling and recovery of physical attributes" value="C:\dev\data\texts\I.2.10 Vision and Scene Understanding (I.4.8, I.5) Subjects_ Modeling and recovery of physical attributes"/> <!-- 321 items -->
+<parameter key="I.2.10 Vision and Scene Understanding (I.4.8, I.5) Subjects: Motion" value="C:\dev\data\texts\I.2.10 Vision and Scene Understanding (I.4.8, I.5) Subjects_ Motion"/> <!-- 308 items -->
+<parameter key="I.2.10 Vision and Scene Understanding (I.4.8, I.5) Subjects: Perceptual reasoning" value="C:\dev\data\texts\I.2.10 Vision and Scene Understanding (I.4.8, I.5) Subjects_ Perceptual reasoning"/> <!-- 174 items -->
+<parameter key="I.2.10 Vision and Scene Understanding (I.4.8, I.5) Subjects: Representations, data structures, and transforms" value="C:\dev\data\texts\I.2.10 Vision and Scene Understanding (I.4.8, I.5) Subjects_ Representations, data structures, and transforms"/> <!-- 83 items -->
+<parameter key="I.2.10 Vision and Scene Understanding (I.4.8, I.5) Subjects: Shape" value="C:\dev\data\texts\I.2.10 Vision and Scene Understanding (I.4.8, I.5) Subjects_ Shape"/> <!-- 131 items -->
+<parameter key="I.2.10 Vision and Scene Understanding (I.4.8, I.5) Subjects: Texture" value="C:\dev\data\texts\I.2.10 Vision and Scene Understanding (I.4.8, I.5) Subjects_ Texture"/> <!-- 290 items -->
+<parameter key="I.2.10 Vision and Scene Understanding (I.4.8, I.5) Subjects: Video analysis" value="C:\dev\data\texts\I.2.10 Vision and Scene Understanding (I.4.8, I.5) Subjects_ Video analysis"/> <!-- 278 items -->
+<parameter key="I.2.11 Distributed Artificial Intelligence Subjects: Coherence and coordination" value="C:\dev\data\texts\I.2.11 Distributed Artificial Intelligence Subjects_ Coherence and coordination"/> <!-- 432 items -->
+<parameter key="I.2.11 Distributed Artificial Intelligence Subjects: Intelligent agents" value="C:\dev\data\texts\I.2.11 Distributed Artificial Intelligence Subjects_ Intelligent agents"/> <!-- 968 items -->
+<parameter key="I.2.11 Distributed Artificial Intelligence Subjects: Languages and structures" value="C:\dev\data\texts\I.2.11 Distributed Artificial Intelligence Subjects_ Languages and structures"/> <!-- 192 items -->
+<parameter key="I.2.11 Distributed Artificial Intelligence Subjects: Multiagent systems" value="C:\dev\data\texts\I.2.11 Distributed Artificial Intelligence Subjects_ Multiagent systems"/> <!-- 1564 items -->
+<parameter key="I.2.m Miscellaneous" value="C:\dev\data\texts\I.2.m Miscellaneous"/> <!-- 98 items -->
+<parameter key="I.3.0 General" value="C:\dev\data\texts\I.3.0 General"/> <!-- 158 items -->
+<parameter key="I.3.1 Hardware Architecture (B.4.2) Subjects: Graphics processors" value="C:\dev\data\texts\I.3.1 Hardware Architecture (B.4.2) Subjects_ Graphics processors"/> <!-- 264 items -->
+<parameter key="I.3.1 Hardware Architecture (B.4.2) Subjects: Input devices" value="C:\dev\data\texts\I.3.1 Hardware Architecture (B.4.2) Subjects_ Input devices"/> <!-- 179 items -->
+<parameter key="I.3.1 Hardware Architecture (B.4.2) Subjects: Parallel processing" value="C:\dev\data\texts\I.3.1 Hardware Architecture (B.4.2) Subjects_ Parallel processing"/> <!-- 162 items -->
+<parameter key="I.3.1 Hardware Architecture (B.4.2) Subjects: Raster display devices" value="C:\dev\data\texts\I.3.1 Hardware Architecture (B.4.2) Subjects_ Raster display devices"/> <!-- 138 items -->
+<parameter key="I.3.2 Graphics Systems (C.2.1, C.2.4, C.3) Subjects: Distributed/network graphics" value="C:\dev\data\texts\I.3.2 Graphics Systems (C.2.1, C.2.4, C.3) Subjects_ Distributed_network graphics"/> <!-- 280 items -->
+<parameter key="I.3.3 Picture/Image Generation Subjects: Bitmap and framebuffer operations" value="C:\dev\data\texts\I.3.3 Picture_Image Generation Subjects_ Bitmap and framebuffer operations"/> <!-- 116 items -->
+<parameter key="I.3.3 Picture/Image Generation Subjects: Digitizing and scanning" value="C:\dev\data\texts\I.3.3 Picture_Image Generation Subjects_ Digitizing and scanning"/> <!-- 112 items -->
+<parameter key="I.3.3 Picture/Image Generation Subjects: Display algorithms" value="C:\dev\data\texts\I.3.3 Picture_Image Generation Subjects_ Display algorithms"/> <!-- 1325 items -->
+<parameter key="I.3.3 Picture/Image Generation Subjects: Line and curve generation" value="C:\dev\data\texts\I.3.3 Picture_Image Generation Subjects_ Line and curve generation"/> <!-- 96 items -->
+<parameter key="I.3.3 Picture/Image Generation Subjects: Viewing algorithms" value="C:\dev\data\texts\I.3.3 Picture_Image Generation Subjects_ Viewing algorithms"/> <!-- 491 items -->
+<parameter key="I.3.4 Graphics Utilities Subjects: Graphics editors" value="C:\dev\data\texts\I.3.4 Graphics Utilities Subjects_ Graphics editors"/> <!-- 174 items -->
+<parameter key="I.3.4 Graphics Utilities Subjects: Graphics packages" value="C:\dev\data\texts\I.3.4 Graphics Utilities Subjects_ Graphics packages"/> <!-- 101 items -->
+<parameter key="I.3.4 Graphics Utilities Subjects: Paint systems" value="C:\dev\data\texts\I.3.4 Graphics Utilities Subjects_ Paint systems"/> <!-- 125 items -->
+<parameter key="I.3.4 Graphics Utilities Subjects: Software support" value="C:\dev\data\texts\I.3.4 Graphics Utilities Subjects_ Software support"/> <!-- 102 items -->
+<parameter key="I.3.4 Graphics Utilities Subjects: Virtual device interfaces" value="C:\dev\data\texts\I.3.4 Graphics Utilities Subjects_ Virtual device interfaces"/> <!-- 233 items -->
+<parameter key="I.3.5 Computational Geometry and Object Modeling Subjects: Boundary representations" value="C:\dev\data\texts\I.3.5 Computational Geometry and Object Modeling Subjects_ Boundary representations"/> <!-- 183 items -->
+<parameter key="I.3.5 Computational Geometry and Object Modeling Subjects: Curve, surface, solid, and object representations" value="C:\dev\data\texts\I.3.5 Computational Geometry and Object Modeling Subjects_ Curve, surface, solid, and object representations"/> <!-- 2510 items -->
+<parameter key="I.3.5 Computational Geometry and Object Modeling Subjects: Geometric algorithms, languages, and systems" value="C:\dev\data\texts\I.3.5 Computational Geometry and Object Modeling Subjects_ Geometric algorithms, languages, and systems"/> <!-- 1326 items -->
+<parameter key="I.3.5 Computational Geometry and Object Modeling Subjects: Hierarchy and geometric transformations" value="C:\dev\data\texts\I.3.5 Computational Geometry and Object Modeling Subjects_ Hierarchy and geometric transformations"/> <!-- 195 items -->
+<parameter key="I.3.5 Computational Geometry and Object Modeling Subjects: Modeling packages" value="C:\dev\data\texts\I.3.5 Computational Geometry and Object Modeling Subjects_ Modeling packages"/> <!-- 170 items -->
+<parameter key="I.3.5 Computational Geometry and Object Modeling Subjects: Object hierarchies" value="C:\dev\data\texts\I.3.5 Computational Geometry and Object Modeling Subjects_ Object hierarchies"/> <!-- 96 items -->
+<parameter key="I.3.5 Computational Geometry and Object Modeling Subjects: Physically based modeling" value="C:\dev\data\texts\I.3.5 Computational Geometry and Object Modeling Subjects_ Physically based modeling"/> <!-- 484 items -->
+<parameter key="I.3.5 Computational Geometry and Object Modeling Subjects: Splines" value="C:\dev\data\texts\I.3.5 Computational Geometry and Object Modeling Subjects_ Splines"/> <!-- 197 items -->
+<parameter key="I.3.6 Methodology and Techniques Subjects: Ergonomics" value="C:\dev\data\texts\I.3.6 Methodology and Techniques Subjects_ Ergonomics"/> <!-- 114 items -->
+<parameter key="I.3.6 Methodology and Techniques Subjects: Graphics data structures and data types" value="C:\dev\data\texts\I.3.6 Methodology and Techniques Subjects_ Graphics data structures and data types"/> <!-- 307 items -->
+<parameter key="I.3.6 Methodology and Techniques Subjects: Interaction techniques" value="C:\dev\data\texts\I.3.6 Methodology and Techniques Subjects_ Interaction techniques"/> <!-- 2563 items -->
+<parameter key="I.3.6 Methodology and Techniques Subjects: Languages" value="C:\dev\data\texts\I.3.6 Methodology and Techniques Subjects_ Languages"/> <!-- 205 items -->
+<parameter key="I.3.6 Methodology and Techniques Subjects: Standards" value="C:\dev\data\texts\I.3.6 Methodology and Techniques Subjects_ Standards"/> <!-- 137 items -->
+<parameter key="I.3.7 Three-Dimensional Graphics and Realism Subjects: Animation" value="C:\dev\data\texts\I.3.7 Three-Dimensional Graphics and Realism Subjects_ Animation"/> <!-- 1688 items -->
+<parameter key="I.3.7 Three-Dimensional Graphics and Realism Subjects: Color, shading, shadowing, and texture" value="C:\dev\data\texts\I.3.7 Three-Dimensional Graphics and Realism Subjects_ Color, shading, shadowing, and texture"/> <!-- 1399 items -->
+<parameter key="I.3.7 Three-Dimensional Graphics and Realism Subjects: Hidden line/surface removal" value="C:\dev\data\texts\I.3.7 Three-Dimensional Graphics and Realism Subjects_ Hidden line_surface removal"/> <!-- 96 items -->
+<parameter key="I.3.7 Three-Dimensional Graphics and Realism Subjects: Radiosity" value="C:\dev\data\texts\I.3.7 Three-Dimensional Graphics and Realism Subjects_ Radiosity"/> <!-- 215 items -->
+<parameter key="I.3.7 Three-Dimensional Graphics and Realism Subjects: Raytracing" value="C:\dev\data\texts\I.3.7 Three-Dimensional Graphics and Realism Subjects_ Raytracing"/> <!-- 406 items -->
+<parameter key="I.3.7 Three-Dimensional Graphics and Realism Subjects: Virtual reality" value="C:\dev\data\texts\I.3.7 Three-Dimensional Graphics and Realism Subjects_ Virtual reality"/> <!-- 2369 items -->
+<parameter key="I.3.7 Three-Dimensional Graphics and Realism Subjects: Visible line/surface algorithms" value="C:\dev\data\texts\I.3.7 Three-Dimensional Graphics and Realism Subjects_ Visible line_surface algorithms"/> <!-- 357 items -->
+<parameter key="I.3.8 Applications" value="C:\dev\data\texts\I.3.8 Applications"/> <!-- 334 items -->
+<parameter key="I.4.0 General Subjects: Image displays" value="C:\dev\data\texts\I.4.0 General Subjects_ Image displays"/> <!-- 93 items -->
+<parameter key="I.4.1 Digitization and Image Capture Subjects: Imaging geometry" value="C:\dev\data\texts\I.4.1 Digitization and Image Capture Subjects_ Imaging geometry"/> <!-- 119 items -->
+<parameter key="I.4.1 Digitization and Image Capture Subjects: Reflectance" value="C:\dev\data\texts\I.4.1 Digitization and Image Capture Subjects_ Reflectance"/> <!-- 72 items -->
+<parameter key="I.4.1 Digitization and Image Capture Subjects: Sampling" value="C:\dev\data\texts\I.4.1 Digitization and Image Capture Subjects_ Sampling"/> <!-- 119 items -->
+<parameter key="I.4.1 Digitization and Image Capture Subjects: Scanning" value="C:\dev\data\texts\I.4.1 Digitization and Image Capture Subjects_ Scanning"/> <!-- 182 items -->
+<parameter key="I.4.2 Compression (Coding) (E.4) Subjects: Approximate methods" value="C:\dev\data\texts\I.4.2 Compression (Coding) (E.4) Subjects_ Approximate methods"/> <!-- 87 items -->
+<parameter key="I.4.3 Enhancement Subjects: Filtering" value="C:\dev\data\texts\I.4.3 Enhancement Subjects_ Filtering"/> <!-- 191 items -->
+<parameter key="I.4.3 Enhancement Subjects: Geometric correction" value="C:\dev\data\texts\I.4.3 Enhancement Subjects_ Geometric correction"/> <!-- 74 items -->
+<parameter key="I.4.6 Segmentation Subjects: Edge and feature detection" value="C:\dev\data\texts\I.4.6 Segmentation Subjects_ Edge and feature detection"/> <!-- 262 items -->
+<parameter key="I.4.6 Segmentation Subjects: Pixel classification" value="C:\dev\data\texts\I.4.6 Segmentation Subjects_ Pixel classification"/> <!-- 141 items -->
+<parameter key="I.4.6 Segmentation Subjects: Region growing, partitioning" value="C:\dev\data\texts\I.4.6 Segmentation Subjects_ Region growing, partitioning"/> <!-- 169 items -->
+<parameter key="I.4.7 Feature Measurement Subjects: Feature representation" value="C:\dev\data\texts\I.4.7 Feature Measurement Subjects_ Feature representation"/> <!-- 146 items -->
+<parameter key="I.4.7 Feature Measurement Subjects: Size and shape" value="C:\dev\data\texts\I.4.7 Feature Measurement Subjects_ Size and shape"/> <!-- 139 items -->
+<parameter key="I.4.7 Feature Measurement Subjects: Texture" value="C:\dev\data\texts\I.4.7 Feature Measurement Subjects_ Texture"/> <!-- 298 items -->
+<parameter key="I.4.8 Scene Analysis Subjects: Color" value="C:\dev\data\texts\I.4.8 Scene Analysis Subjects_ Color"/> <!-- 251 items -->
+<parameter key="I.4.8 Scene Analysis Subjects: Motion" value="C:\dev\data\texts\I.4.8 Scene Analysis Subjects_ Motion"/> <!-- 261 items -->
+<parameter key="I.4.8 Scene Analysis Subjects: Object recognition" value="C:\dev\data\texts\I.4.8 Scene Analysis Subjects_ Object recognition"/> <!-- 318 items -->
+<parameter key="I.4.8 Scene Analysis Subjects: Photometry" value="C:\dev\data\texts\I.4.8 Scene Analysis Subjects_ Photometry"/> <!-- 82 items -->
+<parameter key="I.4.8 Scene Analysis Subjects: Range data" value="C:\dev\data\texts\I.4.8 Scene Analysis Subjects_ Range data"/> <!-- 132 items -->
+<parameter key="I.4.8 Scene Analysis Subjects: Sensor fusion" value="C:\dev\data\texts\I.4.8 Scene Analysis Subjects_ Sensor fusion"/> <!-- 85 items -->
+<parameter key="I.4.8 Scene Analysis Subjects: Shape" value="C:\dev\data\texts\I.4.8 Scene Analysis Subjects_ Shape"/> <!-- 153 items -->
+<parameter key="I.4.8 Scene Analysis Subjects: Stereo" value="C:\dev\data\texts\I.4.8 Scene Analysis Subjects_ Stereo"/> <!-- 115 items -->
+<parameter key="I.4.8 Scene Analysis Subjects: Time-varying imagery" value="C:\dev\data\texts\I.4.8 Scene Analysis Subjects_ Time-varying imagery"/> <!-- 171 items -->
+<parameter key="I.4.8 Scene Analysis Subjects: Tracking" value="C:\dev\data\texts\I.4.8 Scene Analysis Subjects_ Tracking"/> <!-- 432 items -->
+<parameter key="I.4.9 Applications" value="C:\dev\data\texts\I.4.9 Applications"/> <!-- 259 items -->
+<parameter key="I.4.10 Image Representation Subjects: Hierarchical" value="C:\dev\data\texts\I.4.10 Image Representation Subjects_ Hierarchical"/> <!-- 105 items -->
+<parameter key="I.4.10 Image Representation Subjects: Morphological" value="C:\dev\data\texts\I.4.10 Image Representation Subjects_ Morphological"/> <!-- 82 items -->
+<parameter key="I.4.10 Image Representation Subjects: Volumetric" value="C:\dev\data\texts\I.4.10 Image Representation Subjects_ Volumetric"/> <!-- 228 items -->
+<parameter key="I.5.1 Models Subjects: Fuzzy set" value="C:\dev\data\texts\I.5.1 Models Subjects_ Fuzzy set"/> <!-- 77 items -->
+<parameter key="I.5.1 Models Subjects: Geometric" value="C:\dev\data\texts\I.5.1 Models Subjects_ Geometric"/> <!-- 97 items -->
+<parameter key="I.5.1 Models Subjects: Neural nets" value="C:\dev\data\texts\I.5.1 Models Subjects_ Neural nets"/> <!-- 197 items -->
+<parameter key="I.5.1 Models Subjects: Statistical" value="C:\dev\data\texts\I.5.1 Models Subjects_ Statistical"/> <!-- 429 items -->
+<parameter key="I.5.1 Models Subjects: Structural" value="C:\dev\data\texts\I.5.1 Models Subjects_ Structural"/> <!-- 118 items -->
+<parameter key="I.5.2 Design Methodology Subjects: Classifier design and evaluation" value="C:\dev\data\texts\I.5.2 Design Methodology Subjects_ Classifier design and evaluation"/> <!-- 929 items -->
+<parameter key="I.5.2 Design Methodology Subjects: Feature evaluation and selection" value="C:\dev\data\texts\I.5.2 Design Methodology Subjects_ Feature evaluation and selection"/> <!-- 396 items -->
+<parameter key="I.5.2 Design Methodology Subjects: Pattern analysis" value="C:\dev\data\texts\I.5.2 Design Methodology Subjects_ Pattern analysis"/> <!-- 556 items -->
+<parameter key="I.5.3 Clustering Subjects: Algorithms" value="C:\dev\data\texts\I.5.3 Clustering Subjects_ Algorithms"/> <!-- 369 items -->
+<parameter key="I.5.3 Clustering Subjects: Similarity measures" value="C:\dev\data\texts\I.5.3 Clustering Subjects_ Similarity measures"/> <!-- 388 items -->
+<parameter key="I.5.4 Applications Subjects: Computer vision" value="C:\dev\data\texts\I.5.4 Applications Subjects_ Computer vision"/> <!-- 364 items -->
+<parameter key="I.5.4 Applications Subjects: Signal processing" value="C:\dev\data\texts\I.5.4 Applications Subjects_ Signal processing"/> <!-- 472 items -->
+<parameter key="I.5.4 Applications Subjects: Text processing" value="C:\dev\data\texts\I.5.4 Applications Subjects_ Text processing"/> <!-- 425 items -->
+<parameter key="I.5.4 Applications Subjects: Waveform analysis" value="C:\dev\data\texts\I.5.4 Applications Subjects_ Waveform analysis"/> <!-- 78 items -->
+<parameter key="I.5.5 Implementation (C.3) Subjects: Interactive systems" value="C:\dev\data\texts\I.5.5 Implementation (C.3) Subjects_ Interactive systems"/> <!-- 248 items -->
+<parameter key="I.6.0 General" value="C:\dev\data\texts\I.6.0 General"/> <!-- 231 items -->
+<parameter key="I.6.1 Simulation Theory Subjects: Model classification" value="C:\dev\data\texts\I.6.1 Simulation Theory Subjects_ Model classification"/> <!-- 267 items -->
+<parameter key="I.6.1 Simulation Theory Subjects: Systems theory" value="C:\dev\data\texts\I.6.1 Simulation Theory Subjects_ Systems theory"/> <!-- 209 items -->
+<parameter key="I.6.1 Simulation Theory Subjects: Types of simulation (continuous and discrete)" value="C:\dev\data\texts\I.6.1 Simulation Theory Subjects_ Types of simulation (continuous and discrete)"/> <!-- 156 items -->
+<parameter key="I.6.2 Simulation Languages" value="C:\dev\data\texts\I.6.2 Simulation Languages"/> <!-- 284 items -->
+<parameter key="I.6.3 Applications" value="C:\dev\data\texts\I.6.3 Applications"/> <!-- 369 items -->
+<parameter key="I.6.4 Model Validation and Analysis" value="C:\dev\data\texts\I.6.4 Model Validation and Analysis"/> <!-- 390 items -->
+<parameter key="I.6.5 Model Development Subjects: Modeling methodologies" value="C:\dev\data\texts\I.6.5 Model Development Subjects_ Modeling methodologies"/> <!-- 1050 items -->
+<parameter key="I.6.6 Simulation Output Analysis" value="C:\dev\data\texts\I.6.6 Simulation Output Analysis"/> <!-- 317 items -->
+<parameter key="I.6.7 Simulation Support Systems Subjects: Environments" value="C:\dev\data\texts\I.6.7 Simulation Support Systems Subjects_ Environments"/> <!-- 521 items -->
+<parameter key="I.6.8 Types of Simulation Subjects: Animation" value="C:\dev\data\texts\I.6.8 Types of Simulation Subjects_ Animation"/> <!-- 290 items -->
+<parameter key="I.6.8 Types of Simulation Subjects: Combined" value="C:\dev\data\texts\I.6.8 Types of Simulation Subjects_ Combined"/> <!-- 183 items -->
+<parameter key="I.6.8 Types of Simulation Subjects: Continuous" value="C:\dev\data\texts\I.6.8 Types of Simulation Subjects_ Continuous"/> <!-- 162 items -->
+<parameter key="I.6.8 Types of Simulation Subjects: Discrete event" value="C:\dev\data\texts\I.6.8 Types of Simulation Subjects_ Discrete event"/> <!-- 1149 items -->
+<parameter key="I.6.8 Types of Simulation Subjects: Distributed" value="C:\dev\data\texts\I.6.8 Types of Simulation Subjects_ Distributed"/> <!-- 477 items -->
+<parameter key="I.6.8 Types of Simulation Subjects: Gaming" value="C:\dev\data\texts\I.6.8 Types of Simulation Subjects_ Gaming"/> <!-- 78 items -->
+<parameter key="I.6.8 Types of Simulation Subjects: Monte Carlo" value="C:\dev\data\texts\I.6.8 Types of Simulation Subjects_ Monte Carlo"/> <!-- 346 items -->
+<parameter key="I.6.8 Types of Simulation Subjects: Parallel" value="C:\dev\data\texts\I.6.8 Types of Simulation Subjects_ Parallel"/> <!-- 685 items -->
+<parameter key="I.6.8 Types of Simulation Subjects: Visual" value="C:\dev\data\texts\I.6.8 Types of Simulation Subjects_ Visual"/> <!-- 299 items -->
+<parameter key="I.7.0 General" value="C:\dev\data\texts\I.7.0 General"/> <!-- 74 items -->
+<parameter key="I.7.1 Document and Text Editing Subjects: Document management" value="C:\dev\data\texts\I.7.1 Document and Text Editing Subjects_ Document management"/> <!-- 222 items -->
+<parameter key="I.7.2 Document Preparation Subjects: Desktop publishing" value="C:\dev\data\texts\I.7.2 Document Preparation Subjects_ Desktop publishing"/> <!-- 136 items -->
+<parameter key="I.7.2 Document Preparation Subjects: Format and notation" value="C:\dev\data\texts\I.7.2 Document Preparation Subjects_ Format and notation"/> <!-- 244 items -->
+<parameter key="I.7.2 Document Preparation Subjects: Hypertext/hypermedia" value="C:\dev\data\texts\I.7.2 Document Preparation Subjects_ Hypertext_hypermedia"/> <!-- 713 items -->
+<parameter key="I.7.2 Document Preparation Subjects: Languages and systems" value="C:\dev\data\texts\I.7.2 Document Preparation Subjects_ Languages and systems"/> <!-- 182 items -->
+<parameter key="I.7.2 Document Preparation Subjects: Markup languages" value="C:\dev\data\texts\I.7.2 Document Preparation Subjects_ Markup languages"/> <!-- 378 items -->
+<parameter key="I.7.2 Document Preparation Subjects: Multi/mixed media" value="C:\dev\data\texts\I.7.2 Document Preparation Subjects_ Multi_mixed media"/> <!-- 242 items -->
+<parameter key="I.7.2 Document Preparation Subjects: Standards" value="C:\dev\data\texts\I.7.2 Document Preparation Subjects_ Standards"/> <!-- 104 items -->
+<parameter key="I.7.4 Electronic Publishing (H.5.4, J.7)" value="C:\dev\data\texts\I.7.4 Electronic Publishing (H.5.4, J.7)"/> <!-- 143 items -->
+<parameter key="I.7.5 Document Capture (I.4.1) Subjects: Document analysis" value="C:\dev\data\texts\I.7.5 Document Capture (I.4.1) Subjects_ Document analysis"/> <!-- 277 items -->
+<parameter key="I.7.5 Document Capture (I.4.1) Subjects: Graphics recognition and interpretation" value="C:\dev\data\texts\I.7.5 Document Capture (I.4.1) Subjects_ Graphics recognition and interpretation"/> <!-- 72 items -->
+<parameter key="I.7.5 Document Capture (I.4.1) Subjects: Scanning" value="C:\dev\data\texts\I.7.5 Document Capture (I.4.1) Subjects_ Scanning"/> <!-- 76 items -->
+<parameter key="I.7.m Miscellaneous" value="C:\dev\data\texts\I.7.m Miscellaneous"/> <!-- 78 items -->
+<parameter key="J.0 GENERAL" value="C:\dev\data\texts\J.0 GENERAL"/> <!-- 303 items -->
+<parameter key="J.1 ADMINISTRATIVE DATA PROCESSING Subjects: Business" value="C:\dev\data\texts\J.1 ADMINISTRATIVE DATA PROCESSING Subjects_ Business"/> <!-- 1014 items -->
+<parameter key="J.1 ADMINISTRATIVE DATA PROCESSING Subjects: Education" value="C:\dev\data\texts\J.1 ADMINISTRATIVE DATA PROCESSING Subjects_ Education"/> <!-- 668 items -->
+<parameter key="J.1 ADMINISTRATIVE DATA PROCESSING Subjects: Financial (e.g., EFTS)" value="C:\dev\data\texts\J.1 ADMINISTRATIVE DATA PROCESSING Subjects_ Financial (e.g., EFTS)"/> <!-- 394 items -->
+<parameter key="J.1 ADMINISTRATIVE DATA PROCESSING Subjects: Government" value="C:\dev\data\texts\J.1 ADMINISTRATIVE DATA PROCESSING Subjects_ Government"/> <!-- 175 items -->
+<parameter key="J.1 ADMINISTRATIVE DATA PROCESSING Subjects: Law" value="C:\dev\data\texts\J.1 ADMINISTRATIVE DATA PROCESSING Subjects_ Law"/> <!-- 252 items -->
+<parameter key="J.1 ADMINISTRATIVE DATA PROCESSING Subjects: Manufacturing" value="C:\dev\data\texts\J.1 ADMINISTRATIVE DATA PROCESSING Subjects_ Manufacturing"/> <!-- 596 items -->
+<parameter key="J.1 ADMINISTRATIVE DATA PROCESSING Subjects: Marketing" value="C:\dev\data\texts\J.1 ADMINISTRATIVE DATA PROCESSING Subjects_ Marketing"/> <!-- 144 items -->
+<parameter key="J.1 ADMINISTRATIVE DATA PROCESSING Subjects: Military" value="C:\dev\data\texts\J.1 ADMINISTRATIVE DATA PROCESSING Subjects_ Military"/> <!-- 272 items -->
+<parameter key="J.2 PHYSICAL SCIENCES AND ENGINEERING Subjects: Aerospace" value="C:\dev\data\texts\J.2 PHYSICAL SCIENCES AND ENGINEERING Subjects_ Aerospace"/> <!-- 432 items -->
+<parameter key="J.2 PHYSICAL SCIENCES AND ENGINEERING Subjects: Archaeology" value="C:\dev\data\texts\J.2 PHYSICAL SCIENCES AND ENGINEERING Subjects_ Archaeology"/> <!-- 111 items -->
+<parameter key="J.2 PHYSICAL SCIENCES AND ENGINEERING Subjects: Astronomy" value="C:\dev\data\texts\J.2 PHYSICAL SCIENCES AND ENGINEERING Subjects_ Astronomy"/> <!-- 121 items -->
+<parameter key="J.2 PHYSICAL SCIENCES AND ENGINEERING Subjects: Chemistry" value="C:\dev\data\texts\J.2 PHYSICAL SCIENCES AND ENGINEERING Subjects_ Chemistry"/> <!-- 296 items -->
+<parameter key="J.2 PHYSICAL SCIENCES AND ENGINEERING Subjects: Earth and atmospheric sciences" value="C:\dev\data\texts\J.2 PHYSICAL SCIENCES AND ENGINEERING Subjects_ Earth and atmospheric sciences"/> <!-- 507 items -->
+<parameter key="J.2 PHYSICAL SCIENCES AND ENGINEERING Subjects: Electronics" value="C:\dev\data\texts\J.2 PHYSICAL SCIENCES AND ENGINEERING Subjects_ Electronics"/> <!-- 1006 items -->
+<parameter key="J.2 PHYSICAL SCIENCES AND ENGINEERING Subjects: Engineering" value="C:\dev\data\texts\J.2 PHYSICAL SCIENCES AND ENGINEERING Subjects_ Engineering"/> <!-- 859 items -->
+<parameter key="J.2 PHYSICAL SCIENCES AND ENGINEERING Subjects: Mathematics and statistics" value="C:\dev\data\texts\J.2 PHYSICAL SCIENCES AND ENGINEERING Subjects_ Mathematics and statistics"/> <!-- 202 items -->
+<parameter key="J.2 PHYSICAL SCIENCES AND ENGINEERING Subjects: Physics" value="C:\dev\data\texts\J.2 PHYSICAL SCIENCES AND ENGINEERING Subjects_ Physics"/> <!-- 525 items -->
+<parameter key="J.3 LIFE AND MEDICAL SCIENCES Subjects: Biology and genetics" value="C:\dev\data\texts\J.3 LIFE AND MEDICAL SCIENCES Subjects_ Biology and genetics"/> <!-- 1751 items -->
+<parameter key="J.3 LIFE AND MEDICAL SCIENCES Subjects: Health" value="C:\dev\data\texts\J.3 LIFE AND MEDICAL SCIENCES Subjects_ Health"/> <!-- 753 items -->
+<parameter key="J.3 LIFE AND MEDICAL SCIENCES Subjects: Medical information systems" value="C:\dev\data\texts\J.3 LIFE AND MEDICAL SCIENCES Subjects_ Medical information systems"/> <!-- 551 items -->
+<parameter key="J.4 SOCIAL AND BEHAVIORAL SCIENCES Subjects: Economics" value="C:\dev\data\texts\J.4 SOCIAL AND BEHAVIORAL SCIENCES Subjects_ Economics"/> <!-- 384 items -->
+<parameter key="J.4 SOCIAL AND BEHAVIORAL SCIENCES Subjects: Psychology" value="C:\dev\data\texts\J.4 SOCIAL AND BEHAVIORAL SCIENCES Subjects_ Psychology"/> <!-- 397 items -->
+<parameter key="J.4 SOCIAL AND BEHAVIORAL SCIENCES Subjects: Sociology" value="C:\dev\data\texts\J.4 SOCIAL AND BEHAVIORAL SCIENCES Subjects_ Sociology"/> <!-- 246 items -->
+<parameter key="J.5 ARTS AND HUMANITIES Subjects: Architecture" value="C:\dev\data\texts\J.5 ARTS AND HUMANITIES Subjects_ Architecture"/> <!-- 132 items -->
+<parameter key="J.5 ARTS AND HUMANITIES Subjects: Fine arts" value="C:\dev\data\texts\J.5 ARTS AND HUMANITIES Subjects_ Fine arts"/> <!-- 360 items -->
+<parameter key="J.5 ARTS AND HUMANITIES Subjects: Linguistics" value="C:\dev\data\texts\J.5 ARTS AND HUMANITIES Subjects_ Linguistics"/> <!-- 168 items -->
+<parameter key="J.5 ARTS AND HUMANITIES Subjects: Literature" value="C:\dev\data\texts\J.5 ARTS AND HUMANITIES Subjects_ Literature"/> <!-- 118 items -->
+<parameter key="J.5 ARTS AND HUMANITIES Subjects: Performing arts (e.g., dance, music)" value="C:\dev\data\texts\J.5 ARTS AND HUMANITIES Subjects_ Performing arts (e.g., dance, music)"/> <!-- 267 items -->
+<parameter key="J.6 COMPUTER-AIDED ENGINEERING Subjects: Computer-aided design (CAD)" value="C:\dev\data\texts\J.6 COMPUTER-AIDED ENGINEERING Subjects_ Computer-aided design (CAD)"/> <!-- 2045 items -->
+<parameter key="J.6 COMPUTER-AIDED ENGINEERING Subjects: Computer-aided manufacturing (CAM)" value="C:\dev\data\texts\J.6 COMPUTER-AIDED ENGINEERING Subjects_ Computer-aided manufacturing (CAM)"/> <!-- 371 items -->
+<parameter key="J.7 COMPUTERS IN OTHER SYSTEMS (C.3) Subjects: Command and control" value="C:\dev\data\texts\J.7 COMPUTERS IN OTHER SYSTEMS (C.3) Subjects_ Command and control"/> <!-- 401 items -->
+<parameter key="J.7 COMPUTERS IN OTHER SYSTEMS (C.3) Subjects: Consumer products" value="C:\dev\data\texts\J.7 COMPUTERS IN OTHER SYSTEMS (C.3) Subjects_ Consumer products"/> <!-- 341 items -->
+<parameter key="J.7 COMPUTERS IN OTHER SYSTEMS (C.3) Subjects: Industrial control" value="C:\dev\data\texts\J.7 COMPUTERS IN OTHER SYSTEMS (C.3) Subjects_ Industrial control"/> <!-- 285 items -->
+<parameter key="J.7 COMPUTERS IN OTHER SYSTEMS (C.3) Subjects: Military" value="C:\dev\data\texts\J.7 COMPUTERS IN OTHER SYSTEMS (C.3) Subjects_ Military"/> <!-- 298 items -->
+<parameter key="J.7 COMPUTERS IN OTHER SYSTEMS (C.3) Subjects: Process control" value="C:\dev\data\texts\J.7 COMPUTERS IN OTHER SYSTEMS (C.3) Subjects_ Process control"/> <!-- 339 items -->
+<parameter key="J.7 COMPUTERS IN OTHER SYSTEMS (C.3) Subjects: Publishing" value="C:\dev\data\texts\J.7 COMPUTERS IN OTHER SYSTEMS (C.3) Subjects_ Publishing"/> <!-- 188 items -->
+<parameter key="J.7 COMPUTERS IN OTHER SYSTEMS (C.3) Subjects: Real time" value="C:\dev\data\texts\J.7 COMPUTERS IN OTHER SYSTEMS (C.3) Subjects_ Real time"/> <!-- 384 items -->
+<parameter key="J.m MISCELLANEOUS" value="C:\dev\data\texts\J.m MISCELLANEOUS"/> <!-- 99 items -->
+<parameter key="K.0 GENERAL" value="C:\dev\data\texts\K.0 GENERAL"/> <!-- 384 items -->
+<parameter key="K.1 THE COMPUTER INDUSTRY Subjects: Markets" value="C:\dev\data\texts\K.1 THE COMPUTER INDUSTRY Subjects_ Markets"/> <!-- 176 items -->
+<parameter key="K.1 THE COMPUTER INDUSTRY Subjects: Standards" value="C:\dev\data\texts\K.1 THE COMPUTER INDUSTRY Subjects_ Standards"/> <!-- 242 items -->
+<parameter key="K.1 THE COMPUTER INDUSTRY Subjects: Suppliers" value="C:\dev\data\texts\K.1 THE COMPUTER INDUSTRY Subjects_ Suppliers"/> <!-- 126 items -->
+<parameter key="K.2 HISTORY OF COMPUTING Subjects: Hardware" value="C:\dev\data\texts\K.2 HISTORY OF COMPUTING Subjects_ Hardware"/> <!-- 135 items -->
+<parameter key="K.2 HISTORY OF COMPUTING Subjects: People" value="C:\dev\data\texts\K.2 HISTORY OF COMPUTING Subjects_ People"/> <!-- 111 items -->
+<parameter key="K.2 HISTORY OF COMPUTING Subjects: Software" value="C:\dev\data\texts\K.2 HISTORY OF COMPUTING Subjects_ Software"/> <!-- 114 items -->
+<parameter key="K.2 HISTORY OF COMPUTING Subjects: Systems" value="C:\dev\data\texts\K.2 HISTORY OF COMPUTING Subjects_ Systems"/> <!-- 134 items -->
+<parameter key="K.3.0 General" value="C:\dev\data\texts\K.3.0 General"/> <!-- 187 items -->
+<parameter key="K.3.1 Computer Uses in Education Subjects: Collaborative learning" value="C:\dev\data\texts\K.3.1 Computer Uses in Education Subjects_ Collaborative learning"/> <!-- 480 items -->
+<parameter key="K.3.1 Computer Uses in Education Subjects: Computer-assisted instruction (CAI)" value="C:\dev\data\texts\K.3.1 Computer Uses in Education Subjects_ Computer-assisted instruction (CAI)"/> <!-- 956 items -->
+<parameter key="K.3.1 Computer Uses in Education Subjects: Computer-managed instruction (CMI)" value="C:\dev\data\texts\K.3.1 Computer Uses in Education Subjects_ Computer-managed instruction (CMI)"/> <!-- 175 items -->
+<parameter key="K.3.1 Computer Uses in Education Subjects: Distance learning" value="C:\dev\data\texts\K.3.1 Computer Uses in Education Subjects_ Distance learning"/> <!-- 384 items -->
+<parameter key="K.3.2 Computer and Information Science Education Subjects: Accreditation" value="C:\dev\data\texts\K.3.2 Computer and Information Science Education Subjects_ Accreditation"/> <!-- 147 items -->
+<parameter key="K.3.2 Computer and Information Science Education Subjects: Computer science education" value="C:\dev\data\texts\K.3.2 Computer and Information Science Education Subjects_ Computer science education"/> <!-- 3342 items -->
+<parameter key="K.3.2 Computer and Information Science Education Subjects: Curriculum" value="C:\dev\data\texts\K.3.2 Computer and Information Science Education Subjects_ Curriculum"/> <!-- 2248 items -->
+<parameter key="K.3.2 Computer and Information Science Education Subjects: Information systems education" value="C:\dev\data\texts\K.3.2 Computer and Information Science Education Subjects_ Information systems education"/> <!-- 447 items -->
+<parameter key="K.3.2 Computer and Information Science Education Subjects: Literacy" value="C:\dev\data\texts\K.3.2 Computer and Information Science Education Subjects_ Literacy"/> <!-- 164 items -->
+<parameter key="K.3.2 Computer and Information Science Education Subjects: Self-assessment" value="C:\dev\data\texts\K.3.2 Computer and Information Science Education Subjects_ Self-assessment"/> <!-- 200 items -->
+<parameter key="K.3.m Miscellaneous Subjects: Computer literacy" value="C:\dev\data\texts\K.3.m Miscellaneous Subjects_ Computer literacy"/> <!-- 103 items -->
+<parameter key="K.4.0 General" value="C:\dev\data\texts\K.4.0 General"/> <!-- 393 items -->
+<parameter key="K.4.1 Public Policy Issues Subjects: Abuse and crime involving computers" value="C:\dev\data\texts\K.4.1 Public Policy Issues Subjects_ Abuse and crime involving computers"/> <!-- 175 items -->
+<parameter key="K.4.1 Public Policy Issues Subjects: Ethics" value="C:\dev\data\texts\K.4.1 Public Policy Issues Subjects_ Ethics"/> <!-- 170 items -->
+<parameter key="K.4.1 Public Policy Issues Subjects: Human safety" value="C:\dev\data\texts\K.4.1 Public Policy Issues Subjects_ Human safety"/> <!-- 78 items -->
+<parameter key="K.4.1 Public Policy Issues Subjects: Intellectual property rights" value="C:\dev\data\texts\K.4.1 Public Policy Issues Subjects_ Intellectual property rights"/> <!-- 157 items -->
+<parameter key="K.4.1 Public Policy Issues Subjects: Privacy" value="C:\dev\data\texts\K.4.1 Public Policy Issues Subjects_ Privacy"/> <!-- 494 items -->
+<parameter key="K.4.1 Public Policy Issues Subjects: Regulation" value="C:\dev\data\texts\K.4.1 Public Policy Issues Subjects_ Regulation"/> <!-- 127 items -->
+<parameter key="K.4.2 Social Issues Subjects: Abuse and crime involving computers" value="C:\dev\data\texts\K.4.2 Social Issues Subjects_ Abuse and crime involving computers"/> <!-- 92 items -->
+<parameter key="K.4.2 Social Issues Subjects: Assistive technologies for persons with disabilities" value="C:\dev\data\texts\K.4.2 Social Issues Subjects_ Assistive technologies for persons with disabilities"/> <!-- 829 items -->
+<parameter key="K.4.2 Social Issues Subjects: Employment" value="C:\dev\data\texts\K.4.2 Social Issues Subjects_ Employment"/> <!-- 81 items -->
+<parameter key="K.4.2 Social Issues Subjects: Handicapped persons/special needs" value="C:\dev\data\texts\K.4.2 Social Issues Subjects_ Handicapped persons_special needs"/> <!-- 103 items -->
+<parameter key="K.4.3 Organizational Impacts Subjects: Computer-supported collaborative work" value="C:\dev\data\texts\K.4.3 Organizational Impacts Subjects_ Computer-supported collaborative work"/> <!-- 346 items -->
+<parameter key="K.4.3 Organizational Impacts Subjects: Employment" value="C:\dev\data\texts\K.4.3 Organizational Impacts Subjects_ Employment"/> <!-- 78 items -->
+<parameter key="K.4.4 Electronic Commerce (J.1) Subjects: Distributed commercial transactions" value="C:\dev\data\texts\K.4.4 Electronic Commerce (J.1) Subjects_ Distributed commercial transactions"/> <!-- 188 items -->
+<parameter key="K.4.4 Electronic Commerce (J.1) Subjects: Electronic data interchange (EDI)" value="C:\dev\data\texts\K.4.4 Electronic Commerce (J.1) Subjects_ Electronic data interchange (EDI)"/> <!-- 84 items -->
+<parameter key="K.4.4 Electronic Commerce (J.1) Subjects: Intellectual property" value="C:\dev\data\texts\K.4.4 Electronic Commerce (J.1) Subjects_ Intellectual property"/> <!-- 84 items -->
+<parameter key="K.4.4 Electronic Commerce (J.1) Subjects: Payment schemes" value="C:\dev\data\texts\K.4.4 Electronic Commerce (J.1) Subjects_ Payment schemes"/> <!-- 89 items -->
+<parameter key="K.4.4 Electronic Commerce (J.1) Subjects: Security" value="C:\dev\data\texts\K.4.4 Electronic Commerce (J.1) Subjects_ Security"/> <!-- 350 items -->
+<parameter key="K.4.m Miscellaneous" value="C:\dev\data\texts\K.4.m Miscellaneous"/> <!-- 103 items -->
+<parameter key="K.5.0 General" value="C:\dev\data\texts\K.5.0 General"/> <!-- 187 items -->
+<parameter key="K.5.1 Hardware/Software Protection Subjects: Copyrights" value="C:\dev\data\texts\K.5.1 Hardware_Software Protection Subjects_ Copyrights"/> <!-- 169 items -->
+<parameter key="K.5.1 Hardware/Software Protection Subjects: Proprietary rights" value="C:\dev\data\texts\K.5.1 Hardware_Software Protection Subjects_ Proprietary rights"/> <!-- 82 items -->
+<parameter key="K.5.2 Governmental Issues Subjects: Regulation" value="C:\dev\data\texts\K.5.2 Governmental Issues Subjects_ Regulation"/> <!-- 92 items -->
+<parameter key="K.6.0 General Subjects: Economics" value="C:\dev\data\texts\K.6.0 General Subjects_ Economics"/> <!-- 170 items -->
+<parameter key="K.6.1 Project and People Management Subjects: Life cycle" value="C:\dev\data\texts\K.6.1 Project and People Management Subjects_ Life cycle"/> <!-- 174 items -->
+<parameter key="K.6.1 Project and People Management Subjects: Management techniques (e.g., PERT/CPM)" value="C:\dev\data\texts\K.6.1 Project and People Management Subjects_ Management techniques (e.g., PERT_CPM)"/> <!-- 585 items -->
+<parameter key="K.6.1 Project and People Management Subjects: Staffing" value="C:\dev\data\texts\K.6.1 Project and People Management Subjects_ Staffing"/> <!-- 640 items -->
+<parameter key="K.6.1 Project and People Management Subjects: Strategic information systems planning" value="C:\dev\data\texts\K.6.1 Project and People Management Subjects_ Strategic information systems planning"/> <!-- 327 items -->
+<parameter key="K.6.1 Project and People Management Subjects: Systems analysis and design" value="C:\dev\data\texts\K.6.1 Project and People Management Subjects_ Systems analysis and design"/> <!-- 819 items -->
+<parameter key="K.6.1 Project and People Management Subjects: Systems development" value="C:\dev\data\texts\K.6.1 Project and People Management Subjects_ Systems development"/> <!-- 532 items -->
+<parameter key="K.6.1 Project and People Management Subjects: Training" value="C:\dev\data\texts\K.6.1 Project and People Management Subjects_ Training"/> <!-- 849 items -->
+<parameter key="K.6.2 Installation Management Subjects: Benchmarks" value="C:\dev\data\texts\K.6.2 Installation Management Subjects_ Benchmarks"/> <!-- 454 items -->
+<parameter key="K.6.2 Installation Management Subjects: Computer selection" value="C:\dev\data\texts\K.6.2 Installation Management Subjects_ Computer selection"/> <!-- 76 items -->
+<parameter key="K.6.2 Installation Management Subjects: Computing equipment management" value="C:\dev\data\texts\K.6.2 Installation Management Subjects_ Computing equipment management"/> <!-- 109 items -->
+<parameter key="K.6.2 Installation Management Subjects: Performance and usage measurement" value="C:\dev\data\texts\K.6.2 Installation Management Subjects_ Performance and usage measurement"/> <!-- 221 items -->
+<parameter key="K.6.2 Installation Management Subjects: Pricing and resource allocation" value="C:\dev\data\texts\K.6.2 Installation Management Subjects_ Pricing and resource allocation"/> <!-- 151 items -->
+<parameter key="K.6.3 Software Management (D.2.9) Subjects: Software development" value="C:\dev\data\texts\K.6.3 Software Management (D.2.9) Subjects_ Software development"/> <!-- 1422 items -->
+<parameter key="K.6.3 Software Management (D.2.9) Subjects: Software maintenance" value="C:\dev\data\texts\K.6.3 Software Management (D.2.9) Subjects_ Software maintenance"/> <!-- 397 items -->
+<parameter key="K.6.3 Software Management (D.2.9) Subjects: Software process" value="C:\dev\data\texts\K.6.3 Software Management (D.2.9) Subjects_ Software process"/> <!-- 304 items -->
+<parameter key="K.6.3 Software Management (D.2.9) Subjects: Software selection" value="C:\dev\data\texts\K.6.3 Software Management (D.2.9) Subjects_ Software selection"/> <!-- 142 items -->
+<parameter key="K.6.4 System Management Subjects: Centralization/decentralization" value="C:\dev\data\texts\K.6.4 System Management Subjects_ Centralization_decentralization"/> <!-- 146 items -->
+<parameter key="K.6.4 System Management Subjects: Quality assurance" value="C:\dev\data\texts\K.6.4 System Management Subjects_ Quality assurance"/> <!-- 220 items -->
+<parameter key="K.6.5 Security and Protection (D.4.6, K.4.2) Subjects: Authentication" value="C:\dev\data\texts\K.6.5 Security and Protection (D.4.6, K.4.2) Subjects_ Authentication"/> <!-- 460 items -->
+<parameter key="K.6.5 Security and Protection (D.4.6, K.4.2) Subjects: Invasive software (e.g., viruses, worms, Trojan horses)" value="C:\dev\data\texts\K.6.5 Security and Protection (D.4.6, K.4.2) Subjects_ Invasive software (e.g., viruses, worms, Trojan horses)"/> <!-- 315 items -->
+<parameter key="K.6.5 Security and Protection (D.4.6, K.4.2) Subjects: Unauthorized access (e.g., hacking, phreaking)" value="C:\dev\data\texts\K.6.5 Security and Protection (D.4.6, K.4.2) Subjects_ Unauthorized access (e.g., hacking, phreaking)"/> <!-- 419 items -->
+<parameter key="K.7.0 General" value="C:\dev\data\texts\K.7.0 General"/> <!-- 261 items -->
+<parameter key="K.7.1 Occupations" value="C:\dev\data\texts\K.7.1 Occupations"/> <!-- 208 items -->
+<parameter key="K.7.2 Organizations" value="C:\dev\data\texts\K.7.2 Organizations"/> <!-- 226 items -->
+<parameter key="K.7.3 Testing, Certification, and Licensing" value="C:\dev\data\texts\K.7.3 Testing, Certification, and Licensing"/> <!-- 103 items -->
+<parameter key="K.7.m Miscellaneous Subjects: Ethics" value="C:\dev\data\texts\K.7.m Miscellaneous Subjects_ Ethics"/> <!-- 80 items -->
+<parameter key="K.8.0 General Subjects: Games" value="C:\dev\data\texts\K.8.0 General Subjects_ Games"/> <!-- 483 items -->
