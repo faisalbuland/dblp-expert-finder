@@ -19,6 +19,7 @@ import org.junit.Test;
 
 import com.google.common.base.Function;
 import com.google.common.base.Join;
+import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 
@@ -89,7 +90,7 @@ public class CategoryDaoImplTest {
 		logger.info(cat1);
 		assertNotNull(cat1);
 		
-		List<String> catIds = Lists.immutableList(
+		List<String> catIds = ImmutableList.of(
 									"B.2.4", 
 									"B.4.3",
 									"B.8",
@@ -130,7 +131,7 @@ public class CategoryDaoImplTest {
 	 */
 	@Test
 	public void testFindIncorrectlyNamed() {		
-		List<String> wrongCatNames = Lists.immutableList(
+		List<String> wrongCatNames = ImmutableList.of(
 				"B.2.4 High-speed Arithmetic",
 				"B.2.4 High-speed Arithmetic Subjects: Algorithms",
 				"B.2.4 High-speed Arithmetic Subjects: Cost/performance",
@@ -195,7 +196,7 @@ public class CategoryDaoImplTest {
 		assertNotNull(cats);
 		logger.info(cats);
 		
-		List<Category> leaves = Lists.immutableList(Iterables.filter(cats, Categories.ONLY_LEAF_NODES));
+		List<Category> leaves = ImmutableList.copyOf(Iterables.filter(cats, Categories.ONLY_LEAF_NODES));
 		DblpPubDao dao = ServiceLocator.getInstance().getDblpPubDao();
 		Author noOpAuthor = new NullAuthor();
 		for (Category cat : leaves) {

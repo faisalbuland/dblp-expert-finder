@@ -10,6 +10,7 @@ public interface CategoryDao {
 	List<Category> findByFreeTextSearch(String freeText);
 	List<Category> findAll();
 	List<Category> findLeafNodes();
+	List<Category> findLeafParentNodes();
 	
 	void save(Category cat);
 	
