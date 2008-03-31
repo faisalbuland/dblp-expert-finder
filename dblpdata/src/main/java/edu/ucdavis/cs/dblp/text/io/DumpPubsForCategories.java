@@ -3,12 +3,11 @@
  */
 package edu.ucdavis.cs.dblp.text.io;
 
-import static edu.ucdavis.cs.taxonomy.Categories.ONLY_LEAF_NODES;
+import static edu.ucdavis.cs.taxonomy.Categories.ONLY_LEAF_PARENT_NODES;
 
 import java.io.IOException;
 import java.util.List;
 
-import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Logger;
 
 import com.google.common.base.Function;
@@ -17,6 +16,7 @@ import com.google.common.collect.Iterables;
 import com.google.common.collect.Multiset;
 import com.google.common.collect.Multisets;
 
+import de.schlichtherle.io.ArchiveException;
 import de.schlichtherle.io.File;
 import de.schlichtherle.io.FileWriter;
 import edu.ucdavis.cs.dblp.ServiceLocator;
@@ -66,7 +66,7 @@ public class DumpPubsForCategories {
 			count++;
 			
 			for (Category cat : 
-					Iterables.filter(pub.getContent().getCategories(), ONLY_LEAF_NODES)) {
+					Iterables.filter(pub.getContent().getCategories(), ONLY_LEAF_PARENT_NODES)) {
 				catPubCounts.add(cat.getKey());
 				String categoryId = cat.getKey();
 				String catDirName = categoryId.replaceAll("[\\/:*?\"<>|]", "_");
@@ -127,6 +127,12 @@ public class DumpPubsForCategories {
 		outputResults(baseDir, catPubCounts, 30);
 		System.out.println("\n\n\n>=70");
 		outputResults(baseDir, catPubCounts, 70);
+		
+		try {
+			File.update();
+		} catch (ArchiveException e) {
+			logger.error("error after dumping pubs - "+e);
+		}
 	}
 
 	/**
@@ -134,14 +140,14 @@ public class DumpPubsForCategories {
 	 * minimum count threshold specified in {code}minRequiredPubs{count}.
 	 * 
 	 * NOTE: this method uses System.out instead of log4j to make 
-	 * copy+paste-ing to RapidMiner easy. 
+	 * copy+pasting to RapidMiner easy. 
 	 * 
 	 * @param baseDir
 	 * @param catPubCounts
 	 * @param minRequiredPubs
 	 */
 	private void outputResults(File baseDir, Multiset<String> catPubCounts, int minRequiredPubs) {
-		for (Category cat : Iterables.filter(categories, ONLY_LEAF_NODES)) {
+		for (Category cat : Iterables.filter(categories, ONLY_LEAF_PARENT_NODES)) {
 			if (catPubCounts.count(cat.getKey()) >= minRequiredPubs) {
 				String categoryId = cat.getKey();
 				String catDirName = categoryId.replaceAll("[\\/:*?\"<>|]", "_");
@@ -157,10 +163,10 @@ public class DumpPubsForCategories {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		File baseDir = new File("C:\\dev\\data\\texts\\");
+		File baseDir = new File("C:\\dev\\data\\flat\\");
 		baseDir.mkdirs();
 		
-		List<Category> cats = ServiceLocator.getInstance().getCategoryDao().findLeafNodes();
+		List<Category> cats = ServiceLocator.getInstance().getCategoryDao().findLeafParentNodes();
 		DumpPubsForCategories dumper = new DumpPubsForCategories(cats);
 		dumper.dumpData(baseDir);
 	}

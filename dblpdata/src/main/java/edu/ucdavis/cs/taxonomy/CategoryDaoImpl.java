@@ -1,6 +1,8 @@
 package edu.ucdavis.cs.taxonomy;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -10,6 +12,8 @@ import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
+
+import com.google.common.collect.ImmutableList;
 
 /**
  * 
@@ -83,6 +87,16 @@ public class CategoryDaoImpl implements CategoryDao {
 	@Override
 	public List<Category> findLeafNodes() {
 		return (List<Category>)em.createNamedQuery("Category.allLeafNodes").getResultList();
+	}
+	
+	@Override
+	public List<Category> findLeafParentNodes() {
+		Set<Category> leafParentNodesSet = new HashSet<Category>();
+		for (Category cat : findLeafNodes()) {
+			leafParentNodesSet.add(cat.getParent());
+		}
+		
+		return ImmutableList.copyOf(leafParentNodesSet);
 	}
 
 	@Override

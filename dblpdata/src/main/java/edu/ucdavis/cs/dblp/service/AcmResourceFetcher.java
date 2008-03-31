@@ -8,6 +8,7 @@ import java.util.List;
 import org.apache.log4j.Logger;
 
 import com.google.common.base.Predicate;
+import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 
 import edu.ucdavis.cs.dblp.data.Publication;
@@ -49,7 +50,7 @@ public class AcmResourceFetcher implements ResourceFetcher {
 		return responseBody;
 	}
 
-	private static final List<String> NON_ACM_SUFFIXES = Lists.immutableList(
+	private static final List<String> NON_ACM_SUFFIXES = ImmutableList.of(
 			"pdf", "pdf.gz", "ps", "ps.gz", "doc");
 	private static final Predicate<Publication> ACM_SUFFIX_CHECKER = 
 		new Predicate<Publication>() {
@@ -67,7 +68,7 @@ public class AcmResourceFetcher implements ResourceFetcher {
 			return allowed;
 		}
 	};
-	private static final List<String> NON_ACM_URL_PARTS = Lists.immutableList(
+	private static final List<String> NON_ACM_URL_PARTS = ImmutableList.of(
 			"doi.ieeecomputersociety.org",
 			"ieee",
 			"ippserv.ugent.be",

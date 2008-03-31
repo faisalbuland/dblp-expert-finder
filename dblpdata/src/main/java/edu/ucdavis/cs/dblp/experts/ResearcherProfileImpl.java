@@ -15,6 +15,7 @@ import com.google.common.base.Function;
 import com.google.common.base.Join;
 import com.google.common.base.Predicate;
 import com.google.common.collect.HashMultiset;
+import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Multiset;
@@ -60,7 +61,7 @@ public class ResearcherProfileImpl implements ResearcherProfile {
 		leafCategories = new HashMultiset<Category>();		
 		
 		for (Publication pub : pubs) {
-			coAuthors.addAll(Lists.immutableList(
+			coAuthors.addAll(ImmutableList.copyOf(
 				Iterables.filter(pub.getAuthor(), new Predicate<Author>() {
 				@Override
 				public boolean apply(Author author) {
@@ -73,7 +74,7 @@ public class ResearcherProfileImpl implements ResearcherProfile {
 			})));
 			
 			if (pub.getContent() != null) {
-				keywords.addAll(Lists.immutableList(Iterables.transform(
+				keywords.addAll(ImmutableList.copyOf(Iterables.transform(
 						pub.getContent().getKeywords(), new Function<Keyword, Keyword>() {
 					@Override
 					public Keyword apply(Keyword keyword) {
@@ -81,7 +82,7 @@ public class ResearcherProfileImpl implements ResearcherProfile {
 					}
 				})));
 				leafCategories.addAll(
-						Lists.immutableList(
+						ImmutableList.copyOf(
 							Iterables.filter(
 									pub.getContent().getCategories(), 
 									Categories.ONLY_LEAF_NODES))
