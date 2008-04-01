@@ -1,9 +1,9 @@
 package edu.ucdavis.cs.dblp.experts;
 
-import java.util.Collection;
 import java.util.List;
 import java.util.Set;
 
+import org.apache.log4j.Logger;
 import org.apache.solr.client.solrj.response.FacetField;
 import org.apache.solr.client.solrj.response.QueryResponse;
 import org.apache.solr.common.SolrDocument;
@@ -15,12 +15,15 @@ import com.google.common.collect.Sets;
 
 import de.unitrier.dblp.Author;
 import edu.ucdavis.cs.dblp.data.Publication;
+import edu.ucdavis.cs.dblp.data.PublicationType;
 
 /**
  * @author pfishero
  */
 @Transactional(propagation = Propagation.REQUIRED)
 public class DblpResults {
+	private static final Logger logger = Logger.getLogger(DblpResults.class);
+	
 	private String searchText;
 	private long resultsCount;
 	private int queryTime;
@@ -48,6 +51,7 @@ public class DblpResults {
 			pub.setKey(docId);
 			pub.setYear((String)doc.getFieldValue("publicationYear"));
 			pub.setTitle(doc.getFieldValue("title").toString());
+			pub.setType(PublicationType.ARTICLE);
 			Set<Author> authors = Sets.newHashSet();
 			for (Object authorName : doc.getFieldValues("author") ) {
 				authors.add(new Author(authorName.toString()));
@@ -77,5 +81,8 @@ public class DblpResults {
 	}
 	public List<Publication> getPubs() {
 		return pubs;
+	}
+	public List<FacetField> getFacetFields() {
+		return facetFields;
 	}
 }
