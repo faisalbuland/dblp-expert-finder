@@ -686,6 +686,8 @@ public class Publication implements Serializable {
 	public String getCitationString() {
 		StringBuilder str = new StringBuilder();
 		
+		assert this.getType() != null : "type must be initialized for a Publication to be valid";
+		
 		switch(this.getType()) {
 		case ARTICLE:
 			if (this.getJournal() != null) {
