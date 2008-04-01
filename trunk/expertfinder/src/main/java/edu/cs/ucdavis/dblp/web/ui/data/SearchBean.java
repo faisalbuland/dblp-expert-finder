@@ -4,12 +4,10 @@ import java.io.Serializable;
 import java.util.Collection;
 import java.util.List;
 
-import javax.faces.component.UIComponent;
-
 import org.apache.log4j.Logger;
 
+import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Iterables;
-import com.google.common.collect.Lists;
 
 import edu.ucdavis.cs.dblp.ServiceLocator;
 import edu.ucdavis.cs.taxonomy.Categories;
@@ -29,7 +27,7 @@ public class SearchBean implements Serializable {
 		CategoryDao catDao = ServiceLocator.getInstance().getCategoryDao();
 		
 		List<Category> cats = catDao.findByFreeTextSearch(searchText);
-		List<Category> leaves = Lists.immutableList(Iterables.filter(cats, Categories.ONLY_LEAF_NODES));
+		List<Category> leaves = ImmutableList.copyOf(Iterables.filter(cats, Categories.ONLY_LEAF_NODES));
 		this.matches = leaves;
 				
 		return "NODES_SEARCHED";
