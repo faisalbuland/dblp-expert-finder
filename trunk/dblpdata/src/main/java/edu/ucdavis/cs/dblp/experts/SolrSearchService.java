@@ -1,12 +1,17 @@
 package edu.ucdavis.cs.dblp.experts;
 
 import java.io.IOException;
+import java.util.List;
 
 import org.apache.log4j.Logger;
 import org.apache.solr.client.solrj.SolrQuery;
 import org.apache.solr.client.solrj.SolrServer;
 import org.apache.solr.client.solrj.SolrServerException;
 import org.apache.solr.client.solrj.response.QueryResponse;
+
+import com.google.common.base.Join;
+import com.google.common.collect.Iterables;
+import com.google.common.collect.Lists;
 
 /**
  * 
@@ -17,6 +22,11 @@ public class SolrSearchService implements SearchService {
 	
 	private SolrServer server;
 	private String queryType;
+	private List<String> filterQueries;
+	
+	public SolrSearchService() {
+		filterQueries = Lists.newLinkedList();
+	}
 	
 	@Override
 	public DblpResults fullTextSearch(String search) {
@@ -24,7 +34,6 @@ public class SolrSearchService implements SearchService {
 		SolrQuery query = new SolrQuery();
 		query.setQuery(search);
 		query.setQueryType(queryType);
-		query.set("facet.missing", "false");
 		
 		try {
 			QueryResponse response = server.query(query);
@@ -35,13 +44,42 @@ public class SolrSearchService implements SearchService {
 			logger.error("error while executing search:"+search+" -"+e);
 		}
 		
+		filterQueries.clear();
+		
 		return results;
 	}
 
 	@Override
-	public DblpResults refineSearch(Facet refiningFacet, DblpResults context) {
-		// TODO Auto-generated method stub
-		return null;
+	public DblpResults refineSearch(DblpResults context) {
+		logger.info("refining search:"+context.getSearchText()+
+				" with filters: "+Join.join(", ",filterQueries));
+		
+		DblpResults results = null;
+		SolrQuery query = new SolrQuery();
+		query.setQuery(context.getSearchText());
+		query.setQueryType(queryType);
+		query.setFilterQueries(filterQueries.toArray(new String[filterQueries.size()]));
+		
+		try {
+			QueryResponse response = server.query(query);
+			results = DblpResults.fromQueryResponse(response, context.getSearchText());
+		} catch (SolrServerException e) {
+			logger.error("error while executing search:"+context.getSearchText()+" -"+e);
+		} catch (IOException e) {
+			logger.error("error while executing search:"+context.getSearchText()+" -"+e);
+		}
+		
+		return results;
+	}
+	
+	@Override
+	public void addFilterQuery(String filterQuery) {
+		filterQueries.add(filterQuery);		
+	}
+	
+	@Override
+	public void removeFilterQuery(String filterQuery) {
+		filterQueries.remove(filterQuery);
 	}
 
 	public SolrServer getServer() {
@@ -58,5 +96,11 @@ public class SolrSearchService implements SearchService {
 
 	public void setQueryType(String queryType) {
 		this.queryType = queryType;
+	}
+	public List<String> getFilterQueries() {
+		return filterQueries;
+	}
+	public void setFilterQueries(List<String> filterQueries) {
+		this.filterQueries = filterQueries;
 	}
 }
