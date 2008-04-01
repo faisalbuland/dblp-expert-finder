@@ -29,6 +29,14 @@
 	</managed-bean>
 	
 	<managed-bean>
+		<managed-bean-name>kwSearchBean</managed-bean-name>
+		<managed-bean-class>
+			edu.cs.ucdavis.dblp.web.ui.data.KeywordSearchBean
+		</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	
+	<managed-bean>
 		<managed-bean-name>nodeProfile</managed-bean-name>
 		<managed-bean-class>
 			edu.cs.ucdavis.dblp.web.ui.data.NodeProfileBean
@@ -50,6 +58,11 @@
 		<navigation-case>
 			<from-outcome>PEOPLE_SEARCHED</from-outcome>
 			<to-view-id>/searchByResearcher.xhtml</to-view-id>
+			<redirect/>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>TOPIC_SEARCH_CLEARED</from-outcome>
+			<to-view-id>/searchByTopic.xhtml</to-view-id>
 			<redirect/>
 		</navigation-case>
 	</navigation-rule>
