@@ -18,6 +18,7 @@ import au.com.bytecode.opencsv.CSVWriter;
 
 import com.google.common.base.Function;
 import com.google.common.base.Join;
+import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 
@@ -69,7 +70,7 @@ public final class Exporter {
 			writer.writeNext(new String[]{"title", "keywords", "abstract", "authors", "citation", "categories",});
 			// write the data
 			List<String[]> entries = Lists.transform(
-		    		 Lists.immutableList(publications), 
+		    		 ImmutableList.copyOf(publications), 
 		    		 new Function<Publication, String[]>() {
 			    	 	@Override
 			    	 	public String[] apply(Publication pub) {
