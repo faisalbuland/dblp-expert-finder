@@ -4,22 +4,108 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:f="http://java.sun.com/jsf/core">
-
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:a="http://www.cs.ucdavis.edu/jsf" 
+      xmlns:c="http://java.sun.com/jstl/core">
 	<ui:composition template="/WEB-INF/layout/layout.xhtml">
+	
 		<ui:define name="menuBarLIs">
-		<li><a href="searchByResearcher.jsf" accesskey="r">Researcher</a></li>
-		<li class="active"><a href="searchByTopic.jsf" accesskey="t">Topic</a></li>
-		<li><a href="searchByTaxonomy.jsf" accesskey="x">Taxonomy</a></li>
+			<li><a href="searchByResearcher.jsf" accesskey="r">Researcher</a></li>
+			<li class="active"><a href="searchByTopic.jsf" accesskey="t">Topic</a></li>
+			<li><a href="searchByTaxonomy.jsf" accesskey="x">Taxonomy</a></li>
 		</ui:define>
+		
 		<ui:define name="search_field_contents">
-			<form method="post" action="?">
-				<div class="search_form">
-				<p>Search: <input type="text" name="search" class="search" /> <input type="submit" value="Search" class="submit" /> <a class="grey" href="#">Advanced</a></p>
-				</div>
-			</form>
+			<div class="search_form">
+				<p>
+        		<h:outputLabel value="Search: " for="searchText"/>
+        		<h:inputText id="searchText"
+          		value="#{kwSearchBean.searchText}" required="true" styleClass="search" />
+				<h:commandButton action="#{kwSearchBean.doSearch}" value="Search" 
+				styleClass="submit" />
+				<a class="grey" href="#">Advanced</a></p>
+			</div>
 			
 			<p>Search for experts on a given topic.</p>
+		</ui:define>
+		
+		<ui:define name="facets">
+			<h:panelGroup rendered="#{not empty kwSearchBean.searchText or not empty kwSearchBean.refinements}">
+				<h3>Refinements</h3>
+				<div class="left_side">
+					<h:panelGroup rendered="#{not empty kwSearchBean.searchText}">
+						<h:commandButton title="Remove #{kwSearchBean.searchText}" 
+							action="#{kwSearchBean.clearSearchText}"
+							image="/icons/bullet_delete.png" />
+							<h:outputText style="color:gray; font-size: smaller; text-transform: uppercase;" value="Search Text: "/>
+							#{kwSearchBean.searchText}<br/>
+					</h:panelGroup>
+						
+					<ui:repeat value="#{kwSearchBean.refinements}" var="refinement">
+						<h:commandButton title="Remove #{kwSearchBean.addedRefinements[refinement].name}" 
+							action="#{kwSearchBean.clearFacet}"
+							image="/icons/bullet_delete.png" >
+							<f:setPropertyActionListener
+								target="#{kwSearchBean.refinementValue}"
+								value="#{refinement}"/>
+							<f:setPropertyActionListener 
+								target="#{kwSearchBean.refinementName}"
+	        					value="#{item.name}"/>
+	        				<f:setPropertyActionListener
+	        					target="#{kwSearchBean.refinementFacetName}"
+	        					value="#{facet.name}"/>
+						</h:commandButton>
+						<h:outputText style="color:gray; font-size: smaller; text-transform: uppercase;" value="#{kwSearchBean.addedRefinements[refinement].facetName}: "/>
+						#{kwSearchBean.addedRefinements[refinement].name}<br/>
+					</ui:repeat>
+				</div>
+			</h:panelGroup>
+			<h:panelGroup>
+				<ui:repeat value="#{kwSearchBean.results.facetFields}" var="facet">
+					<h3>#{facet.name} (#{facet.valueCount})</h3>
+					<div class="left_side">
+						<p>
+						<ui:repeat value="#{facet.values}" var="item">
+							<h:commandLink action="#{kwSearchBean.refine}"
+								value="#{item.name}">
+								<f:setPropertyActionListener 
+									target="#{kwSearchBean.refinementValue}"
+	        						value="#{item.asFilterQuery}"/>
+	        					<f:setPropertyActionListener 
+									target="#{kwSearchBean.refinementName}"
+	        						value="#{item.name}"/>
+	        					<f:setPropertyActionListener
+	        						target="#{kwSearchBean.refinementFacetName}"
+	        						value="#{facet.name}"/>
+	       					</h:commandLink>
+							<h:outputText value="(#{item.count}), "/> 
+						</ui:repeat>
+						</p>
+					</div>
+				</ui:repeat>
+			</h:panelGroup>
+		</ui:define>
+				
+		<ui:define name="results">
+			<h:panelGroup rendered="#{not empty kwSearchBean.results}">
+				<a:displaySearchResults 
+					resultsTitle="Publications: (#{kwSearchBean.results.resultsCount})" 
+					searchResults="#{kwSearchBean.results.pubs}"
+					showExportLink="false"
+					>
+					<ui:define name="resultOutput">
+						<c:choose>
+							<c:when test="#{not empty result.ee}">
+								<h:outputLink value="#{result.ee}" target="_blank"><b>#{result.title}</b></h:outputLink></c:when>
+							<c:otherwise><b>#{result.title}</b></c:otherwise>
+						</c:choose><br />
+						<c:forEach var="author" items="#{result.author}" varStatus="vs">
+							#{author.content}<c:if test="#{not vs.last}">, </c:if> 
+						</c:forEach><br />
+						#{result.citationString}<br/>
+					</ui:define>
+				</a:displaySearchResults>
+			</h:panelGroup>
 		</ui:define>
 	</ui:composition>
 </html>
