@@ -100,5 +100,21 @@
 			<artifactId>lucene-snowball</artifactId>
 			<version>2.3.1</version>
 		</dependency>
+		<!-- richfaces components -->
+		<dependency>
+			<groupId>org.richfaces.framework</groupId>
+			<artifactId>richfaces-api</artifactId>
+			<version>3.2.0.GA</version>
+		</dependency>
+		<dependency>
+			<groupId>org.richfaces.framework</groupId>
+			<artifactId>richfaces-impl</artifactId>
+			<version>3.2.0.GA</version>
+		</dependency>
+		<dependency>
+			<groupId>org.richfaces.ui</groupId>
+			<artifactId>richfaces-ui</artifactId>
+			<version>3.2.0.GA</version>
+		</dependency>
 	</dependencies>
 </project>
