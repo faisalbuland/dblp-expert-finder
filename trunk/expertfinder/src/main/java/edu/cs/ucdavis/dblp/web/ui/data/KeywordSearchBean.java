@@ -26,6 +26,8 @@ public class KeywordSearchBean {
 	private SearchService searchService;
 	private Map<String, Refinement> addedRefinements;
 	
+	private int currentPage = 1;
+	
 	public KeywordSearchBean() {
 		searchService = ServiceLocator.getInstance().getSearchService();
 		addedRefinements = Maps.newHashMap();
@@ -34,7 +36,7 @@ public class KeywordSearchBean {
 	// ---- Action handlers ----
 	public String doSearch() {		
 		this.results = searchService.fullTextSearch(searchText);
-		
+		this.currentPage = 1;
 		return null;
 	}
 	
@@ -55,6 +57,7 @@ public class KeywordSearchBean {
 		addedRefinements.put(refinementValue, 
 							new Refinement(getRefinementName(), getRefinementFacetName()));
 		this.results = searchService.refineSearch(this.results);
+		this.currentPage = 1;
 		
 		return null;
 	}
@@ -140,5 +143,13 @@ public class KeywordSearchBean {
 		public String getFacetName() {
 			return facetName;
 		}		
+	}
+	
+	public int getPage() {
+		return currentPage;
+	}
+	
+	public void setPage(int page) {
+		this.currentPage = page;
 	}
 }
