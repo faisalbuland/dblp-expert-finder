@@ -6,7 +6,9 @@
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:a="http://www.cs.ucdavis.edu/jsf" 
-      xmlns:c="http://java.sun.com/jstl/core">
+      xmlns:c="http://java.sun.com/jstl/core"
+      xmlns:a4j="http://richfaces.org/a4j"
+      xmlns:rich="http://richfaces.org/rich">
 	<ui:composition template="/WEB-INF/layout/layout.xhtml">
 	
 		<ui:define name="menuBarLIs">
@@ -20,10 +22,11 @@
 				<p>
         		<h:outputLabel value="Search: " for="searchText"/>
         		<h:inputText id="searchText"
-          		value="#{kwSearchBean.searchText}" required="true" styleClass="search" />
+          		value="#{kwSearchBean.searchText}" required="true" styleClass="search" >
+          		</h:inputText>
 				<h:commandButton action="#{kwSearchBean.doSearch}" value="Search" 
-				styleClass="submit" />
-				<a class="grey" href="#">Advanced</a></p>
+									styleClass="submit" />
+				</p>
 			</div>
 			
 			<p>Search for experts on a given topic.</p>
@@ -36,7 +39,7 @@
 					<h:panelGroup rendered="#{not empty kwSearchBean.searchText}">
 						<h:commandButton title="Remove #{kwSearchBean.searchText}" 
 							action="#{kwSearchBean.clearSearchText}"
-							image="/icons/bullet_delete.png" />
+							image="/icons/delete.png" />
 							<h:outputText style="color:gray; font-size: smaller; text-transform: uppercase;" value="Search Text: "/>
 							#{kwSearchBean.searchText}<br/>
 					</h:panelGroup>
@@ -44,7 +47,7 @@
 					<ui:repeat value="#{kwSearchBean.refinements}" var="refinement">
 						<h:commandButton title="Remove #{kwSearchBean.addedRefinements[refinement].name}" 
 							action="#{kwSearchBean.clearFacet}"
-							image="/icons/bullet_delete.png" >
+							image="/icons/delete.png" >
 							<f:setPropertyActionListener
 								target="#{kwSearchBean.refinementValue}"
 								value="#{refinement}"/>
@@ -60,29 +63,124 @@
 					</ui:repeat>
 				</div>
 			</h:panelGroup>
-			<h:panelGroup>
-				<ui:repeat value="#{kwSearchBean.results.facetFields}" var="facet">
-					<h3>#{facet.name} (#{facet.valueCount})</h3>
+			<h:panelGroup rendered="#{not empty kwSearchBean.results.facetFields}">
+					<h3>Authors (#{kwSearchBean.results.facetFieldsMap['Authors'].valueCount})</h3>
 					<div class="left_side">
 						<p>
-						<ui:repeat value="#{facet.values}" var="item">
-							<h:commandLink action="#{kwSearchBean.refine}"
-								value="#{item.name}">
-								<f:setPropertyActionListener 
-									target="#{kwSearchBean.refinementValue}"
-	        						value="#{item.asFilterQuery}"/>
-	        					<f:setPropertyActionListener 
-									target="#{kwSearchBean.refinementName}"
-	        						value="#{item.name}"/>
-	        					<f:setPropertyActionListener
-	        						target="#{kwSearchBean.refinementFacetName}"
-	        						value="#{facet.name}"/>
-	       					</h:commandLink>
-							<h:outputText value="(#{item.count}), "/> 
-						</ui:repeat>
+            			<rich:dataTable width="200" rows="10" columnClasses="col" id="authors_table"
+                			value="#{kwSearchBean.results.facetFieldsMap['Authors'].values}" var="item">
+							<h:column>
+								<h:commandLink action="#{kwSearchBean.refine}"
+									value="#{item.name}">
+									<f:setPropertyActionListener 
+										target="#{kwSearchBean.refinementValue}"
+		        						value="#{item.asFilterQuery}"/>
+		        					<f:setPropertyActionListener 
+										target="#{kwSearchBean.refinementName}"
+		        						value="#{item.name}"/>
+		        					<f:setPropertyActionListener
+		        						target="#{kwSearchBean.refinementFacetName}"
+		        						value="#{kwSearchBean.results.facetFieldsMap['Authors'].name}"/>
+		       					</h:commandLink>
+	       					</h:column>
+	       					<h:column>
+								<h:outputText value="(#{item.count})"/>
+							</h:column> 
+							<f:facet name="footer">
+								<rich:datascroller renderIfSinglePage="false" stepControls="auto" 
+										page="#{kwSearchBean.page}"/>
+							</f:facet>
+						</rich:dataTable>
 						</p>
 					</div>
-				</ui:repeat>
+				<h3>Keywords (#{kwSearchBean.results.facetFieldsMap['Keywords'].valueCount})</h3>
+					<div class="left_side">
+						<p>
+            			<rich:dataTable width="200" rows="10" columnClasses="col" id="keywords_table"
+                			value="#{kwSearchBean.results.facetFieldsMap['Keywords'].values}" var="item">
+							<h:column>
+								<h:commandLink action="#{kwSearchBean.refine}"
+									value="#{item.name}">
+									<f:setPropertyActionListener 
+										target="#{kwSearchBean.refinementValue}"
+		        						value="#{item.asFilterQuery}"/>
+		        					<f:setPropertyActionListener 
+										target="#{kwSearchBean.refinementName}"
+		        						value="#{item.name}"/>
+		        					<f:setPropertyActionListener
+		        						target="#{kwSearchBean.refinementFacetName}"
+		        						value="#{kwSearchBean.results.facetFieldsMap['Keywords'].name}"/>
+		       					</h:commandLink>
+	       					</h:column>
+	       					<h:column>
+								<h:outputText value="(#{item.count})"/>
+							</h:column> 
+							<f:facet name="footer">
+								<rich:datascroller renderIfSinglePage="false" stepControls="auto" 
+										page="#{kwSearchBean.page}"/>
+							</f:facet>
+						</rich:dataTable>
+						</p>
+					</div>
+					
+					<h3>Categories (#{kwSearchBean.results.facetFieldsMap['Categories'].valueCount})</h3>
+					<div class="left_side">
+						<p>
+            			<rich:dataTable width="200" rows="10" columnClasses="col" id="cats_table"
+                			value="#{kwSearchBean.results.facetFieldsMap['Categories'].values}" var="item">
+							<h:column>
+								<h:commandLink action="#{kwSearchBean.refine}"
+									value="#{item.name}">
+									<f:setPropertyActionListener 
+										target="#{kwSearchBean.refinementValue}"
+		        						value="#{item.asFilterQuery}"/>
+		        					<f:setPropertyActionListener 
+										target="#{kwSearchBean.refinementName}"
+		        						value="#{item.name}"/>
+		        					<f:setPropertyActionListener
+		        						target="#{kwSearchBean.refinementFacetName}"
+		        						value="#{kwSearchBean.results.facetFieldsMap['Categories'].name}"/>
+		       					</h:commandLink>
+	       					</h:column>
+	       					<h:column>
+								<h:outputText value="(#{item.count})"/>
+							</h:column> 
+							<f:facet name="footer">
+								<rich:datascroller renderIfSinglePage="false" stepControls="auto" 
+										page="#{kwSearchBean.page}"/>
+							</f:facet>
+						</rich:dataTable>
+						</p>
+					</div>
+				<h3>Years (#{kwSearchBean.results.facetFieldsMap['Years'].valueCount})</h3>
+					<div class="left_side">
+						<p>
+            			<rich:dataTable width="200" rows="10" columnClasses="col" id="years_data"
+                			value="#{kwSearchBean.results.facetFieldsMap['Years'].values}" var="item">
+							<h:column>
+								<h:commandLink action="#{kwSearchBean.refine}"
+									value="#{item.name}">
+									<f:setPropertyActionListener 
+										target="#{kwSearchBean.refinementValue}"
+		        						value="#{item.asFilterQuery}"/>
+		        					<f:setPropertyActionListener 
+										target="#{kwSearchBean.refinementName}"
+		        						value="#{item.name}"/>
+		        					<f:setPropertyActionListener
+		        						target="#{kwSearchBean.refinementFacetName}"
+		        						value="#{kwSearchBean.results.facetFieldsMap['Years'].name}"/>
+		       					</h:commandLink>
+	       					</h:column>
+	       					<h:column>
+								<h:outputText value="(#{item.count})"/>
+							</h:column> 
+							<f:facet name="footer">
+								<rich:datascroller renderIfSinglePage="false" stepControls="auto" 
+										page="#{kwSearchBean.page}"/>
+							</f:facet>
+						</rich:dataTable>
+						</p>
+					</div>
 			</h:panelGroup>
 		</ui:define>
 				
