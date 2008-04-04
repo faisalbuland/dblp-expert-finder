@@ -9,7 +9,6 @@
 		<locale-config>
 			<default-locale>en</default-locale>
 		</locale-config>
-		<view-handler>com.sun.facelets.FaceletViewHandler</view-handler>
 	</application>
 
 	<managed-bean>
