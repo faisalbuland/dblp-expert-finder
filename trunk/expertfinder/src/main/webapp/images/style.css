@@ -229,7 +229,8 @@ input.login {
 }
 
 .rich-table {
-	border-left-color: #FFF;	
+	border-left-color: #FFF;
+	border-top-color: #FFF;	
 }
 
 .rich-table-footercell {
