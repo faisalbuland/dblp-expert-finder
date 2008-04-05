@@ -1,6 +1,8 @@
 package edu.ucdavis.cs.dblp.experts;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 import org.apache.log4j.Logger;
@@ -11,6 +13,7 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.google.common.collect.Lists;
+import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
 
 import de.unitrier.dblp.Author;
@@ -29,6 +32,11 @@ public class DblpResults {
 	private int queryTime;
 	private List<FacetField> facetFields;
 	private List<Publication> pubs;
+	private final Map<String, String> facetsToDisplayNames = Maps.immutableMap(
+															"author_exact", "Authors", 
+															"keyword_exact", "Keywords", 
+															"categoryId_exact", "Categories", 
+															"publishYear", "Years");
 	
 	public DblpResults(String searchText) {
 		super();
@@ -84,5 +92,15 @@ public class DblpResults {
 	}
 	public List<FacetField> getFacetFields() {
 		return facetFields;
+	}
+	
+	public Map<String, FacetField> getFacetFieldsMap() {
+		Map<String, FacetField> ffMap = new HashMap<String, FacetField>();
+		
+		for (FacetField field : getFacetFields()) {
+			ffMap.put(facetsToDisplayNames.get(field.getName()), field);
+		}
+		
+		return ffMap;
 	}
 }
