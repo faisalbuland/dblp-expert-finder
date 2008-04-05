@@ -5,10 +5,12 @@ import java.util.Collection;
 import java.util.List;
 
 import org.apache.log4j.Logger;
+import org.richfaces.model.TreeNode;
 
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Iterables;
 
+import edu.cs.ucdavis.dblp.web.ui.data.taxonomy.CategoryTree;
 import edu.ucdavis.cs.dblp.ServiceLocator;
 import edu.ucdavis.cs.taxonomy.Categories;
 import edu.ucdavis.cs.taxonomy.Category;
@@ -19,6 +21,7 @@ public class SearchBean implements Serializable {
 	
 	private String searchText;
 	private Collection matches;
+	private CategoryTree catTree;
 	
 	public SearchBean() { }
 
@@ -29,9 +32,20 @@ public class SearchBean implements Serializable {
 		List<Category> cats = catDao.findByFreeTextSearch(searchText);
 		List<Category> leaves = ImmutableList.copyOf(Iterables.filter(cats, Categories.ONLY_LEAF_NODES));
 		this.matches = leaves;
-				
+		
+		catTree = new CategoryTree();
+		catTree.asTree(this.matches);
+		
 		return "NODES_SEARCHED";
-	}		
+	}
+	
+	public TreeNode<Category> getCategoryTree() {
+		TreeNode<Category> rootNode = null;
+		if (catTree != null) {
+			rootNode = catTree.getRoot();
+		} 
+		return rootNode;
+	}
 	
 	public boolean isMatchesFound() {
 		boolean matchesFound;
@@ -64,5 +78,9 @@ public class SearchBean implements Serializable {
 
 	public int getMatchesCount() {
 		return matches == null ? 0 : matches.size();
+	}
+	
+	public Boolean isNodeExpanded(org.richfaces.component.UITree node) {
+		return Boolean.TRUE;
 	}
 }
