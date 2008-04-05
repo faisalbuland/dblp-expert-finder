@@ -180,17 +180,65 @@ input.login {
 	font: bold 1em Tahoma, Arial, Sans-Serif;
 	margin: 0 0 0px 0;
 }
-	.left_side {
-		float: left;
-		width: 220px;
-		padding: 0 0 0 10px;
-		margin: 10px 0;
-	}
+
+.left_side {
+	float: left;
+	width: 220px;
+	padding: 0 0 0 10px;
+	margin: 10px 0;
+}
 		
-	.left_side a, .right_side a { color: #414141; background: #FFF; }
-		
-	.left_box { margin: 0 0 10px 0; color: #000; background: #FFF; padding: 3px 0; }
+.left_side a, .right_side a, .rich-stglpanel-body a { color: #414141; background: #FFF; }
 	
+.left_box { margin: 0 0 10px 0; color: #000; background: #FFF; padding: 3px 0; }
+
+/* redefinition of styles for rich:simpleTogglePanel (also see above) */
+.rich-stglpanel-header {
+	clear: both;
+	background: #A9C0CE url(corner.gif) no-repeat top right;
+	background-color: #A9C0CE;
+	border-color: #FFF;
+	color: #FFF;
+	padding: 7px 0 7px 5px; 
+	font-size: 1em;
+	font-weight: bold;
+	font-family: Tahoma, Arial, Sans-Serif;
+	margin: 0 0 0px 0;
+}
+
+.rich-stglpanel {
+	border-color: #FFF;
+}
+
+.rich-stglpanel-body {
+	float: left;
+	width: 220px;
+	padding: 0 0 0 10px;
+	margin: 10px 0;
+}
+
+.rich-table-cell {
+	border-left-color: #FFF;
+	border-right-color: #FFF;
+	border-top-color: #FFF;
+	border-bottom-color: #FFF;
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-top: 0px;
+	padding-bottom: 0px;	
+}
+
+.rich-table {
+	border-left-color: #FFF;	
+}
+
+.rich-table-footercell {
+	background-color: #FFF;
+	border-left-color: #FFF;
+	border-right-color: #FFF;
+	border-top-color: #FFF;
+	border-bottom-color: #FFF;
+}
 		
 /* right side
    ---------- */
