@@ -4,6 +4,7 @@
 package edu.ucdavis.cs.dblp;
 
 import org.apache.log4j.Logger;
+import org.apache.solr.client.solrj.SolrServer;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -73,5 +74,9 @@ public class ServiceLocator {
 	
 	public SearchService getSearchService() {
 		return (SearchService)appContext.getBean("searchService");
+	}
+	
+	public SolrServer getSolrServer() {
+		return (SolrServer)appContext.getBean("solrServer");
 	}
 }
