@@ -4,7 +4,9 @@
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:c="http://java.sun.com/jstl/core">
+      xmlns:c="http://java.sun.com/jstl/core"
+      xmlns:a4j="http://richfaces.org/a4j"
+      xmlns:rich="http://richfaces.org/rich">
 <ui:composition>
 
 	<h3>#{resultsTitle}</h3>
@@ -18,6 +20,21 @@
 		<div class="right_articles">
 			<p><img src="images/image.gif" alt="Image" title="Image" class="image" />
 				<ui:insert name="resultOutput"/>
+				<rich:togglePanel value="closed" switchType="client"
+					stateOrder="closed,showMore">
+     				<f:facet name="closed">
+     					<h:panelGroup rendered="#{not empty result.content and not empty result.content.abstractText}">
+     						<rich:toggleControl value="[More]" switchToState="showMore" />
+     					</h:panelGroup>
+     				</f:facet>
+     						
+     				<f:facet name="showMore">
+     					<h:panelGroup rendered="#{not empty result.content and not empty result.content.abstractText}">
+     					<em>Abstract: </em>#{result.content.abstractText}
+     					<rich:toggleControl value=" [Close]" switchToState="closed" />
+     					</h:panelGroup>
+     				</f:facet>
+				</rich:togglePanel>
 			</p>
 		</div>
 	</c:forEach>
