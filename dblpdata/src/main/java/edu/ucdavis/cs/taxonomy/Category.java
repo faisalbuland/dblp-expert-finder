@@ -36,7 +36,7 @@ import org.apache.log4j.Logger;
 	@NamedQuery(name="Category.byId", query="FROM Category c WHERE c.id=:id"),
 	@NamedQuery(name="Category.byKey", query="FROM Category c WHERE c.key=:key"),
 	@NamedQuery(name="Category.byKeyUpperCase", query="FROM Category c WHERE UPPER(c.key)=UPPER(:key)"),
-	@NamedQuery(name="Category.byFreeTextSearch", query="FROM Category c WHERE UPPER(c.key) LIKE '%' || UPPER(:freeText) || '%'"),
+	@NamedQuery(name="Category.byFreeTextSearch", query="FROM Category c WHERE UPPER(c.key) LIKE '%' || UPPER(:freeText) || '%' AND UPPER(c.label) LIKE '%' || UPPER(:freeText) || '%'"),
 })
 public class Category implements Serializable {
 	private static final Logger logger = Logger.getLogger(Category.class);
