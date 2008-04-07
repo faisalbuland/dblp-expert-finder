@@ -41,7 +41,8 @@
 		<ui:define name="results">
 			<rich:tree rendered="#{searchBean.matchesFound}" value="#{searchBean.categoryTree}" var="treeItem"
 				nodeFace="#{treeItem.leaf ? 'leafType' : 'internalNodeType'}"
-				adviseNodeOpened="#{searchBean.isNodeExpanded}" >
+				adviseNodeOpened="#{searchBean.isNodeExpanded}" 
+				switchType="client" >
 				<rich:treeNode icon="images/arrow.gif" iconLeaf="images/cog.png" type="internalNodeType">
 					<h:outputText value="#{treeItem.key}"/>
 				</rich:treeNode>
