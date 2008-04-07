@@ -23,7 +23,6 @@
 	         		value="#{searchController.searchText}" required="true" styleClass="search" />
 				<h:commandButton action="#{searchController.authorSearch}" value="Search" 
 				styleClass="submit" />
-				<a class="grey" href="#">Advanced</a>
 				</p>
 			</div>
 			
@@ -138,7 +137,10 @@
 						<c:forEach var="author" items="#{result.author}" varStatus="vs">
 							#{author.content}<c:if test="#{not vs.last}">, </c:if> 
 						</c:forEach><br />
-						#{result.citationString}<br/>
+						<h:panelGroup rendered="#{not empty result.citationString}">
+							#{result.citationString}
+						</h:panelGroup>
+						<br/>
 					</ui:define>
 				</a:displaySearchResults>
 				<br />
