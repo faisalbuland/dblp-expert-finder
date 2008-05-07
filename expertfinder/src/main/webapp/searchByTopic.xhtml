@@ -200,27 +200,9 @@
 						<c:forEach var="author" items="#{result.author}" varStatus="vs">
 							#{author.content}<c:if test="#{not vs.last}">, </c:if> 
 						</c:forEach><br />
-						#{result.citationString}
+						#{result.citationString}<br/>
 					</ui:define>
 				</a:displaySearchResults>
-			
-				<rich:datascroller for="paginatedResults" maxPages="5"/>
-                <rich:spacer height="30" />             
-                <rich:dataTable id="paginatedResults" value="#{kwSearchBean.dataModel}" 
-                				var="resultItem" rows="10" width="100%"> 
-                    <rich:column>
-                        <f:facet name="header">
-                            <h:outputText value="Id"/>
-                        </f:facet>
-                        <h:outputText value="#{resultItem.key}"/>
-                    </rich:column>
-                    <rich:column>
-                        <f:facet name="header">
-                            <h:outputText value="Title"/>
-                        </f:facet>
-                        <h:outputText id="title" value="#{resultItem.title}"/>
-                    </rich:column>
-                </rich:dataTable>
 			</h:panelGroup>
 		</ui:define>
 	</ui:composition>
