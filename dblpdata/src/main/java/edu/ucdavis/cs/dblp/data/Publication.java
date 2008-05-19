@@ -24,6 +24,10 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 import org.apache.commons.lang.builder.ToStringStyle;
 import org.apache.log4j.Logger;
 
+import com.google.common.base.Function;
+import com.google.common.base.Predicate;
+import com.google.common.collect.Iterables;
+
 import de.unitrier.dblp.Article;
 import de.unitrier.dblp.Author;
 import de.unitrier.dblp.Book;
@@ -739,4 +743,33 @@ public class Publication implements Serializable {
 			append("PubContent", this.content).
 			toString();
 	}
+	
+	// Google collections convenience methods for Publications
+	public static final Function<Publication, String> FN_PUB_YEAR = 
+		new Function<Publication, String>() {
+			@Override
+			public String apply(Publication pub) {
+				return pub.getYear();
+			}
+		};
+	public static final Function<Publication, Iterable<String>> FN_PUB_KEYWORDS = 
+		new Function<Publication, Iterable<String>>() {
+			@Override
+			public Iterable<String> apply(Publication pub) {
+				return Iterables.transform(pub.getContent().getKeywords(), 
+						new Function<Keyword, String>() {
+							@Override
+							public String apply(Keyword keyword) {
+								return keyword.getKeyword();
+							}
+						});
+			}
+		};
+	public static final Predicate<Publication> PRED_HAS_CONTENT = 
+		new Predicate<Publication>(){
+			@Override
+			public boolean apply(Publication pub) {
+				return pub.getContent() != null;
+			}
+		};
 }

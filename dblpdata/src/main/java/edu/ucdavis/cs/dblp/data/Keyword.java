@@ -9,6 +9,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
@@ -23,6 +25,11 @@ import de.unitrier.dblp.Author;
  * @version $Id$
  */
 @Entity
+@NamedQueries({
+	@NamedQuery(name="Keyword.byId", query="FROM Keyword k WHERE k.id = :id"),
+	@NamedQuery(name="Keyword.byName", query="FROM Keyword k WHERE k.keyword = :keyword"),
+	@NamedQuery(name="Keyword.all", query="SELECT DISTINCT k FROM Keyword k ORDER BY k.keyword ASC"),
+})
 public class Keyword implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)

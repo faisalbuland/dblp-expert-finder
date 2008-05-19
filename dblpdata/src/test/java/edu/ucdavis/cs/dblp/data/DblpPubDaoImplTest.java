@@ -4,8 +4,7 @@
 package edu.ucdavis.cs.dblp.data;
 
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 import java.util.Arrays;
 import java.util.HashSet;
@@ -17,6 +16,7 @@ import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import de.unitrier.dblp.Author;
@@ -64,6 +64,7 @@ public class DblpPubDaoImplTest {
 	}
 	
 	@Test
+	@Ignore
 	public void simplePersistence() throws Exception {
 		Publication pub = new Publication();
 		pub.setKey("test/test");
@@ -85,6 +86,7 @@ public class DblpPubDaoImplTest {
 	}
 	
 	@Test
+	@Ignore
 	public void simplePersistence2() throws Exception {
 		Publication pub = new Publication();
 		pub.setKey("test/test");
@@ -105,6 +107,7 @@ public class DblpPubDaoImplTest {
 	}
 	
 	@Test
+	@Ignore
 	public void simplePersistence3() throws Exception {
 		Publication pub = new Publication();
 		pub.setKey("test/test");
@@ -131,14 +134,17 @@ public class DblpPubDaoImplTest {
 	}
 	
 	// TODO re-enable after building dist
+	@Test
 	public void testFindAuthorPubs() throws Exception {
-		List<Publication> pubs = dao.findByAuthorName("Nick Bryan-Kinns");
+		final String authorName = "Nick Bryan-Kinns";
+		List<Publication> pubs = dao.findByAuthorName(authorName);
 		logger.info(pubs);
 		assertTrue(pubs.size() > 0);
-	}
+	}	
 	
 	// TODO re-enable after building dist
 	@Test
+	@Ignore
 	public void testFindByCategoryId() throws Exception {
 		List<Publication> pubs = dao.findByCategory(
 				ServiceLocator.getInstance().getCategoryDao().findByKey("B.3.1 Semiconductor Memories (B.7.1) Subjects: Dynamic memory (DRAM)"));
@@ -147,6 +153,7 @@ public class DblpPubDaoImplTest {
 	}
 	
 	// TODO re-enable after building dist
+	@Ignore
 	public void testFindSmes() throws Exception {
 		List<SmeDTO> smes = dao.findSmes();
 		logger.info("smes:"+smes);

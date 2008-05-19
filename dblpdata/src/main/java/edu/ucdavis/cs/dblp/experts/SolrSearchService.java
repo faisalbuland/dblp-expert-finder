@@ -10,7 +10,7 @@ import org.apache.solr.client.solrj.SolrServerException;
 import org.apache.solr.client.solrj.response.QueryResponse;
 
 import com.google.common.base.Join;
-import com.google.common.collect.Iterables;
+import com.google.common.base.Preconditions;
 import com.google.common.collect.Lists;
 
 /**
@@ -30,20 +30,8 @@ public class SolrSearchService implements SearchService {
 	
 	@Override
 	public DblpResults fullTextSearch(String search) {
-		DblpResults results = null;
-		SolrQuery query = new SolrQuery();
-		query.setQuery(search);
-		query.setQueryType(queryType);
-		
-		try {
-			QueryResponse response = server.query(query);
-			results = DblpResults.fromQueryResponse(response, search);
-		} catch (SolrServerException e) {
-			logger.error("error while executing search:"+search+" -"+e);
-		} catch (IOException e) {
-			logger.error("error while executing search:"+search+" -"+e);
-		}
-		
+		DblpResults results = executeSearch(new DblpResults(search));
+
 		filterQueries.clear();
 		
 		return results;
@@ -51,14 +39,34 @@ public class SolrSearchService implements SearchService {
 
 	@Override
 	public DblpResults refineSearch(DblpResults context) {
-		logger.info("refining search:"+context.getSearchText()+
-				" with filters: "+Join.join(", ",filterQueries));
+		context.resetPagination();
+		return executeSearch(context);
+	}
+
+	/**
+	 * @param context
+	 * @return
+	 */
+	private DblpResults executeSearch(DblpResults context) {
+		return executeSearch(context, context.getNextStart(), context.getRowFetchSize());
+	}
+	
+	private DblpResults executeSearch(DblpResults context, int nextStart, int numRows) {
+		logger.info("executing search: "+context.getSearchText()+
+				(filterQueries.size() > 0 ? 
+						" with filters: "+Join.join(", ",filterQueries) : "")
+				);
 		
 		DblpResults results = null;
 		SolrQuery query = new SolrQuery();
 		query.setQuery(context.getSearchText());
 		query.setQueryType(queryType);
-		query.setFilterQueries(filterQueries.toArray(new String[filterQueries.size()]));
+		query.setStart(nextStart);
+		query.setRows(numRows);
+		
+		if (filterQueries.size() > 0) {
+			query.setFilterQueries(filterQueries.toArray(new String[filterQueries.size()]));
+		}
 		
 		try {
 			QueryResponse response = server.query(query);
@@ -73,6 +81,19 @@ public class SolrSearchService implements SearchService {
 	}
 	
 	@Override
+	public DblpResults fetchMoreResults(DblpResults context) {
+		Preconditions.checkState(context.hasMore(), 
+				"error: %s does not have any more results", context);
+		return executeSearch(context);
+	}
+	
+	@Override
+	public DblpResults fetchResultsByRange(DblpResults context, int firstRow,
+			int numberOfRows) {
+		return executeSearch(context, firstRow, numberOfRows);
+	}
+	
+	@Override
 	public void addFilterQuery(String filterQuery) {
 		filterQueries.add(filterQuery);		
 	}
@@ -80,6 +101,11 @@ public class SolrSearchService implements SearchService {
 	@Override
 	public void removeFilterQuery(String filterQuery) {
 		filterQueries.remove(filterQuery);
+	}
+	
+	@Override
+	public void clearFilterQueries() {
+		filterQueries.clear();		
 	}
 
 	public SolrServer getServer() {
@@ -97,9 +123,11 @@ public class SolrSearchService implements SearchService {
 	public void setQueryType(String queryType) {
 		this.queryType = queryType;
 	}
+	
 	public List<String> getFilterQueries() {
 		return filterQueries;
 	}
+	
 	public void setFilterQueries(List<String> filterQueries) {
 		this.filterQueries = filterQueries;
 	}

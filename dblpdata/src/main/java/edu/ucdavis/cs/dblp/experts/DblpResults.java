@@ -26,12 +26,15 @@ import edu.ucdavis.cs.dblp.data.PublicationType;
 @Transactional(propagation = Propagation.REQUIRED)
 public class DblpResults {
 	private static final Logger logger = Logger.getLogger(DblpResults.class);
+
+	private int DEFAULT_FETCH_SIZE = Integer.MAX_VALUE;
 	
 	private String searchText;
 	private long resultsCount;
 	private int queryTime;
 	private List<FacetField> facetFields;
 	private List<Publication> pubs;
+	private int start;
 	private final Map<String, String> facetsToDisplayNames = Maps.immutableMap(
 															"author_exact", "Authors", 
 															"keyword_exact", "Keywords", 
@@ -43,6 +46,7 @@ public class DblpResults {
 		this.searchText = searchText;
 		pubs = Lists.newLinkedList();
 	}
+	
 	/**
 	 * @param response
 	 * @return
@@ -51,6 +55,7 @@ public class DblpResults {
 		DblpResults results = new DblpResults(searchText);
 		results.facetFields = response.getFacetFields();
 		results.resultsCount = response.getResults().getNumFound();
+		results.start = response.getResults().getStart();
 		results.queryTime = response.getQTime();
 		
 		for (SolrDocument doc : (List<SolrDocument>)response.getResults()) {
@@ -73,6 +78,46 @@ public class DblpResults {
 		}
 		
 		return results;
+	}
+	
+	/**
+	 * Resets the pagination state to go back to the start of the results.
+	 */
+	public void resetPagination() {
+		start = 0;
+		pubs.clear();
+	}
+	
+	/**
+	 * @return true if there are more results that can be retrieved from SOLR
+	 * for the same query.
+	 */
+	public boolean hasMore() {
+		boolean more = true;
+		
+		if (pubs.size()+start >= resultsCount) { 
+			more = false;
+		}
+		
+		return more;
+	}
+	
+	/**
+	 * Note: clients should call the state testing method {@link #hasMore()}
+	 * before calling this method to determine if there exists more results.
+	 * 
+	 * @return the index of the next "starting" record to retrieve
+	 */
+	public int getNextStart() {
+		return pubs.size()+start;
+	}
+	
+	public int getRowFetchSize() {
+		if (pubs.size() == 0) {
+			return DEFAULT_FETCH_SIZE;
+		} else {
+			return pubs.size();
+		}
 	}
 	
 	public String getSearchText() {
