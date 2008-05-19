@@ -15,6 +15,7 @@
 	<bean name="searchService" class="edu.ucdavis.cs.dblp.experts.SolrSearchService"
 		p:server-ref="solrServer"
 		p:queryType="${solr.queryType}"
+		scope="prototype"
 		/>
 	
 	<bean name="solrServer" class="org.apache.solr.client.solrj.impl.CommonsHttpSolrServer">
