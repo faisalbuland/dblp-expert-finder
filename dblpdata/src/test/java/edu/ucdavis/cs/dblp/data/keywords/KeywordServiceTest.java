@@ -1,6 +1,7 @@
 package edu.ucdavis.cs.dblp.data.keywords;
 
 import static org.junit.Assert.*;
+import static org.hamcrest.CoreMatchers.*;
 
 import java.util.Set;
 
@@ -19,6 +20,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Sets;
 
+import edu.ucdavis.cs.dblp.data.DblpKeywordDao;
 import edu.ucdavis.cs.dblp.data.Keyword;
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -33,6 +35,9 @@ public class KeywordServiceTest {
 	
 	@Resource
 	private KeywordRecognizer recognizer;
+	
+	@Resource
+	private DblpKeywordDao keywordDao;
 	
 	@Test
 	public void checkKeywordRecognition() {
@@ -49,15 +54,30 @@ public class KeywordServiceTest {
 				"measures, inter-dependent attributes for measures and aggregation functions, " +
 				"use of ad-hoc aggregation functions and n to n relations between fact and " +
 				"dimension, in order to handle geographical data, according to its particular " +
-				"nature in an OLAP context.";
+				"nature in an OLAP context. completely automated public turing tests to tell computers " +
+				"and humans apart. CAPTCHA. validation standards for agents and multiagent systems. " +
+				"multiagent systems!";
 		Set<Keyword> expectedKeywords = Sets.newHashSet(ImmutableList.of(
 											new Keyword("Spatial OLAP"),  
 											new Keyword("multidimensional data"), 
-											new Keyword("data warehouse")
+											new Keyword("CAPTCHA"),
+											new Keyword("completely automated public turing " +
+													"tests to tell computers and humans apart"),
+											new Keyword("validation standards for agents and multiagent systems")
 											));
 		Set<Keyword> foundKeywords = recognizer.findKeywordsIn(title+paperAbstract);
 		logger.info("found keywords: "+foundKeywords);
 		expectedKeywords.removeAll(foundKeywords);
 		assertEquals("keyword(s) not found: "+expectedKeywords, expectedKeywords.size(), 0);
 	}
+	
+	@Test
+	public void testFindByName() {
+		String keywordName = "Spatial OLAP";
+		Keyword keyword = keywordDao.findByName(keywordName);
+		assertThat(keyword.getKeyword(), is(equalTo(keywordName)));
+		assertTrue("keyword id was not valid (it was zero)", keyword.getId() > 0);
+		logger.info("keyword id was "+keyword.getId());
+	}
+
 }
