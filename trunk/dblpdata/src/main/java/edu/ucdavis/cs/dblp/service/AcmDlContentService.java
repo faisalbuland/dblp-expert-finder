@@ -522,6 +522,17 @@ public class AcmDlContentService implements ContentService {
 		}
 	}
 	
+	@Override
+	public boolean accepts(Publication pub) {
+		boolean accept = false;
+		String ee = pub.getEe();
+		if (StringUtils.isNotEmpty(ee)) {
+			if (ee.contains("acm.org")) accept = true;
+			if (ee.contains("doi") && ee.contains("10.1145")) accept = true;
+		}
+		return accept;
+	}
+	
 	public static void main(String ... args) throws Exception {
 		File inputFile = new File(args[0]);
 		File outputDir = new File("converted");

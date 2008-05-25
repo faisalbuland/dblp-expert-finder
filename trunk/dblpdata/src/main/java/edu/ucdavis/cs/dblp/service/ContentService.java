@@ -20,4 +20,9 @@ public interface ContentService {
 	public Set<Category> retrieveClassification(Publication pub);
 	public Set<String> retrieveGeneralTerms(Publication pub);
 	public void retrieveAll(Publication pub);
+	/**
+	 * @param pub the publication to check if the content service can retrieve content for
+	 * @return true if the contentservice can retrieve content for <code>pub</code>, else false
+	 */
+	public boolean accepts(Publication pub);
 }
