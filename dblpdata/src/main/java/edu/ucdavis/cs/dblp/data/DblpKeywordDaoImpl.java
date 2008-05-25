@@ -18,7 +18,7 @@ import com.google.common.collect.Lists;
  *
  */
 @Repository
-@Transactional(propagation = Propagation.REQUIRED)
+@Transactional(propagation = Propagation.SUPPORTS)
 public class DblpKeywordDaoImpl implements DblpKeywordDao {
 	private static final Logger logger = Logger.getLogger(DblpKeywordDaoImpl.class);
 	
@@ -53,7 +53,7 @@ public class DblpKeywordDaoImpl implements DblpKeywordDao {
 		Keyword foundKeyword = null;
 		
 		try {
-			Query query = em.createNamedQuery("Keyword.byId");
+			Query query = em.createNamedQuery("Keyword.byName");
 			query.setParameter("keyword", keyword);
 			foundKeyword = (Keyword)query.getSingleResult();
 		} catch (javax.persistence.NoResultException nre) {
