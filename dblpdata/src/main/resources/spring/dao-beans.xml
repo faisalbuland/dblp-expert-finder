@@ -71,17 +71,46 @@
 		class="edu.ucdavis.cs.taxonomy.acm.CcsItemProcessor">
 		<property name="dao" ref="categoryDao" />	
 	</bean>
+
+	<!-- Master content service that delegates to the wrapped underlying services -->	
+	<bean id="contentService" class="edu.ucdavis.cs.dblp.service.DemuxContentService">
+		<property name="contentServices">
+			<list>
+				<ref bean="acmContentService"/>
+				<ref bean="ieeeContentService"/>
+				<ref bean="ieeeCsContentService"/>
+				<ref bean="springerContentService"/>				
+			</list>
+		</property>
+	</bean>
+
+	<bean id="acmContentService" class="edu.ucdavis.cs.dblp.service.AcmDlContentService">
+		<constructor-arg ref="resourceFetcher" />
+	</bean>
+	<bean id="ieeeContentService" class="edu.ucdavis.cs.dblp.service.IeeeDlContentService">
+		<constructor-arg ref="resourceFetcher" />
+	</bean>
+	<bean id="ieeeCsContentService" class="edu.ucdavis.cs.dblp.service.IeeeCsDlContentService">
+		<constructor-arg ref="resourceFetcher" />
+	</bean>
+	<bean id="springerContentService" class="edu.ucdavis.cs.dblp.service.SpringerDlContentService">
+		<constructor-arg ref="resourceFetcher" />
+	</bean>
 	
-	<bean id="contentService" class="edu.ucdavis.cs.dblp.service.AcmDlContentService">
-	<constructor-arg index="0">
-		<bean id="fetcher" class="edu.ucdavis.cs.dblp.service.AcmResourceFetcher">
-			<constructor-arg index="0">
-				<bean id="localFetcher" class="edu.ucdavis.cs.dblp.service.LocalResourceFetcher">
-					<constructor-arg index="0" value="file:/dev/data"/>
-				</bean>
-			</constructor-arg>
-		</bean>
-	</constructor-arg>
+	<alias name="localCacheResourceFetcher" alias="resourceFetcher"/>
+	
+	<bean id="localCacheResourceFetcher"
+		class="edu.ucdavis.cs.dblp.service.LocalCacheResourceFetcher">
+		<property name="baseURL" value="http://192.168.1.22/acm/" />
+	</bean>
+	<bean id="localAcmFetcher"
+		class="edu.ucdavis.cs.dblp.service.AcmResourceFetcher">
+		<constructor-arg index="0">
+			<bean id="localFetcher"
+				class="edu.ucdavis.cs.dblp.service.LocalResourceFetcher">
+				<constructor-arg index="0" value="file:/dev/data" />
+			</bean>
+		</constructor-arg>
 	</bean>
 
 </beans>
