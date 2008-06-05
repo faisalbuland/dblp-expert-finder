@@ -41,9 +41,28 @@
 	</bean>
 
 	<context:annotation-config />
-	<context:component-scan base-package="edu.ucdavis.cs.dblp" />
+	<context:component-scan base-package="edu.ucdavis.cs.dblp">
+<!-- 	<context:exclude-filter type="annotation" expression="edu.ucdavis.cs.dblp.data.stereotype.Extractor"/>  -->
+	</context:component-scan>
 	<tx:annotation-driven />
 	<aop:aspectj-autoproxy />
+	
+	<!-- serialized resources for keyword recognizer -->
+	<bean id="serKeywordDict" class="org.springframework.core.io.ClassPathResource">
+		<constructor-arg value="/serialized/keywordDict.ser.gz"/>
+	</bean>
+	<bean id="serAcronymMap" class="org.springframework.core.io.ClassPathResource">
+		<constructor-arg value="/serialized/acronymMap.ser.gz"/>
+	</bean>
+	<!-- data for spatial db publications visualization -->
+	<bean id="serSimplePubs" class="org.springframework.core.io.ClassPathResource">
+		<constructor-arg value="/serialized/spatdbs-simplewithauthpubs.ser.gz"/>
+	</bean>
+	<!-- clustering solution produced by gcluto/cluto - 
+			should correspond to pubs in serSimplePubs. -->
+	<bean id="solutionDir" class="org.springframework.core.io.FileSystemResource">
+		<constructor-arg value="/dev/cluto-2.1.1/doc2mat-1.0/simpleSpatDbs-project2/data_matrix001/solution001"/>
+	</bean>
 
 	<import resource="classpath:spring/dao-beans.xml" />
 	<import resource="classpath:spring/services.xml" />

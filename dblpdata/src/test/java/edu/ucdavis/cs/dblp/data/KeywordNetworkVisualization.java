@@ -57,8 +57,6 @@ public class KeywordNetworkVisualization {
 	
 	protected static final String SRC = Graph.DEFAULT_SOURCE_KEY;
     protected static final String TRG = Graph.DEFAULT_TARGET_KEY;
-    
-    private final Set<Author> firstLevelAuthors = Sets.newHashSet(); 
 	
 	public KeywordNetworkVisualization() {
 		dao = ServiceLocator.getInstance().getDblpPubDao();
@@ -72,15 +70,13 @@ public class KeywordNetworkVisualization {
 		return pubs;
 	}
 	
-	private Graph generateSimpleGraph(final String authorName) {
-		firstLevelAuthors.clear();
-		
+	private Graph generateSimpleGraph(final String authorName) {		
 		List<Publication> pubs = dao.findByAuthorName(authorName);
 		
 		return generateSimpleGraph(pubs, authorName);
 	}
 	
-	private Graph generateSimpleGraph(List<Publication> pubs, String authorName) {
+	private Graph generateSimpleGraph(List<Publication> pubs, String centerNodeName) {
 		Multimap<Keyword, Publication> kwsToPubs = Multimaps.newHashMultimap();
 		Schema nodeSchema = new Schema();
 		nodeSchema.addColumn("name", String.class);
@@ -117,7 +113,7 @@ public class KeywordNetworkVisualization {
 		logger.info("after reduction - all pubs keyword count="+reducedKeywords.size());
 		
 		int rowId = nodes.addRow();
-		nodes.set(rowId, "name", authorName);
+		nodes.set(rowId, "name", centerNodeName);
 		nodes.set(rowId, "type", "author");
 		
 		Map<Publication, Integer> pubsToNodeIds = Maps.newHashMap();

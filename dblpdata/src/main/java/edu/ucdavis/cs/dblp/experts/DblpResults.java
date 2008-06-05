@@ -1,5 +1,8 @@
 package edu.ucdavis.cs.dblp.experts;
 
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -12,6 +15,7 @@ import org.apache.solr.common.SolrDocument;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
@@ -66,10 +70,14 @@ public class DblpResults {
 			pub.setTitle(doc.getFieldValue("title").toString());
 			pub.setType(PublicationType.ARTICLE);
 			Set<Author> authors = Sets.newHashSet();
-			for (Object authorName : doc.getFieldValues("author") ) {
-				authors.add(new Author(authorName.toString()));
+			if (doc.getFieldValues("author") != null) {
+				for (Object authorName : doc.getFieldValues("author") ) {
+					authors.add(new Author(authorName.toString()));
+				}
+				pub.setAuthor(authors);
+			} else {
+				logger.error("no authors returned for pub "+pub.getKey());
 			}
-			pub.setAuthor(authors);
 			results.pubs.add(pub);
 			/*Publication pub = ServiceLocator.getInstance().getDblpPubDao().findById(docId);
 			if (pub != null) {
@@ -78,6 +86,23 @@ public class DblpResults {
 		}
 		
 		return results;
+	}
+	
+	public static Iterable<Publication> allResults(DblpResults initialResults, SearchService searchService) {
+		Iterable<Publication> allPubs = initialResults.getPubs();
+		int retrievedCount = initialResults.getPubs().size();
+		DblpResults results = initialResults;
+
+		while (results.hasMore()) {
+			assert results.hasMore() : "code error - results did not have more";
+			results = searchService.fetchMoreResults(results);
+			retrievedCount += results.getPubs().size();
+			allPubs = Iterables.concat(allPubs, results.getPubs());
+		}
+		
+		assert retrievedCount == initialResults.getResultsCount() :
+			"retrieved count != reported result count";
+		return allPubs;
 	}
 	
 	/**

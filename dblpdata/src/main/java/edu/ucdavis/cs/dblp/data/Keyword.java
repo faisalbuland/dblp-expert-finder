@@ -17,7 +17,9 @@ import org.apache.commons.lang.builder.HashCodeBuilder;
 import org.apache.commons.lang.builder.ToStringBuilder;
 import org.apache.commons.lang.builder.ToStringStyle;
 
-import de.unitrier.dblp.Author;
+import com.google.common.base.Function;
+
+import edu.ucdavis.cs.dblp.analyzers.TokenizerService;
 
 /**
  * 
@@ -27,7 +29,7 @@ import de.unitrier.dblp.Author;
 @Entity
 @NamedQueries({
 	@NamedQuery(name="Keyword.byId", query="FROM Keyword k WHERE k.id = :id"),
-	@NamedQuery(name="Keyword.byName", query="FROM Keyword k WHERE k.keyword = :keyword"),
+	@NamedQuery(name="Keyword.byName", query="FROM Keyword k WHERE UPPER(k.keyword) = UPPER(:keyword)"),
 	@NamedQuery(name="Keyword.all", query="SELECT DISTINCT k FROM Keyword k ORDER BY k.keyword ASC"),
 })
 public class Keyword implements Serializable {
@@ -81,6 +83,8 @@ public class Keyword implements Serializable {
 				toString();
 	}
 	
+	private static final TokenizerService tokenizer = new TokenizerService();
+	
 	@Override
     public boolean equals(Object obj) {
     	if (obj instanceof Keyword == false) {
@@ -90,8 +94,13 @@ public class Keyword implements Serializable {
 			return true;
 		}
 		Keyword rhs = (Keyword) obj;
+		// DANGER! XXX This is a major kludge to support reduction of keywords.
+		// This may break many other things, but it is being implemented for the
+		// purpose of SimpleKeywordRecognizer.produceSimpleControlledVocabulary(...).
+		String otherKwStemLc = tokenizer.stemAllTokens(rhs.keyword.toLowerCase());
+		String kwStemLc = tokenizer.stemAllTokens(this.keyword.toLowerCase());
 		return new EqualsBuilder()
-					.append(this.keyword, rhs.keyword)
+					.append(kwStemLc, otherKwStemLc)
 					.isEquals();
     }
     
@@ -101,4 +110,13 @@ public class Keyword implements Serializable {
         			.append(this.keyword)
         			.toHashCode();
     }
+    
+    // Google collections convenience methods for Keywords
+	public static final Function<Keyword, String> FN_KEYWORD_STRINGS = 
+		new Function<Keyword, String>() {
+			@Override
+			public String apply(Keyword keyword) {
+				return keyword.getKeyword();
+			}
+		};
 }

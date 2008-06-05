@@ -26,6 +26,8 @@ import org.apache.commons.lang.builder.HashCodeBuilder;
 import org.apache.commons.lang.builder.ToStringBuilder;
 import org.apache.commons.lang.builder.ToStringStyle;
 
+import com.google.common.base.Function;
+
 
 /**
  * <p>Java class for anonymous complex type.
@@ -54,8 +56,9 @@ import org.apache.commons.lang.builder.ToStringStyle;
 	@NamedQuery(name="Author.byNamePrefix", query="SELECT a FROM Author a WHERE a.content LIKE :namePrefix || '%'"),
 })
 public class Author implements Serializable {
-
-    @XmlValue
+	private static final long serialVersionUID = 8576304880996464574L;
+	
+	@XmlValue
     @Id
     @Column(name="AUTHOR_NAME", nullable=false)
     protected String content;
@@ -116,5 +119,11 @@ public class Author implements Serializable {
     	return new ToStringBuilder(this, ToStringStyle.SHORT_PREFIX_STYLE).
     					append("AuthorName", this.content).toString();
     }
-
+    
+    public static final Function<Author, String> FN_AUTHOR_NAME = new Function<Author, String>() {
+    	@Override
+    	public String apply(Author author) {
+    		return author.getContent();
+    	}
+    };
 }

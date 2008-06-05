@@ -44,6 +44,7 @@ import de.unitrier.dblp.Www;
 
 @Entity
 @NamedQueries({
+		@NamedQuery(name="Publication.all", query="FROM Publication p"),
 		@NamedQuery(name="Publication.byId", query="FROM Publication p WHERE p.key = :key"),
 		@NamedQuery(name="Publication.byAuthorName", query="SELECT p FROM Publication p, IN(p.author) a WHERE a.content=:name ORDER BY p.year DESC NULLS LAST"),
 		@NamedQuery(name="Publication.byCategory", query="SELECT p FROM Publication p, IN(p.content.categories) cats WHERE cats.key=:catKey ORDER BY p.year DESC NULLS LAST"),
@@ -52,6 +53,8 @@ import de.unitrier.dblp.Www;
 })
 public class Publication implements Serializable {
 	public static final Logger logger = Logger.getLogger(Publication.class);
+	
+	public static final long serialVersionUID = -708123659231597900l;
 	
 	@Enumerated
 	private PublicationType type;
@@ -744,7 +747,15 @@ public class Publication implements Serializable {
 			toString();
 	}
 	
+	
 	// Google collections convenience methods for Publications
+	public static final Function<Publication, String> FN_PUB_KEY = 
+		new Function<Publication, String>() {
+			@Override
+			public String apply(Publication pub) {
+				return pub.getKey();
+			}
+		};
 	public static final Function<Publication, String> FN_PUB_YEAR = 
 		new Function<Publication, String>() {
 			@Override
@@ -765,6 +776,13 @@ public class Publication implements Serializable {
 						});
 			}
 		};
+	public static final Function<Publication, Iterable<Keyword>> FN_PUB_KEYWORDOBJS = 
+		new Function<Publication, Iterable<Keyword>>() {
+			@Override
+			public Iterable<Keyword> apply(Publication pub) {
+				return pub.getContent().getKeywords();
+			}
+		};
 	public static final Predicate<Publication> PRED_HAS_CONTENT = 
 		new Predicate<Publication>(){
 			@Override
@@ -772,4 +790,35 @@ public class Publication implements Serializable {
 				return pub.getContent() != null;
 			}
 		};
+
+	/* (non-Javadoc)
+	 * @see java.lang.Object#hashCode()
+	 */
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((key == null) ? 0 : key.hashCode());
+		return result;
+	}
+	
+	/* (non-Javadoc)
+	 * @see java.lang.Object#equals(java.lang.Object)
+	 */
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		final Publication other = (Publication) obj;
+		if (key == null) {
+			if (other.key != null)
+				return false;
+		} else if (!key.equals(other.key))
+			return false;
+		return true;
+	}
 }

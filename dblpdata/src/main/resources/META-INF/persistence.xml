@@ -39,8 +39,54 @@ http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd"
 				value="org.hibernate.dialect.DerbyDialect" />
 			<property name="hibernate.connection.driver_class"
 				value="org.apache.derby.jdbc.EmbeddedDriver" />
+	 		<property name="hibernate.connection.url"
+				value="jdbc:derby:/dev/data/dbs/dblp" /> 
+<!--			<property name="hibernate.connection.url"
+				value="jdbc:derby:/dev/data/db_backup/dblp_mostcontent" /> --> 
+			<property name="hibernate.hbm2ddl.auto" value="update" />
+			
+			<property name="hibernate.connection.useUnicode"
+				value="true" />
+			<property name="hibernate.connection.characterEncoding"
+				value="UTF-8" />
+
+			<!-- hibernate search config properties -->
+			<property name="hibernate.search.default.indexBase"
+				value="/dev/indexes" />
+			<property
+				name="hibernate.search.default.optimizer.operation_limit.max"
+				value="1000" />
+			<property
+				name="hibernate.search.default.optimizer.transaction_limit.max"
+				value="1000" />
+		</properties>
+	</persistence-unit>
+	
+	<persistence-unit name="mysqlPersistence">
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+		<class>de.unitrier.dblp.Author</class>
+		<class>de.unitrier.dblp.Cite</class>
+		<class>de.unitrier.dblp.Journal</class>
+		<class>de.unitrier.dblp.Publisher</class>
+		<class>de.unitrier.dblp.School</class>
+		<class>edu.ucdavis.cs.dblp.data.Publication</class> 
+		<class>edu.ucdavis.cs.dblp.data.PublicationContent</class>
+	 	<class>edu.ucdavis.cs.dblp.data.Keyword</class>
+		<class>edu.ucdavis.cs.taxonomy.Category</class>
+		<properties>
+			<property name="hibernate.archive.autodetection"
+				value="class" />
+			<property name="hibernate.show_sql" value="false" />
+			<property name="hibernate.format_sql" value="false" />
+ 			<property name="hibernate.connection.driver_class"
+				value="com.mysql.jdbc.Driver" /> 
 			<property name="hibernate.connection.url"
-				value="jdbc:derby:/dev/data/dbs/dblp" />
+				value="jdbc:mysql://localhost:3306/dblpdata" />
+			<property name="hibernate.connection.username" value="dblp" />
+			<property name="hibernate.connection.password" value="dblp" />
+			<property name="hibernate.dialect"
+				value="org.hibernate.dialect.MySQLDialect" />
+				
 			<property name="hibernate.hbm2ddl.auto" value="update" />
 			
 			<property name="hibernate.connection.useUnicode"

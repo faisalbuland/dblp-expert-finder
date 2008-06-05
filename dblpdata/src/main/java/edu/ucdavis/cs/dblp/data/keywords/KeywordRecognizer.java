@@ -3,9 +3,12 @@ package edu.ucdavis.cs.dblp.data.keywords;
 import java.util.List;
 import java.util.Set;
 
+import com.aliasi.dict.Dictionary;
 import com.google.common.collect.BiMap;
 
 import edu.ucdavis.cs.dblp.data.Keyword;
+import edu.ucdavis.cs.dblp.data.Publication;
+import edu.ucdavis.cs.dblp.text.SimplePub;
 
 public interface KeywordRecognizer {
 	Set<Keyword> findKeywordsIn(String text);
@@ -27,4 +30,24 @@ public interface KeywordRecognizer {
 	 * @return the acronym map (acronyms &lt;-&gt; expanded form)
 	 */
 	BiMap<String, String> getAcronymMap();
+	
+	Dictionary<String> getKeywordDict();
+	
+	/**
+	 * Produces a controlled vocabulary from <code>pubs</code> and updates
+	 * each contained publication to have keywords only from this controlled vocabulary.
+	 *  
+	 * @param pubs
+	 * @return
+	 */
+	void produceControlledVocabulary(Iterable<Publication> pubs);
+	/**
+	 * Produces a controlled vocabulary from <code>pubs</code> and updates
+	 * each contained publication to have keywords only from this controlled vocabulary.
+	 * This version operates on {@link SimplePub}s.
+	 *  
+	 * @param pubs
+	 * @return
+	 */
+	void produceSimpleControlledVocabulary(Iterable<SimplePub> pubs);
 }

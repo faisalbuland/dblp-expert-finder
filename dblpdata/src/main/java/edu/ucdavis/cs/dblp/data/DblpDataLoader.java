@@ -5,8 +5,15 @@ package edu.ucdavis.cs.dblp.data;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Semaphore;
 
 import org.apache.log4j.Logger;
+
+import com.google.common.collect.Lists;
+
+import edu.ucdavis.cs.dblp.ServiceLocator;
 
 /**
  * DataLoader for DBLP data dumps.
@@ -42,9 +49,15 @@ public class DblpDataLoader implements DataLoader {
 			throw new IllegalStateException(
 					"processor must be set before calling doLoad()");
 		}
-
+		
+		ExecutorService execService = null;
 		try {
 			provider.open();
+			execService = Executors.newFixedThreadPool(8);
+			final Semaphore lock = new Semaphore(8);
+//			execService = Executors.newSingleThreadExecutor();
+//			final Semaphore lock = new Semaphore(1);
+			
 			
 			if (0 == batchSize) { // load one at a time
 				for (Object item : provider) {
@@ -59,17 +72,39 @@ public class DblpDataLoader implements DataLoader {
 						logger.info("processing " + i);
 					}
 					if ((i > 0) && (i % batchSize == 0)) {
-						processor.process(items);
-						logger.info("committed after "+ i + " processed");
+						execService.execute(new Runner(Lists.newLinkedList(items), lock));
+						lock.acquire();
 						items.clear();
 					}
 					i++;
 				}
-				processor.process(items);
+				execService.execute(new Runner(Lists.newLinkedList(items), lock));
+				lock.acquire();
 				logger.info(i + " processed");
 			}
 		} finally {
 			provider.close();
+			if (execService != null) {
+				execService.shutdown();
+			}
+		}
+	}
+	private class Runner implements Runnable {
+		private List<Object> items;
+		private ItemProcessor<Object> processor;
+		private Semaphore lock;
+
+		public Runner(List<Object> items, Semaphore lock) {
+			super();
+			this.items = items;
+			this.processor = (ItemProcessor<Object>) ServiceLocator.getInstance().
+								getAppContext().getBean("kwItemProcessorBean");
+			this.lock = lock;
+		}
+		@Override
+		public void run() {
+			processor.process(items);
+			lock.release();
 		}
 	}
 

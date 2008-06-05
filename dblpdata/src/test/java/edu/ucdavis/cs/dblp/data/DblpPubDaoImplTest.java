@@ -4,7 +4,11 @@
 package edu.ucdavis.cs.dblp.data;
 
 
-import static org.junit.Assert.*;
+import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.CoreMatchers.notNullValue;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
 
 import java.util.Arrays;
 import java.util.HashSet;
@@ -19,8 +23,11 @@ import org.junit.BeforeClass;
 import org.junit.Ignore;
 import org.junit.Test;
 
+import com.google.common.collect.ImmutableList;
+
 import de.unitrier.dblp.Author;
 import edu.ucdavis.cs.dblp.ServiceLocator;
+import edu.ucdavis.cs.dblp.data.keywords.KeywordRecognizer;
 
 /**
  * 
@@ -38,6 +45,8 @@ public class DblpPubDaoImplTest {
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
 		dao = ServiceLocator.getInstance().getDblpPubDao();
+//		recognizer = (KeywordRecognizer) ServiceLocator.getInstance().
+//						getAppContext().getBean("keywordRecognizer");
 	}
 
 	/**
@@ -135,12 +144,24 @@ public class DblpPubDaoImplTest {
 	
 	// TODO re-enable after building dist
 	@Test
+	@Ignore
 	public void testFindAuthorPubs() throws Exception {
 		final String authorName = "Nick Bryan-Kinns";
 		List<Publication> pubs = dao.findByAuthorName(authorName);
 		logger.info(pubs);
 		assertTrue(pubs.size() > 0);
-	}	
+	}
+	
+	@Test
+	public void analyzeMissingKeywords() throws Exception {
+//		String id = "conf/icde/TungHH01";
+//		String id = "conf/pakdd/ZhangYXD07";
+		String id = "conf/icat/Yu06";
+//		String id = "conf/jcis/BecerraRD02";
+		Publication pub = dao.findById(id);
+		assertThat(pub.getContent(), is(notNullValue()));
+		logger.info(pub);
+	}
 	
 	// TODO re-enable after building dist
 	@Test
@@ -153,6 +174,7 @@ public class DblpPubDaoImplTest {
 	}
 	
 	// TODO re-enable after building dist
+	@Test
 	@Ignore
 	public void testFindSmes() throws Exception {
 		List<SmeDTO> smes = dao.findSmes();
