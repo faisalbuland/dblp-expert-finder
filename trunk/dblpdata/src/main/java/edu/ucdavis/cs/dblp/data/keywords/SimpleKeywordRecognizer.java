@@ -3,19 +3,30 @@
  */
 package edu.ucdavis.cs.dblp.data.keywords;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.zip.GZIPInputStream;
+import java.util.zip.GZIPOutputStream;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.Resource;
 
 import org.apache.log4j.Logger;
 import org.junit.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
@@ -40,15 +51,19 @@ import com.google.common.collect.Maps;
 import com.google.common.collect.Multiset;
 import com.google.common.collect.Sets;
 
+import edu.ucdavis.cs.dblp.ServiceLocator;
 import edu.ucdavis.cs.dblp.analyzers.TokenizerService;
 import edu.ucdavis.cs.dblp.data.DblpKeywordDao;
 import edu.ucdavis.cs.dblp.data.Keyword;
+import edu.ucdavis.cs.dblp.data.Publication;
+import edu.ucdavis.cs.dblp.data.PublicationContent;
+import edu.ucdavis.cs.dblp.text.SimplePub;
 
 /**
  * @author pfishero
  *
  */
-@Service
+@Service("keywordRecognizer")
 @Transactional(propagation = Propagation.REQUIRED)
 public class SimpleKeywordRecognizer implements KeywordRecognizer {
 	private static final Logger logger = Logger.getLogger(SimpleKeywordRecognizer.class);
@@ -58,67 +73,82 @@ public class SimpleKeywordRecognizer implements KeywordRecognizer {
 	private DblpKeywordDao dao;
 	private TokenizerService tokenizer;
 	private BiMap<String, String> acronymMap = Maps.newHashBiMap();
+	private static final Map<Keyword, Keyword> KW_CACHE = Maps.newConcurrentHashMap();
 	
 	@PostConstruct
 	public void populateKeywordDictionary() {
-		Preconditions.checkState(dao != null, 
-				"keyword dao must be set prior to populating keyword dictonary");
-		keywordDict = new TrieDictionary<String>();
-		final double score = 0.0;
-
-		Multiset<Integer> wordCounts = new HashMultiset<Integer>();
-		Pattern trailingAcronym = Pattern.compile("^([^()]+)\\(([A-Z][a-zA-Z/-]+)\\)$");
-		// acronyms/words to not add, as these produce too many false positive matches
-		Set<String> stopAcronyms = Sets.newHashSet("IT", "USE", "IM", "ITS", "ROD", 
-				"AS", "MR", "TE", "OU", "AN", "AD", "AND", "THE");
-		
-		for(Keyword keyword : Sets.newHashSet(dao.findAll())) {
-			keyword.setKeyword(keyword.getKeyword().replace("&amp;", "&"));
-			keyword.setKeyword(keyword.getKeyword().replace("&amp", "&"));
-			keyword.setKeyword(keyword.getKeyword().replaceAll("&[^\\s]+", ""));
-			keyword.setKeyword(keyword.getKeyword().replaceAll("\\s+", " "));
+		if (keywordDict == null) { // not loaded from serialized form 
+			Preconditions.checkState(dao != null, 
+					"keyword dao must be set prior to populating keyword dictonary");
+			logger.info("populating keyword dictonary");
+			keywordDict = new TrieDictionary<String>();
+			final double score = 0.0;
+	
+			Multiset<Integer> wordCounts = new HashMultiset<Integer>();
+			Pattern trailingAcronym = Pattern.compile("^([^()]+)\\(([A-Z][a-zA-Z/-]+)\\)$");
+			// acronyms/words to not add, as these produce too many false positive matches
+			Set<String> stopAcronyms = Sets.newHashSet("IT", "USE", "IM", "ITS", "ROD", 
+					"AS", "MR", "TE", "OU", "AN", "AD", "AND", "THE", "KEYWORD", "PAPER", "CAN", "TWO");
 			
-			Matcher m = trailingAcronym.matcher(keyword.getKeyword());
-			if (m.matches()) {
-				if (m.groupCount() == 2) {
-					String expandedForm = m.group(1).trim();
-					String acronym = m.group(2).trim();
-					if (!stopAcronyms.contains(acronym.toUpperCase())) {
-						logger.debug("acronym "+acronym+" = "+expandedForm);
-						if (!acronymMap.containsKey(acronym) && 
-								!acronymMap.containsValue(acronym) &&
-								!acronymMap.containsKey(expandedForm) &&
-								!acronymMap.containsValue(expandedForm)) {
-							acronymMap.put(acronym, expandedForm);
+			for(Keyword keyword : Sets.newHashSet(dao.findAll())) {
+				keyword.setKeyword(keyword.getKeyword().replace("&amp;", "&"));
+				keyword.setKeyword(keyword.getKeyword().replace("&amp", "&"));
+				keyword.setKeyword(keyword.getKeyword().replaceAll("&[^\\s]+", ""));
+				keyword.setKeyword(keyword.getKeyword().replaceAll("\\s+", " "));
+				
+				Matcher m = trailingAcronym.matcher(keyword.getKeyword());
+				if (m.matches()) {
+					if (m.groupCount() == 2) {
+						String expandedForm;
+						String acronym;
+						String captureOne = m.group(1).trim();
+						String captureTwo = m.group(2).trim();
+						if (captureOne.length() <= captureTwo.length()) {
+							acronym = captureOne;
+							expandedForm = captureTwo;
 						} else {
-							logger.info("not inserting existing key into acronymMap.  key="+acronym);
+							acronym = captureTwo;
+							expandedForm = captureOne;
 						}
-						addKwToDict(score, expandedForm);
-						addKwToDict(score, acronym);
+						assert acronym.length() <= expandedForm.length();
+						
+						if (!stopAcronyms.contains(acronym.toUpperCase().trim())) {
+							logger.debug("acronym "+acronym+" = "+expandedForm);
+							if (!acronymMap.containsKey(acronym) && 
+									!acronymMap.containsValue(acronym) &&
+									!acronymMap.containsKey(expandedForm) &&
+									!acronymMap.containsValue(expandedForm)) {
+								acronymMap.put(acronym, expandedForm);
+							} else {
+								logger.info("not inserting existing key into acronymMap.  key="+acronym);
+							}
+							addKwToDict(score, expandedForm);
+							addKwToDict(score, acronym);
+						}
+					} else {
+						logger.error("trailing acronym regex didn't work!!");
 					}
 				} else {
-					logger.error("trailing acronym regex didn't work!!");
-				}
-			} else {
-				if (keyword.getKeyword().length() > 2
-						&& !stopAcronyms.contains(keyword.getKeyword().toUpperCase())) {
-					addKwToDict(score, keyword.getKeyword());
-					
-					if (logger.isDebugEnabled()) {
-						String[] words = keyword.getKeyword().split("\\s+");
-						wordCounts.add(words.length);
-						if (words.length > 5) {
-							logger.debug(">5 words = "+Join.join(" ", words));
+					if (keyword.getKeyword().length() > 2
+							&& !stopAcronyms.contains(keyword.getKeyword().toUpperCase().trim())) {
+						addKwToDict(score, keyword.getKeyword());
+						
+						if (logger.isDebugEnabled()) {
+							String[] words = keyword.getKeyword().split("\\s+");
+							wordCounts.add(words.length);
+							if (words.length > 5) {
+								logger.debug(">5 words = "+Join.join(" ", words));
+							}
 						}
-					}
-				} // else, skip one or two character keywords
+					} // else, skip one or two character keywords
+				}
 			}
-		}
-		
-		logger.debug("populated dictionary with "+keywordDict.size()+" keywords");
-		if (logger.isDebugEnabled()) {
-			for (Integer wordNum : wordCounts.elementSet()) {
-				logger.debug("keywords with "+wordNum+" word(s) = "+wordCounts.count(wordNum));
+			
+			logger.debug("populated dictionary with "+keywordDict.size()+" keywords");
+			if (logger.isDebugEnabled()) {
+				for (Integer wordNum : wordCounts.elementSet()) {
+					logger.debug("keywords with "+wordNum+" word(s) = "+wordCounts.count(wordNum));
+				}
 			}
 		}
 	}
@@ -136,6 +166,18 @@ public class SimpleKeywordRecognizer implements KeywordRecognizer {
 	public void initTokenizerService() {
 		tokenizer = new TokenizerService();
 	}
+	
+	@PostConstruct
+	public void oneOffAcronymFixes() {
+		if (!acronymMap.get("XML").toString().equalsIgnoreCase("eXtensible Markup Language")) {
+			acronymMap.put("XML", "eXtensible Markup Language");
+		} 
+		// O => NlogN due to O(NlogN) acronym extraction from parenthesized terms
+		if (acronymMap.containsKey("O") && 
+				acronymMap.get("O").toString().equalsIgnoreCase("NlogN")) {
+			acronymMap.remove("O");
+		}
+	}
 
 	/**
 	 * @param dao the Keyword DAO to set
@@ -143,6 +185,34 @@ public class SimpleKeywordRecognizer implements KeywordRecognizer {
 	@Resource
 	public void setDao(DblpKeywordDao dao) {
 		this.dao = dao;
+	}
+	
+	@Autowired(required=false)
+	public void setSerializedKeywordDict(@Qualifier("serKeywordDict") org.springframework.core.io.Resource serKeywordDict) {
+		try {
+			logger.info("loading serialized version of keywordDict");
+			ObjectInputStream ois = new ObjectInputStream(new GZIPInputStream(serKeywordDict.getInputStream()));
+			this.keywordDict = (Dictionary<String>)ois.readObject();
+			ois.close();
+		} catch (IOException e) {
+			logger.error("error while loading keywordDict: "+e);
+		} catch (ClassNotFoundException cnfe) {
+			logger.error("error while loading keywordDict: "+cnfe);
+		}
+	}
+	
+	@Autowired(required=false)
+	public void setSerializedAcronymMap(@Qualifier("serAcronymMap") org.springframework.core.io.Resource serAcronymMap) {
+		try {
+			logger.info("loading serialized version of acronymMap");
+			ObjectInputStream ois = new ObjectInputStream(new GZIPInputStream(serAcronymMap.getInputStream()));
+			this.acronymMap = (BiMap<String, String>)ois.readObject();
+			ois.close();
+		} catch (IOException e) {
+			logger.error("error while loading acronymMap: "+e);
+		} catch (ClassNotFoundException cnfe) {
+			logger.error("error while loading acronymMap: "+cnfe);
+		}
 	}
 	
 	private static final Comparator<Keyword> LENGTH_COMPARATOR = new Comparator<Keyword>() {
@@ -167,7 +237,7 @@ public class SimpleKeywordRecognizer implements KeywordRecognizer {
 		Chunking chunking = chunker.chunk(text);
 		String theText = chunking.charSequence().toString();
 		List<Chunk> chunks = Lists.newArrayList(chunking.chunkSet());
-		Collections.sort(chunks, Chunk.LONGEST_MATCH_ORDER_COMPARATOR);
+//		Collections.sort(chunks, Chunk.LONGEST_MATCH_ORDER_COMPARATOR);
 
 		for (Chunk chunk : chunks) {
 			int start = chunk.start();
@@ -175,13 +245,18 @@ public class SimpleKeywordRecognizer implements KeywordRecognizer {
 		    String chunkText = theText.substring(start,end).trim();
 			chunkText = chunkText.replaceAll("\\s+", " ");
 		    Keyword foundKeyword = new Keyword(chunkText);
+		    if (!KW_CACHE.containsKey(foundKeyword)) {
+		    	KW_CACHE.put(foundKeyword, foundKeyword);
+		    }
+		    foundKeyword = KW_CACHE.get(foundKeyword);
 		    foundKeywords.add(foundKeyword);
 		}
 		foundKeywords = disambiguateKeywords(foundKeywords);
 		if (logger.isDebugEnabled()) {
-			List<Keyword> keywordList = Lists.newArrayList(foundKeywords);
-			Collections.sort(keywordList, LENGTH_COMPARATOR);
-			logger.debug("found keywords: \n"+Join.join("\n", keywordList));
+//			List<Keyword> keywordList = Lists.newArrayList(foundKeywords);
+//			Collections.sort(keywordList, LENGTH_COMPARATOR);
+			logger.debug("found "+foundKeywords.size()+" keywords: \n"+
+					Join.join("\n", foundKeywords));
 		}
 		
 		return foundKeywords;
@@ -196,7 +271,12 @@ public class SimpleKeywordRecognizer implements KeywordRecognizer {
 	private static final Function<String, Keyword> FN_KEYWORD_FROM_STR = new Function<String, Keyword>() { 
 		@Override
 		public Keyword apply(String arg0) {
-			return new Keyword(arg0);
+			Keyword foundKeyword = new Keyword(arg0);
+			if (!KW_CACHE.containsKey(foundKeyword)) {
+		    	KW_CACHE.put(foundKeyword, foundKeyword);
+		    }
+		    foundKeyword = KW_CACHE.get(foundKeyword);
+			return foundKeyword;
 		}
 	};
 	
@@ -214,6 +294,8 @@ public class SimpleKeywordRecognizer implements KeywordRecognizer {
 		return mungedKeywords;
 	}
 	
+	private final Map<String, Keyword> canonicalForms = Maps.newHashMap();
+	
 	/**
 	 * Removes duplicates (stemmed form) and removes keywords that are contained within 
 	 * other keywords, for example, 'spatial', 'spatial database', 'spatial databases' would 
@@ -225,28 +307,61 @@ public class SimpleKeywordRecognizer implements KeywordRecognizer {
 	public List<String> reduceKeywords(List<String> keywords) {
 		List<String> keywordsList = Lists.newArrayList();
 		
-		for (String keyword : keywords) {
-			boolean keepKeyword = true;
-			for (String otherKeyword : keywords) {
-				if (!keyword.equals(otherKeyword)) {
-					String otherKwStemLc = tokenizer.stemAllTokens(otherKeyword.toLowerCase());
-					String kwStemLc = tokenizer.stemAllTokens(keyword.toLowerCase());
-					if (otherKwStemLc.contains(kwStemLc) &&
-							// if they are equal but differ in case, throw out the one with 
-							// the lesser hash code
-							!(otherKeyword.equalsIgnoreCase(keyword) && 
-									otherKeyword.hashCode() <= keyword.hashCode()) &&
-							// if their stemmed versions are equal but their normal forms are not,
-							// throw out the shorter one or the one with a larger hash code 
-							// if their lengths are equal
-							!(!otherKeyword.equals(keyword) && 
-									otherKeyword.length() < keyword.length()) ) {
-						keepKeyword = false;
+		// expand acronyms
+		Set<String> expandedKeywordsSet = Sets.newLinkedHashSet();
+		Iterables.addAll(expandedKeywordsSet, Iterables.transform(keywords, 
+				new Function<String, String>(){
+					@Override
+					public String apply(String keyword) {
+						if (SimpleKeywordRecognizer.this.getAcronymMap().containsKey(keyword)) {
+							if (logger.isDebugEnabled()) {
+								logger.debug("expanding "+keyword+" to "+
+										SimpleKeywordRecognizer.this.getAcronymMap().get(keyword));
+							}
+							return SimpleKeywordRecognizer.this.getAcronymMap().get(keyword);
+						} else {
+							return keyword;
+						}
+					}
+		}));
+		
+		// for every kw in the expandedKeywordsList
+		// either it gets added, or it gets resolved to another keyword
+		List<String> expandedKeywordsList = Lists.newLinkedList(expandedKeywordsSet);
+		Collections.sort(expandedKeywordsList, String.CASE_INSENSITIVE_ORDER);
+		Map<String, String> kwCanonicalMap = Maps.newHashMap();
+		canonicalForms.clear();
+		
+		for (String keyword : expandedKeywordsList) {
+			kwCanonicalMap.put(keyword, keyword);
+			canonicalForms.put(keyword, new Keyword(keyword));
+			if (acronymMap.inverse().containsKey(keyword)) { 
+				// keyword is an expanded form of an acronym
+				canonicalForms.put(acronymMap.inverse().get(keyword), new Keyword(keyword));
+			}
+			String cleanedKeyword = keyword.replaceAll("\\([A-Z]+\\)$","").trim();
+			for (String otherKeyword : expandedKeywordsList) {
+				String cleanedOtherKeyword = otherKeyword.replaceAll("\\([A-Z]+\\)$","").trim();
+				if (keyword != otherKeyword) {
+					String otherKwStemLc = tokenizer.stemAllTokens(cleanedOtherKeyword.toLowerCase());
+					String kwStemLc = tokenizer.stemAllTokens(cleanedKeyword.toLowerCase());
+					if (otherKwStemLc.equals(kwStemLc)) {
+						if (cleanedOtherKeyword.length() > cleanedKeyword.length() || 
+								(cleanedOtherKeyword.length() == cleanedKeyword.length() && 
+										cleanedOtherKeyword.hashCode() >= cleanedKeyword.hashCode())) {
+							kwCanonicalMap.put(keyword, otherKeyword);
+							canonicalForms.put(keyword, new Keyword(otherKeyword));
+							if (acronymMap.inverse().containsKey(keyword)) { 
+								// keyword is an expanded form of an acronym
+								canonicalForms.put(acronymMap.inverse().get(keyword), new Keyword(otherKeyword));
+							}
+						}
 					}
 				}
 			}
-			if (keepKeyword) keywordsList.add(keyword);
 		}
+		
+		Iterables.addAll(keywordsList, Sets.newHashSet(kwCanonicalMap.values()));
 		
 		return keywordsList;
 	}
@@ -256,27 +371,117 @@ public class SimpleKeywordRecognizer implements KeywordRecognizer {
 		List<Keyword> refinedKeywords = Lists.newLinkedList(keywords);
 		
 		// remove non-informative keywords
-		// * single token keywords that don't have the first two letters capitalized
+		// * single token keywords that don't have the first letter capitalized
+		// or the second is a non-lower case character (ex: R-tree, R*-tree, kNN)
 		for (Iterator<Keyword> iter = refinedKeywords.iterator(); iter.hasNext(); ) {
 			Keyword kw = iter.next();
-			// strip punc
-			String kwTemp = kw.getKeyword().replace("_", " ").replace("-", " ").replace("\\", " ").replace("/", " ");
-			String[] tokens = kwTemp.split("\\s+");
-			boolean firstTwoCharsCaps = kwTemp.length() >= 2 &&
-										Character.isUpperCase(kwTemp.charAt(0)) &&
-										Character.isUpperCase(kwTemp.charAt(1));
-			if ((tokens.length < 2) && !firstTwoCharsCaps) {
-				logger.debug("removing non-informative keyword: "+kwTemp);
-				iter.remove();
+			if (kw.getKeyword().length() >= 2 &&
+					!Character.isLowerCase(kw.getKeyword().charAt(1))) {
+				logger.debug("keeping special case keyword: "+kw.getKeyword());
+			} else {
+				// strip punc
+				String kwTemp = kw.getKeyword().replace("_", " ").replace("-", " ").replace("\\", " ").replace("/", " ");
+				String[] tokens = kwTemp.split("\\s+");
+				// re-enabling keeping kws with the first letter as uppercase, to 
+				// pick up terms like "PostgreSQL".
+				boolean validFirstTwoChars = kwTemp.length() >= 2 &&
+											(!Character.isLowerCase(kwTemp.charAt(1)) ||
+												Character.isUpperCase(kwTemp.charAt(0)));
+				if ((tokens.length < 2) && !validFirstTwoChars) {
+					logger.debug("removing non-informative keyword: "+kwTemp+
+							" (came from "+kw.getKeyword()+')');
+					iter.remove();
+				}
 			}
 		}
 		
 		return refinedKeywords;
 	}
 	
+	public void produceSimpleControlledVocabulary(Iterable<SimplePub> pubs) {
+		// reduce keywords and remove low information ones
+		// keep track of which keywords came from which publications
+		// repopulate each publication's keywords from the controlled vocabulary
+		// reduce one more time across the entire publication set
+		Set<Keyword> reducedKeywords = Sets.newHashSet(
+										removeLowInformationKeywords(
+											findKeywordsIn(Join.join(" ", 
+											Iterables.transform(pubs, SimplePub.FN_SIMPLPUB_KEYWORDS)))));
+		logger.debug("after reduction - all pubs keyword count="+reducedKeywords.size());
+		if (logger.isDebugEnabled()) {
+			logger.debug("reduced keywords: "+Join.join("\n", reducedKeywords));
+		}
+		
+		for (SimplePub pub : pubs) {
+			Set<Keyword> updatedKeywords = Sets.newHashSet();
+			for (Keyword kw : pub.getKeywords()) {
+				if (reducedKeywords.contains(canonicalForms.get(kw.getKeyword()))) {
+					updatedKeywords.add(canonicalForms.get(kw.getKeyword()));
+				} else {
+					logger.debug("ignoring keyword not found in the controlled vocabulary: "+kw);
+				}
+			}
+			pub.setKeywords(updatedKeywords);
+			logger.debug("pub "+pub.getKey()+" now has "+
+					pub.getKeywords().size()+" keyphrases");
+		}
+	}
+	
+	/* (non-Javadoc)
+	 * @see edu.ucdavis.cs.dblp.data.keywords.KeywordRecognizer#produceControlledVocabulary(java.lang.Iterable)
+	 */
+	@Override
+	public void produceControlledVocabulary(Iterable<Publication> pubs) {
+		// scan publications using existing keywords
+		// reduce keywords and remove low information ones
+		// keep track of which keywords came from which publications
+		// repopulate each publication's keywords from the controlled vocabulary
+		Set<Keyword> keywords = Sets.newHashSet();
+		for (Publication pub : pubs) {
+			StringBuilder rawText = new StringBuilder();
+			rawText.append(pub.getTitle()).append(" ");
+			if (pub.getContent() != null) {
+				rawText.append(pub.getContent().getAbstractText()).append(" ");
+				rawText.append(Join.join(" ", pub.getContent().getKeywords())).append(" ");
+			} else {
+				pub.setContent(new PublicationContent());
+			}
+			final Set<Keyword> pubKws = findKeywordsIn(rawText.toString().trim());
+			pub.getContent().setKeywords(pubKws);
+//			keywords.addAll(pubKws);
+		}
+		/*
+		logger.debug("all pubs keyword count="+keywords.size());
+		// reduce one more time across the entire publication set
+		Set<Keyword> reducedKeywords = Sets.newHashSet(
+											removeLowInformationKeywords(
+												findKeywordsIn(Join.join(" ", keywords))));
+		logger.debug("after reduction - all pubs keyword count="+reducedKeywords.size());
+		if (logger.isDebugEnabled()) {
+			logger.debug("reduced keywords: "+Join.join("\n", reducedKeywords));
+		}
+		
+		for (Publication pub : pubs) {
+			for (Iterator<Keyword> iter = pub.getContent().getKeywords().iterator(); iter.hasNext(); ) {
+				Keyword kw = iter.next();
+				if (!reducedKeywords.contains(kw)) {
+					logger.debug("removing keyword not found in the controlled vocabulary: "+kw);
+					iter.remove();
+				}
+			}
+			logger.debug("pub "+pub.getKey()+" now has "+
+					pub.getContent().getKeywords().size()+" keyphrases");
+		}
+		*/
+	}
+	
 	@Override
 	public BiMap<String, String> getAcronymMap() {
 		return acronymMap;
+	}
+	
+	public Dictionary<String> getKeywordDict() {
+		return keywordDict;
 	}
 	
 	@Test
@@ -309,6 +514,46 @@ public class SimpleKeywordRecognizer implements KeywordRecognizer {
 		List<String> testKws = ImmutableList.of("geographic information systems", "Geographical Information Systems");
 		List<String> processedKws = reduceKeywords(testKws);
 		logger.info("dup with extra acronym = "+processedKws);
+	}
+	
+	@Test
+	public void testLongestMatch5() {
+		initTokenizerService();
+		List<String> testKws = ImmutableList.of("123", "R-tree", "R-tree", "R-Trees", "R-Tree family", "abc", "random",
+				"WWW", "world wide web", "Geographic Information Systems", "GIS");
+		List<String> processedKws = reduceKeywords(testKws);
+		logger.info("R-tree variants = "+processedKws);
+	}
+	
+	@Test
+	public void testShouldNotMerge() {
+		initTokenizerService();
+		List<String> testKws = ImmutableList.of("3D face recognition", "face recognition");
+		List<String> processedKws = reduceKeywords(testKws);
+		logger.info("should not be merged = "+processedKws);
+	}
+	
+	public static void main(String[] args) throws Exception {
+		ApplicationContext ctx = ServiceLocator.getInstance().getAppContext();
+		KeywordRecognizer recognizer = (KeywordRecognizer) ctx.getBean("keywordRecognizer");
+		
+		File outputDir = new File("serialized");
+
+		if (!outputDir.exists()) {
+			logger.info("creating serialized output directory "+outputDir.toURI());
+			outputDir.mkdir();
+		}
+		
+		Dictionary<String> keywordDict = recognizer.getKeywordDict();
+		BiMap<String, String> acronymMap = recognizer.getAcronymMap();
+		
+		ObjectOutputStream oos = new ObjectOutputStream(new GZIPOutputStream(new FileOutputStream(new File(outputDir, "keywordDict"))));
+		oos.writeObject(keywordDict);
+		oos.close();
+		
+		oos = new ObjectOutputStream(new GZIPOutputStream(new FileOutputStream(new File(outputDir, "acronymMap"))));
+		oos.writeObject(acronymMap);
+		oos.close();
 	}
 
 }

@@ -85,7 +85,7 @@ public class IeeeCsDlContentService implements ContentService {
 		if (StringUtils.isNotBlank(pub.getEe())) {
 			try {
 				Parser parser = new Parser(fetcher.fetchElectronicEdition(pub));
-				retrieveAbstract(pub, parser);
+				abstractText = retrieveAbstract(pub, parser);
 			} catch (ParserException e) {
 				String msg = "error while parsing electronic edition link";
 				logger.error(msg+':'+e);
@@ -102,10 +102,10 @@ public class IeeeCsDlContentService implements ContentService {
 	public void testIeeeCsRetrieval() {
 		this.fetcher = new WebResourceFetcher();
 		Publication testPub = new Publication();
-		testPub.setEe("http://192.168.1.22/acm/conf/3dpvt/HussainON04.html");
-		testPub.setKey("conf/3dpvt/HussainON04");
-		this.retrieveAbstract(testPub);
-		this.retrieveKeywords(testPub);
+		testPub.setEe("http://192.168.1.22/acm/conf/icat/Yu06.html");
+		testPub.setKey("conf/icat/Yu06");
+		this.retrieveAll(testPub);
+		logger.info(testPub);
 	}
 
 	@Override

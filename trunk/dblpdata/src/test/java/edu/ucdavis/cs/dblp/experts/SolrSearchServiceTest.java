@@ -27,7 +27,7 @@ locations={"/spring/dblpApplicationContext.xml"})
 public class SolrSearchServiceTest {
 	private static final Logger logger = Logger.getLogger(SolrSearchServiceTest.class);
 	
-	@Autowired
+	@Autowired(required=true)
 	private SearchService searchService;
 	
 	@Test

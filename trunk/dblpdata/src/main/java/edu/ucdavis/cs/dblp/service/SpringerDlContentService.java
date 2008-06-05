@@ -82,7 +82,7 @@ public class SpringerDlContentService implements ContentService {
 		if (StringUtils.isNotBlank(pub.getEe())) {
 			try {
 				Parser parser = new Parser(fetcher.fetchElectronicEdition(pub));
-				retrieveAbstract(pub, parser);
+				abstractText = retrieveAbstract(pub, parser);
 			} catch (ParserException e) {
 				String msg = "error while parsing electronic edition link";
 				logger.error(msg+':'+e);

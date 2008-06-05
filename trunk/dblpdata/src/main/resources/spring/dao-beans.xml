@@ -7,7 +7,7 @@
 		http://www.springframework.org/schema/lang http://www.springframework.org/schema/lang/spring-lang-2.5.xsd
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
 
-	<!-- DBLPS -->
+	<!-- DBLPs -->
 	<bean id="dblpPubDao"
 		class="edu.ucdavis.cs.dblp.data.DblpPubDaoImpl" />
 		
@@ -18,7 +18,8 @@
 		class="edu.ucdavis.cs.dblp.data.DblpDataLoader">
 		<property name="inputSourceItemProvider"
 			ref="inputSourceItemProviderBean" />
-		<property name="itemProcessor" ref="itemProcessorBean" />
+<!--	 	<property name="itemProcessor" ref="itemProcessorBean" /> -->
+ 		<property name="itemProcessor" ref="kwItemProcessorBean" />
 		<property name="batchSize" value="250" />
 	</bean>
 
@@ -43,6 +44,15 @@
 		<property name="dao" ref="dblpPubDao" />
 		<property name="contentService" ref="contentService" />
 	</bean>
+	
+	<bean id="kwItemProcessorBean"
+		class="edu.ucdavis.cs.dblp.data.DblpItemKeywordProcessor" lazy-init="true"
+		scope="prototype">
+		<property name="dao" ref="dblpPubDao" />
+		<property name="contentService" ref="contentService" />
+		<property name="recognizer" ref="keywordRecognizer" />
+	</bean>
+	
 	
 	<!-- ACM CCS (Taxonomy system) -->
 	<bean id="categoryDao"
@@ -73,7 +83,8 @@
 	</bean>
 
 	<!-- Master content service that delegates to the wrapped underlying services -->	
-	<bean id="contentService" class="edu.ucdavis.cs.dblp.service.DemuxContentService">
+	<bean id="contentService" class="edu.ucdavis.cs.dblp.service.DemuxContentService"
+		scope="prototype">
 		<property name="contentServices">
 			<list>
 				<ref bean="acmContentService"/>
@@ -84,27 +95,33 @@
 		</property>
 	</bean>
 
-	<bean id="acmContentService" class="edu.ucdavis.cs.dblp.service.AcmDlContentService">
+	<bean id="acmContentService" class="edu.ucdavis.cs.dblp.service.AcmDlContentService"
+		scope="prototype">
 		<constructor-arg ref="resourceFetcher" />
 	</bean>
-	<bean id="ieeeContentService" class="edu.ucdavis.cs.dblp.service.IeeeDlContentService">
+	<bean id="ieeeContentService" class="edu.ucdavis.cs.dblp.service.IeeeDlContentService"
+		scope="prototype">
 		<constructor-arg ref="resourceFetcher" />
 	</bean>
-	<bean id="ieeeCsContentService" class="edu.ucdavis.cs.dblp.service.IeeeCsDlContentService">
+	<bean id="ieeeCsContentService" class="edu.ucdavis.cs.dblp.service.IeeeCsDlContentService"
+		scope="prototype">
 		<constructor-arg ref="resourceFetcher" />
 	</bean>
-	<bean id="springerContentService" class="edu.ucdavis.cs.dblp.service.SpringerDlContentService">
+	<bean id="springerContentService" class="edu.ucdavis.cs.dblp.service.SpringerDlContentService"
+		scope="prototype">
 		<constructor-arg ref="resourceFetcher" />
 	</bean>
 	
 	<alias name="localCacheResourceFetcher" alias="resourceFetcher"/>
 	
 	<bean id="localCacheResourceFetcher"
-		class="edu.ucdavis.cs.dblp.service.LocalCacheResourceFetcher">
+		class="edu.ucdavis.cs.dblp.service.LocalCacheResourceFetcher"
+		scope="prototype">
 		<property name="baseURL" value="http://192.168.1.22/acm/" />
 	</bean>
 	<bean id="localAcmFetcher"
-		class="edu.ucdavis.cs.dblp.service.AcmResourceFetcher">
+		class="edu.ucdavis.cs.dblp.service.AcmResourceFetcher"
+		scope="prototype">
 		<constructor-arg index="0">
 			<bean id="localFetcher"
 				class="edu.ucdavis.cs.dblp.service.LocalResourceFetcher">
