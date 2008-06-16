@@ -93,6 +93,11 @@ public class KeywordSearchBean {
 	public DblpResults getResults() {
 		return results;
 	}
+	
+	public DblpDataModel getDataModel() {
+		return new DblpDataModel(searchService, results, 
+					ServiceLocator.getInstance().getDblpPubDao());
+	}
 
 	public String getRefinementValue() {
 		return refinementValue;
