@@ -13,7 +13,8 @@ public interface ResearcherDao {
 	Collection<Author> findByName(String name);
 	Collection<Author> findByNamePrefix(String prefix);
 	Collection<Publication> findPublications(Author researcher);
-
+	Collection<ResearcherProfile> buildProfile(String name);
+	
 	void save(Author researcher);
 	
 	void update(Author researcher);

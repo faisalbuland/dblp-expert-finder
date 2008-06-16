@@ -14,17 +14,22 @@ import org.apache.log4j.Logger;
 import com.google.common.base.Function;
 import com.google.common.base.Join;
 import com.google.common.base.Predicate;
+import com.google.common.collect.Comparators;
 import com.google.common.collect.HashMultiset;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
+import com.google.common.collect.Multimap;
 import com.google.common.collect.Multiset;
+import com.google.common.collect.Ordering;
 
 import de.unitrier.dblp.Author;
 import edu.ucdavis.cs.dblp.ServiceLocator;
 import edu.ucdavis.cs.dblp.data.Keyword;
 import edu.ucdavis.cs.dblp.data.Publication;
 import edu.ucdavis.cs.dblp.data.StemmedKeyword;
+import edu.ucdavis.cs.dblp.data.keywords.KeywordRecognizer;
+import edu.ucdavis.cs.dblp.text.SimplePub;
 import edu.ucdavis.cs.taxonomy.Categories;
 import edu.ucdavis.cs.taxonomy.Category;
 
@@ -40,6 +45,9 @@ public class ResearcherProfileImpl implements ResearcherProfile {
 	private Multiset<Author> coAuthors;
 	private Multiset<Keyword> keywords;
 	private Multiset<Category> leafCategories;
+	
+	private final KeywordRecognizer recognizer = ServiceLocator.getInstance().getKeywordRecognizer();
+	private final SearchService searchService = ServiceLocator.getInstance().getSearchService();
 	
 	public ResearcherProfileImpl(Author researcher, Collection<Publication> pubs) {
 		this.researcher = researcher;
@@ -234,6 +242,40 @@ public class ResearcherProfileImpl implements ResearcherProfile {
 		}
 		
 		return str.toString();
+	}
+
+	@Override
+	public List<Keyword> identifyExpertiseAreas() {
+		recognizer.produceControlledVocabulary(this.pubs);
+		recognizer.removeLowInformationKeywords(pubs);
+		return Lists.newLinkedList(Keyword.fromAll(simpleTopKeyphrases(SimplePub.fromAll(pubs))));
+	}
+
+	public Collection<String> simpleTopKeyphrases(Iterable<SimplePub> pubs) {
+		final Multiset<String> keyphrases = new HashMultiset<String>();
+		for(Iterable<String> kwStrings : Iterables.transform(pubs, 
+				SimplePub.FN_SIMPLPUB_KEYWORDS)) {
+			Iterables.addAll(keyphrases, kwStrings);
+		}
+		List<String> sortedKeyphrases = Lists.newLinkedList(keyphrases.elementSet());
+		Ordering<String> order = Comparators.compound(Comparators.fromFunction(new Function<String, Integer>(){
+			@Override
+			public Integer apply(String keyphrase) {
+				return keyphrases.count(keyphrase);
+			}
+		}), Comparators.fromFunction(new Function<String, Integer>(){
+			@Override
+			public Integer apply(String keyphrase) {
+				return keyphrase.split("\\s+").length;
+			}
+		}));
+		order.reverseOrder().sort(sortedKeyphrases);
+		logger.info("keyphrase count: "+sortedKeyphrases.size());
+		for (int i=0; i < sortedKeyphrases.size(); i++) {
+			logger.info(sortedKeyphrases.get(i)+','+keyphrases.count(sortedKeyphrases.get(i)));
+		}
+		
+		return keyphrases.elementSet();
 	}
 
 }

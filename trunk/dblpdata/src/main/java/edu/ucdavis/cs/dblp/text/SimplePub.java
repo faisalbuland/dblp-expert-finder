@@ -55,6 +55,16 @@ public class SimplePub implements Serializable {
 			}
 		}
 	}
+	
+	public static final Iterable<SimplePub> fromAll(Iterable<Publication> pubs) {
+		List<SimplePub> simplePubs = Lists.newLinkedList();
+		
+		for (Publication pub : pubs) {
+			simplePubs.add(new SimplePub(pub));
+		}
+		
+		return simplePubs;
+	}
 
 	/**
 	 * @return the title

@@ -1,5 +1,6 @@
 package edu.ucdavis.cs.dblp.text;
 
+import java.awt.Color;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -43,7 +44,9 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
+import com.google.common.collect.Multimap;
 import com.google.common.collect.Multiset;
+import com.google.common.collect.Ordering;
 import com.google.common.collect.Sets;
 
 import edu.ucdavis.cs.dblp.ServiceLocator;
@@ -68,6 +71,8 @@ public class SpatialTopics {
 	@Resource
 	private SearchService searchService;
 	private Set<SimplePub> simplePubs;
+	@Resource
+	private ClutoClusterSolution clusterSolution;
 	
 	@Autowired(required=false)
 	public void setSerializedSimplePubs(@Qualifier("serSimplePubs") org.springframework.core.io.Resource serSimplePubs) {
@@ -277,9 +282,71 @@ public class SpatialTopics {
 			logAuthorPubCount(simplePubs);
 			logCoauthorCount(simplePubs);
 			logVenueHistogram(simplePubs);*/
-			graph = generateGraph(getPubsForYear("2000", simplePubs));
+			logTopKeyphrasesPerYear(pubs);
+//			logTopKeyphrases(pubs);
+//			graph = generateKeyphraseGraph(getPubsForYear("2000", simplePubs));
+			graph = generateClusterGraph(simplePubs);
 		}
 		return graph;
+	}
+	
+	public void logTopKeyphrasesPerYear(Iterable<SimplePub> pubs) {
+		// for all pubs, extract years
+		// add keywords to a year bin
+		final Map<String, Multiset<String>> yearKws = Maps.newHashMap();
+		for(SimplePub pub : pubs) {
+			// create-on-get (if not present)
+			if (yearKws.get(pub.getYear()) == null) {
+				yearKws.put(pub.getYear(), new HashMultiset<String>());
+			}
+			Iterables.addAll(yearKws.get(pub.getYear()),
+					Iterables.transform(pub.getKeywords(), Keyword.FN_KEYWORD_STRINGS));
+		}
+		
+		for (final String year : Comparators.naturalOrder().sortedCopy(yearKws.keySet())) {
+			List<String> sortedKeyphrases = Lists.newLinkedList(yearKws.get(year).elementSet());
+			Ordering<String> order = Comparators.fromFunction(new Function<String, Integer>(){
+				@Override
+				public Integer apply(String keyphrase) {
+					return yearKws.get(year).count(keyphrase);
+				}
+			});
+			order.reverseOrder().sort(sortedKeyphrases);
+			logger.info("\ntop keyphrases for year "+year);
+			for (int i=0; i < sortedKeyphrases.size() && i < 15; i++) {
+//				logger.info(sortedKeyphrases.get(i)+','+yearKws.get(year).count(sortedKeyphrases.get(i)));
+				// use sysout to enable easier importing into Excel
+				System.out.println(year+','+sortedKeyphrases.get(i)+','+yearKws.get(year).count(sortedKeyphrases.get(i)));
+			}
+		}
+	}
+	
+	public void logTopKeyphrases(Iterable<SimplePub> pubs) {
+		Multimap<Integer, SimplePub> clusters = this.clusterSolution.getClustersFor(pubs);
+		for(Integer clusterNum : clusters.keySet()) {
+			final Multiset<String> keyphrases = new HashMultiset<String>();
+			for(Iterable<String> kwStrings : Iterables.transform(clusters.get(clusterNum), 
+					SimplePub.FN_SIMPLPUB_KEYWORDS)) {
+				Iterables.addAll(keyphrases, kwStrings);
+			}
+			List<String> sortedKeyphrases = Lists.newLinkedList(keyphrases.elementSet());
+			Ordering<String> order = Comparators.compound(Comparators.fromFunction(new Function<String, Integer>(){
+				@Override
+				public Integer apply(String keyphrase) {
+					return keyphrases.count(keyphrase);
+				}
+			}), Comparators.fromFunction(new Function<String, Integer>(){
+				@Override
+				public Integer apply(String keyphrase) {
+					return keyphrase.split("\\s+").length;
+				}
+			}));
+			order.reverseOrder().sort(sortedKeyphrases);
+			logger.info("top keyphrases for cluster "+clusterNum);
+			for (int i=0; i < 20; i++) {
+				logger.info(sortedKeyphrases.get(i)+','+keyphrases.count(sortedKeyphrases.get(i)));
+			}
+		}
 	}
 	
 	public void logAuthorPubCount(Iterable<SimplePub> pubs) {
@@ -363,7 +430,132 @@ public class SpatialTopics {
 		logger.debug("first pub year: "+pubs.get(0).getYear());
 	}
 	
-	public Graph2D generateGraph(Iterable<SimplePub> pubs) {
+	public Graph2D generateClusterGraph(Iterable<SimplePub> pubs) {
+		Graph2D graph = new Graph2D();
+		final String ROOT_ID="SpatDBs-ROOT";
+		
+		// one central node to bind all the clusters together
+		// one "cluster root" node each
+		// nodes for topics within each cluster, connected to each other also
+		
+		Multimap<Integer, SimplePub> clusters = this.clusterSolution.getClustersFor(pubs);
+		// node per keyword
+		Set<String> kws = Sets.newHashSet();
+		for (Integer clusterNum : clusters.keySet()) {
+			for(Iterable<String> kwStrings : Iterables.transform(clusters.get(clusterNum), 
+												SimplePub.FN_SIMPLPUB_KEYWORDS)) {
+				Iterables.addAll(kws, kwStrings);
+			}
+		}
+		
+		Node[] V = new Node[kws.size()+1+clusters.keySet().size()]; // kws+root+cluster nodes
+		Map<String, Node> nodeMap = Maps.newHashMap();
+		Map<EdgeKey, Edge> edgeMap = Maps.newHashMap();
+		Multiset<Node> edgeCount = new HashMultiset<Node>();
+	    
+		int i=0;
+		// root first
+		Node rootNode = V[i] = graph.createNode();
+		nodeMap.put(ROOT_ID, V[i]);
+		NodeRealizer vr = graph.getRealizer(V[i]);
+		vr.setLabelText(ROOT_ID);
+		vr.setSize(125.0, 75.0);
+		vr.setFillColor(Color.GREEN);
+		i++;
+		// clusters
+	    for(Integer clusterNum : clusters.keySet()) {
+	    	V[i] = graph.createNode();
+	    	String clusterName = "Cluster: "+clusterNum; 
+			nodeMap.put(clusterName, V[i]);
+			NodeRealizer clusterVr = graph.getRealizer(V[i]);
+			clusterVr.setLabelText("Cluster: "+clusterNum);
+			clusterVr.setSize(75.0, 25.0);
+			clusterVr.setFillColor(Color.LIGHT_GRAY);
+
+			// add edge to root
+			Node source = rootNode;
+			Node sink = V[i];
+			Edge edge = graph.createEdge(source, sink);
+			EdgeKey edgeKey = new EdgeKey(ROOT_ID, clusterName);
+			edgeMap.put(edgeKey, edge);
+			edgeCount.add(source);
+			edgeCount.add(sink);
+		
+			i++;
+			
+			// add cluster members
+			// top keywords
+			final Multiset<String> keyphrases = new HashMultiset<String>();
+			for(Iterable<String> kwStrings : Iterables.transform(clusters.get(clusterNum), 
+					SimplePub.FN_SIMPLPUB_KEYWORDS)) {
+				Iterables.addAll(keyphrases, kwStrings);
+			}
+			List<String> sortedKeyphrases = Lists.newLinkedList(keyphrases.elementSet());
+			Ordering<String> order = Comparators.compound(Comparators.fromFunction(new Function<String, Integer>(){
+				@Override
+				public Integer apply(String keyphrase) {
+					return keyphrases.count(keyphrase);
+				}
+			}), Comparators.fromFunction(new Function<String, Integer>(){
+				@Override
+				public Integer apply(String keyphrase) {
+					return keyphrase.split("\\s+").length;
+				}
+			}));
+			order.reverseOrder().sort(sortedKeyphrases);
+			for (int j=0; j < 20; j++) {
+				  String kwStr = sortedKeyphrases.get(j);
+				  if (!nodeMap.containsKey(kwStr)) {
+					  logger.info("creating node for "+kwStr);
+				      V[i] = graph.createNode();
+				      nodeMap.put(kwStr, V[i]);
+				      NodeRealizer vreal = graph.getRealizer(V[i]);
+				      vreal.setLabelText(kwStr);
+				      vreal.setSize(100.0, 25.0);
+				      i++;
+				  }
+			      
+			      // add edge to keyword
+			      Node kwSource = nodeMap.get(clusterName);
+			      Node kwSink = nodeMap.get(kwStr);
+			      Edge kwEdge = graph.createEdge(kwSource, kwSink);
+			      logger.info("creating edge from "+clusterName+" to "+kwStr);
+			      EdgeKey kwEdgeKey = new EdgeKey(clusterName, kwStr);
+			      edgeMap.put(kwEdgeKey, kwEdge);
+			      edgeCount.add(kwSource);
+			      edgeCount.add(kwSink);
+			}
+			
+			// pub keywords
+			for(SimplePub pub : clusters.get(clusterNum)) {
+				for (Keyword kw : pub.getKeywords()) 
+			    {
+					for(Keyword coOccurringKw : pub.getKeywords()) {
+		    			if (!coOccurringKw.equals(kw)) {
+		    				EdgeKey kwEdgeKey = new EdgeKey(kw, coOccurringKw);
+		    				if (!edgeMap.containsKey(kwEdgeKey)) {
+		    					Node kwSource = nodeMap.get(kw.getKeyword());
+		    					Node kwSink = nodeMap.get(coOccurringKw.getKeyword());
+		    					// only add an edge if both kws were in the top keyword buckets
+		    					if (kwSource != null && kwSink != null &&
+		    							(edgeCount.count(source) <= 1 || 
+		    							edgeCount.count(sink) <= 1)) {
+			    					Edge kwEdge = graph.createEdge(kwSource, kwSink); 
+			    					edgeMap.put(kwEdgeKey, kwEdge);
+			    					edgeCount.add(kwSource);
+			    					edgeCount.add(kwSink);
+		    					}
+		    				} // else, skip duplicate edge
+		    			} // else, skip as we don't want self-loops
+		    		}
+			    }
+			}
+	    }
+			
+		return graph;
+	}
+	
+	public Graph2D generateKeyphraseGraph(Iterable<SimplePub> pubs) {
 		Graph2D graph = new Graph2D();
 		
 		// node per keyword

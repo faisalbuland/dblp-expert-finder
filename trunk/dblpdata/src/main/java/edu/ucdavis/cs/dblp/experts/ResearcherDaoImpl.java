@@ -6,7 +6,6 @@ package edu.ucdavis.cs.dblp.experts;
 import java.util.Collection;
 import java.util.List;
 
-import javax.persistence.Entity;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
@@ -14,6 +13,8 @@ import javax.persistence.Query;
 import org.apache.log4j.Logger;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
+
+import com.google.common.collect.Lists;
 
 import de.unitrier.dblp.Author;
 import edu.ucdavis.cs.dblp.ServiceLocator;
@@ -60,6 +61,19 @@ public class ResearcherDaoImpl implements ResearcherDao {
 	public Collection<Publication> findPublications(Author researcher) {
 		return ServiceLocator.getInstance().
 				getDblpPubDao().findByAuthorName(researcher.getContent());
+	}
+	
+	@Override
+	public Collection<ResearcherProfile> buildProfile(String name) {
+		Collection<ResearcherProfile> profiles = Lists.newLinkedList();
+		Collection<Author> authors = findByName(name);
+		
+		for (Author author : authors) {
+			ResearcherProfile profile = new ResearcherProfileImpl(author);
+			profiles.add(profile);
+		}
+		
+		return profiles;
 	}
 
 	/* (non-Javadoc)

@@ -3,19 +3,24 @@
  */
 package edu.ucdavis.cs.dblp.experts;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
+import static org.hamcrest.Matchers.*;
 
 import java.util.Collection;
+import java.util.List;
 
 import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 
+import com.google.common.collect.Iterables;
 import com.google.common.collect.Iterators;
 
 import de.unitrier.dblp.Author;
 import edu.ucdavis.cs.dblp.ServiceLocator;
+import edu.ucdavis.cs.dblp.data.Keyword;
 import edu.ucdavis.cs.dblp.data.timeline.EventData;
 
 /**
@@ -40,7 +45,7 @@ public class ResearcherDaoImplTest {
 	/**
 	 * Test method for {@link edu.ucdavis.cs.dblp.experts.ResearcherDaoImpl#findByName(java.lang.String)}.
 	 */
-	@Test
+	@Test @Ignore
 	public final void testFindByName() {
 		String[] names = new String[]{
 			"Ian Davidson",
@@ -55,7 +60,7 @@ public class ResearcherDaoImplTest {
 		}
 	}
 	
-	@Test
+	@Test @Ignore
 	public final void testFindByNamePrefix() {
 		String[] namePrefixes = new String[]{
 			"Ian Dav",
@@ -73,7 +78,7 @@ public class ResearcherDaoImplTest {
 	/**
 	 * Test method for {@link edu.ucdavis.cs.dblp.experts.ResearcherDaoImpl#findPublications(de.unitrier.dblp.Author)}.
 	 */
-	@Test
+	@Test @Ignore
 	public final void testFindPublications() {
 //		Collection<Author> authors = dao.findByName("Hector Garcia-Molina");
 		Collection<Author> authors = dao.findByName("Ian Davidson");
@@ -86,6 +91,17 @@ public class ResearcherDaoImplTest {
 		logger.info("pubs as xml: " + 
 				EventData.fromPublications(profile.getPublications()).
 					toXML());
+	}
+	
+	@Test
+	public final void verifyAuthorProfile() {
+//		final String researcherName = "Ian Davidson";
+//		final String researcherName = "Shyhtsun Felix Wu";
+		final String researcherName = "Michael Gertz";
+		ResearcherProfile profile = Iterables.getOnlyElement(dao.buildProfile(researcherName));
+		assertTrue(profile.getPublications().size() > 0);
+		List<Keyword> expertiseAreas = profile.identifyExpertiseAreas();
+		assertThat(expertiseAreas.size(), is(greaterThanOrEqualTo(1)));
 	}
 
 }
