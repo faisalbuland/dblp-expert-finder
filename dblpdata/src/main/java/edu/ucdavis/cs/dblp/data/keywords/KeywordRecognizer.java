@@ -1,5 +1,6 @@
 package edu.ucdavis.cs.dblp.data.keywords;
 
+import java.util.Collection;
 import java.util.List;
 import java.util.Set;
 
@@ -22,6 +23,8 @@ public interface KeywordRecognizer {
 	 */
 	List<String> reduceKeywords(List<String> keywords);
 	
+	Collection<Publication> removeLowInformationKeywords(Collection<Publication> pubs);
+	
 	List<Keyword> removeLowInformationKeywords(Iterable<Keyword> keywords);
 	
 	/**
@@ -40,7 +43,7 @@ public interface KeywordRecognizer {
 	 * @param pubs
 	 * @return
 	 */
-	void produceControlledVocabulary(Iterable<Publication> pubs);
+	Iterable<Publication> produceControlledVocabulary(Iterable<Publication> pubs);
 	/**
 	 * Produces a controlled vocabulary from <code>pubs</code> and updates
 	 * each contained publication to have keywords only from this controlled vocabulary.
@@ -49,5 +52,5 @@ public interface KeywordRecognizer {
 	 * @param pubs
 	 * @return
 	 */
-	void produceSimpleControlledVocabulary(Iterable<SimplePub> pubs);
+	Iterable<SimplePub> produceSimpleControlledVocabulary(Iterable<SimplePub> pubs);
 }

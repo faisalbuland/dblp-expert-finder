@@ -10,6 +10,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import edu.ucdavis.cs.dblp.data.DataLoader;
 import edu.ucdavis.cs.dblp.data.DblpPubDao;
+import edu.ucdavis.cs.dblp.data.keywords.KeywordRecognizer;
 import edu.ucdavis.cs.dblp.experts.ResearcherDao;
 import edu.ucdavis.cs.dblp.experts.SearchService;
 import edu.ucdavis.cs.dblp.service.ContentService;
@@ -78,5 +79,9 @@ public class ServiceLocator {
 	
 	public SolrServer getSolrServer() {
 		return (SolrServer)appContext.getBean("solrServer");
+	}
+	
+	public KeywordRecognizer getKeywordRecognizer() {
+		return (KeywordRecognizer)appContext.getBean("keywordRecognizer");
 	}
 }

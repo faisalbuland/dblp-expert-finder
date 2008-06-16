@@ -4,6 +4,8 @@
 package edu.ucdavis.cs.dblp.data;
 
 import java.io.Serializable;
+import java.util.Collection;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -18,6 +20,7 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 import org.apache.commons.lang.builder.ToStringStyle;
 
 import com.google.common.base.Function;
+import com.google.common.collect.Lists;
 
 import edu.ucdavis.cs.dblp.analyzers.TokenizerService;
 
@@ -33,6 +36,11 @@ import edu.ucdavis.cs.dblp.analyzers.TokenizerService;
 	@NamedQuery(name="Keyword.all", query="SELECT DISTINCT k FROM Keyword k ORDER BY k.keyword ASC"),
 })
 public class Keyword implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -5944617676640723866L;	
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	protected Long id;
@@ -46,6 +54,16 @@ public class Keyword implements Serializable {
 	public Keyword(String keyword) {
 		super();
 		this.keyword = keyword;
+	}
+	
+	public static final Collection<Keyword> fromAll(Iterable<String> kws) {
+		List<Keyword> keywords = Lists.newLinkedList();
+		
+		for (String kw : kws) {
+			keywords.add(new Keyword(kw));
+		}
+		
+		return keywords;
 	}
 
 	/**

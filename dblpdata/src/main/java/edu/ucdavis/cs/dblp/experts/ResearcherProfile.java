@@ -1,6 +1,7 @@
 package edu.ucdavis.cs.dblp.experts;
 
 import java.util.Collection;
+import java.util.List;
 
 import com.google.common.collect.Multiset;
 
@@ -24,4 +25,9 @@ public interface ResearcherProfile {
 	Collection<Author> getSortedCoAuthors();
 	Collection<Keyword> getSortedKeywords();
 	Collection<Category> getSortedLeafCategories();
+	/**
+	 * @return a ranked list of expertise areas (ranked in desc order of expertise)
+	 */
+	List<Keyword> identifyExpertiseAreas();
+	
 }

@@ -2,11 +2,7 @@ package edu.ucdavis.cs.dblp.text;
 
 import java.io.File;
 import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.util.Iterator;
 import java.util.Map;
-import java.util.Set;
-import java.util.zip.GZIPInputStream;
 
 import javax.annotation.PostConstruct;
 
@@ -21,7 +17,9 @@ import org.springframework.stereotype.Component;
 
 import com.google.common.base.Join;
 import com.google.common.base.Preconditions;
+import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Maps;
+import com.google.common.collect.Multimap;
 
 import edu.ucdavis.cs.dblp.ServiceLocator;
 
@@ -81,21 +79,34 @@ public class ClutoClusterSolution {
 		}
 	}
 	
-	public Map<SimplePub, Integer> getClustersFor(Iterable<SimplePub> pubs) {
+	public Multimap<Integer, SimplePub> getClustersFor(Iterable<SimplePub> pubs) {
 		// verify that a non-empty solution was loaded
 		Preconditions.checkState(this.clusters.size() > 0);
 		
-		Map<SimplePub, Integer> solution = Maps.newHashMap();
+		Multimap<Integer, SimplePub> solution = new HashMultimap<Integer, SimplePub>();
 		
 		for(SimplePub pub : pubs) {
 			if (clusters.containsKey(convertPubKey(pub))) {
-				solution.put(pub, clusters.get(convertPubKey(pub)));
+				solution.put(clusters.get(convertPubKey(pub)), pub);
 			} else {
 				logger.error("solution cluster not found for pub: "+pub);
 			}
 		}
 		
 		return solution;
+	}
+	
+	public Map<SimplePub, Integer> getClusterNumbersFor(Iterable<SimplePub> pubs) {
+		Multimap<Integer, SimplePub> clusters = getClustersFor(pubs);
+		Map<SimplePub, Integer> pubClusterNums = Maps.newHashMap();
+		
+		for(Integer clusterNum : clusters.keySet()) {
+			for(SimplePub pub : clusters.get(clusterNum)) {
+				pubClusterNums.put(pub, clusterNum);
+			}
+		}
+		
+		return pubClusterNums ;
 	}
 	
 	/**
@@ -114,9 +125,9 @@ public class ClutoClusterSolution {
 		ApplicationContext ctx = ServiceLocator.getInstance().getAppContext();
 		final ClutoClusterSolution solution = (ClutoClusterSolution) ctx.getBean("clutoClusterSolution");
 		final SpatialTopics st = (SpatialTopics) ctx.getBean("spatialTopics");
-		Map<SimplePub, Integer> clusters = solution.getClustersFor(st.getSimplePubs());
-		for(SimplePub pub : st.getSimplePubs()) {
-			logger.info("cluster for "+pub.getKey()+" = "+clusters.get(pub));
+		Multimap<Integer, SimplePub> clusters = solution.getClustersFor(st.getSimplePubs());
+		for(Integer clusterNum : clusters.keySet()) {
+			logger.info("pubs for cluster "+clusterNum+'\n'+clusters.get(clusterNum));
 		}
 	}
 }

@@ -17,6 +17,10 @@
 		p:queryType="${solr.queryType}"
 		scope="prototype"
 		/>
+	<!-- SOLR index location -->
+	<bean id="indexLocation" class="org.springframework.core.io.FileSystemResource">
+		<constructor-arg value="/dev/apache-solr-nightly/example/solr/data/index"/>
+	</bean>
 	
 	<bean name="solrServer" class="org.apache.solr.client.solrj.impl.CommonsHttpSolrServer">
 		<constructor-arg index="0" value="${solr.server.url}"/>

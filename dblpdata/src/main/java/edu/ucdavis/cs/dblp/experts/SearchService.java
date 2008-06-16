@@ -8,6 +8,7 @@ public interface SearchService {
 	DblpResults refineSearch(DblpResults context);
 	DblpResults fetchMoreResults(DblpResults context);
 	DblpResults fetchResultsByRange(DblpResults context, int firstRow, int numberOfRows);
+	int getDocFrequency(String phrase);
 	List<String> getFilterQueries();
 	void addFilterQuery(String filterQuery);
 	void removeFilterQuery(String filterQuery);
