@@ -21,7 +21,7 @@
 			<p><img src="images/image.gif" alt="Image" title="Image" class="image" />
 				<ui:insert name="resultOutput"/>
 				<rich:togglePanel value="closed" switchType="client"
-					stateOrder="closed,showMore">
+					stateOrder="closed,showMore" >
      				<f:facet name="closed">
      					<h:panelGroup rendered="#{not empty result.content and not empty result.content.abstractText}">
      						<rich:toggleControl value="[More]" switchToState="showMore" />
@@ -29,7 +29,7 @@
      				</f:facet>
      						
      				<f:facet name="showMore">
-     					<h:panelGroup rendered="#{not empty result.content and not empty result.content.abstractText}">
+     					<h:panelGroup rendered="#{not empty result.content and not empty result.content.abstractText}" >
      					<em>Abstract: </em>#{result.content.abstractText}
      					<rich:toggleControl value=" [Close]" switchToState="closed" />
      					</h:panelGroup>
