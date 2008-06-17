@@ -1,5 +1,6 @@
 package edu.ucdavis.cs.dblp.data.mining;
 import java.io.File;
+import java.io.IOException;
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -37,25 +38,30 @@ public class DocExporter {
 	private DblpPubDao dao;
 	@Resource
 	private CategoryDao catDao;
-
-    public static void main(String[] args) throws Exception {
-    	
-    }
 	
     @Test
     public void exportPubs() throws Exception {
         List<Publication> pubs = dao.findByCategory(
 				catDao.findByFreeTextSearch("Spatial Database").get(0));
-        Function<Publication, String> fnPubLines = new Function<Publication, String>() {
+        File outfile = new File("spatdbs.txt");
+        exportData(pubs, outfile);
+    }
+
+	/**
+	 * @param pubs
+	 * @param outfile
+	 * @throws IOException
+	 */
+	public static void exportData(Iterable<Publication> pubs, File outfile)
+			throws IOException {
+		Function<Publication, String> fnPubLines = new Function<Publication, String>() {
         	@Override
         	public String apply(Publication pub) {
-        		return pub.getKey().replaceAll("/", "")+" "+pub.getTitle()+" "+
-        			(pub.getContent() != null ?
+        		return pub.getKey().replaceAll("[^A-Za-z0-9]", "")+" "+pub.getTitle()+" "+
+        			(pub.getContent() != null && pub.getContent().getAbstractText() != null ?
         					pub.getContent().getAbstractText() : "").replaceAll("\\s+", " ");
         	}
         };
-        File outfile = new File("spatdbs.txt");
         FileUtils.writeLines(outfile, Lists.newLinkedList(Iterables.transform(pubs, fnPubLines)));
-    }
-
+	}
 }

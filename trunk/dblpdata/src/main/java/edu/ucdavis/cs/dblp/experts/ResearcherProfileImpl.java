@@ -6,6 +6,7 @@ package edu.ucdavis.cs.dblp.experts;
 import java.util.Collection;
 import java.util.Comparator;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -19,7 +20,6 @@ import com.google.common.collect.HashMultiset;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
-import com.google.common.collect.Multimap;
 import com.google.common.collect.Multiset;
 import com.google.common.collect.Ordering;
 
@@ -59,6 +59,16 @@ public class ResearcherProfileImpl implements ResearcherProfile {
 		ResearcherDao dao = ServiceLocator.getInstance().getResearcherDao();
 		this.researcher = researcher;
 		pubs = dao.findPublications(researcher);
+		
+		// filter out home page
+		for (Iterator<Publication> iter = pubs.iterator(); iter.hasNext(); ) {
+			Publication pub = iter.next();
+			if (pub.getKey().toLowerCase().contains("homepage") || 
+					pub.getTitle().toLowerCase().contains("homepage")) {
+				iter.remove();
+				logger.info("removing homepage 'publication': "+pub);
+			}
+		}
 		
 		buildSets(researcher, pubs);
 	}
